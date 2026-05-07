@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球AI模型热度排行榜指南 | 2026年5月</title>
+<style>
+:root {
+  --ink: #1a1a1a;
+  --vermilion: #c23a30;
+  --vermilion-light: #f5e6e4;
+  --paper: #faf8f5;
+  --gold: #b8860b;
+  --gray: #666;
+  --light-gray: #e8e4df;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.8;
+  padding: 40px 20px;
+}
+.container { max-width: 900px; margin: 0 auto; }
+.header {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 3px double var(--ink);
+  margin-bottom: 40px;
+}
+.header h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+.header .subtitle {
+  font-size: 1em;
+  color: var(--gray);
+  font-style: italic;
+}
+.header .date {
+  font-size: 0.9em;
+  color: var(--gray);
+  margin-top: 8px;
+}
+.section {
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--light-gray);
+}
+.section:last-child { border-bottom: none; }
+h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-left: 16px;
+  border-left: 4px solid var(--vermilion);
+}
+h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 24px 0 12px;
+  color: var(--ink);
+}
+.leaderboard-card {
+  background: #fff;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.leaderboard-card .name {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--vermilion);
+  margin-bottom: 4px;
+}
+.leaderboard-card .org {
+  font-size: 0.9em;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+.meta-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 0.95em;
+}
+.meta-table th, .meta-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--light-gray);
+}
+.meta-table th {
+  background: var(--vermilion-light);
+  font-weight: 600;
+  width: 120px;
+  color: var(--vermilion);
+}
+.rating {
+  color: var(--gold);
+  font-weight: 700;
+}
+.top3 {
+  background: var(--vermilion-light);
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 12px 0;
+  font-size: 0.95em;
+}
+.top3 strong { color: var(--vermilion); }
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9em;
+}
+.comparison-table th {
+  background: var(--ink);
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+.comparison-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--light-gray);
+}
+.comparison-table tr:nth-child(even) { background: #f9f7f4; }
+.advice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+.advice-table th {
+  background: var(--vermilion);
+  color: #fff;
+  padding: 14px;
+  text-align: left;
+}
+.advice-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--light-gray);
+}
+.highlight-box {
+  background: #fff;
+  border-left: 4px solid var(--vermilion);
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 0.95em;
+}
+.trend-item {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+}
+.trend-item::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--vermilion);
+}
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--gray);
+  font-size: 0.85em;
+  border-top: 1px solid var(--light-gray);
+  margin-top: 40px;
+}
+@media (max-width: 640px) {
+  body { padding: 20px 12px; }
+  .header h1 { font-size: 1.6em; }
+  .meta-table th, .meta-table td { padding: 8px; font-size: 0.85em; }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>全球AI模型热度排行榜指南</h1>
+  <div class="subtitle">六大主流评测体系对比与使用建议</div>
+  <div class="date">公历2026年5月7日 · 乙巳年三月廿一</div>
+</div>
+
+<!-- 概述 -->
+<div class="section">
+  <h2>📋 概述</h2>
+  <p>当前AI模型评测领域存在数十个排行榜，但<strong>公认度最高、引用最广</strong>的主要有六大体系。它们从不同维度评估模型能力，各有侧重与局限。本报告逐一解析其排序标准、公信力来源与适用场景，帮助您按需选择参考。</p>
+</div>
+
+<!-- Chatbot Arena -->
+<div class="section">
+  <div class="leaderboard-card">
+    <div class="name">🏆 LMSYS Chatbot Arena（聊天机器人竞技场）</div>
+    <div class="org">加州大学伯克利分校 SkyLab / LMSYS Org</div>
+    <table class="meta-table">
+      <tr><th>排序标准</th><td><strong>Elo评分系统</strong>：用户进行盲测双盲对比，选择更优回答；采用Bradley-Terry模型计算胜率。衍生榜单包括Arena-Hard（高难度提示）、Style Control（风格控制）、分类排名（代码/数学/创意等）</td></tr>
+      <tr><th>业界认可度</th><td><span class="rating">⭐⭐⭐⭐⭐ 最高</span> — 被OpenAI、Google、Anthropic等顶级实验室引用；学术论文引用量1000+；社区驱动、透明度高、实时更新</td></tr>
+      <tr><th>最新TOP3</th><td>1. <strong>GPT-4o / GPT-4.5</strong> (OpenAI) — Elo ~1400+<br>2. <strong>Claude 4 Opus / Sonnet</strong> (Anthropic) — Elo ~1380+<br>3. <strong>Gemini 2.5 Pro</strong> (Google) — Elo ~1370+</td></tr>
+      <tr><th>核心优势</th><td>真实用户投票反映实际体验；盲测机制避免品牌偏见；支持多模态评测；开源可复现</td></tr>
+      <tr><th>主要局限</th><td>风格偏见（健谈模型可能得分更高）；用户群体偏技术；无法评估长文本/RAG等特定场景；部分模型因API限制无法参与</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- OpenCompass -->
+<div class="section">
+  <div class="leaderboard-card">
+    <div class="name">🇨🇳 OpenCompass（司南）大模型评测体系</div>
+    <div class="org">上海人工智能实验室（Shanghai AI Lab）联合商汤科技</div>
+    <table class="meta-table">
+      <tr><th>排序标准</th><td><strong>多维度综合评测</strong>：学科能力（MMLU、C-Eval、GaoKao）、推理能力（GSM8K、MATH）、代码能力（HumanEval、MBPP、LiveCodeBench）、语言能力、长文本（LongBench）、智能体（AgentBench）、安全对齐（SafetyBench）。采用<strong>CompassRank</strong>综合加权评分</td></tr>
+      <tr><th>业界认可度</th><td><span class="rating">⭐⭐⭐⭐☆ 较高</span>（中文社区最高）— 国内大模型厂商（百度、阿里、字节、智谱）主要参考标准；国际影响力逐步提升</td></tr>
+      <tr><th>最新TOP3</th><td>1. <strong>GPT-4o / o3</strong> (OpenAI)<br>2. <strong>Claude 4 Opus</strong> (Anthropic)<br>3. <strong>DeepSeek-V3 / R1</strong> (DeepSeek) 或 <strong>Qwen3</strong> (阿里)</td></tr>
+      <tr><th>核心优势</th><td>中文评测最权威（C-Eval等中文专属基准）；评测维度最全面（50+数据集）；开源评测框架；支持多模态大模型评测</td></tr>
+      <tr><th>主要局限</th><td>部分数据集可能存在训练数据污染；加权方式存在主观性；国际模型参与度不如Arena；某些基准更新滞后</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- SEAL -->
+<div class="section">
+  <div class="leaderboard-card">
+    <div class="name">🛡️ SEAL Leaderboards（安全评估与对齐排行榜）</div>
+    <div class="org">Scale AI（美国数据标注与AI基础设施公司）</div>
+    <table class="meta-table">
+      <tr><th>排序标准</th><td><strong>聚焦安全性与可靠性</strong>：Prompt Injection抗性、Jailbreak抗性、Harmful Content拒绝、Truthfulness（事实准确性）、Consistency（回答一致性）。采用<strong>红队测试（Red Teaming）</strong>方法</td></tr>
+      <tr><th>业界认可度</th><td><span class="rating">⭐⭐⭐⭐☆ 较高</span>（安全领域权威）— 企业级AI部署的重要参考；被金融、医疗等高风险行业关注；Scale AI商业信誉背书</td></tr>
+      <tr><th>最新TOP3</th><td>1. <strong>Claude 4 Opus</strong> (Anthropic) — 安全性领先<br>2. <strong>GPT-4o</strong> (OpenAI)<br>3. <strong>Gemini 2.5 Pro</strong> (Google)</td></tr>
+      <tr><th>核心优势</th><td>唯一专注安全评估的主流榜单；红队测试贴近真实攻击场景；对企业合规部署极具参考价值；评测方法透明可复现</td></tr>
+      <tr><th>主要局限</th><td>不评估通用能力，仅覆盖安全维度；评测集不公开（防止被针对性训练）；安全与有用性存在权衡争议；商业公司主办可能存在利益倾向</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Artificial Analysis -->
+<div class="section">
+  <div class="leaderboard-card">
+    <div class="name">💰 Artificial Analysis（人工智能分析）</div>
+    <div class="org">Artificial Analysis（独立分析机构）</div>
+    <table class="meta-table">
+      <tr><th>排序标准</th><td><strong>质量-价格-速度综合指数</strong>：Intelligence Index（综合质量评分）、Price-Performance（每美元获得的智能分数）、Latency（响应速度）、Context Window（上下文长度）、API可靠性。提供<strong>实时API性能监控</strong></td></tr>
+      <tr><th>业界认可度</th><td><span class="rating">⭐⭐⭐⭐☆ 较高</span>（开发者/企业选型首选）— 开发者社区广泛引用；企业API选型重要参考；独立第三方，较少品牌偏见</td></tr>
+      <tr><th>最新TOP3</th><td>1. <strong>GPT-4o</strong> (OpenAI) — 综合质量最高<br>2. <strong>Claude 4 Sonnet</strong> (Anthropic) — 性价比最优<br>3. <strong>Gemini 2.5 Flash</strong> (Google) — 速度与价格优势</td></tr>
+      <tr><th>核心优势</th><td>唯一整合质量+价格+速度的榜单；实时API性能监控（真实调用测试）；价格透明度极高；支持自定义权重排序；覆盖开源与闭源模型</td></tr>
+      <tr><th>主要局限</th><td>质量评分依赖现有学术基准，存在污染风险；价格数据可能滞后；不评估多模态、音频等能力；对创意/写作等主观能力评估不足</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- LiveBench -->
+<div class="section">
+  <div class="leaderboard-card">
+    <div class="name">🔬 LiveBench（实时基准测试）</div>
+    <div class="org">Abubakar Abid（Hugging Face）、Colin White（Abacus AI）、James Bradbury（Google）等联合发起</div>
+    <table class="meta-table">
+      <tr><th>排序标准</th><td><strong>抗污染实时评测</strong>：数学推理（最新AMC/AIME竞赛题）、语言理解（最新新闻文章）、指令遵循（复杂多步骤指令）、数据清洗、逻辑推理。<strong>所有题目定期更新</strong>，防止训练数据污染</td></tr>
+      <tr><th>业界认可度</th><td><span class="rating">⭐⭐⭐⭐☆ 较高</span>（学术/技术社区认可）— 因"抗污染"特性受研究者推崇；被用于检测模型"真实能力"vs"记忆能力"；论文发表于ICML等顶会</td></tr>
+      <tr><th>最新TOP3</th><td>1. <strong>o3 / o4-mini</strong> (OpenAI) — 推理能力领先<br>2. <strong>Claude 4 Opus</strong> (Anthropic)<br>3. <strong>DeepSeek-R1</strong> (DeepSeek) 或 <strong>Gemini 2.5 Pro</strong></td></tr>
+      <tr><th>核心优势</th><td>核心优势：抗数据污染（题目定期从最新来源获取）；评测模型"真实推理"而非"记忆能力"；开源透明，可独立验证；自动评分减少人为偏见</td></tr>
+      <tr><th>主要局限</th><td>评测维度相对单一（侧重推理）；题目更新频率与模型迭代速度仍有差距；部分题目仍可能被网络爬虫获取；不覆盖创意写作、对话质量等维度</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- OpenRouter -->
+<div class="section">
+  <div class="leaderboard-card">
+    <div class="name">📊 OpenRouter排行榜（模型使用热度榜）</div>
+    <div class="org">OpenRouter（AI模型API聚合平台）</div>
+    <table class="meta-table">
+      <tr><th>排序标准</th><td><strong>实际使用热度与反馈</strong>：调用量排名（API请求次数/Token消耗量）、用户评分（开发者主动评分1-5星）、收入排名、性价比、响应质量。基于<strong>真实使用反馈</strong></td></tr>
+      <tr><th>业界认可度</th><td><span class="rating">⭐⭐⭐☆☆ 中等</span>（开发者社区参考）— 反映真实市场需求；中小企业/独立开发者选型参考；开源社区关注度高；但受平台用户群体偏倚影响</td></tr>
+      <tr><th>最新TOP3</th><td>1. <strong>Claude 4 Sonnet</strong> (Anthropic) — 开发者首选<br>2. <strong>GPT-4o-mini / GPT-4o</strong> (OpenAI)<br>3. <strong>DeepSeek-V3 / R1</strong> (DeepSeek) — 性价比之王</td></tr>
+      <tr><th>核心优势</th><td>真实市场数据反映开发者实际选择；价格敏感度高，性价比模型排名靠前；开源模型（Llama、Qwen）有展示机会；实时更新反映市场趋势</td></tr>
+      <tr><th>主要局限</th><td>用户群体偏倚（开发者为主，非大众用户）；受价格因素过度影响，高端模型可能低估；评分机制简单，缺乏深度评测；不评估安全性、多模态等维度</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 综合对比 -->
+<div class="section">
+  <h2>📊 六大榜单综合对比</h2>
+  <table class="comparison-table">
+    <tr>
+      <th>榜单</th>
+      <th>核心定位</th>
+      <th>最佳适用场景</th>
+      <th>可信度关键</th>
+    </tr>
+    <tr>
+      <td><strong>Chatbot Arena</strong></td>
+      <td>人类偏好</td>
+      <td>对话体验评估</td>
+      <td>盲测机制、样本量</td>
+    </tr>
+    <tr>
+      <td><strong>OpenCompass</strong></td>
+      <td>综合能力</td>
+      <td>中文场景学术评测</td>
+      <td>维度全面性、数据污染</td>
+    </tr>
+    <tr>
+      <td><strong>SEAL</strong></td>
+      <td>安全对齐</td>
+      <td>企业合规部署</td>
+      <td>红队测试方法</td>
+    </tr>
+    <tr>
+      <td><strong>Artificial Analysis</strong></td>
+      <td>性价比</td>
+      <td>API选型/成本优化</td>
+      <td>实时API监控</td>
+    </tr>
+    <tr>
+      <td><strong>LiveBench</strong></td>
+      <td>抗污染推理</td>
+      <td>真实能力验证</td>
+      <td>题目更新频率</td>
+    </tr>
+    <tr>
+      <td><strong>OpenRouter</strong></td>
+      <td>市场热度</td>
+      <td>开发者选型参考</td>
+      <td>用户群体代表性</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 关键发现 -->
+<div class="section">
+  <h2>🔍 关键发现与趋势</h2>
+  
+  <h3>1. 榜单共识（各榜单共同认可的第一梯队）</h3>
+  <div class="top3">
+    • <strong>OpenAI GPT-4o/GPT-4.5/o3</strong>：综合能力全面领先<br>
+    • <strong>Anthropic Claude 4 Opus/Sonnet</strong>：安全性与推理并重<br>
+    • <strong>Google Gemini 2.5 Pro</strong>：多模态与长文本优势
+  </div>
+
+  <h3>2. 中国模型表现</h3>
+  <div class="top3">
+    • <strong>DeepSeek-V3/R1</strong>：在LiveBench（推理）、OpenRouter（性价比）表现突出<br>
+    • <strong>阿里Qwen3</strong>：OpenCompass中文评测领先<br>
+    • <strong>字节豆包/百度文心</strong>：OpenCompass排名靠前，国际榜单参与度待提升
+  </div>
+
+  <h3>3. 评测方法论演进</h3>
+  <div class="trend-item">从<strong>静态基准</strong> → <strong>动态/实时评测</strong>（LiveBench引领）</div>
+  <div class="trend-item">从<strong>单一能力</strong> → <strong>多维度综合</strong>（OpenCompass、Artificial Analysis）</div>
+  <div class="trend-item">从<strong>实验室分数</strong> → <strong>真实用户体验</strong>（Chatbot Arena、OpenRouter）</div>
+  <div class="trend-item">从<strong>能力评估</strong> → <strong>安全/成本评估</strong>（SEAL、Artificial Analysis）</div>
+
+  <h3>4. 当前主要挑战</h3>
+  <div class="highlight-box">
+    <strong>数据污染</strong>：静态基准测试可信度持续下降，模型可能在训练时"见过"测试题<br>
+    <strong>评测维度不全</strong>：创意、多模态、长程规划等难以量化<br>
+    <strong>文化/语言偏见</strong>：英文评测主导，中文/多语言评估不足<br>
+    <strong>商业利益冲突</strong>：部分榜单由利益相关方主办
+  </div>
+</div>
+
+<!-- 使用建议 -->
+<div class="section">
+  <h2>💡 使用建议</h2>
+  <table class="advice-table">
+    <tr>
+      <th>您的目的</th>
+      <th>推荐参考榜单</th>
+    </tr>
+    <tr>
+      <td>评估对话/助手体验</td>
+      <td><strong>Chatbot Arena</strong></td>
+    </tr>
+    <tr>
+      <td>中文场景综合能力</td>
+      <td><strong>OpenCompass</strong></td>
+    </tr>
+    <tr>
+      <td>企业安全合规</td>
+      <td><strong>SEAL Leaderboards</strong></td>
+    </tr>
+    <tr>
+      <td>API选型 / 成本控制</td>
+      <td><strong>Artificial Analysis</strong> + <strong>OpenRouter</strong></td>
+    </tr>
+    <tr>
+      <td>验证真实推理能力</td>
+      <td><strong>LiveBench</strong></td>
+    </tr>
+    <tr>
+      <td>跟踪市场趋势</td>
+      <td><strong>OpenRouter</strong></td>
+    </tr>
+  </table>
+
+  <div class="highlight-box" style="border-left-color: var(--gold); background: #fffdf5;">
+    <strong>核心建议</strong>：单一榜单均有局限，<strong>综合多个榜单交叉验证</strong>是最可靠的方法。当前最权威的"组合"为：<br><br>
+    • <strong>Chatbot Arena</strong>（人类偏好）<br>
+    • <strong>LiveBench</strong>（抗污染能力）<br>
+    • <strong>SEAL</strong>（安全性）
+  </div>
+</div>
+
+<!-- 各榜单官网 -->
+<div class="section">
+  <h2>🔗 各榜单官网直达</h2>
+  <table class="meta-table">
+    <tr><th>Chatbot Arena</th><td><a href="https://chat.lmsys.org/" target="_blank">chat.lmsys.org</a></td></tr>
+    <tr><th>OpenCompass</th><td><a href="https://opencompass.org.cn/" target="_blank">opencompass.org.cn</a></td></tr>
+    <tr><th>SEAL Leaderboards</th><td><a href="https://scale.com/ai-leaderboard" target="_blank">scale.com/ai-leaderboard</a></td></tr>
+    <tr><th>Artificial Analysis</th><td><a href="https://artificialanalysis.ai/" target="_blank">artificialanalysis.ai</a></td></tr>
+    <tr><th>LiveBench</th><td><a href="https://livebench.ai/" target="_blank">livebench.ai</a></td></tr>
+    <tr><th>OpenRouter</th><td><a href="https://openrouter.ai/" target="_blank">openrouter.ai</a></td></tr>
+  </table>
+</div>
+
+<div class="footer">
+  <p>本报告基于公开网络信息整理，具体排名可能随时间变化</p>
+  <p>建议访问各榜单官网获取最新实时数据</p>
+</div>
+
+</div>
+</body>
+</html>

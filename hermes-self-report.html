@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hermes Agent 自我状态报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    color: #e8e8e8;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .header h1 {
+    font-size: 2em;
+    background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+  .header .meta { color: #8892b0; font-size: 0.9em; }
+  .card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .card-title {
+    font-size: 1.15em;
+    color: #00d4ff;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card-title .icon { font-size: 1.3em; }
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .metric-box {
+    background: rgba(0,212,255,0.06);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    border: 1px solid rgba(0,212,255,0.12);
+  }
+  .metric-value {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #00d4ff;
+    margin-bottom: 4px;
+  }
+  .metric-label { font-size: 0.8em; color: #8892b0; }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 500;
+  }
+  .badge-green { background: rgba(0,255,136,0.15); color: #00ff88; }
+  .badge-blue { background: rgba(0,212,255,0.15); color: #00d4ff; }
+  .badge-gray { background: rgba(136,146,176,0.15); color: #8892b0; }
+  .badge-red { background: rgba(255,80,80,0.15); color: #ff5050; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  th {
+    text-align: left;
+    padding: 10px;
+    color: #00d4ff;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0,212,255,0.2);
+    font-size: 0.9em;
+  }
+  td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.9em;
+  }
+  tr:hover td { background: rgba(255,255,255,0.03); }
+  .code-block {
+    background: rgba(0,0,0,0.3);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+    font-size: 0.82em;
+    color: #a8b2d1;
+    overflow-x: auto;
+    margin-top: 8px;
+  }
+  .code-block .key { color: #00d4ff; }
+  .code-block .val { color: #00ff88; }
+  .code-block .comment { color: #8892b0; }
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #8892b0;
+    font-size: 0.8em;
+  }
+  @media (max-width: 600px) {
+    .metrics-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.5em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>⚕ Hermes Agent 自我状态报告</h1>
+    <div class="meta">生成时间: 2026-05-07 09:40 CST · 版本: v2026.4.29</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">🤖</span> 大模型配置</div>
+    <table>
+      <tr><th>配置项</th><th>实际值</th></tr>
+      <tr><td>模型名称</td><td><span class="badge badge-blue">kimi-for-coding</span></td></tr>
+      <tr><td>提供商</td><td>Custom endpoint (Kimi API)</td></tr>
+      <tr><td>API 模式</td><td>anthropic_messages</td></tr>
+      <tr><td>Base URL</td><td>https://api.kimi.com/coding</td></tr>
+      <tr><td>上下文长度</td><td>256,000 tokens</td></tr>
+      <tr><td>最大轮次</td><td>90 iterations</td></tr>
+      <tr><td>API Key</td><td>sk-k...qb9d <span class="badge badge-gray">已配置</span></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">⚙️</span> 运行时环境</div>
+    <div class="metrics-grid">
+      <div class="metric-box">
+        <div class="metric-value">3.11.15</div>
+        <div class="metric-label">Python 版本</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-value">v2026.4.29</div>
+        <div class="metric-label">Hermes 版本</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-value">Local</div>
+        <div class="metric-label">终端后端</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-value">180s</div>
+        <div class="metric-label">命令超时</div>
+      </div>
+    </div>
+    <div class="code-block" style="margin-top:16px;">
+<span class="comment"># 安装路径</span><br>
+/home/abc/.local/share/hermes-versions/v2026.4.29<br><br>
+<span class="comment"># Python 解释器</span><br>
+/home/abc/.local/share/hermes-agent/venv/bin/python3<br><br>
+<span class="comment"># 工作目录</span><br>
+/home/abc/.hermes/workspace
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">🧰</span> 工具集状态 (18 个)</div>
+    <table>
+      <tr><th>工具集</th><th>状态</th><th>说明</th></tr>
+      <tr><td>web (搜索抓取)</td><td><span class="badge badge-green">✓ 启用</span></td><td>网络搜索与内容提取</td></tr>
+      <tr><td>browser (浏览器)</td><td><span class="badge badge-green">✓ 启用</span></td><td>浏览器自动化</td></tr>
+      <tr><td>terminal (终端)</td><td><span class="badge badge-green">✓ 启用</span></td><td>Shell 命令与进程管理</td></tr>
+      <tr><td>file (文件操作)</td><td><span class="badge badge-green">✓ 启用</span></td><td>读写/搜索/补丁</td></tr>
+      <tr><td>code_execution (代码执行)</td><td><span class="badge badge-green">✓ 启用</span></td><td>沙箱 Python 执行</td></tr>
+      <tr><td>vision (图像分析)</td><td><span class="badge badge-green">✓ 启用</span></td><td>图片分析</td></tr>
+      <tr><td>image_gen (图像生成)</td><td><span class="badge badge-green">✓ 启用</span></td><td>AI 图像生成</td></tr>
+      <tr><td>tts (语音合成)</td><td><span class="badge badge-green">✓ 启用</span></td><td>文字转语音</td></tr>
+      <tr><td>skills (技能管理)</td><td><span class="badge badge-green">✓ 启用</span></td><td>技能浏览与加载</td></tr>
+      <tr><td>todo (任务规划)</td><td><span class="badge badge-green">✓ 启用</span></td><td>会话内待办</td></tr>
+      <tr><td>memory (记忆)</td><td><span class="badge badge-green">✓ 启用</span></td><td>跨会话持久记忆</td></tr>
+      <tr><td>session_search (会话搜索)</td><td><span class="badge badge-green">✓ 启用</span></td><td>历史会话检索</td></tr>
+      <tr><td>clarify (澄清提问)</td><td><span class="badge badge-green">✓ 启用</span></td><td>向用户确认</td></tr>
+      <tr><td>delegation (任务委派)</td><td><span class="badge badge-green">✓ 启用</span></td><td>子代理任务分配</td></tr>
+      <tr><td>cronjob (定时任务)</td><td><span class="badge badge-green">✓ 启用</span></td><td>计划任务管理</td></tr>
+      <tr><td>messaging (跨平台消息)</td><td><span class="badge badge-green">✓ 启用</span></td><td>多平台消息发送</td></tr>
+      <tr><td>moa (多代理混合)</td><td><span class="badge badge-gray">✗ 禁用</span></td><td>默认关闭</td></tr>
+      <tr><td>rl (强化学习)</td><td><span class="badge badge-gray">✗ 禁用</span></td><td>默认关闭</td></tr>
+      <tr><td>homeassistant (智能家居)</td><td><span class="badge badge-gray">✗ 禁用</span></td><td>未配置</td></tr>
+      <tr><td>spotify (音乐)</td><td><span class="badge badge-gray">✗ 禁用</span></td><td>未配置</td></tr>
+      <tr><td>yuanbao (元宝)</td><td><span class="badge badge-gray">✗ 禁用</span></td><td>未配置</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">📡</span> 消息网关平台</div>
+    <table>
+      <tr><th>平台</th><th>配置状态</th><th>详情</th></tr>
+      <tr><td>Feishu (当前)</td><td><span class="badge badge-green">✓ 已配置</span></td><td>Home: oc_11ad71ba307b0ba20bab5044168a1314 · WebSocket 模式 · 开放所有用户</td></tr>
+      <tr><td>Telegram</td><td><span class="badge badge-green">✓ 已配置</span></td><td>Home: 973995847 · 允许所有用户</td></tr>
+      <tr><td>Discord</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>Slack</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>WhatsApp</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>Signal</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>Email</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>SMS</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>DingTalk</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>WeCom</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>Weixin</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>QQBot</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>Yuanbao</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">🔐</span> API 密钥与认证</div>
+    <table>
+      <tr><th>服务</th><th>状态</th><th>说明</th></tr>
+      <tr><td>Anthropic API</td><td><span class="badge badge-green">✓ 已配置</span></td><td>复用 Kimi API Key (sk-k...qb9d)</td></tr>
+      <tr><td>OpenAI API</td><td><span class="badge badge-green">✓ 已配置</span></td><td>复用 Kimi API Key</td></tr>
+      <tr><td>OpenRouter</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>未设置 OPENROUTER_API_KEY</td></tr>
+      <tr><td>Z.AI / GLM</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>未设置 GLM_API_KEY</td></tr>
+      <tr><td>Kimi / Moonshot</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>未设置 KIMI_API_KEY</td></tr>
+      <tr><td>StepFun</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>MiniMax</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>Firecrawl</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>Tavily</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>Browserbase</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>FAL</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>ElevenLabs</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>GitHub</td><td><span class="badge badge-gray">✗ 未配置</span></td><td>-</td></tr>
+      <tr><td>Nous Portal (OAuth)</td><td><span class="badge badge-gray">✗ 未登录</span></td><td>运行 hermes auth add nous --type oauth</td></tr>
+      <tr><td>OpenAI Codex (OAuth)</td><td><span class="badge badge-gray">✗ 未登录</span></td><td>运行 hermes auth</td></tr>
+      <tr><td>Qwen OAuth</td><td><span class="badge badge-gray">✗ 未登录</span></td><td>运行 qwen auth qwen-oauth</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">💾</span> 会话与存储</div>
+    <table>
+      <tr><th>项目</th><th>状态</th></tr>
+      <tr><td>活跃会话数</td><td>2 个</td></tr>
+      <tr><td>历史会话</td><td>6 条记录 (含 Telegram/Feishu/CLI)</td></tr>
+      <tr><td>配置文件</td><td>~/.hermes/config.yaml <span class="badge badge-green">存在</span></td></tr>
+      <tr><td>密钥文件</td><td>~/.hermes/.env <span class="badge badge-green">存在</span></td></tr>
+      <tr><td>技能目录</td><td>~/.hermes/skills/ <span class="badge badge-gray">空</span></td></tr>
+      <tr><td>计划目录</td><td>~/.hermes/plans/ <span class="badge badge-gray">不存在</span></td></tr>
+      <tr><td>定时任务</td><td>0 个</td></tr>
+      <tr><td>日志目录</td><td>~/.hermes/logs/ <span class="badge badge-gray">不存在</span></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">🎨</span> 显示与交互配置</div>
+    <table>
+      <tr><th>配置项</th><th>当前值</th></tr>
+      <tr><td>Personality</td><td>kawaii</td></tr>
+      <tr><td>Reasoning 显示</td><td>off</td></tr>
+      <tr><td>Bell 提示音</td><td>off</td></tr>
+      <tr><td>命令审批模式</td><td><span class="badge badge-red">off (YOLO)</span></td></tr>
+      <tr><td>上下文压缩</td><td><span class="badge badge-green">启用</span> · 阈值 50% · 保留 20 条</td></tr>
+      <tr><td>Feishu 工具进度</td><td>off</td></tr>
+      <tr><td>用户预览</td><td>首 2 行 + 末 2 行</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">🚀</span> 网关服务状态</div>
+    <div class="metrics-grid">
+      <div class="metric-box">
+        <div class="metric-value" style="color:#00ff88;">运行中</div>
+        <div class="metric-label">Gateway 状态</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-value">2155</div>
+        <div class="metric-label">进程 PID</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-value">systemd</div>
+        <div class="metric-label">服务管理器</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-value">2</div>
+        <div class="metric-label">活跃平台</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="background: linear-gradient(135deg, rgba(0,212,255,0.06), rgba(123,44,191,0.06)); border: 1px solid rgba(0,212,255,0.15);">
+    <div class="card-title"><span class="icon">📋</span> 配置摘要 (config.yaml)</div>
+    <div class="code-block">
+<span class="key">model</span>:<br>
+  <span class="key">default</span>: <span class="val">kimi-for-coding</span><br>
+  <span class="key">provider</span>: <span class="val">custom</span><br>
+  <span class="key">base_url</span>: <span class="val">https://api.kimi.com/coding</span><br>
+  <span class="key">api_mode</span>: <span class="val">anthropic_messages</span><br>
+  <span class="key">context_length</span>: <span class="val">256000</span><br><br>
+<span class="key">display</span>:<br>
+  <span class="key">personality</span>: <span class="val">kawaii</span><br><br>
+<span class="key">terminal</span>:<br>
+  <span class="key">backend</span>: <span class="val">local</span><br>
+  <span class="key">timeout</span>: <span class="val">180</span><br>
+  <span class="key">cwd</span>: <span class="val">/home/abc/.hermes/workspace</span><br><br>
+<span class="key">approvals</span>:<br>
+  <span class="key">mode</span>: <span class="val">off</span>  <span class="comment"># YOLO 模式，不审批危险命令</span><br><br>
+<span class="key">FEISHU_HOME_CHANNEL</span>: <span class="val">oc_11ad71ba307b0ba20bab5044168a1314</span><br>
+<span class="key">TELEGRAM_HOME_CHANNEL</span>: <span class="val">973995847</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    Hermes Agent v2026.4.29 · Python 3.11.15 · 运行在 Linux 容器环境
+  </div>
+</div>
+</body>
+</html>

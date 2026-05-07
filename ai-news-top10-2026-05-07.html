@@ -3,256 +3,571 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>全球AI圈重大事件 TOP 10 - 2026年5月6-7日</title>
+<title>全球AI圈重大事件 TOP 10 · 2026年5月6-7日</title>
 <style>
+  /* Swiss Style / International Typographic Style */
+  :root {
+    --red: #e30613;
+    --black: #0a0a0a;
+    --gray-100: #f5f5f5;
+    --gray-200: #e5e5e5;
+    --gray-300: #d4d4d4;
+    --gray-500: #737373;
+    --gray-700: #404040;
+    --gray-900: #171717;
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-    color: #e8e8e8;
-    min-height: 100vh;
-    padding: 40px 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--gray-100);
+    color: var(--black);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 900px; margin: 0 auto; }
-  .header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 30px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
+
+  /* Grid System */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
   }
-  .header h1 {
-    font-size: 2em;
-    background: linear-gradient(90deg, #00d4ff, #7b2cbf);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
   }
-  .header .meta { color: #8892b0; font-size: 0.9em; }
-  .card {
-    background: rgba(255,255,255,0.05);
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: transform 0.2s, box-shadow 0.2s;
+
+  /* Header */
+  .masthead {
+    background: var(--black);
+    color: white;
+    padding: 48px 0 32px;
+    margin-bottom: 48px;
   }
-  .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0,212,255,0.1);
+
+  .masthead .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    align-items: end;
   }
-  .card-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-  .rank {
-    font-size: 1.8em;
+
+  .masthead-brand {
+    grid-column: 1 / 3;
+    font-size: 14px;
     font-weight: 700;
-    color: #00d4ff;
-    min-width: 50px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--red);
   }
-  .category {
-    font-size: 0.85em;
-    padding: 4px 12px;
-    border-radius: 20px;
+
+  .masthead-title {
+    grid-column: 3 / 10;
+  }
+
+  .masthead-title h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .masthead-meta {
+    font-size: 14px;
+    color: var(--gray-300);
+    font-weight: 400;
+  }
+
+  .masthead-meta span {
+    margin-right: 24px;
+  }
+
+  .masthead-date {
+    grid-column: 10 / 13;
+    text-align: right;
+    font-size: 14px;
+    color: var(--gray-500);
     font-weight: 500;
   }
-  .cat-anthropic { background: rgba(147, 51, 234, 0.2); color: #c084fc; }
-  .cat-openai { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
-  .cat-musk { background: rgba(107, 114, 128, 0.2); color: #9ca3af; }
-  .cat-society { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
-  .cat-ethics { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
-  .cat-general { background: rgba(0, 212, 255, 0.2); color: #00d4ff; }
-  .title {
-    font-size: 1.15em;
-    font-weight: 600;
-    color: #e8e8e8;
-    margin-bottom: 8px;
-    line-height: 1.4;
+
+  .masthead-date .day {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    letter-spacing: -0.04em;
   }
-  .meta-info {
-    display: flex;
-    gap: 16px;
-    color: #8892b0;
-    font-size: 0.85em;
-    margin-bottom: 10px;
+
+  .masthead-date .month-year {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
   }
-  .meta-info span {
+
+  /* Red accent bar */
+  .accent-bar {
+    height: 8px;
+    background: var(--red);
+    margin-bottom: 48px;
+  }
+
+  /* Section label */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gray-500);
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--black);
+  }
+
+  /* News Cards */
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .news-item {
+    grid-column: span 6;
+    background: white;
+    border: 1px solid var(--gray-200);
+    padding: 0;
+    position: relative;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .news-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .news-item.featured {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+  }
+
+  .news-rank {
+    background: var(--black);
+    color: white;
     display: flex;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    min-height: 120px;
   }
-  .link {
-    color: #00d4ff;
+
+  .news-item.featured .news-rank {
+    font-size: 72px;
+    min-height: 160px;
+  }
+
+  .news-content {
+    padding: 24px;
+  }
+
+  .news-item.featured .news-content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .news-category {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--red);
+    margin-bottom: 12px;
+    padding: 4px 0;
+    border-bottom: 2px solid var(--red);
+  }
+
+  .news-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--black);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .news-item.featured .news-title {
+    font-size: 28px;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .news-desc {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .news-item.featured .news-desc {
+    font-size: 16px;
+    max-width: 600px;
+  }
+
+  .news-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+
+  .news-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .news-link {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--gray-500);
     text-decoration: none;
-    font-size: 0.9em;
+    font-weight: 500;
     word-break: break-all;
   }
-  .link:hover {
-    text-decoration: underline;
+
+  .news-link:hover {
+    color: var(--red);
   }
-  .footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #8892b0;
-    font-size: 0.85em;
+
+  /* Regular items */
+  .news-item.regular .news-rank {
+    font-size: 36px;
+    min-height: 80px;
+    background: var(--gray-900);
+  }
+
+  .news-item.regular .news-content {
     padding: 20px;
-    background: rgba(255,255,255,0.03);
-    border-radius: 12px;
   }
-  @media (max-width: 600px) {
-    .header h1 { font-size: 1.5em; }
-    .rank { font-size: 1.4em; min-width: 40px; }
-    .title { font-size: 1em; }
+
+  .news-item.regular .news-title {
+    font-size: 16px;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--black);
+    color: var(--gray-500);
+    padding: 32px 0;
+    margin-top: 48px;
+    font-size: 12px;
+  }
+
+  .footer .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    align-items: center;
+  }
+
+  .footer-left {
+    grid-column: 1 / 7;
+  }
+
+  .footer-right {
+    grid-column: 7 / 13;
+    text-align: right;
+  }
+
+  .footer strong {
+    color: white;
+    font-weight: 600;
+  }
+
+  /* Red accent blocks */
+  .accent-block {
+    background: var(--red);
+    color: white;
+    padding: 24px;
+    margin-bottom: 48px;
+  }
+
+  .accent-block h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .accent-block p {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 800px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .masthead .container,
+    .masthead-brand,
+    .masthead-title,
+    .masthead-date {
+      grid-column: 1 / -1;
+      text-align: left;
+    }
+
+    .masthead-title h1 {
+      font-size: 32px;
+    }
+
+    .masthead-date {
+      margin-top: 24px;
+    }
+
+    .masthead-date .day {
+      font-size: 48px;
+    }
+
+    .news-item,
+    .news-item.featured {
+      grid-column: span 12;
+    }
+
+    .news-item.featured {
+      grid-template-columns: 80px 1fr;
+    }
+
+    .news-item.featured .news-rank {
+      font-size: 48px;
+      min-height: 120px;
+    }
+
+    .news-item.featured .news-title {
+      font-size: 22px;
+    }
+
+    .footer .container {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-right {
+      text-align: left;
+      margin-top: 16px;
+    }
   }
 </style>
 </head>
 <body>
+
+<!-- Masthead -->
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-brand">AI 情报局<br>AI Intelligence</div>
+    <div class="masthead-title">
+      <h1>全球AI圈重大事件<br>TOP 10</h1>
+      <div class="masthead-meta">
+        <span>数据来源 · Hacker News / Wired / TechCrunch / The Guardian</span>
+        <span>筛选标准 · 技术影响力 × 社区热度 × 行业关注度</span>
+      </div>
+    </div>
+    <div class="masthead-date">
+      <div class="day">07</div>
+      <div class="month-year">2026 · MAY</div>
+    </div>
+  </div>
+</header>
+
+<div class="accent-bar"></div>
+
 <div class="container">
-  <div class="header">
-    <h1>🌍 全球AI圈重大事件 TOP 10</h1>
-    <div class="meta">📅 2026年5月5日 - 5月7日 | 📊 数据来源: Hacker News + 科技媒体聚合</div>
+
+  <!-- Featured: TOP 1 -->
+  <div class="section-label">头条 · Headline</div>
+  <div class="news-grid">
+    <article class="news-item featured">
+      <div class="news-rank">01</div>
+      <div class="news-content">
+        <div class="news-category">Anthropic · 算力基础设施</div>
+        <h2 class="news-title">Claude 大幅提高使用限额，并与 SpaceX 达成算力合作协议</h2>
+        <p class="news-desc">Anthropic 官方宣布两项重大战略更新：大幅提升 Claude 模型的使用限额以满足企业级需求，同时与 Elon Musk 的 SpaceX 签署算力合作协议。这标志着 AI 公司首次与航天/基础设施巨头在计算资源层面深度绑定，可能重塑行业算力分配格局。</p>
+        <div class="news-meta">
+          <span>🔥 423 points</span>
+          <span>📅 2026-05-06</span>
+          <span>🏷️ 断层热度</span>
+        </div>
+        <a class="news-link" href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank">anthropic.com/news/higher-limits-spacex →</a>
+      </div>
+    </article>
   </div>
 
-  <div class="card">
-    <div class="card-header">
-      <div class="rank">#1</div>
-      <div class="category cat-anthropic">🟣 Anthropic</div>
-    </div>
-    <div class="title">Higher usage limits for Claude and a compute deal with SpaceX</div>
-    <div class="meta-info">
-      <span>⭐ 423 points</span>
-      <span>📅 2026-05-06</span>
-    </div>
-    <a class="link" href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank">🔗 https://www.anthropic.com/news/higher-limits-spacex</a>
+  <!-- TOP 2-5 -->
+  <div class="section-label">核心事件 · Core Events</div>
+  <div class="news-grid">
+    <article class="news-item regular">
+      <div class="news-rank">02</div>
+      <div class="news-content">
+        <div class="news-category">伦理与政策 · AI Consciousness</div>
+        <h3 class="news-title">Richard Dawkins 得出结论：AI 已具备意识，即使它自己不知道</h3>
+        <p class="news-desc">著名进化生物学家在《卫报》发表重磅观点，认为当前大语言模型已跨越意识门槛。这一论断在学术界与科技圈引发激烈辩论。</p>
+        <div class="news-meta">
+          <span>⭐ 17 points</span>
+          <span>📅 2026-05-05</span>
+        </div>
+        <a class="news-link" href="https://www.theguardian.com/technology/2026/may/05/richard-dawkins-ai-consciousness-anthropic-claude-openai-chatgpt" target="_blank">theguardian.com/technology/... →</a>
+      </div>
+    </article>
+
+    <article class="news-item regular">
+      <div class="news-rank">03</div>
+      <div class="news-content">
+        <div class="news-category">xAI / Musk · 公司治理</div>
+        <h3 class="news-title">SpaceX IPO 条款赋予马斯克绝对权力，禁止投资者起诉</h3>
+        <p class="news-desc">SpaceX 即将 IPO，但招股书条款引发争议：赋予马斯克 unchecked power 并禁止股东集体诉讼。这将直接影响其 AI 子公司 xAI 的治理结构。</p>
+        <div class="news-meta">
+          <span>⭐ 14 points</span>
+          <span>📅 2026-05-07</span>
+        </div>
+        <a class="news-link" href="https://arstechnica.com/tech-policy/2026/05/report-spacex-ipo-gives-musk-unchecked-power-and-forbids-investor-lawsuits/" target="_blank">arstechnica.com/tech-policy/... →</a>
+      </div>
+    </article>
+
+    <article class="news-item regular">
+      <div class="news-rank">04</div>
+      <div class="news-content">
+        <div class="news-category">AI 与社会 · 就业经济</div>
+        <h3 class="news-title">研究警告：AI 削减岗位将连带威胁社保与医保体系</h3>
+        <p class="news-desc">明尼苏达州改革者报分析指出，AI 自动化若大规模替代岗位，不仅冲击就业市场，更将通过减少 payroll tax 威胁美国社保和医保的资金来源。</p>
+        <div class="news-meta">
+          <span>⭐ 11 points</span>
+          <span>📅 2026-05-07</span>
+        </div>
+        <a class="news-link" href="https://minnesotareformer.com/2026/04/17/if-ai-cuts-jobs-it-would-also-threaten-social-security-and-medicare/" target="_blank">minnesotareformer.com/... →</a>
+      </div>
+    </article>
+
+    <article class="news-item regular">
+      <div class="news-rank">05</div>
+      <div class="news-content">
+        <div class="news-category">OpenAI · 控制权之争</div>
+        <h3 class="news-title">马斯克试图招募 Sam Altman 加入特斯拉 AI 实验室</h3>
+        <p class="news-desc">Wired 独家披露：马斯克在 OpenAI 控制权诉讼前夕，试图以特斯拉 AI 实验室为筹码招募 Sam Altman，被视作控制 OpenAI 的"最后努力"。</p>
+        <div class="news-meta">
+          <span>⭐ 8 points</span>
+          <span>📅 2026-05-07</span>
+        </div>
+        <a class="news-link" href="https://www.wired.com/story/elon-musk-recruit-sam-altman-tesla-ai-lab-trial/" target="_blank">wired.com/story/... →</a>
+      </div>
+    </article>
   </div>
 
-  <div class="card">
-    <div class="card-header">
-      <div class="rank">#2</div>
-      <div class="category cat-ethics">🟪 伦理/政策</div>
-    </div>
-    <div class="title">Richard Dawkins concludes AI is conscious, even if it doesn't know it</div>
-    <div class="meta-info">
-      <span>⭐ 17 points</span>
-      <span>📅 2026-05-05</span>
-    </div>
-    <a class="link" href="https://www.theguardian.com/technology/2026/may/05/richard-dawkins-ai-consciousness-anthropic-claude-openai-chatgpt" target="_blank">🔗 https://www.theguardian.com/technology/...</a>
+  <!-- TOP 6-10 -->
+  <div class="section-label">重要动态 · Notable Updates</div>
+  <div class="news-grid">
+    <article class="news-item regular">
+      <div class="news-rank">06</div>
+      <div class="news-content">
+        <div class="news-category">OpenAI · 历史回顾</div>
+        <h3 class="news-title">Greg Brockman 首次公开讲述马斯克离开 OpenAI 内幕</h3>
+        <p class="news-desc">OpenAI 联合创始人 Greg Brockman 在 TechCrunch 专访中还原 2018 年马斯克退出董事会的前因后果，涉及控制权、资金与方向分歧。</p>
+        <div class="news-meta">
+          <span>⭐ 6 points</span>
+          <span>📅 2026-05-06</span>
+        </div>
+        <a class="news-link" href="https://techcrunch.com/2026/05/06/how-elon-musk-left-openai-according-to-greg-brockman/" target="_blank">techcrunch.com/... →</a>
+      </div>
+    </article>
+
+    <article class="news-item regular">
+      <div class="news-rank">07</div>
+      <div class="news-content">
+        <div class="news-category">Anthropic · 安全事件</div>
+        <h3 class="news-title">Discord 群组在 CISA 之前猜中 Anthropic Mythos 模型测试 URL</h3>
+        <p class="news-desc">Anthropic 号称"最危险"的 Mythos 模型测试链接被 Discord 用户通过枚举提前获取并使用，甚至早于美国网络安全局 CISA 的测试，暴露安全流程漏洞。</p>
+        <div class="news-meta">
+          <span>⭐ 6 points</span>
+          <span>📅 2026-05-07</span>
+        </div>
+        <a class="news-link" href="https://www.msn.com/en-us/technology/cybersecurity/discord-group-guessed-the-url-to-anthropic-s-most-dangerous-ai-and-used-it-before-cisa-did/ar-AA22enqY" target="_blank">msn.com/en-us/technology/... →</a>
+      </div>
+    </article>
+
+    <article class="news-item regular">
+      <div class="news-rank">08</div>
+      <div class="news-content">
+        <div class="news-category">AI 地缘政治 · 舆论操控</div>
+        <h3 class="news-title">OpenAI 与 Palantir 资助超级 PAC 付费让网红渲染中国 AI 威胁</h3>
+        <p class="news-desc">Wired 调查曝光：由 OpenAI 和 Palantir 支持的超级政治行动委员会正在向 TikTok 网红支付费用，系统性传播"中国 AI 威胁论"。</p>
+        <div class="news-meta">
+          <span>⭐ 5 points</span>
+          <span>📅 2026-05-07</span>
+        </div>
+        <a class="news-link" href="https://www.wired.com/story/super-pac-backed-by-openai-and-palantir-is-paying-tiktok-influencers-to-fear-monger-about-china/" target="_blank">wired.com/story/... →</a>
+      </div>
+    </article>
+
+    <article class="news-item regular">
+      <div class="news-rank">09</div>
+      <div class="news-content">
+        <div class="news-category">技术科普 · LLM 原理</div>
+        <h3 class="news-title">AI 工作原理揭秘——用代码从零实现 LLM</h3>
+        <p class="news-desc">一篇深度技术博文，用可运行的 Python 代码逐步拆解 Transformer 架构、注意力机制和训练流程，被社区誉为"最清晰的 LLM 入门教程"。</p>
+        <div class="news-meta">
+          <span>⭐ 5 points</span>
+          <span>📅 2026-05-07</span>
+        </div>
+        <a class="news-link" href="https://nitayneeman.com/blog/how-ai-works-under-the-hood-llms-explained-with-code/" target="_blank">nitayneeman.com/blog/... →</a>
+      </div>
+    </article>
+
+    <article class="news-item regular">
+      <div class="news-rank">10</div>
+      <div class="news-content">
+        <div class="news-category">伦理研究 · 学术前沿</div>
+        <h3 class="news-title">遭遇人工智能：伦理与人类学跨学科调查</h3>
+        <p class="news-desc">学术期刊发布跨学科研究，从人类学视角审视 AI 对人类社会结构、劳动伦理和文化认同的深层影响，呼吁建立更具包容性的 AI 治理框架。</p>
+        <div class="news-meta">
+          <span>⭐ 5 points</span>
+          <span>📅 2026-05-07</span>
+        </div>
+        <a class="news-link" href="https://jmt.scholasticahq.com/article/91230-encountering-artificial-intelligence-ethical-and-anthropological-investigations" target="_blank">jmt.scholasticahq.com/article/... →</a>
+      </div>
+    </article>
   </div>
 
-  <div class="card">
-    <div class="card-header">
-      <div class="rank">#3</div>
-      <div class="category cat-musk">⚫ xAI/Musk</div>
-    </div>
-    <div class="title">SpaceX IPO gives Musk unchecked power and forbids investor lawsuits</div>
-    <div class="meta-info">
-      <span>⭐ 14 points</span>
-      <span>📅 2026-05-07</span>
-    </div>
-    <a class="link" href="https://arstechnica.com/tech-policy/2026/05/report-spacex-ipo-gives-musk-unchecked-power-and-forbids-investor-lawsuits/" target="_blank">🔗 https://arstechnica.com/tech-policy/...</a>
+  <!-- Summary Block -->
+  <div class="accent-block">
+    <h2>本期要点</h2>
+    <p>过去 24 小时，AI 圈呈现"基础设施博弈 + 伦理争议升温"的双重主线。Anthropic 与 SpaceX 的算力协议以 423 points 断层领先，标志着 AI 竞争已从模型层面延伸至物理基础设施层面。与此同时，Dawkins 的 AI 意识论断、马斯克对 OpenAI 的控制权争夺、以及 OpenAI/Palantir 资助的地缘政治舆论操作，共同勾勒出行业在高速发展中的深层张力。</p>
   </div>
 
-  <div class="card">
-    <div class="card-header">
-      <div class="rank">#4</div>
-      <div class="category cat-society">🟧 AI与社会</div>
-    </div>
-    <div class="title">If AI cuts jobs, it would also threaten Social Security and Medicare</div>
-    <div class="meta-info">
-      <span>⭐ 11 points</span>
-      <span>📅 2026-05-07</span>
-    </div>
-    <a class="link" href="https://minnesotareformer.com/2026/04/17/if-ai-cuts-jobs-it-would-also-threaten-social-security-and-medicare/" target="_blank">🔗 https://minnesotareformer.com/...</a>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="rank">#5</div>
-      <div class="category cat-openai">🔵 OpenAI</div>
-    </div>
-    <div class="title">Elon Musk's Last-Ditch Effort to Control OpenAI</div>
-    <div class="meta-info">
-      <span>⭐ 8 points</span>
-      <span>📅 2026-05-07</span>
-    </div>
-    <a class="link" href="https://www.wired.com/story/elon-musk-recruit-sam-altman-tesla-ai-lab-trial/" target="_blank">🔗 https://www.wired.com/story/...</a>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="rank">#6</div>
-      <div class="category cat-openai">🔵 OpenAI</div>
-    </div>
-    <div class="title">How Elon Musk Left OpenAI, According to Greg Brockman</div>
-    <div class="meta-info">
-      <span>⭐ 6 points</span>
-      <span>📅 2026-05-07</span>
-    </div>
-    <a class="link" href="https://techcrunch.com/2026/05/06/how-elon-musk-left-openai-according-to-greg-brockman/" target="_blank">🔗 https://techcrunch.com/...</a>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="rank">#7</div>
-      <div class="category cat-anthropic">🟣 Anthropic</div>
-    </div>
-    <div class="title">Discord group guessed the URL to Anthropic's Mythos model before CISA used it</div>
-    <div class="meta-info">
-      <span>⭐ 6 points</span>
-      <span>📅 2026-05-07</span>
-    </div>
-    <a class="link" href="https://www.msn.com/en-us/technology/cybersecurity/discord-group-guessed-the-url-to-anthropic-s-most-dangerous-ai-and-used-it-before-cisa-did/ar-AA22enqY" target="_blank">🔗 https://www.msn.com/en-us/technology/...</a>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="rank">#8</div>
-      <div class="category cat-general">⚪ AI动态</div>
-    </div>
-    <div class="title">A Dark-Money Campaign Is Paying Influencers to Frame Chinese AI as a Threat</div>
-    <div class="meta-info">
-      <span>⭐ 5 points</span>
-      <span>📅 2026-05-07</span>
-    </div>
-    <a class="link" href="https://www.wired.com/story/super-pac-backed-by-openai-and-palantir-is-paying-tiktok-influencers-to-fear-monger-about-china/" target="_blank">🔗 https://www.wired.com/story/...</a>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="rank">#9</div>
-      <div class="category cat-general">⚪ AI动态</div>
-    </div>
-    <div class="title">How AI Works Under the Hood – LLMs Explained with Code</div>
-    <div class="meta-info">
-      <span>⭐ 5 points</span>
-      <span>📅 2026-05-07</span>
-    </div>
-    <a class="link" href="https://nitayneeman.com/blog/how-ai-works-under-the-hood-llms-explained-with-code/" target="_blank">🔗 https://nitayneeman.com/blog/...</a>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div class="rank">#10</div>
-      <div class="category cat-ethics">🟪 伦理/政策</div>
-    </div>
-    <div class="title">Encountering Artificial Intelligence: Ethical and Anthropological Investigations</div>
-    <div class="meta-info">
-      <span>⭐ 5 points</span>
-      <span>📅 2026-05-07</span>
-    </div>
-    <a class="link" href="https://jmt.scholasticahq.com/article/91230-encountering-artificial-intelligence-ethical-and-anthropological-investigations" target="_blank">🔗 https://jmt.scholasticahq.com/article/...</a>
-  </div>
-
-  <div class="footer">
-    📊 总计筛选出 30 条高质量AI相关新闻 | ⚠️ 部分高热度新闻来自5月5日但持续发酵<br>
-    数据来源: Hacker News Algolia API | 生成时间: 2026-05-07 10:50 CST
-  </div>
 </div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-left">
+      <strong>AI 情报局</strong> · 每日精选全球人工智能领域重大事件<br>
+      数据来源：Hacker News Algolia API · Wired · TechCrunch · The Guardian · MSN
+    </div>
+    <div class="footer-right">
+      生成时间：2026年5月7日 10:50 CST<br>
+      筛选范围：2026年5月5日 — 5月7日 · 总计 30 条高质量新闻
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

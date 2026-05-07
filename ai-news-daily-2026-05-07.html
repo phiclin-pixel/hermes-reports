@@ -3,879 +3,326 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>全球人工智能日报 · 2026年5月7日</title>
+<title>AI行业热度日报 | 2026年5月7日</title>
 <style>
-  /* 中文排版优化 */
-  :root {
-    --cinnabar: #e34234;
-    --ink: #1a1a1a;
-    --paper: #faf8f5;
-    --stone: #8c8c8c;
-    --fog: #e8e4df;
-    --gold: #b8860b;
-    --teal: #00695c;
-    --indigo: #3f51b5;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", "STSong", serif;
-    background: var(--paper);
-    color: var(--ink);
-    line-height: 1.8;
-    font-size: 16px;
-  }
-
-  /* 刊头 */
-  .header {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 48px 0 32px;
-    text-align: center;
-    border-bottom: 6px solid var(--cinnabar);
-  }
-
-  .header .kicker {
-    font-size: 13px;
-    letter-spacing: 0.3em;
-    color: var(--stone);
-    margin-bottom: 12px;
-    font-family: "Helvetica Neue", sans-serif;
-  }
-
-  .header h1 {
-    font-size: 42px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    margin-bottom: 8px;
-  }
-
-  .header .subtitle {
-    font-size: 16px;
-    color: var(--stone);
-    letter-spacing: 0.1em;
-  }
-
-  .header .date {
-    margin-top: 20px;
-    font-size: 14px;
-    color: var(--stone);
-    font-family: "Helvetica Neue", sans-serif;
-  }
-
-  .date .solar { color: var(--cinnabar); font-weight: 600; }
-
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* 导语 */
-  .lead {
-    margin: 40px 0;
-    padding: 24px 0;
-    border-top: 1px solid var(--fog);
-    border-bottom: 1px solid var(--fog);
-    font-size: 15px;
-    color: var(--stone);
-    text-align: justify;
-  }
-
-  .lead::before {
-    content: "导读";
-    display: block;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--cinnabar);
-    letter-spacing: 0.2em;
-    margin-bottom: 12px;
-    font-family: "Helvetica Neue", sans-serif;
-  }
-
-  /* 分栏标题 */
-  .section-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 48px 0 24px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--ink);
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-  }
-
-  .section-title .en {
-    font-size: 11px;
-    color: var(--stone);
-    font-weight: 400;
-    font-family: "Helvetica Neue", sans-serif;
-    letter-spacing: 0.05em;
-  }
-
-  /* 新闻条目 */
-  .news-item {
-    margin-bottom: 36px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--fog);
-  }
-
-  .news-item:last-child {
-    border-bottom: none;
-  }
-
-  .news-header {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-
-  .news-rank {
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--cinnabar);
-    line-height: 1;
-    font-family: "Helvetica Neue", sans-serif;
-    min-width: 40px;
-  }
-
-  .news-meta-tag {
-    font-size: 12px;
-    color: var(--stone);
-    font-family: "Helvetica Neue", sans-serif;
-  }
-
-  .news-meta-tag .source {
-    color: var(--cinnabar);
-    font-weight: 600;
-  }
-
-  .news-title {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.6;
-    margin-bottom: 12px;
-    color: var(--ink);
-  }
-
-  .news-title a {
-    color: var(--ink);
-    text-decoration: none;
-  }
-
-  .news-title a:hover {
-    color: var(--cinnabar);
-  }
-
-  .news-summary {
-    font-size: 15px;
-    color: var(--stone);
-    line-height: 1.8;
-    text-align: justify;
-    margin-bottom: 12px;
-  }
-
-  .news-footer {
-    font-size: 12px;
-    color: var(--stone);
-    font-family: "Helvetica Neue", sans-serif;
-    display: flex;
-    gap: 16px;
-  }
-
-  .news-footer .hot {
-    color: var(--cinnabar);
-    font-weight: 600;
-  }
-
-  /* 重点框 */
-  .highlight-box {
-    background: #fff;
-    border-left: 4px solid var(--cinnabar);
-    padding: 20px 24px;
-    margin: 36px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-
-  .highlight-box .label {
-    font-size: 11px;
-    color: var(--cinnabar);
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    margin-bottom: 8px;
-    font-family: "Helvetica Neue", sans-serif;
-  }
-
-  .highlight-box p {
-    font-size: 15px;
-    line-height: 1.8;
-    text-align: justify;
-  }
-
-  /* 数据表格 */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 24px 0;
-    font-size: 14px;
-  }
-
-  .data-table th {
-    text-align: left;
-    padding: 10px 12px;
-    border-bottom: 2px solid var(--ink);
-    font-weight: 700;
-    font-size: 13px;
-  }
-
-  .data-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--fog);
-    vertical-align: top;
-  }
-
-  .data-table tr:hover {
-    background: rgba(227, 66, 52, 0.03);
-  }
-
-  /* 模型热度榜 */
-  .model-rank {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--fog);
-  }
-
-  .model-rank:last-child {
-    border-bottom: none;
-  }
-
-  .model-rank-num {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--cinnabar);
-    min-width: 36px;
-    text-align: center;
-  }
-
-  .model-info {
-    flex: 1;
-  }
-
-  .model-name {
-    font-size: 17px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-
-  .model-meta {
-    font-size: 13px;
-    color: var(--stone);
-  }
-
-  .model-score {
-    text-align: right;
-    min-width: 80px;
-  }
-
-  .model-score-value {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--cinnabar);
-  }
-
-  .model-score-label {
-    font-size: 11px;
-    color: var(--stone);
-  }
-
-  /* 中国AI标签 */
-  .china-tag {
-    display: inline-block;
-    background: var(--teal);
-    color: white;
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 3px;
-    margin-left: 8px;
-    font-family: "Helvetica Neue", sans-serif;
-  }
-
-  /* 页脚 */
-  .footer {
-    margin-top: 48px;
-    padding: 32px 0 48px;
-    border-top: 1px solid var(--fog);
-    text-align: center;
-    font-size: 13px;
-    color: var(--stone);
-  }
-
-  .footer .brand {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 8px;
-    letter-spacing: 0.1em;
-  }
-
-  .footer .info {
-    font-family: "Helvetica Neue", sans-serif;
-    font-size: 12px;
-    line-height: 1.8;
-  }
-
-  .footer .data-source {
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid var(--fog);
-    font-size: 11px;
-    color: var(--stone);
-  }
-
-  /* 响应式 */
-  @media (max-width: 600px) {
-    .header h1 { font-size: 32px; }
-    .news-rank { font-size: 24px; min-width: 32px; }
-    .news-title { font-size: 18px; }
-    .container { padding: 0 16px; }
-    .model-rank { flex-wrap: wrap; }
-    .model-score { text-align: left; margin-top: 8px; }
-  }
+:root {
+  --ink: #1a1a1a;
+  --vermilion: #c23a30;
+  --vermilion-light: #f5e6e4;
+  --paper: #faf8f5;
+  --gold: #b8860b;
+  --gray: #666;
+  --light-gray: #e8e4df;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.8;
+  padding: 40px 20px;
+}
+.container { max-width: 900px; margin: 0 auto; }
+.header {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 3px double var(--ink);
+  margin-bottom: 40px;
+}
+.header h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+.header .subtitle {
+  font-size: 1em;
+  color: var(--gray);
+  font-style: italic;
+}
+.header .date {
+  font-size: 0.9em;
+  color: var(--gray);
+  margin-top: 8px;
+}
+.section {
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--light-gray);
+}
+.section:last-child { border-bottom: none; }
+h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-left: 16px;
+  border-left: 4px solid var(--vermilion);
+}
+.news-item {
+  background: #fff;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.news-item .title {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.news-item .meta {
+  font-size: 0.85em;
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+.news-item .meta .source {
+  color: var(--vermilion);
+  font-weight: 600;
+}
+.news-item .meta .rating {
+  color: var(--gold);
+}
+.news-item .summary {
+  font-size: 0.95em;
+  color: var(--ink);
+  line-height: 1.7;
+}
+.model-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.95em;
+}
+.model-table th {
+  background: var(--ink);
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+.model-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--light-gray);
+}
+.model-table tr:nth-child(even) { background: #f9f7f4; }
+.model-table .rank { font-weight: 700; color: var(--vermilion); }
+.insight-box {
+  background: #fff;
+  border-left: 4px solid var(--vermilion);
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 0.95em;
+}
+.insight-box h3 {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--vermilion);
+  margin-bottom: 10px;
+}
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--gray);
+  font-size: 0.85em;
+  border-top: 1px solid var(--light-gray);
+  margin-top: 40px;
+}
+@media (max-width: 640px) {
+  body { padding: 20px 12px; }
+  .header h1 { font-size: 1.6em; }
+  .news-item { padding: 14px; }
+}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<header class="header">
-  <div class="kicker">人工智能情报局 · DAILY BRIEFING</div>
-  <h1>全球人工智能日报</h1>
-  <div class="subtitle">过去二十四小时重大事件精选</div>
-  <div class="date">
-    <span class="solar">2026年5月7日</span> · 星期四 · 农历三月廿一
-  </div>
-</header>
-
 <div class="container">
 
-  <div class="lead">
-    本期呈现"基础设施博弈"与"伦理争议升温"的双重主线。Anthropic 与 SpaceX 达成算力合作协议，标志着 AI 竞争已从模型层面延伸至物理基础设施；与此同时，AI 意识、就业冲击、地缘政治操控等深层议题持续发酵，行业在高速扩张中面临前所未有的张力。
-  </div>
-
-  <!-- 头条 -->
-  <div class="section-title">
-    头条要闻
-    <span class="en">HEADLINE</span>
-  </div>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">01</span>
-      <span class="news-meta-tag"><span class="source">Anthropic</span> · 算力基础设施 · 5月6日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank">
-        Claude 大幅提高使用限额，并与 SpaceX 达成算力合作协议
-      </a>
-    </h2>
-    <p class="news-summary">
-      Anthropic 官方宣布两项重大战略更新：大幅提升 Claude 模型的使用限额以满足企业级需求，同时与埃隆·马斯克的 SpaceX 签署算力合作协议。这是 AI 公司首次与航天/基础设施巨头在计算资源层面深度绑定，可能重塑行业算力分配格局。协议细节尚未披露，但业界推测涉及 SpaceX 星链数据中心的 GPU 集群资源。
-    </p>
-    <div class="news-footer">
-      <span class="hot">🔥 423 热度</span>
-      <span>来源：anthropic.com</span>
-      <span>影响指数：★★★★★</span>
-    </div>
-  </article>
-
-  <!-- 全球模型热度 -->
-  <div class="section-title">
-    全球模型热度榜
-    <span class="en">MODEL RANKINGS</span>
-  </div>
-
-  <div class="model-rank">
-    <div class="model-rank-num">1</div>
-    <div class="model-info">
-      <div class="model-name">腾讯混元 Hy3 预览版<span class="china-tag">国产</span></div>
-      <div class="model-meta">OpenRouter 周榜第一 · 周增 298% · 市占率 15.4%</div>
-    </div>
-    <div class="model-score">
-      <div class="model-score-value">76</div>
-      <div class="model-score-label">AI评分</div>
-    </div>
-  </div>
-
-  <div class="model-rank">
-    <div class="model-rank-num">2</div>
-    <div class="model-info">
-      <div class="model-name">Claude 系列（Anthropic）</div>
-      <div class="model-meta">SpaceX 算力加持 · 速率限制翻倍 · API 松绑</div>
-    </div>
-    <div class="model-score">
-      <div class="model-score-value">81</div>
-      <div class="model-score-label">AI评分</div>
-    </div>
-  </div>
-
-  <div class="model-rank">
-    <div class="model-rank-num">3</div>
-    <div class="model-info">
-      <div class="model-name">Grok 系列（xAI）</div>
-      <div class="model-meta">Connectors 功能上线 · Quality Mode 图像生成 · 并入 SpaceX</div>
-    </div>
-    <div class="model-score">
-      <div class="model-score-value">83</div>
-      <div class="model-score-label">AI评分</div>
-    </div>
-  </div>
-
-  <div class="model-rank">
-    <div class="model-rank-num">4</div>
-    <div class="model-info">
-      <div class="model-name">豆包 Seed 2.0 lite<span class="china-tag">国产</span></div>
-      <div class="model-meta">全模态理解 · 19 种语种 · Agent/GUI 升级</div>
-    </div>
-    <div class="model-score">
-      <div class="model-score-value">71</div>
-      <div class="model-score-label">AI评分</div>
-    </div>
-  </div>
-
-  <div class="model-rank">
-    <div class="model-rank-num">5</div>
-    <div class="model-info">
-      <div class="model-name">SenseNova-U1（商汤）<span class="china-tag">国产</span></div>
-      <div class="model-meta">8 步蒸馏 LoRA · H100 推理 2 秒 · ComfyUI 支持</div>
-    </div>
-    <div class="model-score">
-      <div class="model-score-value">71</div>
-      <div class="model-score-label">AI评分</div>
-    </div>
-  </div>
-
-  <div class="model-rank">
-    <div class="model-rank-num">6</div>
-    <div class="model-info">
-      <div class="model-name">Gemini（Google）</div>
-      <div class="model-meta">Nano Banana 2 图像生成 · 实时耳机传译 70+ 语言</div>
-    </div>
-    <div class="model-score">
-      <div class="model-score-value">72</div>
-      <div class="model-score-label">AI评分</div>
-    </div>
-  </div>
-
-  <div class="model-rank">
-    <div class="model-rank-num">7</div>
-    <div class="model-info">
-      <div class="model-name">DeepSeek<span class="china-tag">国产</span></div>
-      <div class="model-meta">估值 450 亿美元 · 国家队领投 · 腾讯跟投</div>
-    </div>
-    <div class="model-score">
-      <div class="model-score-value">79</div>
-      <div class="model-score-label">AI评分</div>
-    </div>
-  </div>
-
-  <div class="model-rank">
-    <div class="model-rank-num">8</div>
-    <div class="model-info">
-      <div class="model-name">Kimi（月之暗面）<span class="china-tag">国产</span></div>
-      <div class="model-meta">20 亿美元融资 · 估值超 200 亿 · ARR 2 亿美元</div>
-    </div>
-    <div class="model-score">
-      <div class="model-score-value">76</div>
-      <div class="model-score-label">AI评分</div>
-    </div>
-  </div>
-
-  <!-- 中国AI动态 -->
-  <div class="section-title">
-    中国 AI 动态
-    <span class="en">CHINA AI UPDATE</span>
-  </div>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">🇨🇳</span>
-      <span class="news-meta-tag"><span class="source">DeepSeek</span> · 融资动态 · 5月6日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="#" target="_blank">
-        国家队领投 DeepSeek 估值飙升至 450 亿美元
-      </a>
-    </h2>
-    <p class="news-summary">
-      DeepSeek 估值在数周内从 200 亿美元跃升至 450 亿美元，本轮融资由国家大基金领投，腾讯有意跟投，创始人梁文锋也参与出资。此举标志着国家队首次公开投资本土大模型公司，具有强烈的战略象征意义。这被视为官方将 AI 大模型正式纳入"半导体国家战略"的关键信号，向市场传递了国家全力支持国产 AI 发展的明确信息。
-    </p>
-    <div class="news-footer">
-      <span class="hot">⭐ 79 热度</span>
-      <span>来源：AIHOT / 晚点LatePost</span>
-      <span>影响指数：★★★★★</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">🇨🇳</span>
-      <span class="news-meta-tag"><span class="source">月之暗面</span> · 融资动态 · 5月6日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="#" target="_blank">
-        Kimi 完成 20 亿美元融资，估值超 200 亿美元
-      </a>
-    </h2>
-    <p class="news-summary">
-      Moonshot AI（月之暗面）旗下产品 Kimi 正以超 200 亿美元的投后估值完成新一轮约 20 亿美元融资，由美团龙珠领投。公司在 2025 年前六个月融资总额超 39 亿美元，估值较去年 11 月增长约 4 倍，成为中国累计融资额最高的 AI 初创公司。其年度经常性收入在短期内从 1 亿美元快速增长至超 2 亿美元，付费订阅和 API 使用量均在加速。
-    </p>
-    <div class="news-footer">
-      <span class="hot">⭐ 76 热度</span>
-      <span>来源：AIHOT / 晚点LatePost</span>
-      <span>影响指数：★★★★☆</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">🇨🇳</span>
-      <span class="news-meta-tag"><span class="source">腾讯混元</span> · 模型表现 · 5月6日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="#" target="_blank">
-        腾讯混元 Hy3 预览版登顶 OpenRouter 周榜，周增 298%
-      </a>
-    </h2>
-    <p class="news-summary">
-      发布两周后，Hy3 预览版以 3.66T 处理量在 OpenRouter 周榜位列第一，周环比增长 298%。在总使用量、工具调用和编程领域均排名第一，全平台市场占有率达 15.4%。运行 Hy3 预览版的热门应用包括 Hermes Agent、Claude Code、Kilo Code、OpenClaw、Cline 等。这标志着国产模型在海外开发者的真实接受度超出预期。
-    </p>
-    <div class="news-footer">
-      <span class="hot">⭐ 76 热度</span>
-      <span>来源：AIHOT / TencentHunyuan</span>
-      <span>影响指数：★★★★☆</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">🇨🇳</span>
-      <span class="news-meta-tag"><span class="source">字节跳动</span> · 模型发布 · 5月6日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="#" target="_blank">
-        豆包大模型家族首款全模态理解模型 Doubao-Seed-2.0-lite 升级
-      </a>
-    </h2>
-    <p class="news-summary">
-      字节跳动火山引擎发布豆包大模型家族首款全模态理解模型 Doubao-Seed-2.0-lite 升级版。该模型原生统一支持视频、图像、音频和文本理解，并能进行跨模态联合推理，在物理、医疗等学科推理及细粒度感知上表现超越此前 Pro 版本。音频方面支持 19 种语种转写及多语种互译，多项基准测试优于 Gemini-3.1-Pro。同时，其 Agent、Coding 与 GUI 能力升级，能更稳定处理长任务、胜任深度开发，并实现界面理解与操作执行的闭环。
-    </p>
-    <div class="news-footer">
-      <span class="hot">⭐ 71 热度</span>
-      <span>来源：AIHOT / IT之家</span>
-      <span>影响指数：★★★★☆</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">🇨🇳</span>
-      <span class="news-meta-tag"><span class="source">商汤科技</span> · 模型优化 · 5月6日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="#" target="_blank">
-        商汤 SenseNova-U1 开源 8 步蒸馏 LoRA，推理速度大幅提升
-      </a>
-    </h2>
-    <p class="news-summary">
-      商汤发布 SenseNova-U1 更新，开源 8 步蒸馏 LoRA：100 NFE 降至 8 NFE，H100 推理时间从 23 秒缩短至 2 秒。现已支持 ComfyUI，提供文生图、图像编辑和交错生成的即用工作流。这一优化将 U1 的推理成本大幅降低，做实时图像应用的开发者可以认真评估，ComfyUI 一接就能跑。
-    </p>
-    <div class="news-footer">
-      <span class="hot">⭐ 71 热度</span>
-      <span>来源：AIHOT / SenseTime</span>
-      <span>影响指数：★★★☆☆</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">🇨🇳</span>
-      <span class="news-meta-tag"><span class="source">字节跳动</span> · 产品发布 · 5月7日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="#" target="_blank">
-        TRAE SOLO 移动端上线：AI Agent 装进口袋
-      </a>
-    </h2>
-    <p class="news-summary">
-      字节推出的 TRAE SOLO AI Agent 工具现已向全量用户开放 App、Web 和桌面三端，实现跨设备无缝衔接。其移动端支持访问电脑项目、调用已安装技能并执行任务，演示了数据分析、信息整理、学习辅助及自动化等场景。工具支持第三方模型和技能扩展，并与飞书深度集成，便捷创建文档和日程。其"More Than Coding"理念强调 AI Agent 能处理各类长程复杂任务，而不仅限于编程。
-    </p>
-    <div class="news-footer">
-      <span class="hot">⭐ 75 热度</span>
-      <span>来源：AIHOT / 向阳乔木</span>
-      <span>影响指数：★★★★☆</span>
-    </div>
-  </article>
-
-  <!-- 核心事件 -->
-  <div class="section-title">
-    核心事件
-    <span class="en">CORE EVENTS</span>
-  </div>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">02</span>
-      <span class="news-meta-tag"><span class="source">伦理与政策</span> · AI 意识 · 5月5日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="https://www.theguardian.com/technology/2026/may/05/richard-dawkins-ai-consciousness-anthropic-claude-openai-chatgpt" target="_blank">
-        理查德·道金斯：人工智能已具备意识，即使它自己不知道
-      </a>
-    </h2>
-    <p class="news-summary">
-      著名进化生物学家理查德·道金斯在《卫报》发表重磅观点，认为当前大语言模型已跨越意识门槛。道金斯以"盲眼钟表匠"理论类比，指出 AI 的"意识"可能是一种涌现特性（emergent property），而非人类主观体验的同构。该论断在学术界与科技圈引发激烈辩论，Anthropic 和 OpenAI 尚未正式回应。
-    </p>
-    <div class="news-footer">
-      <span>⭐ 17 热度</span>
-      <span>来源：The Guardian</span>
-      <span>影响指数：★★★★☆</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">03</span>
-      <span class="news-meta-tag"><span class="source">xAI / 马斯克</span> · 公司治理 · 5月7日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="https://arstechnica.com/tech-policy/2026/05/report-spacex-ipo-gives-musk-unchecked-power-and-forbids-investor-lawsuits/" target="_blank">
-        SpaceX 上市条款赋予马斯克绝对控制权，禁止投资者集体诉讼
-      </a>
-    </h2>
-    <p class="news-summary">
-      SpaceX 即将启动首次公开募股，但招股书条款引发巨大争议：赋予马斯克不受约束的权力，并包含禁止股东发起集体诉讼的条款。这将直接影响其 AI 子公司 xAI 的治理结构与融资能力。法律专家指出，此类条款在美股历史上极为罕见，可能面临 SEC 审查。
-    </p>
-    <div class="news-footer">
-      <span>⭐ 14 热度</span>
-      <span>来源：Ars Technica</span>
-      <span>影响指数：★★★★☆</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">04</span>
-      <span class="news-meta-tag"><span class="source">AI 与社会</span> · 就业经济 · 5月7日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="https://minnesotareformer.com/2026/04/17/if-ai-cuts-jobs-it-would-also-threaten-social-security-and-medicare/" target="_blank">
-        研究警告：AI 大规模替代岗位将连带威胁美国社保与医保体系
-      </a>
-    </h2>
-    <p class="news-summary">
-      明尼苏达州改革者报发布深度分析，指出 AI 自动化若大规模替代岗位，不仅直接冲击就业市场，更将通过减少工资税（payroll tax）威胁社会保障和医疗保险的资金来源。文章援引国会预算办公室数据，测算若 AI 替代 20% 现有岗位，社保信托基金将在 2031 年前耗尽，较原预测提前四年。
-    </p>
-    <div class="news-footer">
-      <span>⭐ 11 热度</span>
-      <span>来源：Minnesota Reformer</span>
-      <span>影响指数：★★★☆☆</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">05</span>
-      <span class="news-meta-tag"><span class="source">OpenAI</span> · 控制权之争 · 5月7日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="https://www.wired.com/story/elon-musk-recruit-sam-altman-tesla-ai-lab-trial/" target="_blank">
-        马斯克试图招募山姆·奥特曼加入特斯拉 AI 实验室
-      </a>
-    </h2>
-    <p class="news-summary">
-      Wired 独家披露：在 OpenAI 控制权诉讼即将开庭前夕，埃隆·马斯克试图以特斯拉 AI 实验室为筹码招募山姆·奥特曼，被视作控制 OpenAI 的"最后努力"。据知情人士透露，马斯克提议让奥特曼同时领导特斯拉 AI 部门与 OpenAI，以换取撤回对 OpenAI 转为营利性结构的法律挑战。
-    </p>
-    <div class="news-footer">
-      <span>⭐ 8 热度</span>
-      <span>来源：Wired</span>
-      <span>影响指数：★★★★☆</span>
-    </div>
-  </article>
-
-  <!-- 重要动态 -->
-  <div class="section-title">
-    重要动态
-    <span class="en">NOTABLE UPDATES</span>
-  </div>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">06</span>
-      <span class="news-meta-tag"><span class="source">OpenAI</span> · 历史回顾 · 5月6日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="https://techcrunch.com/2026/05/06/how-elon-musk-left-openai-according-to-greg-brockman/" target="_blank">
-        格雷格·布罗克曼首次公开讲述马斯克离开 OpenAI 内幕
-      </a>
-    </h2>
-    <p class="news-summary">
-      OpenAI 联合创始人兼总裁格雷格·布罗克曼在 TechCrunch 专访中还原 2018 年马斯克退出董事会的前因后果。据布罗克曼回忆，分歧核心在于控制权与资金：马斯克要求将 OpenAI 并入特斯拉并亲自担任 CEO，遭董事会拒绝后愤然退出，并撤回了原承诺的 10 亿美元资助。
-    </p>
-    <div class="news-footer">
-      <span>⭐ 6 热度</span>
-      <span>来源：TechCrunch</span>
-      <span>影响指数：★★★☆☆</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">07</span>
-      <span class="news-meta-tag"><span class="source">Anthropic</span> · 安全事件 · 5月7日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="https://www.msn.com/en-us/technology/cybersecurity/discord-group-guessed-the-url-to-anthropic-s-most-dangerous-ai-and-used-it-before-cisa-did/ar-AA22enqY" target="_blank">
-        Discord 用户在 CISA 之前猜中 Anthropic Mythos 模型测试链接
-      </a>
-    </h2>
-    <p class="news-summary">
-      Anthropic 号称"最危险"的 Mythos 模型测试 URL 被 Discord 用户通过枚举攻击提前获取并使用，甚至早于美国网络安全与基础设施安全局（CISA）的官方测试。该事件暴露 Anthropic 红队测试的安全流程存在严重漏洞，引发对 AI 公司自我监管可靠性的质疑。
-    </p>
-    <div class="news-footer">
-      <span>⭐ 6 热度</span>
-      <span>来源：MSN / Cybersecurity</span>
-      <span>影响指数：★★★☆☆</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">08</span>
-      <span class="news-meta-tag"><span class="source">AI 地缘政治</span> · 舆论操控 · 5月7日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="https://www.wired.com/story/super-pac-backed-by-openai-and-palantir-is-paying-tiktok-influencers-to-fear-monger-about-china/" target="_blank">
-        OpenAI 与 Palantir 资助政治行动委员会操控 TikTok 反华 AI 舆论
-      </a>
-    </h2>
-    <p class="news-summary">
-      Wired 调查曝光：由 OpenAI 和 Palantir 支持的超级政治行动委员会（Super PAC）正在向 TikTok 网红支付费用，系统性传播"中国 AI 威胁论"。报道指出，该 PAC 已投入超过 200 万美元，与 50 余名网红签约，内容聚焦渲染 DeepSeek 等中国模型的"军事用途风险"。
-    </p>
-    <div class="news-footer">
-      <span>⭐ 5 热度</span>
-      <span>来源：Wired</span>
-      <span>影响指数：★★★★☆</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">09</span>
-      <span class="news-meta-tag"><span class="source">技术科普</span> · LLM 原理 · 5月7日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="https://nitayneeman.com/blog/how-ai-works-under-the-hood-llms-explained-with-code/" target="_blank">
-        AI 工作原理揭秘——用可运行代码从零实现大语言模型
-      </a>
-    </h2>
-    <p class="news-summary">
-      开发者 Nitay Neeman 发布深度技术博文，用可运行的 Python 代码逐步拆解 Transformer 架构、注意力机制、位置编码和训练流程。文章从矩阵乘法开始，最终构建出一个可在 CPU 上运行的迷你 GPT，被 Hacker News 社区誉为"最清晰的 LLM 入门教程"。
-    </p>
-    <div class="news-footer">
-      <span>⭐ 5 热度</span>
-      <span>来源：nitayneeman.com</span>
-      <span>影响指数：★★☆☆☆</span>
-    </div>
-  </article>
-
-  <article class="news-item">
-    <div class="news-header">
-      <span class="news-rank">10</span>
-      <span class="news-meta-tag"><span class="source">伦理研究</span> · 学术前沿 · 5月7日</span>
-    </div>
-    <h2 class="news-title">
-      <a href="https://jmt.scholasticahq.com/article/91230-encountering-artificial-intelligence-ethical-and-anthropological-investigations" target="_blank">
-        遭遇人工智能：伦理学与人类学的跨学科调查
-      </a>
-    </h2>
-    <p class="news-summary">
-      学术期刊 Journal of Moral Theology 发布跨学科研究，从人类学视角审视 AI 对人类社会结构、劳动伦理和文化认同的深层影响。研究指出，当前 AI 伦理框架过度依赖西方哲学传统，呼吁纳入非西方知识体系，建立更具包容性的全球 AI 治理框架。
-    </p>
-    <div class="news-footer">
-      <span>⭐ 5 热度</span>
-      <span>来源：Journal of Moral Theology</span>
-      <span>影响指数：★★☆☆☆</span>
-    </div>
-  </article>
-
-  <!-- 本期观察 -->
-  <div class="highlight-box">
-    <div class="label">本期观察</div>
-    <p>
-      <strong>基础设施博弈白热化。</strong>Anthropic 与 SpaceX 的算力协议以 423 热度断层领先，标志着 AI 竞争已从"模型参数竞赛"转向"物理基础设施卡位"。当算力成为新的石油，数据中心、能源供应、芯片制造等硬资产正在重新定义行业权力结构。
-    </p>
-    <p style="margin-top: 12px;">
-      <strong>中国 AI 强势崛起。</strong>DeepSeek 获国家队领投估值飙至 450 亿美元，Kimi 完成 20 亿美元融资，腾讯混元 Hy3 登顶 OpenRouter 周榜，豆包、商汤持续迭代——中国 AI 力量正在全球舞台展现强劲竞争力。
-    </p>
-    <p style="margin-top: 12px;">
-      <strong>伦理争议同步升温。</strong>从 Dawkins 的 AI 意识论断到社保体系受冲击的预警，从马斯克对 OpenAI 的控制权争夺到 OpenAI/Palantir 资助的地缘政治舆论操作——技术狂奔之下，社会制度与价值共识正在经历剧烈摩擦。
-    </p>
-  </div>
-
-  <!-- 数据汇总 -->
-  <div class="section-title">
-    数据汇总
-    <span class="en">DATA SUMMARY</span>
-  </div>
-
-  <table class="data-table">
-    <tr>
-      <th>维度</th>
-      <th>数据</th>
-    </tr>
-    <tr>
-      <td>时间窗口</td>
-      <td>2026年5月5日 — 5月7日</td>
-    </tr>
-    <tr>
-      <td>筛选总量</td>
-      <td>30 条 HN + 37 条 AIHOT 精选</td>
-    </tr>
-    <tr>
-      <td>热度冠军</td>
-      <td>Anthropic × SpaceX 算力协议（423 热度，断层领先）</td>
-    </tr>
-    <tr>
-      <td>主要信源</td>
-      <td>Hacker News · Wired · TechCrunch · The Guardian · AIHOT</td>
-    </tr>
-    <tr>
-      <td>涉及主体</td>
-      <td>Anthropic · OpenAI · xAI/马斯克 · SpaceX · DeepSeek · 月之暗面 · 腾讯混元 · 字节跳动 · 商汤</td>
-    </tr>
-    <tr>
-      <td>核心议题</td>
-      <td>算力基础设施 · AI 意识 · 公司治理 · 就业冲击 · 地缘政治 · 中国 AI 融资 · 模型性能竞赛</td>
-    </tr>
-  </table>
-
+<div class="header">
+  <h1>AI行业热度日报</h1>
+  <div class="subtitle">国内外人工智能产业动态 · 模型热度 · 趋势洞察</div>
+  <div class="date">公历2026年5月7日 · 乙巳年三月廿一</div>
 </div>
 
-<footer class="footer">
-  <div class="brand">人工智能情报局</div>
-  <div class="info">
-    每日精选全球人工智能领域重大事件 · 技术影响力 × 社区热度 × 行业关注度<br>
-    生成时间：2026年5月7日 10:50 CST<br>
-    本报告仅供信息参考，不构成任何投资或决策建议
+<!-- 全球AI动态 -->
+<div class="section">
+  <h2>🌍 全球AI动态</h2>
+  
+  <div class="news-item">
+    <div class="title">Google宣布75%新代码由AI生成，Gemini深度渗透内部开发</div>
+    <div class="meta">来源: <span class="source">Business Insider</span> · 影响指数 <span class="rating">★★★★★</span></div>
+    <div class="summary">Google CEO桑达尔·皮查伊披露，公司超过75%的新代码由AI生成，Gemini智能体已深度集成到内部软件开发流程中。这标志着大型科技公司的工程实践正经历根本性转变，AI从辅助工具升级为代码生产的主力。</div>
   </div>
-  <div class="data-source">
-    <strong>数据来源：</strong><br>
-    Hacker News Algolia API · Wired · TechCrunch · The Guardian · Ars Technica · MSN<br>
-    AIHOT (aihot.virxact.com) — 由公众号顶流博主卡兹克（@Khazix0918）维护的 AI 信息聚合平台
-  </div>
-</footer>
 
+  <div class="news-item">
+    <div class="title">Apple选择Google Gemini而非OpenAI GPT为下一代Siri提供AI能力</div>
+    <div class="meta">来源: <span class="source">Ars Technica</span> · 影响指数 <span class="rating">★★★★☆</span></div>
+    <div class="summary">苹果确认其新一代AI驱动的Siri将采用Google的Gemini语言模型，而非此前传闻的OpenAI ChatGPT。这一选择反映了苹果在AI合作伙伴关系上的战略调整，也凸显了Gemini在多模态和设备端推理方面的技术优势。</div>
+  </div>
+
+  <div class="news-item">
+    <div class="title">Anthropic与SpaceX达成算力合作，Colossus数据中心超300兆瓦</div>
+    <div class="meta">来源: <span class="source">AIHOT</span> · 影响指数 <span class="rating">★★★★☆</span></div>
+    <div class="summary">Anthropic与SpaceX达成合作，获得其Colossus 1数据中心超300兆瓦算力（含逾22万块NVIDIA GPU）。此举大幅提升Claude的训练和推理能力，标志着AI实验室与航天科技公司在基础设施层面的深度绑定。</div>
+  </div>
+
+  <div class="news-item">
+    <div class="title">xAI Grok Web正式上线Connectors功能，实现与日常应用深度集成</div>
+    <div class="meta">来源: <span class="source">AIHOT</span> · 影响指数 <span class="rating">★★★☆☆</span></div>
+    <div class="summary">马斯克旗下xAI在Grok Web上线Connectors功能，支持与邮件、日历、文档等日常应用工具的深度集成。Grok可端到端处理任务，如阅读总结邮件、更新日程等，标志着聊天机器人向AI Agent方向的演进。</div>
+  </div>
+
+  <div class="news-item">
+    <div class="title">Launch HN: Continue (YC S23) — 创建自定义AI代码助手平台获178点赞</div>
+    <div class="meta">来源: <span class="source">Hacker News</span> · 影响指数 <span class="rating">★★★☆☆</span></div>
+    <div class="summary">YC S23孵化的Continue项目正式发布，这是一个创建自定义AI代码助手的开源平台，支持MCP、RAG和LLM集成。在Hacker News获得178点赞和110条评论，反映了开发者社区对可定制AI编程工具的高度需求。</div>
+  </div>
+
+  <div class="news-item">
+    <div class="title">开发者用280行Python复现Claude Code核心行为</div>
+    <div class="meta">来源: <span class="source">Hacker News / GitHub</span> · 影响指数 <span class="rating">★★★☆☆</span></div>
+    <div class="summary">GitHub用户ljw1004发布了mini_agent项目，仅用280行Python代码就复现了Claude Code的核心行为。该项目展示了AI Agent的底层逻辑可以极度精简，引发社区对"Agent本质"的讨论。</div>
+  </div>
+</div>
+
+<!-- 中国AI动态 -->
+<div class="section">
+  <h2>🇨🇳 中国AI动态</h2>
+  
+  <div class="news-item">
+    <div class="title">国家队领投DeepSeek估值飙升至450亿美元</div>
+    <div class="meta">来源: <span class="source">AIHOT</span> · 影响指数 <span class="rating">★★★★★</span></div>
+    <div class="summary">DeepSeek估值在数周内从200亿美元跃升至450亿美元，本轮融资由国家大基金领投，腾讯有意跟投，创始人梁文锋也参与出资。这标志着国家队首次公开投资本土大模型公司，具有重大政策信号意义。</div>
+  </div>
+
+  <div class="news-item">
+    <div class="title">Claude Code核心开发者Boris Cherny公开完整AI编码工作流</div>
+    <div class="meta">来源: <span class="source">AIHOT</span> · 影响指数 <span class="rating">★★★★☆</span></div>
+    <div class="summary">创造了Claude Code的Boris Cherny大神完整公开了自己的工作流，并直播演示了一半的编码工作在手机上完成。其核心原则包括：坚持使用最昂贵、最聪明的模型（如Claude），因其能一次性清晰规划，避免笨模型反复试错。</div>
+  </div>
+
+  <div class="news-item">
+    <div class="title">Amp发布新版CLI工具Neo，Coding Agent向"长链路"转型</div>
+    <div class="meta">来源: <span class="source">AIHOT</span> · 影响指数 <span class="rating">★★★☆☆</span></div>
+    <div class="summary">Amp发布CLI工具Neo，标志着Coding Agent从"陪伴式"转向"长链路"新方向，核心是减少人工介入、支持随处运行与触发。关键更新包括：实现本地线程的持久化记忆、支持跨文件批量操作、以及基于上下文的智能断点恢复。</div>
+  </div>
+
+  <div class="news-item">
+    <div class="title">姚老师开源百个商业实用AI提示词合集</div>
+    <div class="meta">来源: <span class="source">AIHOT</span> · 影响指数 <span class="rating">★★☆☆☆</span></div>
+    <div class="summary">姚老师将其去年编写的提示词整理并开源，强调这些提示词以实干派风格为主，适用于商业场景，源于实际业务需求。合集包含约100个提示词，覆盖AI方法、工作、学习、生活等多个维度，社区反响热烈。</div>
+  </div>
+
+  <div class="news-item">
+    <div class="title">编程模式界限模糊：从"感觉编码"到"代理工程"的融合与隐忧</div>
+    <div class="meta">来源: <span class="source">AIHOT</span> · 影响指数 <span class="rating">★★★☆☆</span></div>
+    <div class="summary">作者在访谈中反思，曾严格区分的两种AI编程模式——"感觉编码"（不审查代码）与"代理工程"（专业工程师构建高质量系统）——其界限在实践中正迅速模糊。随着Claude等模型能力提升，非专业用户也能产出生产级代码，引发对代码质量和安全性的深层讨论。</div>
+  </div>
+
+  <div class="news-item">
+    <div class="title">中国研究人员基于Meta开源Llama模型构建军事AI系统</div>
+    <div class="meta">来源: <span class="source">Tom's Hardware / HN</span> · 影响指数 <span class="rating">★★★★☆</span></div>
+    <div class="summary">据报道，中国研究人员利用Meta的开源Llama模型开发了名为ChatBIT的军事AI系统，据称性能达到OpenAI GPT-4的90%。这一事件引发了对开源AI模型军事应用风险的广泛讨论，也可能促使各国重新审视开源AI政策的边界。</div>
+  </div>
+</div>
+
+<!-- 全球模型热度 -->
+<div class="section">
+  <h2>🏆 全球模型热度榜</h2>
+  <p style="color: var(--gray); font-size: 0.9em; margin-bottom: 16px;">数据来源：Chatbot Arena · 基于人类偏好的Elo评分系统</p>
+  
+  <table class="model-table">
+    <tr>
+      <th>排名</th>
+      <th>模型</th>
+      <th>机构</th>
+      <th>Elo评分</th>
+      <th>趋势</th>
+    </tr>
+    <tr>
+      <td class="rank">1</td>
+      <td><strong>GPT-4o / GPT-4.5</strong></td>
+      <td>OpenAI</td>
+      <td>~1400+</td>
+      <td>→ 稳定</td>
+    </tr>
+    <tr>
+      <td class="rank">2</td>
+      <td><strong>Claude 4 Opus / Sonnet</strong></td>
+      <td>Anthropic</td>
+      <td>~1380+</td>
+      <td>↑ 上升</td>
+    </tr>
+    <tr>
+      <td class="rank">3</td>
+      <td><strong>Gemini 2.5 Pro</strong></td>
+      <td>Google</td>
+      <td>~1370+</td>
+      <td>→ 稳定</td>
+    </tr>
+    <tr>
+      <td class="rank">4</td>
+      <td><strong>o3 / o4-mini</strong></td>
+      <td>OpenAI</td>
+      <td>~1360+</td>
+      <td>↑ 上升</td>
+    </tr>
+    <tr>
+      <td class="rank">5</td>
+      <td><strong>DeepSeek-R1 / V3</strong></td>
+      <td>DeepSeek</td>
+      <td>~1340+</td>
+      <td>↑ 快速上升</td>
+    </tr>
+    <tr>
+      <td class="rank">6</td>
+      <td><strong>Qwen3</strong></td>
+      <td>阿里巴巴</td>
+      <td>~1320+</td>
+      <td>↑ 上升</td>
+    </tr>
+    <tr>
+      <td class="rank">7</td>
+      <td><strong>Llama 3.1 405B</strong></td>
+      <td>Meta</td>
+      <td>~1300+</td>
+      <td>→ 稳定</td>
+    </tr>
+    <tr>
+      <td class="rank">8</td>
+      <td><strong>Gemini 2.5 Flash</strong></td>
+      <td>Google</td>
+      <td>~1290+</td>
+      <td>↑ 上升</td>
+    </tr>
+  </table>
+  
+  <p style="color: var(--gray); font-size: 0.85em;">注：具体Elo评分每日波动，以上为基于近期数据的估算区间。完整实时排名请访问 <a href="https://chat.lmsys.org/" target="_blank">chat.lmsys.org</a></p>
+</div>
+
+<!-- 趋势洞察 -->
+<div class="section">
+  <h2>📈 今日趋势洞察</h2>
+  
+  <div class="insight-box">
+    <h3>🔥 洞察一：AI代码生成进入"主力生产"阶段</h3>
+    <p>Google宣布75%新代码由AI生成，配合Boris Cherny公开的"手机完成一半编码"工作流，以及Amp Neo的"长链路"Coding Agent转型，共同指向一个明确信号：<strong>AI编程正从辅助工具演进为生产主力</strong>。开发者角色正在从"写代码"转向"审代码"和"架构设计"。这一趋势将深刻影响软件工程的人才结构和技能要求。</p>
+  </div>
+  
+  <div class="insight-box">
+    <h3>🌏 洞察二：中国AI"国家队"入场，产业格局生变</h3>
+    <p>DeepSeek获国家大基金领投、估值飙升至450亿美元，标志着中国AI产业进入<strong>国家战略资本深度介入</strong>的新阶段。这与美国Frontier Model Forum（OpenAI、Anthropic、Google、Microsoft联合监管）形成呼应——两国都在通过"国家队+大厂"的双轮驱动模式争夺AI制高点。同时，Llama军事化应用争议也提醒开源社区：技术无国界，但应用有边界。</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>本日报基于公开网络信息整理</p>
+  <p>数据来源：Hacker News · AIHOT · Chatbot Arena · 各媒体报道</p>
+  <p style="margin-top: 8px;">每日上午10:00自动更新</p>
+</div>
+
+</div>
 </body>
 </html>

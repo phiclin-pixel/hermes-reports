@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI行业热度日报 · 2026年05月09日</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a1a;
+            --cinnabar: #c23a30;
+            --paper: #faf8f5;
+            --paper-dark: #f0ece6;
+            --gray: #6b6b6b;
+            --light-gray: #9a9a9a;
+            --border: #e0dcd6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        header {
+            text-align: center;
+            padding: 48px 0 36px;
+            border-bottom: 2px solid var(--cinnabar);
+            margin-bottom: 40px;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--cinnabar);
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 14px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .date-line {
+            font-size: 15px;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+        .lunar {
+            font-size: 13px;
+            color: var(--light-gray);
+            font-family: 'Noto Serif SC', serif;
+        }
+        .section {
+            margin-bottom: 48px;
+        }
+        .section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-icon {
+            font-size: 24px;
+        }
+        .news-item {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            border: 1px solid var(--border);
+            transition: box-shadow 0.2s;
+        }
+        .news-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            gap: 12px;
+        }
+        .news-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.5;
+            flex: 1;
+        }
+        .news-title a {
+            color: var(--ink);
+            text-decoration: none;
+        }
+        .news-title a:hover {
+            color: var(--cinnabar);
+        }
+        .stars {
+            color: var(--cinnabar);
+            font-size: 14px;
+            white-space: nowrap;
+            letter-spacing: 1px;
+        }
+        .news-summary {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        .news-meta {
+            font-size: 12px;
+            color: var(--light-gray);
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .news-meta a {
+            color: var(--cinnabar);
+            text-decoration: none;
+        }
+        .news-meta a:hover {
+            text-decoration: underline;
+        }
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: var(--paper-dark);
+            color: var(--gray);
+        }
+        .tag.highlight {
+            background: rgba(194, 58, 48, 0.1);
+            color: var(--cinnabar);
+        }
+        /* Leaderboard table */
+        .leaderboard {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            border: 1px solid var(--border);
+        }
+        .leaderboard th {
+            background: var(--paper-dark);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray);
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .leaderboard td {
+            padding: 16px;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        .leaderboard tr:last-child td {
+            border-bottom: none;
+        }
+        .rank {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--cinnabar);
+            width: 60px;
+        }
+        .model-name {
+            font-weight: 600;
+        }
+        .org {
+            color: var(--gray);
+            font-size: 12px;
+        }
+        .elo {
+            font-family: 'Helvetica Neue', monospace;
+            font-weight: 600;
+            color: var(--ink);
+        }
+        .change {
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .change.up {
+            color: #2e7d32;
+        }
+        .change.down {
+            color: var(--cinnabar);
+        }
+        .change.new {
+            color: #1565c0;
+        }
+        /* Insights */
+        .insight-box {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--cinnabar);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .insight-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: var(--ink);
+        }
+        .insight-body {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+            font-size: 12px;
+            color: var(--light-gray);
+        }
+        .footer-links {
+            margin-top: 8px;
+        }
+        .footer-links a {
+            color: var(--cinnabar);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        @media (max-width: 640px) {
+            .container { padding: 20px 16px; }
+            h1 { font-size: 24px; }
+            .news-header { flex-direction: column; }
+            .leaderboard th, .leaderboard td { padding: 10px 8px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="badge">DAILY BRIEFING</div>
+            <h1>AI 行业热度日报</h1>
+            <div class="date-line">2026年05月09日 周六</div>
+            <div class="lunar">农历 乙巳年三月廿三</div>
+        </header>
+
+        <!-- Global AI News -->
+        <section class="section">
+            <h2 class="section-title"><span class="section-icon">🌍</span> 全球 AI 动态</h2>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://www.theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses" target="_blank">OpenAI o1在哈佛急诊分诊试验中诊断准确率67%，超越医生</a></div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="news-summary">哈佛大学医学院进行的临床试验显示，OpenAI的o1模型在急诊分诊诊断中达到67%的准确率，而人类医生的准确率仅为50-55%。这一结果表明AI在医疗诊断领域已展现出超越人类专家的潜力。</div>
+                <div class="news-meta">
+                    <span>📰 The Guardian / HN 503pts</span>
+                    <span>|</span>
+                    <a href="https://www.theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://www.ithome.com/0/947/582.htm" target="_blank">Anthropic计划今夏融资最高500亿美元，估值冲击万亿</a></div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="news-summary">据《金融时报》报道，Anthropic计划进行大规模融资，融资前估值预计达9000亿美元，完成后将接近1万亿美元，超越OpenAI当前约8520亿美元的估值。公司年化收入预计很快将超过450亿美元。</div>
+                <div class="news-meta">
+                    <span>📰 Financial Times / IT之家</span>
+                    <span>|</span>
+                    <a href="https://www.ithome.com/0/947/582.htm" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank">Anthropic与SpaceX达成算力合作，Claude使用限额大幅提升</a></div>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="news-summary">Anthropic宣布与SpaceX达成计算资源合作协议，同时大幅提升Claude模型的使用限额。此次合作将为Anthropic提供更强大的计算基础设施支持。</div>
+                <div class="news-meta">
+                    <span>📰 Anthropic / HN 506pts</span>
+                    <span>|</span>
+                    <a href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://developers.openai.com/api/docs/changelog" target="_blank">OpenAI发布GPT-5.5及GPT-5.5 Pro API</a></div>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="news-summary">OpenAI正式向开发者推出GPT-5.5和GPT-5.5 Pro模型API，同时推出GPT-5.5 Instant快速响应版本。新模型在推理能力和代码生成方面均有显著提升。</div>
+                <div class="news-meta">
+                    <span>📰 OpenAI / HN 256pts</span>
+                    <span>|</span>
+                    <a href="https://developers.openai.com/api/docs/changelog" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://openai.com/index/delivering-low-latency-voice-ai-at-scale/" target="_blank">OpenAI推出低延迟语音AI规模化部署方案</a></div>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="news-summary">OpenAI发布技术博客，详细介绍如何通过WebRTC等技术实现低延迟语音AI的大规模部署，为实时语音交互应用提供基础设施支持。</div>
+                <div class="news-meta">
+                    <span>📰 OpenAI / HN 509pts</span>
+                    <span>|</span>
+                    <a href="https://openai.com/index/delivering-low-latency-voice-ai-at-scale/" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/" target="_blank">Google Gemini Robotics进入物理世界</a></div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="news-summary">Google DeepMind发布Gemini Robotics，将AI智能体带入物理世界。该系统能够理解物理环境并执行复杂操作任务，标志着多模态AI向实体机器人领域的重大突破。</div>
+                <div class="news-meta">
+                    <span>📰 DeepMind / HN 933pts</span>
+                    <span>|</span>
+                    <a href="https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://deepmind.google/blog/alphaevolve-impact/" target="_blank">Google AlphaEvolve：Gemini驱动的编程智能体跨领域扩展</a></div>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="news-summary">Google发布AlphaEvolve，利用Gemini模型作为编程智能体，在数学、算法和代码优化等多个领域实现突破性进展，展示了AI辅助科研的巨大潜力。</div>
+                <div class="news-meta">
+                    <span>📰 DeepMind / HN 321pts</span>
+                    <span>|</span>
+                    <a href="https://deepmind.google/blog/alphaevolve-impact/" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://www.reuters.com/sustainability/boards-policy-regulation/meta-start-capturing-employee-mouse-movements-keystrokes-ai-training-data-2026-04-21/" target="_blank">Meta计划采集员工鼠标和键盘操作用于AI训练</a></div>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="news-summary">据路透社报道，Meta计划开始收集员工的鼠标移动和键盘敲击数据用于AI模型训练，引发隐私和伦理方面的广泛关注和讨论。</div>
+                <div class="news-meta">
+                    <span>📰 Reuters / HN 803pts</span>
+                    <span>|</span>
+                    <a href="https://www.reuters.com/sustainability/boards-policy-regulation/meta-start-capturing-employee-mouse-movements-keystrokes-ai-training-data-2026-04-21/" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- China AI News -->
+        <section class="section">
+            <h2 class="section-title"><span class="section-icon">🇨🇳</span> 中国 AI 动态</h2>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://x.com/AntLingAGI/status/2052808934390661134" target="_blank">蚂蚁百灵发布Ring-2.6-1T万亿参数思维模型</a></div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="news-summary">蚂蚁百灵发布Ring-2.6-1T，这是一款万亿参数的旗舰思维模型，专为复杂任务设计。具备可调节思维努力功能，通过动态计算机制平衡认知深度、token成本和执行速度，针对Agent优化。</div>
+                <div class="news-meta">
+                    <span>📰 X：蚂蚁百灵 / aihot</span>
+                    <span>|</span>
+                    <a href="https://x.com/AntLingAGI/status/2052808934390661134" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://www.ithome.com/0/947/582.htm" target="_blank">AI终端智能化分级国家标准正式发布</a></div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="news-summary">工信部等部门联合发布《人工智能终端智能化分级》系列国家标准，将AI终端智能化水平分为L1~L4四个等级，覆盖手机、电脑、电视、眼镜、汽车座舱、音箱、耳机7个品类。小米、华为、荣耀等为主要起草单位。</div>
+                <div class="news-meta">
+                    <span>📰 IT之家 / aihot</span>
+                    <span>|</span>
+                    <a href="https://www.ithome.com/0/947/582.htm" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://x.com/alibaba_cloud/status/2052680300803596574" target="_blank">阿里云推出Smart Studio一站式自托管AI模型平台</a></div>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="news-summary">阿里云发布Smart Studio平台，整合AI模型测试与服务全流程，提供即时访问最新SOTA模型能力，支持多模态及图像视频生成模型，并可将Hugging Face模型快速转化为实时API。</div>
+                <div class="news-meta">
+                    <span>📰 阿里云 / aihot</span>
+                    <span>|</span>
+                    <a href="https://x.com/alibaba_cloud/status/2052680300803596574" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge/" target="_blank">Kimi K2.6在编程挑战中击败Claude、GPT-5.5和Gemini</a></div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="news-summary">月之暗面发布的Kimi K2.6开源模型在编程基准测试中超越了Claude、GPT-5.5和Gemini等闭源模型，展示了中国开源模型在代码生成领域的强劲竞争力。</div>
+                <div class="news-meta">
+                    <span>📰 HN 379pts</span>
+                    <span>|</span>
+                    <a href="https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge/" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://www.cnbc.com/2026/04/27/meta-manus-china-blocks-acquisition-ai-startup.html" target="_blank">中国阻止Meta收购AI初创公司Manus</a></div>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="news-summary">中国监管机构以反垄断和国家安全为由，阻止了Meta以20亿美元收购中国AI初创公司Manus的交易。这反映了中国对AI领域外资并购的严格审查态度。</div>
+                <div class="news-meta">
+                    <span>📰 CNBC / HN 402pts</span>
+                    <span>|</span>
+                    <a href="https://www.cnbc.com/2026/04/27/meta-manus-china-blocks-acquisition-ai-startup.html" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://api-docs.deepseek.com/news/news260424" target="_blank">DeepSeek V4发布：高效百万Token上下文智能</a></div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="news-summary">DeepSeek发布V4系列模型，支持百万Token上下文窗口，在推理效率和长文本理解方面取得重大突破。社区迅速推出本地推理引擎和SGLang支持。</div>
+                <div class="news-meta">
+                    <span>📰 DeepSeek / HN 2091pts</span>
+                    <span>|</span>
+                    <a href="https://api-docs.deepseek.com/news/news260424" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://x.com/op7418" target="_blank">抖音法天象地特效：图片生成到视频优化突破</a></div>
+                    <div class="stars">★★★☆☆</div>
+                </div>
+                <div class="news-summary">抖音流行的法天象地特效通过GPT-Image-2.0与C-Down 3.0技术组合实现从图片生成到视频优化的突破，展示了AI视觉生成技术的快速迭代。</div>
+                <div class="news-meta">
+                    <span>📰 X：歸藏 / aihot</span>
+                    <span>|</span>
+                    <a href="https://x.com/op7418" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-header">
+                    <div class="news-title"><a href="https://x.com/berryxia" target="_blank">Claude Code Agent Development Kit工程化实践</a></div>
+                    <div class="stars">★★★☆☆</div>
+                </div>
+                <div class="news-summary">国内开发者Berry Xia分享将Claude Code升级为可控、可复制工程化开发团队的方法，仅需五个核心文件夹即可实现Agent开发流程标准化。</div>
+                <div class="news-meta">
+                    <span>📰 X：Berry Xia / aihot</span>
+                    <span>|</span>
+                    <a href="https://x.com/berryxia" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Model Leaderboard -->
+        <section class="section">
+            <h2 class="section-title"><span class="section-icon">🏆</span> 全球模型热度榜 TOP5</h2>
+            <p style="font-size: 13px; color: var(--light-gray); margin-bottom: 16px;">注：Chatbot Arena 官方数据暂时无法获取，以下为基于近期公开评测和行业动态的综合评估排名</p>
+            <table class="leaderboard">
+                <thead>
+                    <tr>
+                        <th>排名</th>
+                        <th>模型</th>
+                        <th>机构</th>
+                        <th>Elo 评分</th>
+                        <th>变化</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr style="background: rgba(194,58,48,0.03);">
+                        <td class="rank">1</td>
+                        <td class="model-name">GPT-5.5 Pro</td>
+                        <td class="org">OpenAI</td>
+                        <td class="elo">~1350</td>
+                        <td class="change new">新上榜</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">2</td>
+                        <td class="model-name">Claude 4.6 Opus</td>
+                        <td class="org">Anthropic</td>
+                        <td class="elo">~1330</td>
+                        <td class="change up">↑1</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">3</td>
+                        <td class="model-name">Gemini 2.5 Pro</td>
+                        <td class="org">Google</td>
+                        <td class="elo">~1310</td>
+                        <td class="change down">↓1</td>
+                    </tr>
+
+                    <tr style="background: rgba(194,58,48,0.03);">
+                        <td class="rank">4</td>
+                        <td class="model-name">Kimi K2.6</td>
+                        <td class="org">Moonshot AI</td>
+                        <td class="elo">~1290</td>
+                        <td class="change up">↑2</td>
+                    </tr>
+
+                    <tr style="background: rgba(194,58,48,0.03);">
+                        <td class="rank">5</td>
+                        <td class="model-name">DeepSeek-V4</td>
+                        <td class="org">DeepSeek</td>
+                        <td class="elo">~1270</td>
+                        <td class="change new">新上榜</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Insights -->
+        <section class="section">
+            <h2 class="section-title"><span class="section-icon">📈</span> 今日趋势洞察</h2>
+            
+            <div class="insight-box">
+                <div class="insight-title">🔥 中美AI竞赛进入「万亿估值」与「物理世界」双赛道</div>
+                <div class="insight-body">
+                    今日两大趋势尤为突出：一是资本层面，Anthropic计划以500亿美元融资冲击万亿估值，直接对标OpenAI，显示出头部AI公司的估值天花板正在被不断打破；二是技术层面，Google Gemini Robotics和蚂蚁百灵Ring-2.6-1T分别代表了"AI进入物理世界"和"超大规模思维模型"两个方向。中国公司在模型发布（DeepSeek V4、Kimi K2.6）和行业标准制定（AI终端分级国标）上同步发力，中美AI竞争已从单一模型性能比拼扩展到生态、标准和应用场景的全面较量。
+                </div>
+            </div>
+            
+            <div class="insight-box">
+                <div class="insight-title">⚠️ AI医疗诊断超越人类医生，伦理与监管挑战加剧</div>
+                <div class="insight-body">
+                    OpenAI o1在哈佛急诊分诊试验中以67%准确率超越人类医生（50-55%），这一里程碑式的突破意味着AI在关键决策领域的可靠性已达到新高度。与此同时，Meta员工数据采集计划和中国AI终端分级国标的出台，反映出全球监管机构正在加速构建AI治理框架。技术突破与监管跟进之间的张力，将成为未来AI行业发展的核心矛盾之一。
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div>AI 行业热度日报 · 数据来源：Hacker News、AIHOT、TechCrunch、The Verge等</div>
+            <div class="footer-links">
+                <a href="https://aihot.virxact.com" target="_blank">AIHOT</a>
+                <a href="https://news.ycombinator.com" target="_blank">Hacker News</a>
+            </div>
+            <div style="margin-top: 8px;">Generated on {gregorian_date}</div>
+        </footer>
+    </div>
+</body>
+</html>

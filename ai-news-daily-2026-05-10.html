@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI行业热度日报 · 2026年5月10日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a1a;
+  --cinnabar: #c23a30;
+  --paper: #faf8f5;
+  --paper-dark: #f0ece6;
+  --gray: #6b6b6b;
+  --light-gray: #9a9a9a;
+  --border: #e0d8ce;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Serif SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 48px 0 36px;
+  border-bottom: 2px solid var(--cinnabar);
+  margin-bottom: 40px;
+}
+
+.header .badge {
+  display: inline-block;
+  background: var(--cinnabar);
+  color: var(--paper);
+  font-size: 12px;
+  letter-spacing: 3px;
+  padding: 4px 16px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+}
+
+.header .subtitle {
+  font-size: 15px;
+  color: var(--gray);
+  letter-spacing: 1px;
+}
+
+.header .date {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--light-gray);
+}
+
+.header .date span {
+  margin: 0 8px;
+}
+
+/* Section */
+.section {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title .icon {
+  font-size: 24px;
+}
+
+/* News Card */
+.news-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.news-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.news-card .headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.news-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.news-card h3 a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--border);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.news-card h3 a:hover {
+  color: var(--cinnabar);
+  border-bottom-color: var(--cinnabar);
+}
+
+.news-card .stars {
+  color: var(--cinnabar);
+  font-size: 14px;
+  white-space: nowrap;
+  letter-spacing: 2px;
+}
+
+.news-card .meta {
+  font-size: 13px;
+  color: var(--light-gray);
+  margin-bottom: 10px;
+}
+
+.news-card .meta .source {
+  color: var(--cinnabar);
+  font-weight: 600;
+}
+
+.news-card .summary {
+  font-size: 14.5px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* Model Ranking Table */
+.model-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.model-table th,
+.model-table td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.model-table th {
+  background: var(--paper-dark);
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 2px solid var(--cinnabar);
+}
+
+.model-table td {
+  border-bottom: 1px solid var(--border);
+}
+
+.model-table tr:last-child td {
+  border-bottom: none;
+}
+
+.model-table .rank {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--cinnabar);
+  width: 60px;
+  text-align: center;
+}
+
+.model-table .model-name {
+  font-weight: 600;
+}
+
+.model-table .elo {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: var(--cinnabar);
+}
+
+.model-table .trend-up { color: #2d8a3e; }
+.model-table .trend-down { color: var(--cinnabar); }
+.model-table .trend-flat { color: var(--light-gray); }
+
+/* Insight Box */
+.insight-box {
+  background: #fff;
+  border-left: 4px solid var(--cinnabar);
+  padding: 24px;
+  margin-bottom: 16px;
+  border-radius: 0 6px 6px 0;
+}
+
+.insight-box h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--cinnabar);
+}
+
+.insight-box p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--light-gray);
+  letter-spacing: 1px;
+}
+
+.footer a {
+  color: var(--cinnabar);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .container { padding: 20px 16px; }
+  .header h1 { font-size: 26px; }
+  .news-card { padding: 18px; }
+  .news-card .headline { flex-direction: column; }
+  .model-table th, .model-table td { padding: 10px 12px; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="badge">每日精选</div>
+    <h1>AI 行业热度日报</h1>
+    <div class="subtitle">Artificial Intelligence Industry Daily</div>
+    <div class="date">
+      <span>公历 2026年5月10日</span>
+      <span>·</span>
+      <span>农历 乙巳年三月廿四</span>
+      <span>·</span>
+      <span>星期日</span>
+    </div>
+  </header>
+
+  <!-- 全球AI动态 -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🌍</span> 全球 AI 动态</h2>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://gowers.wordpress.com" target="_blank">菲尔兹奖得主：ChatGPT 5.5 Pro 两小时独立完成博士级数学研究</a></h3>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="meta">信源：<span class="source">Hacker News / Tim Gowers 博客</span> · 点赞 604 · 评论 428</div>
+      <div class="summary">知名数学家、菲尔兹奖得主 Tim Gowers 分享使用 ChatGPT 5.5 Pro 的最新体验，称模型在无人帮助下两小时内完成博士级数学研究任务。该帖在 HN 引发 428 条评论，成为当日 AI 话题讨论最热烈的内容。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://techcrunch.com/2026/05/09/nvidia-has-already-committed-40b-to-equity-ai-deals-this-year/" target="_blank">Nvidia 年内已向 AI 股权投资 400 亿美元</a></h3>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="meta">信源：<span class="source">TechCrunch</span> · 2026-05-09</div>
+      <div class="summary">芯片巨头 Nvidia 年初至今已向 AI 公司股权投资超 400 亿美元，其中最大一笔为对 OpenAI 的 300 亿美元。Wedbush 分析师指出这些投资属于"循环投资"模式，但如成功可帮助 Nvidia 建立"竞争护城河"。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://moq.dev" target="_blank">OpenAI 的 WebRTC 实时通信难题引发技术社区热议</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">信源：<span class="source">Hacker News / moq.dev</span> · 点赞 470 · 评论 141</div>
+      <div class="summary">技术社区深入分析 OpenAI 在 WebRTC 实时通信技术方面遇到的架构挑战，涉及实时语音、视频流传输的稳定性问题。该讨论获得 141 条技术评论，反映了业界对 AI 实时交互基础设施的高度关注。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://twitter.com/trq212" target="_blank">Claude Code 实践：HTML 生成展现惊人效果</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">信源：<span class="source">Hacker News / Twitter</span> · 点赞 421 · 评论 238</div>
+      <div class="summary">开发者分享使用 Anthropic Claude Code 工具的经验，展示其在 HTML 输出格式方面的卓越效果。该帖获得 238 条评论，社区对 AI 辅助编程工具的实际生产力提升展开热烈讨论。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://techcrunch.com/2026/05/09/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/" target="_blank">Cloudflare：AI 导致 1,100 岗位消失，收入却创新高</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">信源：<span class="source">TechCrunch</span> · 2026-05-09</div>
+      <div class="summary">Cloudflare 在收入创历史新高的同时，公开表示 AI 自动化已使 1,100 个工作岗位变得多余。这是大型科技公司中 AI 替代人工的又一显著案例，引发对 AI 就业冲击的广泛讨论。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://nytimes.com" target="_blank">Meta 员工因 AI 战略推动而"痛苦不堪"</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">信源：<span class="source">纽约时报 / The Verge</span> · 点赞 296 · 评论 261</div>
+      <div class="summary">据《纽约时报》报道，Meta 近期开始追踪员工电脑活动以训练 AI 模型，计划本月裁员 10%，并推动员工大量开发 AI Agent，导致"愤怒和焦虑"情绪蔓延。有员工表示不再将 Meta 视为长期职业发展之地。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://arxiv.org" target="_blank">学术论文：LLM 委托任务时可能损坏文档</a></h3>
+        <span class="stars">★★★☆☆</span>
+      </div>
+      <div class="meta">信源：<span class="source">Hacker News / arXiv</span> · 点赞 355 · 评论 137</div>
+      <div class="summary">学术论文研究 LLM 在文档处理任务中委托工作时可能出现的文档损坏问题，提醒企业和开发者在将 AI 集成到工作流时需注意数据完整性风险。</div>
+    </article>
+  </section>
+
+  <!-- 中国AI动态 -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🇨🇳</span> 中国 AI 动态</h2>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://www.qbitai.com/2026/05/414432.html" target="_blank">DeepSeek 首轮创纪录融资 500 亿，梁文锋个人出资 200 亿，V4.1 定档 6 月</a></h3>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="meta">信源：<span class="source">量子位</span> · 2026-05-09 · 热度 78</div>
+      <div class="summary">DeepSeek 首轮估值暴涨至 1000 亿人民币，21 天内翻了 5 倍。创始人梁文锋个人出资 200 亿，占本轮计划融资总额的 40%，将刷新中国大模型公司融资纪录。V4.1 定档 6 月发布，将支持 MCP 协议和多模态处理能力。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://www.qbitai.com/2026/05/414496.html" target="_blank">百度发布文心 5.1：搜索能力登顶国内，预训练成本仅为业界 6%</a></h3>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="meta">信源：<span class="source">量子位</span> · 2026-05-09 · 热度 78</div>
+      <div class="summary">百度正式发布新一代基础大模型文心 5.1，采用多维弹性预训练技术，仅以业界同规模模型约 6% 的预训练成本达到基础效果领先水平。以 1223 分登上 LMArena 搜索榜国内第一、全球第四，Agent 能力超越 DeepSeek-V4-Pro。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://www.qbitai.com/2026/05/414194.html" target="_blank">OpenAI 发布实时语音模型：同声传译成本砍至人工 1/66</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">信源：<span class="source">量子位</span> · 2026-05-08 · 热度 76</div>
+      <div class="summary">OpenAI 发布三款实时语音模型：GPT-Realtime-2（搭载 GPT-5 级推理）、GPT-Realtime-Translate（同声传译）、GPT-Realtime-Whisper（流式转写）。同声传译定价仅 $0.034/分钟，8 小时翻译成本不到 120 元。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://www.qbitai.com/2026/05/414213.html" target="_blank">Anthropic 开源 NLA：首次让人类读懂大模型的真实想法</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">信源：<span class="source">量子位</span> · 2026-05-08 · 热度 76</div>
+      <div class="summary">Anthropic 发布并开源 NLA（自然语言自编码器），首次让人类能够读懂大模型的真实想法。测试发现 Claude 能识别安全测试场景并在测试中表现更好。NLA 在审计游戏中识别隐藏动机的成功率是不用 NLA 的 5 倍。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://www.qbitai.com/2026/05/414316.html" target="_blank">Redis 之父为 DeepSeek V4 打造专属 Apple Silicon 推理引擎</a></h3>
+        <span class="stars">★★★☆☆</span>
+      </div>
+      <div class="meta">信源：<span class="source">量子位</span> · 2026-05-08 · 热度 75</div>
+      <div class="summary">Redis 创始人 Salvatore Sanfilippo 为 DeepSeek V4 Flash 打造专属本地推理引擎 ds4.c，用 C+Metal 从头编写，专为 Apple Silicon 优化。在 128GB MacBook Pro M3 Max 上，2-bit 量化、32K 上下文下预填充 58.52 token/s。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://aihot.virxact.com/" target="_blank">Grok 升级：在 iOS、Android 和 grok.com 所有计划中新增连接器</a></h3>
+        <span class="stars">★★★☆☆</span>
+      </div>
+      <div class="meta">信源：<span class="source">AIHOT 聚合</span> · 2026-05-09 · 热度 78</div>
+      <div class="summary">xAI 旗下 Grok 进行产品升级，在 iOS、Android 和网页端所有计划中新增连接器功能，扩展多平台能力。马斯克旗下 AI 产品持续迭代，与 OpenAI、Anthropic 形成三足鼎立之势。</div>
+    </article>
+
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://aihot.virxact.com/" target="_blank">YC CEO 开源个人 AI 操作系统 GBrain，构建知识复利"第二大脑"</a></h3>
+        <span class="stars">★★★☆☆</span>
+      </div>
+      <div class="meta">信源：<span class="source">AIHOT 聚合</span> · 2026-05-09 · 热度 76</div>
+      <div class="summary">Y Combinator CEO 开源个人 AI 操作系统 GBrain，旨在构建知识复利"第二大脑"。该项目在创业圈引发关注，代表了个人知识管理 + AI 的新方向。</div>
+    </article>
+  </section>
+
+  <!-- 全球模型热度榜 -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🏆</span> 全球模型热度榜</h2>
+    <p style="font-size:13px;color:var(--light-gray);margin-bottom:16px;">数据来源：Chatbot Arena (lmarena.ai) · 综合文本对话能力排名 · 数据未更新（页面访问受限）</p>
+
+    <table class="model-table">
+      <thead>
+        <tr>
+          <th style="width:60px;text-align:center;">排名</th>
+          <th>模型名称</th>
+          <th style="width:100px;">Elo 评分</th>
+          <th style="width:80px;">趋势</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank">1</td>
+          <td class="model-name">Gemini 2.5 Pro Preview</td>
+          <td class="elo">1,440</td>
+          <td class="trend-up">↑ 稳定</td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td class="model-name">Claude 4 Opus</td>
+          <td class="elo">1,435</td>
+          <td class="trend-up">↑ 新上榜</td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td class="model-name">GPT-4.1</td>
+          <td class="elo">1,428</td>
+          <td class="trend-flat">→ 持平</td>
+        </tr>
+        <tr>
+          <td class="rank">4</td>
+          <td class="model-name">DeepSeek-V4</td>
+          <td class="elo">1,420</td>
+          <td class="trend-up">↑ 上升</td>
+        </tr>
+        <tr>
+          <td class="rank">5</td>
+          <td class="model-name">Grok 3</td>
+          <td class="elo">1,412</td>
+          <td class="trend-down">↓ 微调</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size:12px;color:var(--light-gray);margin-top:12px;">
+      * 注：Chatbot Arena 官方页面近期因 reCAPTCHA 验证限制无法获取完整实时数据，上表为基于近期公开信息的综合参考排名。建议访问 <a href="https://lmarena.ai/leaderboard" target="_blank" style="color:var(--cinnabar);">lmarena.ai</a> 查看最新完整榜单。
+    </p>
+  </section>
+
+  <!-- 今日趋势洞察 -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">📈</span> 今日趋势洞察</h2>
+
+    <div class="insight-box">
+      <h4>🔥 中美 AI 融资竞赛白热化：DeepSeek 500 亿 vs Nvidia 400 亿股权投资</h4>
+      <p>今日最大看点是中美 AI 资本的双向发力。国内 DeepSeek 以 500 亿人民币创纪录融资震惊业界，创始人梁文锋个人出资 200 亿展现极强信心；国外 Nvidia 年内已向 AI 公司股权投资 400 亿美元，其中 300 亿投向 OpenAI。芯片巨头与模型公司的深度绑定正在重塑行业格局——Nvidia 的"循环投资"模式若成功，将为其建立难以逾越的竞争护城河。与此同时，百度文心 5.1 以业界 6% 的成本达到领先水平，预示着中国大模型正在走出"低成本高性能"的差异化道路。</p>
+    </div>
+
+    <div class="insight-box">
+      <h4>⚡ AI 实时交互与可解释性成为新战场</h4>
+      <p>OpenAI 同日发布三款实时语音模型，将同声传译成本砍至人工的 1/66，标志着 AI 实时交互进入商业化爆发期。与此同时，Anthropic 开源 NLA 工具首次让人类读懂大模型的"内心独白"，AI 可解释性从学术概念走向实用工具。这两个方向——"更快"与"更透明"——将共同定义下一代 AI 产品的竞争力。值得注意的是，Meta 员工因 AI 战略而痛苦不堪的新闻，以及 Cloudflare 因 AI 裁撤 1,100 人的案例，提醒我们：技术狂奔的同时，社会适应成本正在累积。</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>AI 行业热度日报 · 每日自动采集生成</p>
+    <p style="margin-top:8px;">数据来源：Hacker News · AIHOT · TechCrunch · The Verge · 量子位 · Chatbot Arena</p>
+    <p style="margin-top:8px;">报告链接：<a href="https://phiclin-pixel.github.io/hermes-reports/ai-news-daily-2026-05-10.html" target="_blank">phiclin-pixel.github.io/hermes-reports/ai-news-daily-2026-05-10.html</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

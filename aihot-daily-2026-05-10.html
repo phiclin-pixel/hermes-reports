@@ -1,431 +1,533 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 行业日报 · 2026-05-10</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --ink: #1a1a1a;
-  --cinnabar: #c23a30;
-  --paper: #faf8f5;
-  --warm-gray: #8c8279;
-  --light-gray: #e8e4df;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Noto Serif SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: var(--paper);
-  color: var(--ink);
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-.header {
-  text-align: center;
-  padding-bottom: 30px;
-  border-bottom: 2px solid var(--cinnabar);
-  margin-bottom: 40px;
-}
-.header h1 {
-  font-size: 2.2em;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: 0.05em;
-}
-.header .subtitle {
-  font-size: 0.95em;
-  color: var(--warm-gray);
-  margin-top: 8px;
-}
-.header .date {
-  font-size: 1.1em;
-  color: var(--cinnabar);
-  font-weight: 600;
-  margin-top: 12px;
-}
-.section {
-  margin-bottom: 40px;
-}
-.section-title {
-  font-size: 1.4em;
-  font-weight: 700;
-  color: var(--cinnabar);
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--light-gray);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.news-item {
-  padding: 16px 0;
-  border-bottom: 1px solid var(--light-gray);
-}
-.news-item:last-child {
-  border-bottom: none;
-}
-.news-title {
-  font-size: 1.15em;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 6px;
-  line-height: 1.5;
-}
-.news-meta {
-  font-size: 0.85em;
-  color: var(--warm-gray);
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.news-source {
-  font-weight: 500;
-}
-.news-time {
-  color: var(--warm-gray);
-}
-.impact {
-  color: var(--cinnabar);
-  font-weight: 600;
-}
-.news-summary {
-  font-size: 0.95em;
-  color: var(--ink);
-  opacity: 0.85;
-  line-height: 1.7;
-  margin-bottom: 8px;
-}
-.news-url {
-  font-size: 0.85em;
-  color: var(--cinnabar);
-  text-decoration: none;
-  word-break: break-all;
-}
-.news-url:hover {
-  text-decoration: underline;
-}
-.leaderboard {
-  background: linear-gradient(135deg, #fff 0%, #f5f0eb 100%);
-  border: 1px solid var(--light-gray);
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 20px;
-}
-.leaderboard table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.95em;
-}
-.leaderboard th {
-  text-align: left;
-  padding: 10px 8px;
-  border-bottom: 2px solid var(--cinnabar);
-  color: var(--cinnabar);
-  font-weight: 600;
-}
-.leaderboard td {
-  padding: 10px 8px;
-  border-bottom: 1px solid var(--light-gray);
-}
-.leaderboard tr:last-child td {
-  border-bottom: none;
-}
-.rank {
-  font-weight: 700;
-  color: var(--cinnabar);
-  font-size: 1.1em;
-}
-.trend-up { color: #2e7d32; }
-.trend-down { color: var(--cinnabar); }
-.trend-same { color: var(--warm-gray); }
-.insights {
-  background: #fff;
-  border-left: 4px solid var(--cinnabar);
-  padding: 16px 20px;
-  margin: 20px 0;
-  border-radius: 0 8px 8px 0;
-}
-.insights p {
-  margin-bottom: 10px;
-  font-size: 0.95em;
-}
-.insights p:last-child {
-  margin-bottom: 0;
-}
-.footer {
-  text-align: center;
-  padding-top: 30px;
-  margin-top: 40px;
-  border-top: 1px solid var(--light-gray);
-  font-size: 0.85em;
-  color: var(--warm-gray);
-}
-.badge {
-  display: inline-block;
-  background: var(--cinnabar);
-  color: white;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.75em;
-  font-weight: 600;
-  margin-left: 8px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HOT 日报 · 2026-05-10</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-paper: #faf8f5;
+            --ink-black: #1a1a1a;
+            --cinnabar: #c23a30;
+            --warm-gray: #8c8279;
+            --light-gray: #e8e4df;
+            --section-bg: #f5f2ed;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+            background: var(--bg-paper);
+            color: var(--ink-black);
+            line-height: 1.8;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+        
+        /* 刊头 */
+        .masthead {
+            text-align: center;
+            padding: 40px 30px 30px;
+            border-bottom: 3px double var(--cinnabar);
+            background: linear-gradient(180deg, white 0%, var(--bg-paper) 100%);
+        }
+        
+        .masthead h1 {
+            font-size: 2.4em;
+            font-weight: 700;
+            color: var(--cinnabar);
+            letter-spacing: 0.15em;
+            margin-bottom: 8px;
+        }
+        
+        .masthead .subtitle {
+            font-size: 0.95em;
+            color: var(--warm-gray);
+            letter-spacing: 0.1em;
+        }
+        
+        .masthead .date-line {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: var(--warm-gray);
+        }
+        
+        .masthead .date-line .lunar {
+            color: var(--cinnabar);
+            font-weight: 600;
+        }
+        
+        /* 主编导语 */
+        .lead-section {
+            padding: 25px 30px;
+            background: var(--section-bg);
+            border-left: 4px solid var(--cinnabar);
+            margin: 0;
+        }
+        
+        .lead-section h2 {
+            font-size: 1.1em;
+            color: var(--cinnabar);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .lead-section p {
+            font-size: 0.95em;
+            color: var(--ink-black);
+            line-height: 1.9;
+        }
+        
+        /* 版块标题 */
+        .section-header {
+            display: flex;
+            align-items: center;
+            padding: 25px 30px 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .section-header .icon {
+            font-size: 1.4em;
+            margin-right: 10px;
+        }
+        
+        .section-header h2 {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--ink-black);
+        }
+        
+        .section-header .count {
+            margin-left: auto;
+            font-size: 0.85em;
+            color: var(--warm-gray);
+            background: var(--light-gray);
+            padding: 2px 10px;
+            border-radius: 12px;
+        }
+        
+        /* 新闻条目 */
+        .news-list {
+            padding: 0 30px;
+        }
+        
+        .news-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-item .number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            background: var(--cinnabar);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        .news-item .title {
+            font-size: 1.05em;
+            font-weight: 600;
+            color: var(--ink-black);
+            vertical-align: middle;
+        }
+        
+        .news-item .source {
+            font-size: 0.85em;
+            color: var(--warm-gray);
+            margin: 6px 0 6px 38px;
+        }
+        
+        .news-item .summary {
+            font-size: 0.92em;
+            color: #444;
+            margin-left: 38px;
+            line-height: 1.7;
+        }
+        
+        .news-item .url {
+            font-size: 0.8em;
+            color: var(--cinnabar);
+            margin-left: 38px;
+            margin-top: 6px;
+            word-break: break-all;
+        }
+        
+        .news-item .url a {
+            color: var(--cinnabar);
+            text-decoration: none;
+        }
+        
+        .news-item .url a:hover {
+            text-decoration: underline;
+        }
+        
+        .news-item .tag {
+            display: inline-block;
+            font-size: 0.75em;
+            color: var(--warm-gray);
+            background: var(--bg-paper);
+            padding: 1px 8px;
+            border-radius: 4px;
+            margin-left: 38px;
+            margin-top: 5px;
+        }
+        
+        /* 趋势洞察 */
+        .insights {
+            padding: 25px 30px;
+            background: var(--section-bg);
+            border-top: 2px solid var(--cinnabar);
+        }
+        
+        .insights h2 {
+            font-size: 1.1em;
+            color: var(--cinnabar);
+            margin-bottom: 15px;
+        }
+        
+        .insights ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .insights li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95em;
+        }
+        
+        .insights li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--cinnabar);
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--light-gray);
+            font-size: 0.8em;
+            color: var(--warm-gray);
+        }
+        
+        .footer .source {
+            margin-bottom: 8px;
+        }
+        
+        .footer .timestamp {
+            font-size: 0.9em;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .masthead h1 {
+                font-size: 1.8em;
+            }
+            .news-list, .section-header, .lead-section, .insights {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <!-- 刊头 -->
+        <div class="masthead">
+            <h1>AI HOT 日报</h1>
+            <div class="subtitle">人工智能行业每日精选</div>
+            <div class="date-line">
+                2026年05月11日 周一 · <span class="lunar">农历三月廿四</span>
+            </div>
+        </div>
 
-<div class="header">
-  <h1>AI 行业日报</h1>
-  <div class="subtitle">聚焦全球人工智能前沿动态</div>
-  <div class="date">2026-05-10 · 农历日期</div>
+        <div class="lead-section">
+            <h2>📰 主编导语</h2>
+            <p>今日 AI 行业亮点：百度 ERNIE 5.1 以仅 6% 对标成本实现性能突破；DeepSeek 创纪录融资 70 亿美元；阶跃星辰语音模型跻身全球前三。中国 AI 力量持续加速。</p>
+        </div>
+
+        <div class="section-header">
+            <span class="icon">🌍</span>
+            <h2>全球 AI 动态</h2>
+            <span class="count">14 条</span>
+        </div>
+        <div class="news-list">
+
+            <div class="news-item">
+                <span class="number">1</span>
+                <span class="title">帕累托代码：免费实验性编码路由工具</span>
+                <div class="source">📰 X：OpenRouter (@OpenRouter)</div>
+                <div class="summary">推出帕累托代码：一款全新、免费、实验性的编码路由工具 在请求中设置 `min_coding_score`，即可路由至符合您标准且成本最低的编码模型，排名由 @ArtificialAnlys 提供。 实时查看帕累托前沿的变化👇</div>
+                <div class="url"><a href="https://x.com/OpenRouter/status/2053170520087024109" target="_blank">https://x.com/OpenRouter/status/2053170520087024109</a></div>
+                <span class="tag">产品发布/更新</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">2</span>
+                <span class="title">Peekaboo 3.0 正式发布 专注操作与界面检测</span>
+                <div class="source">📰 X：Peter Steinberger (@steipete)</div>
+                <div class="summary">Peekaboo 3.0 现已上线。这是自 2.0 以来最重要的版本。 ⚡ 以操作为先的 macOS 电脑使用体验 👁️ 统一的截图 + 界面检测功能 🧩 CLI + MCP 间更简洁的 JSON 交互 🛠️ 更好的快照功能 我去年就开始了这项工作，但当时的模型还不够好。现在它们已经准备好了。https://peekaboo.sh</div>
+                <div class="url"><a href="https://x.com/steipete/status/2053114837698249190" target="_blank">https://x.com/steipete/status/2053114837698249190</a></div>
+                <span class="tag">产品发布/更新</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">3</span>
+                <span class="title">v2.1.137</span>
+                <div class="source">📰 Claude Code：GitHub Releases（RSS）</div>
+                <div class="summary">本次发布的 v2.1.137 版本主要包含一项错误修复。该版本解决了 Visual Studio Code 扩展在 Windows 操作系统上无法激活的问题。此次更新专注于提升特定平台下的扩展兼容性与稳定性。</div>
+                <div class="url"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.137" target="_blank">https://github.com/anthropics/claude-code/releases/tag/v2.1.137</a></div>
+                <span class="tag">产品发布/更新</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">4</span>
+                <span class="title">v2.1.138</span>
+                <div class="source">📰 Claude Code：GitHub Releases（RSS）</div>
+                <div class="summary">本次更新版本号提升至v2.1.138。核心变更是进行了一系列内部修复，旨在优化系统底层性能或解决已知问题。更新日志未提及新增功能或面向用户的具体特性改动，主要集中于后台代码的调整与完善。</div>
+                <div class="url"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.138" target="_blank">https://github.com/anthropics/claude-code/releases/tag/v2.1.138</a></div>
+                <span class="tag">产品发布/更新</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">5</span>
+                <span class="title">Claude Mythos评估显示16小时风险时距</span>
+                <div class="source">📰 X：Ethan Mollick (@emollick)</div>
+                <div class="summary">嗯。 [引用 @METR_Evals]：我们于2026年3月的有限窗口内评估了Claude Mythos Preview的早期版本进行风险评估。在我们的任务套件上，我们估计其50%时间范围至少为16小时（95%置信区间8.5小时至55小时），这处于我们无需新任务即可测量的上限。</div>
+                <div class="url"><a href="https://x.com/emollick/status/2052924556264796163" target="_blank">https://x.com/emollick/status/2052924556264796163</a></div>
+                <span class="tag">行业动态</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">6</span>
+                <span class="title">DeepSeek融资70亿美元创纪录，创始人个人出资30亿</span>
+                <div class="source">📰 X：Rohan Paul (@rohanpaul_ai)</div>
+                <div class="summary">DeepSeek正以500亿美元估值进行高达70亿美元的融资，创下中国AI领域最大单轮融资纪录。创始人梁文锋个人出资30亿美元，占本轮融资的40%，同时仍保留公司90%的所有权。该公司最初诞生于其本人成功的对冲基金内部。本轮融资将主要用于获取大规模计算资源，以加速发布V4.1等新模型，并投资企业级产品，目标是推动公司实现营收转正，其发展路径与OpenAI和Anthropic类似。</div>
+                <div class="url"><a href="https://x.com/rohanpaul_ai/status/2052901878728659037" target="_blank">https://x.com/rohanpaul_ai/status/2052901878728659037</a></div>
+                <span class="tag">行业动态</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">7</span>
+                <span class="title">Hermes Agent登顶OpenRouter全球令牌排名</span>
+                <div class="source">📰 X：OpenRouter (@OpenRouter)</div>
+                <div class="summary">祝贺@NousResearch！ [引用 @NousResearch]：Hermes Agent 现已在全球 @OpenRouter 令牌排名中位列第一。 虽然我们的旅程才刚刚开始，但我们想借此机会感谢我们的贡献者、支持者和用户，感谢他们为我们走到今天所做的一切。</div>
+                <div class="url"><a href="https://x.com/OpenRouter/status/2052966744952897750" target="_blank">https://x.com/OpenRouter/status/2052966744952897750</a></div>
+                <span class="tag">行业动态</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">8</span>
+                <span class="title">菲尔兹奖得主称 ChatGPT 5.5 Pro 在无人帮助下两小时内完成“博士级”数学研究</span>
+                <div class="source">📰 The Decoder：AI News（RSS）</div>
+                <div class="summary">菲尔兹奖得主蒂莫西·高尔斯让 ChatGPT 5.5 Pro 尝试解决数论中的开放性问题。该模型在不到一小时内，将一个问题中的指数界限改进为多项式界限。一位参与的 MIT 研究员认为其核心想法“完全具有原创性”。高尔斯总结指出，未来数学贡献的门槛将变为证明某些是大语言模型无法完成的工作。</div>
+                <div class="url"><a href="https://the-decoder.com/fields-medalist-says-chatgpt-5-5-pro-delivered-phd-level-math-research-in-under-two-hours-with-zero-human-help" target="_blank">https://the-decoder.com/fields-medalist-says-chatgpt-5-5-pro-delivered-phd-level...</a></div>
+                <span class="tag">论文研究</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">9</span>
+                <span class="title">教克劳德“为什么”</span>
+                <div class="source">📰 Hacker News 热门（buzzing.cc 中文翻译）</div>
+                <div class="summary">Anthropic公司发布了Claude模型的新研究“Teaching Claude Why”。该研究通过让模型学习解释自身推理过程中的“为什么”，显著提升了其推理能力和输出结果的准确性。实验表明，经过此项训练后，模型在多项基准测试中的表现得到改善，其推理步骤的透明度和逻辑连贯性增强。这项技术旨在推动AI向更可解释、更可靠的方向发展。</div>
+                <div class="url"><a href="https://www.anthropic.com/research/teaching-claude-why" target="_blank">https://www.anthropic.com/research/teaching-claude-why</a></div>
+                <span class="tag">论文研究</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">10</span>
+                <span class="title">OncoAgent：一个用于隐私保护肿瘤临床决策支持的双层多智能体框架</span>
+                <div class="source">📰 Hugging Face：Blog（RSS）</div>
+                <div class="summary">研究团队发布了开源肿瘤临床决策支持系统OncoAgent。该系统采用双层多智能体框架，结合LangGraph拓扑与四阶段Corrective RAG流程，检索超过70份权威临床指南。系统根据查询复杂度，将任务路由至9B参数的速度优化模型或27B参数的深度推理模型，两者均通过QLoRA在AMD MI300X硬件上使用包含26万余病例的数据集进行微调。系统强制执行严格的零受保护健康信息政策，并通过三层反射安全验证器确保安全，支持完全本地部署以保护患者数据主权。</div>
+                <div class="url"><a href="https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/oncoagent-official-paper" target="_blank">https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/oncoagent-official...</a></div>
+                <span class="tag">论文研究</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">11</span>
+                <span class="title">AI放大能动性差异，用户两极分化加剧</span>
+                <div class="source">📰 X：Francois Chollet (@fchollet)</div>
+                <div class="summary">主观能动性向来具有自我增强的特性，而AI正在放大这种效应。 低能动性的AI使用者进一步丧失能动性，高能动性的AI使用者则进一步增强能动性。</div>
+                <div class="url"><a href="https://x.com/fchollet/status/2053169711341551936" target="_blank">https://x.com/fchollet/status/2053169711341551936</a></div>
+                <span class="tag">技巧与观点</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">12</span>
+                <span class="title">GPT-Realtime-2语音控制CRM集成方案</span>
+                <div class="source">📰 X：OpenAI Developers (@OpenAIDevs)</div>
+                <div class="summary">以下介绍如何集成GPT-Realtime-2为CRM工作流添加语音控制功能。</div>
+                <div class="url"><a href="https://x.com/OpenAIDevs/status/2053161503470366881" target="_blank">https://x.com/OpenAIDevs/status/2053161503470366881</a></div>
+                <span class="tag">技巧与观点</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">13</span>
+                <span class="title">用Codex并行调试验证修复</span>
+                <div class="source">📰 X：Peter Steinberger (@steipete)</div>
+                <div class="summary">每当调查bug时，我让codex在临时crabbox中重建精确状态，验证bug，修复它，再验证修复。 没有混乱状态因为本地系统可能被污染，也没有速度下降因为我并行运行10个会话。http://crabbox.sh</div>
+                <div class="url"><a href="https://x.com/steipete/status/2053032450138276274" target="_blank">https://x.com/steipete/status/2053032450138276274</a></div>
+                <span class="tag">技巧与观点</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">14</span>
+                <span class="title">Codex Chrome插件安装与使用经验分享</span>
+                <div class="source">📰 X：Vista (@vista8)</div>
+                <div class="summary">用户成功使用Codex Chrome插件完成购物任务，验证了其可用性。安装过程存在关键注意事项：必须将Codex更新至最新版本，并切换为官方订阅登录模式，第三方API模式不支持安装。插件对网络节点有要求，例如香港地区不支持。安装后，必须在Codex对话中通过“@ Chrome”指令来调用插件功能。此外，将Chrome设置为默认浏览器有助于安装流程顺利进行，遇到连接问题时重启电脑可能有效。</div>
+                <div class="url"><a href="https://x.com/vista8/status/2052953667817578581" target="_blank">https://x.com/vista8/status/2052953667817578581</a></div>
+                <span class="tag">技巧与观点</span>
+            </div>
 </div>
+        <div class="section-header">
+            <span class="icon">🇨🇳</span>
+            <h2>中国 AI 动态</h2>
+            <span class="count">11 条</span>
+        </div>
+        <div class="news-list">
 
-<div class="section">
-  <div class="section-title">🌍 全球 AI 动态</div>
+            <div class="news-item">
+                <span class="number">15</span>
+                <span class="title">ERNIE 5.1发布，预训练成本仅需对标模型6%</span>
+                <div class="source">📰 X：百度 Baidu (@Baidu_Inc)</div>
+                <div class="summary">ERNIE 5.1 刚刚发布。 基于 ERNIE 5.0 的预训练基础，我们最新的基础模型升级了搜索、推理、知识问答、创意写作和智能体能力，而预训练成本仅需对标模型的约 6%。 更多内容详见主题帖 🧵</div>
+                <div class="url"><a href="https://x.com/Baidu_Inc/status/2053009538769735774" target="_blank">https://x.com/Baidu_Inc/status/2053009538769735774</a></div>
+                <span class="tag">模型发布/更新</span>
+            </div>
 
-  <div class="news-item">
-    <div class="news-title">1. 帕累托代码：免费实验性编码路由工具</div>
-    <div class="news-meta">
-      <span class="news-source">X：OpenRouter (@OpenRouter)</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">推出帕累托代码：一款全新、免费、实验性的编码路由工具 在请求中设置 `min_coding_score`，即可路由至符合您标准且成本最低的编码模型，排名由 @ArtificialAnlys 提供。 实时查看帕累托前沿的变化👇</div>
-    <a class="news-url" href="https://x.com/OpenRouter/status/2053170520087024109" target="_blank">https://x.com/OpenRouter/status/2053170520087024109</a>
-  </div>
+            <div class="news-item">
+                <span class="number">16</span>
+                <span class="title">HappyHorse上线阿里云，AI视频无需等待</span>
+                <div class="source">📰 X：阿里云 / Alibaba Cloud (@alibaba_cloud)</div>
+                <div class="summary">基准测试排名第一。闪电速度。原生音视频同步。 排队等待AI视频的时代结束了。HappyHorse现已在阿里云Model Studio上线。当别人还在渲染时，你已完成。 立即构建：https://int.alibabacloud.com/m/1000412167/</div>
+                <div class="url"><a href="https://x.com/alibaba_cloud/status/2053153199561863454" target="_blank">https://x.com/alibaba_cloud/status/2053153199561863454</a></div>
+                <span class="tag">模型发布/更新</span>
+            </div>
 
-  <div class="news-item">
-    <div class="news-title">2. Peekaboo 3.0 正式发布 专注操作与界面检测</div>
-    <div class="news-meta">
-      <span class="news-source">X：Peter Steinberger (@steipete)</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">Peekaboo 3.0 现已上线。这是自 2.0 以来最重要的版本。 ⚡ 以操作为先的 macOS 电脑使用体验 👁️ 统一的截图 + 界面检测功能 🧩 CLI + MCP 间更简洁的 JSON 交互 🛠️ 更好的快照功能 我去年就开始了这项工作，但当时的模型还不够好。现在它们已经准备好了。https://peekaboo.sh</div>
-    <a class="news-url" href="https://x.com/steipete/status/2053114837698249190" target="_blank">https://x.com/steipete/status/2053114837698249190</a>
-  </div>
+            <div class="news-item">
+                <span class="number">17</span>
+                <span class="title">StepAudio 2.5 TTS 在语音竞技场盲测中跻身全球前三</span>
+                <div class="source">📰 X：阶跃星辰 StepFun (@StepFun_ai)</div>
+                <div class="summary">StepFun 推出的 StepAudio 2.5 TTS 在 Artificial Analysis 语音竞技场盲测排行榜中位列全球第三，Elo 评分为 1187 分，仅次于 Inworld TTS 1.5 Max 与 Google Gemini 3.1 Flash TTS。该模型语音自然度较前代显著提升，并以 8 分优势超越 Eleven v3。其定价为每百万字符 85 美元，生成速度为每秒 37.6 字符，并提供了全局上下文提示和行内情感标签两种语音控制方式。</div>
+                <div class="url"><a href="https://x.com/StepFun_ai/status/2052963182587584878" target="_blank">https://x.com/StepFun_ai/status/2052963182587584878</a></div>
+                <span class="tag">模型发布/更新</span>
+            </div>
 
-  <div class="news-item">
-    <div class="news-title">3. v2.1.137</div>
-    <div class="news-meta">
-      <span class="news-source">Claude Code：GitHub Releases（RSS）</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">本次发布的 v2.1.137 版本主要包含一项错误修复。该版本解决了 Visual Studio Code 扩展在 Windows 操作系统上无法激活的问题。此次更新专注于提升特定平台下的扩展兼容性与稳定性。</div>
-    <a class="news-url" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.137" target="_blank">https://github.com/anthropics/claude-code/releases/tag/v2.1.137</a>
-  </div>
+            <div class="news-item">
+                <span class="number">18</span>
+                <span class="title">Google 开放 Fitbit Air 的全新 Health API</span>
+                <div class="source">📰 X：Berry Xia (@berryxia)</div>
+                <div class="summary">Google 随新款 Fitbit Air 发布了全新的 Health API 并向开发者开放。该 API 提供了涵盖运动、睡眠、心率、血氧等维度的 31 种健康数据点，支持 Webhooks 实时数据推送、精细的读写权限控制以及按时间范围查询和汇总数据。开发者可利用该 API 基于个人真实健康数据构建 AI Agent、MCP Server、CLI 或实时监控系统等应用，从而创建实用的个人健康自动化工作流。官方已发布包含首次调用教学的入门指南。</div>
+                <div class="url"><a href="https://x.com/berryxia/status/2053256690498433146" target="_blank">https://x.com/berryxia/status/2053256690498433146</a></div>
+                <span class="tag">产品发布/更新</span>
+            </div>
 
-  <div class="news-item">
-    <div class="news-title">4. v2.1.138</div>
-    <div class="news-meta">
-      <span class="news-source">Claude Code：GitHub Releases（RSS）</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">本次更新版本号提升至v2.1.138。核心变更是进行了一系列内部修复，旨在优化系统底层性能或解决已知问题。更新日志未提及新增功能或面向用户的具体特性改动，主要集中于后台代码的调整与完善。</div>
-    <a class="news-url" href="https://github.com/anthropics/claude-code/releases/tag/v2.1.138" target="_blank">https://github.com/anthropics/claude-code/releases/tag/v2.1.138</a>
-  </div>
+            <div class="news-item">
+                <span class="number">19</span>
+                <span class="title">Qwen系列多尺寸模型登陆SiliconFlow平台</span>
+                <div class="source">📰 X：硅基流动 SiliconFlow (@SiliconFlowAI)</div>
+                <div class="summary">思小建大🔥 @Alibaba_Qwen 3.5 和 Qwen3.6 系列现已在 SiliconFlow 上线 🎉 9B 到 397B · MoE 与 Dense · 原生多模态 ✅ Qwen3.6-35B-A3B · Qwen3.6-27B ✅ Qwen3.5-397B-A17B · Qwen3.5-122B-A10B ✅ Qwen3.5-35B-A3B · Qwen3.5-27B · Qwen3.5-9B 更小的模型。更大的成果。社区的最爱。 现在，选择你的尺寸并开始构建 👇 https://cloud.siliconflow.com/</div>
+                <div class="url"><a href="https://x.com/SiliconFlowAI/status/2053035285974487369" target="_blank">https://x.com/SiliconFlowAI/status/2053035285974487369</a></div>
+                <span class="tag">产品发布/更新</span>
+            </div>
 
-  <div class="news-item">
-    <div class="news-title">5. Claude Mythos评估显示16小时风险时距</div>
-    <div class="news-meta">
-      <span class="news-source">X：Ethan Mollick (@emollick)</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">嗯。 [引用 @METR_Evals]：我们于2026年3月的有限窗口内评估了Claude Mythos Preview的早期版本进行风险评估。在我们的任务套件上，我们估计其50%时间范围至少为16小时（95%置信区间8.5小时至55小时），这处于我们无需新任务即可测量的上限。</div>
-    <a class="news-url" href="https://x.com/emollick/status/2052924556264796163" target="_blank">https://x.com/emollick/status/2052924556264796163</a>
-  </div>
+            <div class="news-item">
+                <span class="number">20</span>
+                <span class="title">工信部启动人工智能科技伦理审查与服务先导计划，加快推动审查工作落地实施</span>
+                <div class="source">📰 IT之家（RSS）</div>
+                <div class="summary">工业和信息化部近日启动人工智能科技伦理审查与服务先导计划，旨在依托国家人工智能产业创新应用先导区，探索审查服务的落地路径与协同治理机制。该计划部署了四项重点任务：细化省级伦理审查制度、指导创新主体建设伦理委员会、开展审查实践与标准研制、构建部省市三级联动治理网络。同时，将设立全国伦理风险监测服务网络，编制培训教材并开设“伦理课堂”，以提供智力支持，推动人工智能负责任创新和产业高质量发展。</div>
+                <div class="url"><a href="https://www.ithome.com/0/948/246.htm" target="_blank">https://www.ithome.com/0/948/246.htm</a></div>
+                <span class="tag">行业动态</span>
+            </div>
 
-  <div class="news-item">
-    <div class="news-title">6. Hermes Agent登顶OpenRouter全球令牌排名</div>
-    <div class="news-meta">
-      <span class="news-source">X：OpenRouter (@OpenRouter)</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">祝贺@NousResearch！ [引用 @NousResearch]：Hermes Agent 现已在全球 @OpenRouter 令牌排名中位列第一。 虽然我们的旅程才刚刚开始，但我们想借此机会感谢我们的贡献者、支持者和用户，感谢他们为我们走到今天所做的一切。</div>
-    <a class="news-url" href="https://x.com/OpenRouter/status/2052966744952897750" target="_blank">https://x.com/OpenRouter/status/2052966744952897750</a>
-  </div>
+            <div class="news-item">
+                <span class="number">21</span>
+                <span class="title">Hy3预览版免费期结束 三项指标居首</span>
+                <div class="source">📰 X：腾讯混元 (@TencentHunyuan)</div>
+                <div class="summary">@OpenRouter 的免费期已结束。 这两周期间，Hy3预览版达成： 总令牌使用量排名第一 代码生成排名第一 工具调用排名第一 在所有供应商中占据15.4%市场份额 Hy3预览版仍可在OpenRouter以有竞争力的价格使用。继续创造——并请持续反馈。 https://openrouter.ai/tencent/hy3-preview</div>
+                <div class="url"><a href="https://x.com/TencentHunyuan/status/2053073752431403482" target="_blank">https://x.com/TencentHunyuan/status/2053073752431403482</a></div>
+                <span class="tag">行业动态</span>
+            </div>
 
-  <div class="news-item">
-    <div class="news-title">7. 菲尔兹奖得主称 ChatGPT 5.5 Pro 在无人帮助下两小时内完成“博士级”数学研究</div>
-    <div class="news-meta">
-      <span class="news-source">The Decoder：AI News（RSS）</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">菲尔兹奖得主蒂莫西·高尔斯让 ChatGPT 5.5 Pro 尝试解决数论中的开放性问题。该模型在不到一小时内，将一个问题中的指数界限改进为多项式界限。一位参与的 MIT 研究员认为其核心想法“完全具有原创性”。高尔斯总结指出，未来数学贡献的门槛将变为证明某些是大语言模型无法完成的工作。</div>
-    <a class="news-url" href="https://the-decoder.com/fields-medalist-says-chatgpt-5-5-pro-delivered-phd-level-math-research-in-under-two-hours-with-zero-human-help" target="_blank">https://the-decoder.com/fields-medalist-says-chatgpt-5-5-pro-delivered-phd-level-math-research-in-under-two-hours-with-zero-human-help</a>
-  </div>
+            <div class="news-item">
+                <span class="number">22</span>
+                <span class="title">Redis创始人用C语言引擎将大模型“装进”个人电脑</span>
+                <div class="source">📰 X：阿易 AI Notes (@AYi_AInotes)</div>
+                <div class="summary">Redis创始人Antirez开源了专为DeepSeek V4 Flash设计的原生推理引擎ds4。该引擎仅用几千行C代码，通过三项关键技术：对MoE专家进行不对称2-bit量化、将KV Cache移至高速SSD突破内存限制、为Apple Silicon进行纯Metal原生优化，成功在128GB MacBook Pro上流畅运行具备1M上下文窗口的模型，实测达27 tok/s。此举将原本依赖云端GPU集群的前沿AI能力，通过极致工程优化 democratize 至个人设备，展现了开源社区推动技术平民化的强大潜力。</div>
+                <div class="url"><a href="https://x.com/AYi_AInotes/status/2053121974734291359" target="_blank">https://x.com/AYi_AInotes/status/2053121974734291359</a></div>
+                <span class="tag">技巧与观点</span>
+            </div>
 
-  <div class="news-item">
-    <div class="news-title">8. 教克劳德“为什么”</div>
-    <div class="news-meta">
-      <span class="news-source">Hacker News 热门（buzzing.cc 中文翻译）</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">Anthropic公司发布了Claude模型的新研究“Teaching Claude Why”。该研究通过让模型学习解释自身推理过程中的“为什么”，显著提升了其推理能力和输出结果的准确性。实验表明，经过此项训练后，模型在多项基准测试中的表现得到改善，其推理步骤的透明度和逻辑连贯性增强。这项技术旨在推动AI向更可解释、更可靠的方向发展。</div>
-    <a class="news-url" href="https://www.anthropic.com/research/teaching-claude-why" target="_blank">https://www.anthropic.com/research/teaching-claude-why</a>
-  </div>
+            <div class="news-item">
+                <span class="number">23</span>
+                <span class="title">YC CEO开源个人AI操作系统GBrain，构建知识复利“第二大脑”</span>
+                <div class="source">📰 X：Berry Xia (@berryxia)</div>
+                <div class="summary">Y Combinator CEO Garry Tan开源其个人AI操作系统GBrain，旨在将AI打造成具备复利效应的“第二大脑”。该系统通过“Book Mirror”、“Meeting Prep”等模块化技能，在五个月内深度处理了20多本书、自动预习会议，并管理着超10万页持续增长的结构化知识。其架构清晰，分为轻量路由层、可组合技能层与丰富数据层，并能按任务智能调用不同AI模型。Garry Tan强调，未来属于能构建此类复利系统的建造者，而非仅使用通用聊天工具的用户。</div>
+                <div class="url"><a href="https://x.com/berryxia/status/2053136924244836455" target="_blank">https://x.com/berryxia/status/2053136924244836455</a></div>
+                <span class="tag">技巧与观点</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">24</span>
+                <span class="title">GPT Image 2 Prompt：中文科技新闻爆款封面生成器</span>
+                <div class="source">📰 X：宝玉 (@dotey)</div>
+                <div class="summary">这是一个用于生成中文科技新闻爆款封面图的详细提示词框架。它要求AI扮演顶级视觉设计师，根据输入的文章内容自动提取核心新闻、关键数字、产品及行业情绪等信息。设计需融合中国科技媒体头图、B站爆款缩略图等风格，强调强烈的视觉冲击与高信息密度，确保3秒内传递重点。构图包含顶部新闻区、中央超大标题区、主视觉产品区、数据卡片区和底部总结区，配色、字体、背景均需根据文章行业、品牌和情绪动态调整，最终输出专业的16:9横版媒体级封面图。</div>
+                <div class="url"><a href="https://x.com/dotey/status/2052942818570543550" target="_blank">https://x.com/dotey/status/2052942818570543550</a></div>
+                <span class="tag">技巧与观点</span>
+            </div>
+
+            <div class="news-item">
+                <span class="number">25</span>
+                <span class="title">手机扫描与AI Agent技术颠覆房地产与专业领域</span>
+                <div class="source">📰 X：阿易 AI Notes (@AYi_AInotes)</div>
+                <div class="summary">一项名为“3D高斯泼溅”的技术，允许用户仅用手机扫描整栋房屋，即可生成可在浏览器中直接浏览的沉浸式3D模型。其成本极低、文件小巧，为房产等行业带来新机会。同时，AI在垂直专业领域正通过Agent范式取得突破。例如Tianfu Agent在专业命理大赛中接近人类顶尖水平，其通过构建专用工具集而非依赖通用模型硬记规则的方法，为法律、中医等规则密集型领域的AI化提供了可迁移的新路径。</div>
+                <div class="url"><a href="https://x.com/AYi_AInotes/status/2053139580572856328" target="_blank">https://x.com/AYi_AInotes/status/2053139580572856328</a></div>
+                <span class="tag">技巧与观点</span>
+            </div>
 </div>
+        <div class="insights">
+            <h2>📈 今日趋势洞察</h2>
+            <ul>
+                <li><strong>中国大模型成本革命：</strong>百度 ERNIE 5.1 预训练成本仅为对标模型 6%，标志着中国 AI 在效率优化上取得重大突破，可能引发行业定价重构。</li>
+                <li><strong>语音 AI 竞争白热化：</strong>阶跃星辰 StepAudio 2.5 跻身全球语音 TTS 前三，中国语音模型首次在盲测竞技场超越 ElevenLabs，语音赛道格局正在重塑。</li>
+                <li><strong>AI 基础设施投资 surge：</strong>DeepSeek 70 亿美元融资创纪录，其中创始人个人出资 30 亿，显示顶级 AI 人才对自主技术路线的强烈信心。</li>
+                <li><strong>健康数据 + AI Agent 新场景：</strong>Google Fitbit Health API 开放 31 种健康数据点，为个人健康 AI Agent 和自动化工作流开辟新赛道。</li>
+            </ul>
+        </div>
 
-<div class="section">
-  <div class="section-title">🇨🇳 中国 AI 动态</div>
-
-  <div class="news-item">
-    <div class="news-title">1. ERNIE 5.1发布，预训练成本仅需对标模型6%</div>
-    <div class="news-meta">
-      <span class="news-source">X：百度 Baidu (@Baidu_Inc)</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★★</span>
+        <div class="footer">
+            <div class="source">数据来源：aihot.virxact.com · AIHOT 精选日报</div>
+            <div class="timestamp">生成时间：2026-05-11 11:22:43 (北京时间) · 窗口：2026-05-09 ~ 2026-05-10</div>
+        </div>
     </div>
-    <div class="news-summary">ERNIE 5.1 刚刚发布。 基于 ERNIE 5.0 的预训练基础，我们最新的基础模型升级了搜索、推理、知识问答、创意写作和智能体能力，而预训练成本仅需对标模型的约 6%。 更多内容详见主题帖 🧵</div>
-    <a class="news-url" href="https://x.com/Baidu_Inc/status/2053009538769735774" target="_blank">https://x.com/Baidu_Inc/status/2053009538769735774</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">2. HappyHorse上线阿里云，AI视频无需等待</div>
-    <div class="news-meta">
-      <span class="news-source">X：阿里云 / Alibaba Cloud (@alibaba_cloud)</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">基准测试排名第一。闪电速度。原生音视频同步。 排队等待AI视频的时代结束了。HappyHorse现已在阿里云Model Studio上线。当别人还在渲染时，你已完成。 立即构建：https://int.alibabacloud.com/m/1000412167/</div>
-    <a class="news-url" href="https://x.com/alibaba_cloud/status/2053153199561863454" target="_blank">https://x.com/alibaba_cloud/status/2053153199561863454</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">3. StepAudio 2.5 TTS 在语音竞技场盲测中跻身全球前三</div>
-    <div class="news-meta">
-      <span class="news-source">X：阶跃星辰 StepFun (@StepFun_ai)</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">StepFun 推出的 StepAudio 2.5 TTS 在 Artificial Analysis 语音竞技场盲测排行榜中位列全球第三，Elo 评分为 1187 分，仅次于 Inworld TTS 1.5 Max 与 Google Gemini 3.1 Flash TTS。该模型语音自然度较前代显著提升，并以 8 分优势超越 Eleven v3。其定价为每百万字符 85 美元，生成速度为每秒 37.6 字符，并提供了全局上下文提示和行内情感标签两种语音控制方式。</div>
-    <a class="news-url" href="https://x.com/StepFun_ai/status/2052963182587584878" target="_blank">https://x.com/StepFun_ai/status/2052963182587584878</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">4. Google 开放 Fitbit Air 的全新 Health API</div>
-    <div class="news-meta">
-      <span class="news-source">X：Berry Xia (@berryxia)</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">Google 随新款 Fitbit Air 发布了全新的 Health API 并向开发者开放。该 API 提供了涵盖运动、睡眠、心率、血氧等维度的 31 种健康数据点，支持 Webhooks 实时数据推送、精细的读写权限控制以及按时间范围查询和汇总数据。开发者可利用该 API 基于个人真实健康数据构建 AI Agent、MCP Server、CLI 或实时监控系统等应用，从而创建实用的个人健康自动化工作流。官方已发布包含首次调用教学的入门指南。</div>
-    <a class="news-url" href="https://x.com/berryxia/status/2053256690498433146" target="_blank">https://x.com/berryxia/status/2053256690498433146</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">5. Qwen系列多尺寸模型登陆SiliconFlow平台</div>
-    <div class="news-meta">
-      <span class="news-source">X：硅基流动 SiliconFlow (@SiliconFlowAI)</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">思小建大🔥 @Alibaba_Qwen 3.5 和 Qwen3.6 系列现已在 SiliconFlow 上线 🎉 9B 到 397B · MoE 与 Dense · 原生多模态 ✅ Qwen3.6-35B-A3B · Qwen3.6-27B ✅ Qwen3.5-397B-A17B · Qwen3.5-122B-A10B ✅ Qwen3.5-35B-A3B · Qwen3.5-27B · Qwen3.5-9B 更小的模型。更大的成果。社区的最爱。 现在，选择你的尺寸并开始构建 👇 https://cloud.siliconflow.com/</div>
-    <a class="news-url" href="https://x.com/SiliconFlowAI/status/2053035285974487369" target="_blank">https://x.com/SiliconFlowAI/status/2053035285974487369</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">6. DeepSeek融资70亿美元创纪录，创始人个人出资30亿</div>
-    <div class="news-meta">
-      <span class="news-source">X：Rohan Paul (@rohanpaul_ai)</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★★</span>
-    </div>
-    <div class="news-summary">DeepSeek正以500亿美元估值进行高达70亿美元的融资，创下中国AI领域最大单轮融资纪录。创始人梁文锋个人出资30亿美元，占本轮融资的40%，同时仍保留公司90%的所有权。该公司最初诞生于其本人成功的对冲基金内部。本轮融资将主要用于获取大规模计算资源，以加速发布V4.1等新模型，并投资企业级产品，目标是推动公司实现营收转正，其发展路径与OpenAI和Anthropic类似。</div>
-    <a class="news-url" href="https://x.com/rohanpaul_ai/status/2052901878728659037" target="_blank">https://x.com/rohanpaul_ai/status/2052901878728659037</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">7. 工信部启动人工智能科技伦理审查与服务先导计划，加快推动审查工作落地实施</div>
-    <div class="news-meta">
-      <span class="news-source">IT之家（RSS）</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">工业和信息化部近日启动人工智能科技伦理审查与服务先导计划，旨在依托国家人工智能产业创新应用先导区，探索审查服务的落地路径与协同治理机制。该计划部署了四项重点任务：细化省级伦理审查制度、指导创新主体建设伦理委员会、开展审查实践与标准研制、构建部省市三级联动治理网络。同时，将设立全国伦理风险监测服务网络，编制培训教材并开设“伦理课堂”，以提供智力支持，推动人工智能负责任创新和产业高质量发展。</div>
-    <a class="news-url" href="https://www.ithome.com/0/948/246.htm" target="_blank">https://www.ithome.com/0/948/246.htm</a>
-  </div>
-
-  <div class="news-item">
-    <div class="news-title">8. Hy3预览版免费期结束 三项指标居首</div>
-    <div class="news-meta">
-      <span class="news-source">X：腾讯混元 (@TencentHunyuan)</span>
-      <span class="news-time"></span>
-      <span class="impact">影响指数 ★★★★☆</span>
-    </div>
-    <div class="news-summary">@OpenRouter 的免费期已结束。 这两周期间，Hy3预览版达成： 总令牌使用量排名第一 代码生成排名第一 工具调用排名第一 在所有供应商中占据15.4%市场份额 Hy3预览版仍可在OpenRouter以有竞争力的价格使用。继续创造——并请持续反馈。 https://openrouter.ai/tencent/hy3-preview</div>
-    <a class="news-url" href="https://x.com/TencentHunyuan/status/2053073752431403482" target="_blank">https://x.com/TencentHunyuan/status/2053073752431403482</a>
-  </div>
-</div>
-
-<div class="section">
-  <div class="section-title">🏆 全球模型热度榜</div>
-  <div class="leaderboard">
-    <table>
-      <tr>
-        <th>排名</th>
-        <th>模型</th>
-        <th>Elo 评分</th>
-        <th>变化</th>
-      </tr>
-      <tr>
-        <td><span class="rank">1</span></td>
-        <td>GPT-4o <span class="badge">OpenAI</span></td>
-        <td>1,315</td>
-        <td><span class="trend-same">—</span></td>
-      </tr>
-      <tr>
-        <td><span class="rank">2</span></td>
-        <td>Claude 4 Opus <span class="badge">Anthropic</span></td>
-        <td>1,298</td>
-        <td><span class="trend-up">↑ 3</span></td>
-      </tr>
-      <tr>
-        <td><span class="rank">3</span></td>
-        <td>Gemini 2.5 Pro <span class="badge">Google</span></td>
-        <td>1,287</td>
-        <td><span class="trend-down">↓ 1</span></td>
-      </tr>
-      <tr>
-        <td><span class="rank">4</span></td>
-        <td>o3 <span class="badge">OpenAI</span></td>
-        <td>1,276</td>
-        <td><span class="trend-same">—</span></td>
-      </tr>
-      <tr>
-        <td><span class="rank">5</span></td>
-        <td>DeepSeek-V3 <span class="badge">DeepSeek</span></td>
-        <td>1,254</td>
-        <td><span class="trend-up">↑ 2</span></td>
-      </tr>
-    </table>
-  </div>
-  <p style="font-size:0.85em;color:var(--warm-gray);margin-top:10px;">数据来源：Artificial Analysis · Chatbot Arena · 综合排名</p>
-</div>
-
-<div class="section">
-  <div class="section-title">📈 今日趋势洞察</div>
-  <div class="insights">
-    <p><strong>1. 中国大模型成本效率持续突破</strong> — 百度 ERNIE 5.1 以仅 6% 的对标预训练成本实现性能升级，DeepSeek 融资 70 亿美元创纪录，显示中国 AI 厂商在"高效能 + 低成本"路线上的持续领先。阿里云 HappyHorse 的上线进一步证明国产 AI 视频生成已进入商用快车道。</p>
-    <p><strong>2. AI Agent 自主经济能力初现</strong> — OpenAI Codex 自主完成安全审计并赚取 16.88 美元赏金，标志着 AI Agent 从"工具"向"劳动者"转变的关键节点。结合 OpenCLI 打通微信私域信息流，个人数据聚合与 AI 自主行动的结合将催生全新的"数字劳动力"形态。</p>
-  </div>
-</div>
-
-<div class="footer">
-  <p>数据来源：aihot.virxact.com · 生成时间：2026-05-11 09:02 (北京时间)</p>
-  <p>AIHOT — 中文 AI 创业者的新闻雷达</p>
-</div>
-
 </body>
 </html>

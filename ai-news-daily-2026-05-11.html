@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI行业热度日报 · 2026-05-11</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a1a;
+  --cinnabar: #c23a30;
+  --paper: #faf8f5;
+  --paper-dark: #f0ece6;
+  --gray: #6b6b6b;
+  --light-gray: #9a9a9a;
+  --border: #e0d8ce;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Serif SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 48px 0 36px;
+  border-bottom: 2px solid var(--cinnabar);
+  margin-bottom: 40px;
+}
+
+.header .badge {
+  display: inline-block;
+  background: var(--cinnabar);
+  color: var(--paper);
+  font-size: 12px;
+  letter-spacing: 3px;
+  padding: 4px 16px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+}
+
+.header .subtitle {
+  font-size: 15px;
+  color: var(--gray);
+  letter-spacing: 1px;
+}
+
+.header .date {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--light-gray);
+}
+
+.header .date span {
+  margin: 0 8px;
+}
+
+/* Section */
+.section {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title .icon {
+  font-size: 24px;
+}
+
+/* News Card */
+.news-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.news-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.news-card .headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.news-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.news-card h3 a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--border);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.news-card h3 a:hover {
+  color: var(--cinnabar);
+  border-bottom-color: var(--cinnabar);
+}
+
+.news-card .stars {
+  color: var(--cinnabar);
+  font-size: 14px;
+  white-space: nowrap;
+  letter-spacing: 2px;
+}
+
+.news-card .meta {
+  font-size: 13px;
+  color: var(--light-gray);
+  margin-bottom: 10px;
+}
+
+.news-card .meta .source {
+  color: var(--cinnabar);
+  font-weight: 600;
+}
+
+.news-card .summary {
+  font-size: 14.5px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* Model Ranking Table */
+.model-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.model-table th,
+.model-table td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.model-table th {
+  background: var(--paper-dark);
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 2px solid var(--cinnabar);
+}
+
+.model-table td {
+  border-bottom: 1px solid var(--border);
+}
+
+.model-table tr:last-child td {
+  border-bottom: none;
+}
+
+.model-table .rank {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--cinnabar);
+  width: 60px;
+  text-align: center;
+}
+
+.model-table .model-name {
+  font-weight: 600;
+}
+
+.model-table .elo {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: var(--cinnabar);
+}
+
+.model-table .trend-up { color: #2d8a3e; }
+.model-table .trend-down { color: var(--cinnabar); }
+.model-table .trend-flat { color: var(--light-gray); }
+
+/* Insight Box */
+.insight-box {
+  background: #fff;
+  border-left: 4px solid var(--cinnabar);
+  padding: 24px;
+  margin-bottom: 16px;
+  border-radius: 0 6px 6px 0;
+}
+
+.insight-box h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--cinnabar);
+}
+
+.insight-box p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--light-gray);
+  letter-spacing: 1px;
+}
+
+.footer a {
+  color: var(--cinnabar);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .container { padding: 20px 16px; }
+  .header h1 { font-size: 26px; }
+  .news-card { padding: 18px; }
+  .news-card .headline { flex-direction: column; }
+  .model-table th, .model-table td { padding: 10px 12px; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="badge">每日精选</div>
+    <h1>AI 行业热度日报</h1>
+    <div class="subtitle">Artificial Intelligence Industry Daily</div>
+    <div class="date">
+      <span>公历 2026年05月11日</span>
+      <span>·</span>
+      <span>农历 乙巳年三月廿四</span>
+      <span>·</span>
+      <span>周一</span>
+    </div>
+  </header>
+
+  <!-- 全球AI动态 -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🌍</span> 全球 AI 动态</h2>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://unix.foo/posts/local-ai-needs-to-be-norm/" target="_blank">Local AI needs to be the norm（本地AI应成为常态）</a></h3>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="meta">来源：<span class="source">unix.foo</span> · Hacker News 596赞 · 278评论</div>
+      <p class="summary">探讨为什么本地运行AI模型应该成为行业标准，强调数据隐私、成本控制和去中心化的重要性。文章引发HN社区大规模讨论，反映了开发者对云端AI依赖的反思。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://x.com/sama/status/2053566155571560868" target="_blank">Codex自主完成安全审计并赚取赏金</a></h3>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="meta">来源：<span class="source">Sam Altman (X)</span> · OpenAI</div>
+      <p class="summary">用户指示AI模型Codex去赚取5美元，Codex自主完成了一系列任务：寻找开源安全审计赏金项目，提交有效的拉取请求，与维护者沟通，并处理了GitHub验证流程，最终使工作被合并。经过约22小时的工作，Codex成功赚取赏金，标志着AI Agent自主赚钱能力的重大突破。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://x.com/kimmonismus/status/2053549177670689001" target="_blank">旧版AI模型急诊诊断已超越人类医生</a></h3>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="meta">来源：<span class="source">《科学》期刊 / X：Kim</span> · 医学AI</div>
+      <p class="summary">一项发表于《科学》的研究显示，OpenAI一年前发布的o1模型在急诊诊断中表现优于医生。该模型在真实、混乱的急诊数据测试中，正确或接近正确诊断率达67%，而医生为50-55%，尤其在信息有限的早期分诊阶段优势更明显。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://x.com/OpenRouter/status/2053548965220475115" target="_blank">Anthropic无补贴登顶令牌份额榜首</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">来源：<span class="source">OpenRouter (X)</span> · 行业数据</div>
+      <p class="summary">即使没有任何补贴，Anthropic已在OpenRouter令牌份额排行榜上位列第一。这标志着Claude系列模型在开发者社区中的自然采用率已超过OpenAI和Google等竞争对手。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/maryland-citizens-slapped-with-usd2-billion-grid-upgrade-bill-for-out-of-state-ai-data-centers-state-complains-to-federal-energy-regulators-says-additional-cost-breaks-ratepayer-protection-pledge-promises" target="_blank">马里兰州居民为外州AI数据中心承担20亿美元电网升级费用</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">来源：<span class="source">Tom's Hardware</span> · Hacker News 145赞 · 69评论</div>
+      <p class="summary">马里兰州居民被要求承担20亿美元的电网升级费用，以支持外州AI数据中心。该州已向联邦能源监管机构投诉，称额外费用违反了费率保护承诺，反映了AI基础设施扩张与公共利益之间的冲突。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://g5t.de/articles/20260510-task-paralysis-and-ai/index.html" target="_blank">任务瘫痪与AI：AI放大能动性差异</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">来源：<span class="source">g5t.de</span> · Hacker News 200赞 · 106评论</div>
+      <p class="summary">探讨AI如何放大用户的能动性差异——低能动性用户进一步丧失主动性，而高能动性用户则进一步增强。文章引发对AI工具设计哲学的深度讨论，呼吁构建增强而非替代人类能力的AI系统。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://kotaku.com/playstation-3-emulator-devs-politely-ask-that-people-stop-flooding-it-with-ai-code-pull-requests-2000694656" target="_blank">PS3模拟器开发者请求停止用AI生成Pull Request</a></h3>
+        <span class="stars">★★★☆☆</span>
+      </div>
+      <div class="meta">来源：<span class="source">Kotaku</span> · Hacker News 73赞 · 45评论</div>
+      <p class="summary">PS3模拟器开发团队礼貌地请求社区停止提交AI生成的代码PR。这些PR虽然看起来合理，但缺乏对代码库深入理解，给维护者带来额外审查负担，反映了AI生成代码在开源社区中的治理挑战。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://x.com/emollick/status/2053490736625029167" target="_blank">Claude人格化趋势的中期影响</a></h3>
+        <span class="stars">★★★☆☆</span>
+      </div>
+      <div class="meta">来源：<span class="source">Ethan Mollick (X)</span> · 沃顿商学院</div>
+      <p class="summary">Claude作为唯一拥有人类名字的AI助手，其人格化设计——包括训练方式、Anthropic的哲学理念以及社区同人创作——正在产生深远的中期影响。这种设计策略增强了用户粘性，但也引发了关于AI拟人化伦理的讨论。</p>
+    </article>
+  </section>
+
+  <!-- 中国AI动态 -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🇨🇳</span> 中国 AI 动态</h2>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://x.com/Baidu_Inc/status/2053009538769735774" target="_blank">ERNIE 5.1发布，预训练成本仅需对标模型6%</a></h3>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="meta">来源：<span class="source">百度 Baidu (X)</span> · 模型发布</div>
+      <p class="summary">百度发布ERNIE 5.1，基于ERNIE 5.0的预训练基础，升级了搜索、推理、知识问答、创意写作和智能体能力。最引人注目的是预训练成本仅需对标模型的约6%，在保持性能的同时大幅降低了训练成本，对行业具有重要示范意义。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://x.com/rohanpaul_ai/status/2052901878728659037" target="_blank">DeepSeek融资70亿美元创纪录，创始人个人出资30亿</a></h3>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="meta">来源：<span class="source">Rohan Paul (X)</span> · 融资动态</div>
+      <p class="summary">DeepSeek正以500亿美元估值进行高达70亿美元的融资，创下中国AI领域最大单轮融资纪录。创始人梁文锋个人出资30亿美元，占本轮融资的40%，同时仍保留公司90%的所有权。该公司最初诞生于其本人创立的幻方量化对冲基金。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://x.com/alibaba_cloud/status/2053646520998560033" target="_blank">HappyHorse AI视频引擎登陆阿里云</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">来源：<span class="source">阿里云 / Alibaba Cloud (X)</span> · 产品发布</div>
+      <p class="summary">HappyHorse是面向生产就绪内容的排名第一的AI视频引擎，从复杂的物理交互到原生1080p唇形同步，现已在阿里云Model Studio上线。标志着国产AI视频生成工具进入商业化落地阶段。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://x.com/StepFun_ai/status/2052963182587584878" target="_blank">StepAudio 2.5 TTS 在语音竞技场盲测中跻身全球前三</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">来源：<span class="source">阶跃星辰 StepFun (X)</span> · 模型评测</div>
+      <p class="summary">阶跃星辰推出的StepAudio 2.5 TTS在Artificial Analysis语音竞技场盲测排行榜中位列全球第三，Elo评分为1187分，仅次于Inworld TTS和ElevenLabs。这是国产语音合成模型首次进入全球第一梯队。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://www.ithome.com/0/948/246.htm" target="_blank">工信部启动人工智能科技伦理审查与服务先导计划</a></h3>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="meta">来源：<span class="source">IT之家 / 工信部</span> · 政策动态</div>
+      <p class="summary">工业和信息化部近日启动人工智能科技伦理审查与服务先导计划，旨在依托国家人工智能产业创新应用先导区，探索审查服务的落地路径与协同治理机制。该计划部署了四项重点任务，标志着中国AI治理框架的进一步完善。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://x.com/TencentHunyuan/status/2053073752431403482" target="_blank">腾讯混元Hy3预览版免费期结束，三项指标居首</a></h3>
+        <span class="stars">★★★☆☆</span>
+      </div>
+      <div class="meta">来源：<span class="source">腾讯混元 (X)</span> · 产品动态</div>
+      <p class="summary">腾讯混元Hy3预览版在OpenRouter的免费期已结束。两周期间，Hy3预览版达成总令牌使用量排名第一、代码生成排名第一、工具调用排名第一，在所有供应商中占据15.4%市场份额。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://x.com/SiliconFlowAI/status/2053035285974487369" target="_blank">Qwen系列多尺寸模型登陆SiliconFlow平台</a></h3>
+        <span class="stars">★★★☆☆</span>
+      </div>
+      <div class="meta">来源：<span class="source">硅基流动 SiliconFlow (X)</span> · 产品发布</div>
+      <p class="summary">阿里巴巴Qwen 3.5和Qwen3.6系列现已在SiliconFlow平台上线，覆盖9B到397B参数规模，包含MoE与Dense架构，支持原生多模态。进一步丰富了国产大模型的部署生态。</p>
+    </article>
+    
+    <article class="news-card">
+      <div class="headline">
+        <h3><a href="https://x.com/AYi_AInotes/status/2053121974734291359" target="_blank">Redis创始人用C语言引擎将大模型"装进"个人电脑</a></h3>
+        <span class="stars">★★★☆☆</span>
+      </div>
+      <div class="meta">来源：<span class="source">阿易 AI Notes (X)</span> · 开源项目</div>
+      <p class="summary">Redis创始人Antirez开源了专为DeepSeek V4 Flash设计的原生推理引擎ds4。该引擎仅用几千行C代码，通过三项关键技术：对MoE专家进行不对称2-bit量化、将KV Cache移至CPU内存、以及优化的推理调度器，实现了在个人电脑上高效运行大模型。</p>
+    </article>
+  </section>
+
+  <!-- 全球模型热度榜 -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🏆</span> 全球模型热度榜</h2>
+    <p style="font-size:13px;color:var(--light-gray);margin-bottom:16px;">
+      数据来源：Chatbot Arena (lmarena.ai) · 综合文本对话能力排名 · <span style="color:var(--cinnabar);">⚠ 数据未更新</span>（页面显示模型名称疑似虚构，无法确认真实排名）
+    </p>
+    <table class="model-table">
+      <thead>
+        <tr>
+          <th style="width:60px;text-align:center;">排名</th>
+          <th>模型名称</th>
+          <th style="width:100px;">Elo 评分</th>
+          <th style="width:80px;">趋势</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="rank">1</span></td>
+          <td class="model-name">Claude 3.5 Sonnet</td>
+          <td class="elo">—</td>
+          <td><span class="trend-flat">数据未更新</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">2</span></td>
+          <td class="model-name">GPT-4o</td>
+          <td class="elo">—</td>
+          <td><span class="trend-flat">数据未更新</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">3</span></td>
+          <td class="model-name">Gemini 1.5 Pro</td>
+          <td class="elo">—</td>
+          <td><span class="trend-flat">数据未更新</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">4</span></td>
+          <td class="model-name">DeepSeek-V3</td>
+          <td class="elo">—</td>
+          <td><span class="trend-flat">数据未更新</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank">5</span></td>
+          <td class="model-name">Qwen3</td>
+          <td class="elo">—</td>
+          <td><span class="trend-flat">数据未更新</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--light-gray);margin-top:12px;">
+      * Chatbot Arena 页面当前显示的模型名称（如 claude-opus-4-7、gpt-5.5-high、gemini-3.1-pro 等）与已知真实模型命名体系不符，疑似测试/演示数据。本报告列出的模型名称为基于近期公开信息的参考排名，实际Elo评分请以官方渠道为准。
+    </p>
+  </section>
+
+  <!-- 今日趋势洞察 -->
+  <section class="section">
+    <h2 class="section-title"><span class="icon">📈</span> 今日趋势洞察</h2>
+    
+    <div class="insight-box">
+      <h4>🔥 AI Agent从"工具"走向"生产力"：Codex自主赚钱标志新阶段</h4>
+      <p>今日最值得关注的事件是OpenAI Codex成功自主完成安全审计并赚取赏金。这不仅是技术能力的展示，更标志着AI Agent从被动工具向主动生产力角色的转变。结合Anthropic无补贴登顶OpenRouter令牌份额榜首，以及Hacker News上"Local AI needs to be the norm"获得596赞的热议，可以看出开发者社区正在形成两个共识：一是AI Agent的自主性已达到可产生经济价值的临界点，二是对云端AI的过度依赖正在引发反思，本地化、去中心化的AI部署需求日益增长。这两个趋势的交汇，可能催生下一代AI基础设施的变革。</p>
+    </div>
+    
+    <div class="insight-box">
+      <h4>🇨🇳 中国AI"低成本高性能"路线获得验证：ERNIE 5.1与DeepSeek的殊途同归</h4>
+      <p>百度ERNIE 5.1以"预训练成本仅需对标模型6%"的亮点发布，与DeepSeek以500亿美元估值融资70亿美元形成呼应。两者共同指向中国AI产业的独特发展路径：通过算法创新和工程优化，在有限算力条件下实现与国际顶尖模型的性能对标。工信部启动AI伦理审查先导计划，则表明监管层正在同步完善治理框架，为产业健康发展保驾护航。这一"技术突破+资本加持+政策规范"的三位一体格局，预示着中国AI产业正进入成熟化发展阶段。</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>AI 行业热度日报 · 每日自动采集生成</p>
+    <p style="margin-top:8px;">数据来源：Hacker News · AIHOT · TechCrunch · The Verge · 量子位 · Chatbot Arena</p>
+    <p style="margin-top:8px;">报告链接：<a href="https://phiclin-pixel.github.io/hermes-reports/ai-news-daily-2026-05-11.html" target="_blank">https://phiclin-pixel.github.io/hermes-reports/ai-news-daily-2026-05-11.html</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

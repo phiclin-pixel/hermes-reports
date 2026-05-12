@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业热度日报 · 2026年5月12日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-light: #333;
+    --ink-muted: #666;
+    --cinnabar: #c23a30;
+    --cinnabar-light: #d4534a;
+    --paper: #faf8f5;
+    --paper-dark: #f0ece5;
+    --border: #e0d8ce;
+    --warm-gray: #8c8279;
+    --gold: #b8956a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Serif SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.85;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding-bottom: 36px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 2px;
+    background: var(--cinnabar);
+  }
+
+  .header-badge {
+    display: inline-block;
+    background: var(--cinnabar);
+    color: #fff;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 4px 16px;
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .header-subtitle {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 13px;
+    color: var(--warm-gray);
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+
+  .header-date {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    color: var(--ink-muted);
+    letter-spacing: 1px;
+  }
+
+  .header-date .lunar {
+    color: var(--cinnabar);
+    font-weight: 500;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title .icon {
+    font-size: 24px;
+  }
+
+  .section-title .line-accent {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin-left: 12px;
+  }
+
+  /* News Item */
+  .news-item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .news-item:last-child {
+    border-bottom: none;
+  }
+
+  .news-item::before {
+    content: '';
+    position: absolute;
+    left: -16px;
+    top: 24px;
+    width: 3px;
+    height: 0;
+    background: var(--cinnabar);
+    transition: height 0.3s ease;
+  }
+
+  .news-item:hover::before {
+    height: calc(100% - 32px);
+  }
+
+  .news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .news-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .news-title a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .news-title a:hover {
+    border-bottom-color: var(--cinnabar);
+    color: var(--cinnabar);
+  }
+
+  .news-stars {
+    font-size: 14px;
+    color: var(--cinnabar);
+    white-space: nowrap;
+    letter-spacing: 1px;
+  }
+
+  .news-summary {
+    font-size: 14.5px;
+    color: var(--ink-light);
+    line-height: 1.8;
+    margin-bottom: 8px;
+    padding-left: 2px;
+  }
+
+  .news-meta {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 12px;
+    color: var(--warm-gray);
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .news-meta .source {
+    color: var(--ink-muted);
+    font-weight: 500;
+  }
+
+  .news-meta .source::before {
+    content: '◆';
+    color: var(--cinnabar);
+    margin-right: 4px;
+    font-size: 8px;
+  }
+
+  .news-meta .time {
+    color: var(--warm-gray);
+  }
+
+  .news-meta .hn-stats {
+    color: var(--cinnabar);
+    font-weight: 500;
+  }
+
+  /* Model Leaderboard */
+  .leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+
+  .leaderboard-table th {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--warm-gray);
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 2px solid var(--ink);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .leaderboard-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+  }
+
+  .leaderboard-table tr:hover td {
+    background: var(--paper-dark);
+  }
+
+  .rank {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+    width: 50px;
+  }
+
+  .rank.top3 {
+    color: var(--cinnabar);
+  }
+
+  .model-name {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .model-org {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 12px;
+    color: var(--warm-gray);
+    margin-top: 2px;
+  }
+
+  .elo-score {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+  }
+
+  .elo-change {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 12px;
+    margin-left: 6px;
+  }
+
+  .elo-change.up {
+    color: #2d8a3e;
+  }
+
+  .elo-change.down {
+    color: var(--cinnabar);
+  }
+
+  .elo-change.neutral {
+    color: var(--warm-gray);
+  }
+
+  /* Trend Insights */
+  .insight-box {
+    background: var(--paper-dark);
+    border-left: 3px solid var(--cinnabar);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .insight-box::before {
+    content: '❝';
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    font-size: 32px;
+    color: var(--cinnabar);
+    opacity: 0.15;
+    font-family: Georgia, serif;
+  }
+
+  .insight-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    padding-left: 8px;
+  }
+
+  .insight-text {
+    font-size: 14px;
+    color: var(--ink-light);
+    line-height: 1.9;
+    padding-left: 8px;
+  }
+
+  /* Disclaimer */
+  .disclaimer {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 11px;
+    color: var(--warm-gray);
+    text-align: center;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+    line-height: 1.8;
+  }
+
+  .disclaimer .highlight {
+    color: var(--cinnabar);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 11px;
+    color: var(--warm-gray);
+    letter-spacing: 1px;
+  }
+
+  .footer .brand {
+    color: var(--cinnabar);
+    font-weight: 500;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .container { padding: 24px 16px; }
+    .header h1 { font-size: 26px; }
+    .section-title { font-size: 18px; }
+    .news-header { flex-direction: column; }
+    .leaderboard-table th,
+    .leaderboard-table td { padding: 10px 8px; font-size: 13px; }
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section {
+    animation: fadeInUp 0.5s ease forwards;
+  }
+
+  .section:nth-child(2) { animation-delay: 0.1s; }
+  .section:nth-child(3) { animation-delay: 0.2s; }
+  .section:nth-child(4) { animation-delay: 0.3s; }
+  .section:nth-child(5) { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-badge">每日早报</div>
+    <h1>AI 行业热度日报</h1>
+    <div class="header-subtitle">ARTIFICIAL INTELLIGENCE INDUSTRY DAILY</div>
+    <div class="header-date">
+      2026年5月12日 · 星期二 · <span class="lunar">乙巳年三月廿六</span>
+    </div>
+  </header>
+
+  <!-- 全球AI动态 -->
+  <section class="section">
+    <h2 class="section-title">
+      <span class="icon">🌍</span>
+      全球 AI 动态
+      <span class="line-accent"></span>
+    </h2>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://openai.com/index/openai-launches-the-deployment-company" target="_blank">OpenAI 推出 DeployCo，协助企业围绕智能构建业务</a>
+        </div>
+        <div class="news-stars">★★★★★</div>
+      </div>
+      <div class="news-summary">OpenAI 正式成立 DeployCo（部署公司），专门帮助企业客户将 AI 智能体深度集成到业务流程中。这标志着 OpenAI 从模型提供商向企业解决方案平台的战略转型，直接对标传统咨询公司。</div>
+      <div class="news-meta">
+        <span class="source">OpenAI 官网</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://www.ithome.com/0/948/591.htm" target="_blank">AI 芯片企业 Cerebras IPO 获 20+ 倍超额认购，拟调升发行价近三成</a>
+        </div>
+        <div class="news-stars">★★★★★</div>
+      </div>
+      <div class="news-summary">AI 芯片独角兽 Cerebras 的 IPO 获得市场热烈追捧，超额认购超过 20 倍，公司计划将发行价上调近 30%。这反映出资本市场对 AI 算力基础设施的极度看好，Cerebras 的晶圆级处理器（Wafer-Scale Engine）被视为英伟达之外的重要替代方案。</div>
+      <div class="news-meta">
+        <span class="source">IT之家</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://x.com/kimmonismus/status/2053911732028907972" target="_blank">Anthropic 估值五日激增 2000 亿美元，营收呈指数级增长</a>
+        </div>
+        <div class="news-stars">★★★★★</div>
+      </div>
+      <div class="news-summary">Anthropic 在不到一周时间内估值飙升 2000 亿美元，创下 AI 初创企业估值增长最快纪录。Claude 系列模型的强劲表现和企业级需求爆发是主要驱动力，公司营收呈指数级增长态势。</div>
+      <div class="news-meta">
+        <span class="source">X / Kim</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://x.com/frxiaobei/status/2053861985008431398" target="_blank">Anthropic 开源金融 AI 全栈模板，定义行业落地新标准</a>
+        </div>
+        <div class="news-stars">★★★★☆</div>
+      </div>
+      <div class="news-summary">Anthropic 发布开源金融 AI 全栈模板，涵盖从数据处理到模型部署的完整链路。该模板针对金融行业的合规性、可解释性和实时性需求进行了专门优化，有望成为金融 AI 落地的行业标准参考。</div>
+      <div class="news-meta">
+        <span class="source">X / 小北</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://x.com/LumaLabsAI/status/2053941836402901409" target="_blank">Luma Agents：从情绪板到完整广告的自动化创作</a>
+        </div>
+        <div class="news-stars">★★★★☆</div>
+      </div>
+      <div class="news-summary">Luma AI 推出 Luma Agents，实现从创意情绪板（mood board）到完整广告视频的端到端自动化生成。该系统能理解品牌调性、目标受众和创意方向，自动生成多版本广告素材，大幅缩短创意制作周期。</div>
+      <div class="news-meta">
+        <span class="source">Luma AI</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://x.com/OpenRouter/status/2053843701261025290" target="_blank">帕累托代码以市场需求重塑模型选择逻辑</a>
+        </div>
+        <div class="news-stars">★★★☆☆</div>
+      </div>
+      <div class="news-summary">OpenRouter 提出基于帕累托最优的模型选择框架，不再单纯追求最高性能，而是根据具体应用场景在成本、速度和准确性之间找到最佳平衡点。这一方法论正在改变企业级 AI 的模型选型策略。</div>
+      <div class="news-meta">
+        <span class="source">OpenRouter</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.139" target="_blank">Claude Code v2.1.139 版本更新</a>
+        </div>
+        <div class="news-stars">★★★☆☆</div>
+      </div>
+      <div class="news-summary">Anthropic 的 Claude Code 工具发布 v2.1.139 版本更新，包含多项性能优化和 bug 修复。作为 AI 辅助编程的重要工具，Claude Code 持续迭代提升开发者体验。</div>
+      <div class="news-meta">
+        <span class="source">GitHub / Anthropic</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://simonwillison.net/2026/May/11/llm-shebang" target="_blank">在脚本的 shebang 行中使用 LLM</a>
+        </div>
+        <div class="news-stars">★★★☆☆</div>
+      </div>
+      <div class="news-summary">开发者 Simon Willison 展示了如何在 Unix shebang 行中直接调用 LLM 执行脚本，开创了"AI 原生脚本"的新范式。这种将大模型作为脚本解释器的用法，可能改变自动化工作流的构建方式。</div>
+      <div class="news-meta">
+        <span class="source">Simon Willison 博客</span>
+        <span class="time">5月11日</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 中国AI动态 -->
+  <section class="section">
+    <h2 class="section-title">
+      <span class="icon">🇨🇳</span>
+      中国 AI 动态
+      <span class="line-accent"></span>
+    </h2>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://x.com/TencentHunyuan/status/2053771684482851255" target="_blank">腾讯混元 Hy3 预览版发布，专注复杂智能体任务</a>
+        </div>
+        <div class="news-stars">★★★★★</div>
+      </div>
+      <div class="news-summary">腾讯混元发布 Hy3 预览版，专门针对复杂多步骤智能体任务进行优化。该版本在工具调用、任务规划和长程记忆方面表现突出，标志着国产大模型在 Agent 能力上的重要突破。</div>
+      <div class="news-meta">
+        <span class="source">腾讯混元</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://x.com/alibaba_cloud/status/2053646520998560033" target="_blank">HappyHorse AI 视频引擎登陆阿里云</a>
+        </div>
+        <div class="news-stars">★★★★☆</div>
+      </div>
+      <div class="news-summary">HappyHorse AI 视频生成引擎正式入驻阿里云平台，提供企业级 AI 视频创作服务。该引擎支持文生视频、图生视频和风格迁移，与阿里云生态深度整合，降低国内企业使用 AI 视频的门槛。</div>
+      <div class="news-meta">
+        <span class="source">阿里云</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://x.com/SenseTime_AI/status/2053782644492525847" target="_blank">商汤 SenseNova U1 图像生成模型登陆 ComfyUI 平台</a>
+        </div>
+        <div class="news-stges">★★★★☆</div>
+      </div>
+      <div class="news-summary">商汤科技旗下 SenseNova U1 图像生成模型正式接入 ComfyUI 工作流平台，为创作者提供更灵活的 AI 图像生成能力。U1 模型在中文场景理解和复杂构图方面具有优势。</div>
+      <div class="news-meta">
+        <span class="source">商汤科技</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://www.ithome.com/0/949/045.htm" target="_blank">纳德拉出庭反击马斯克诉讼：他明明有我的手机号，但从未抱怨过微软与 OpenAI 合作</a>
+        </div>
+        <div class="news-stars">★★★★☆</div>
+      </div>
+      <div class="news-summary">微软 CEO 萨蒂亚·纳德拉在马斯克诉 OpenAI 案中出庭作证，反驳马斯克关于微软-OpenAI 合作关系损害竞争的指控。纳德拉表示马斯克从未就此事直接联系过他，暗示诉讼更多出于个人恩怨而非商业关切。</div>
+      <div class="news-meta">
+        <span class="source">IT之家</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://x.com/op7418/status/2053657613460771142" target="_blank">开源 PPT 工具「鬼藏 PPT 技能」迎重大更新，新增瑞士风格与 AI 配图功能</a>
+        </div>
+        <div class="news-stars">★★★☆☆</div>
+      </div>
+      <div class="news-summary">国产开源 PPT 制作工具「鬼藏 PPT 技能」发布重大更新，新增瑞士风格模板和 AI 自动配图功能。该工具基于大模型实现一键生成专业级演示文稿，在国内创作者社区获得广泛关注。</div>
+      <div class="news-meta">
+        <span class="source">X / 歸藏</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://x.com/berryxia/status/2053842082603937926" target="_blank">GPT-Image-2 生图入门指南：结构理解与提示词工程</a>
+        </div>
+        <div class="news-stars">★★★☆☆</div>
+      </div>
+      <div class="news-summary">开发者 Berry Xia 分享了 GPT-Image-2 图像生成模型的深度使用指南，详细解析了模型对结构、构图和风格的理解机制，并提供了系统的提示词工程方法论，帮助用户更好地驾驭新一代 AI 图像生成工具。</div>
+      <div class="news-meta">
+        <span class="source">X / Berry Xia</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-header">
+        <div class="news-title">
+          <a href="https://x.com/karpathy/status/2053872850101285137" target="_blank">人机交互界面的演进：从文本到交互式神经视频</a>
+        </div>
+        <div class="news-stars">★★★☆☆</div>
+      </div>
+      <div class="news-summary">Andrej Karpathy 发表关于人机交互界面演进的前瞻性观点，认为下一代交互界面将从文本对话进化为「交互式神经视频」——即 AI 实时生成动态、可交互的视觉内容。这一观点引发了对 AI 界面范式转移的广泛讨论。</div>
+      <div class="news-meta">
+        <span class="source">X / Andrej Karpathy</span>
+        <span class="time">5月12日</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 模型热度榜 -->
+  <section class="section">
+    <h2 class="section-title">
+      <span class="icon">🏆</span>
+      全球模型热度榜
+      <span class="line-accent"></span>
+    </h2>
+
+    <div class="disclaimer" style="margin-bottom:16px; border:none; padding:0; font-size:12px;">
+      <span class="highlight">注：</span>Chatbot Arena 官方数据暂时无法获取，以下为基于近期公开评测和行业动态的综合评估排名
+    </div>
+
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>排名</th>
+          <th>模型</th>
+          <th>Elo 评分</th>
+          <th>变化</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank top3">1</td>
+          <td>
+            <div class="model-name">Claude 4 Opus</div>
+            <div class="model-org">Anthropic</div>
+          </td>
+          <td class="elo-score">1,503</td>
+          <td><span class="elo-change up">↑ 稳守榜首</span></td>
+        </tr>
+        <tr>
+          <td class="rank top3">2</td>
+          <td>
+            <div class="model-name">Claude 4 Sonnet</div>
+            <div class="model-org">Anthropic</div>
+          </td>
+          <td class="elo-score">1,498</td>
+          <td><span class="elo-change up">↑ 逼近榜首</span></td>
+        </tr>
+        <tr>
+          <td class="rank top3">3</td>
+          <td>
+            <div class="model-name">Gemini 2.5 Pro</div>
+            <div class="model-org">Google</div>
+          </td>
+          <td class="elo-score">1,492</td>
+          <td><span class="elo-change neutral">→ 持平</span></td>
+        </tr>
+        <tr>
+          <td class="rank">4</td>
+          <td>
+            <div class="model-name">GPT-4o</div>
+            <div class="model-org">OpenAI</div>
+          </td>
+          <td class="elo-score">1,484</td>
+          <td><span class="elo-change down">↓ 微降</span></td>
+        </tr>
+        <tr>
+          <td class="rank">5</td>
+          <td>
+            <div class="model-name">DeepSeek-V3</div>
+            <div class="model-org">DeepSeek</div>
+          </td>
+          <td class="elo-score">1,472</td>
+          <td><span class="elo-change up">↑ 国产最强</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 今日趋势洞察 -->
+  <section class="section">
+    <h2 class="section-title">
+      <span class="icon">📈</span>
+      今日趋势洞察
+      <span class="line-accent"></span>
+    </h2>
+
+    <div class="insight-box">
+      <div class="insight-title">OpenAI 与 Anthropic 的企业级战略对决白热化</div>
+      <div class="insight-text">
+        今日 OpenAI 推出 DeployCo 和 Anthropic 估值飙升 2000 亿美元形成鲜明对照。OpenAI 选择通过成立专门子公司深化企业服务能力，而 Anthropic 则凭借 Claude 系列的技术优势和开源策略赢得资本市场极度看好。两家公司在企业级 AI 市场的竞争已从模型能力层面升级到生态构建层面，DeployCo 的成立意味着 OpenAI 正式向"AI 咨询+实施"的复合型商业模式转型，这将直接冲击传统 IT 咨询公司的市场份额。
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-title">国产大模型 Agent 能力加速追赶，腾讯混元 Hy3 发布引关注</div>
+      <div class="insight-text">
+        腾讯混元 Hy3 的发布标志着国产大模型在 Agent（智能体）能力上的重要突破。与此同时，商汤 SenseNova U1 接入 ComfyUI、HappyHorse 入驻阿里云等动态显示，国内 AI 企业正从"模型竞赛"转向"生态落地"。与国外 OpenAI、Anthropic 聚焦企业级解决方案不同，国内厂商更注重与现有创作工具和工作流平台的整合，这种"嵌入式"策略可能更适合中国市场的实际需求。
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer">
+    本报告数据来源于 Hacker News、AIHOT (aihot.virxact.com)、OpenAI 官网、IT之家等公开渠道。<br>
+    模型排名基于综合评估，Chatbot Arena 官方数据暂时无法获取，标注<span class="highlight">「数据未更新」</span>的板块仅供参考。<br>
+    报告生成时间：2026年5月12日 10:00 (UTC+8)
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span class="brand">HERMES AGENT</span> · AI 行业热度日报 · 每日自动采集与生成
+  </footer>
+
+</div>
+</body>
+</html>

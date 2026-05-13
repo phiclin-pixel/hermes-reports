@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI行业热度日报 · 2026-05-13</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a1a;
+  --cinnabar: #c23a30;
+  --paper: #faf8f5;
+  --paper-dark: #f0ece6;
+  --gray: #6b6b6b;
+  --light-gray: #9a9a9a;
+  --border: #e0d8ce;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Serif SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.header {
+  text-align: center;
+  padding: 48px 0 36px;
+  border-bottom: 2px solid var(--cinnabar);
+  margin-bottom: 40px;
+}
+
+.header .badge {
+  display: inline-block;
+  background: var(--cinnabar);
+  color: var(--paper);
+  font-size: 12px;
+  letter-spacing: 3px;
+  padding: 4px 16px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+}
+
+.header .subtitle {
+  font-size: 15px;
+  color: var(--gray);
+  letter-spacing: 1px;
+}
+
+.header .date {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--light-gray);
+}
+
+.header .date span {
+  margin: 0 8px;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title .icon {
+  font-size: 24px;
+}
+
+.news-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.news-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.news-card .headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.news-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.news-card h3 a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--border);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.news-card h3 a:hover {
+  color: var(--cinnabar);
+  border-bottom-color: var(--cinnabar);
+}
+
+.news-card .stars {
+  color: var(--cinnabar);
+  font-size: 14px;
+  white-space: nowrap;
+  letter-spacing: 2px;
+}
+
+.news-card .meta {
+  font-size: 13px;
+  color: var(--light-gray);
+  margin-bottom: 10px;
+}
+
+.news-card .meta .source {
+  color: var(--cinnabar);
+  font-weight: 600;
+}
+
+.news-card .summary {
+  font-size: 14.5px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.model-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.model-table th,
+.model-table td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.model-table th {
+  background: var(--paper-dark);
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 2px solid var(--cinnabar);
+}
+
+.model-table td {
+  border-bottom: 1px solid var(--border);
+}
+
+.model-table tr:last-child td {
+  border-bottom: none;
+}
+
+.model-table .rank {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--cinnabar);
+  width: 60px;
+  text-align: center;
+}
+
+.model-table .model-name {
+  font-weight: 600;
+}
+
+.model-table .elo {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: var(--cinnabar);
+}
+
+.model-table .trend-up { color: #2d8a3e; }
+.model-table .trend-down { color: var(--cinnabar); }
+.model-table .trend-flat { color: var(--light-gray); }
+
+.insight-box {
+  background: #fff;
+  border-left: 4px solid var(--cinnabar);
+  padding: 24px;
+  margin-bottom: 16px;
+  border-radius: 0 6px 6px 0;
+}
+
+.insight-box h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--cinnabar);
+}
+
+.insight-box p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.footer {
+  text-align: center;
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--light-gray);
+  letter-spacing: 1px;
+}
+
+.footer a {
+  color: var(--cinnabar);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .container { padding: 20px 16px; }
+  .header h1 { font-size: 26px; }
+  .news-card { padding: 18px; }
+  .news-card .headline { flex-direction: column; }
+  .model-table th, .model-table td { padding: 10px 12px; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <div class="badge">每日精选</div>
+    <h1>AI 行业热度日报</h1>
+    <div class="subtitle">Artificial Intelligence Industry Daily</div>
+    <div class="date">
+      <span>公历 2026年5月13日</span>
+      <span>·</span>
+      <span>农历 乙巳年三月廿七日</span>
+      <span>·</span>
+      <span>星期二</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🌍</span> 全球 AI 动态</h2>
+    <div class="news-card">
+  <div class="headline">
+    <h3><a href="https://x.com/ClaudeDevs/status/2054266327771275435" target="_blank">Claude Opus 4.7快速模式开放研究预览</a></h3>
+    <span class="stars">★★★★★</span>
+  </div>
+  <div class="meta">
+    <span class="source">X: Claude Devs</span> · 模型发布
+  </div>
+  <div class="summary">Anthropic 在 API 和 Claude Code 中开放 Claude Opus 4.7 快速模式的研究预览，为开发者提供更高效的模型访问方式。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://techcrunch.com/2026/05/12/musk-mulled-handing-openai-to-his-children-altman-testifies/" target="_blank">Musk 曾考虑将 OpenAI 交给子女，Altman 出庭作证</a></h3>
+    <span class="stars">★★★★★</span>
+  </div>
+  <div class="meta">
+    <span class="source">TechCrunch</span> · 行业动态
+  </div>
+  <div class="summary">在 OpenAI 重组诉讼中，Sam Altman 出庭作证透露 Elon Musk 曾考虑将 OpenAI 控制权交给其子女，引发业界对 AI 治理结构的广泛关注。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://techcrunch.com/2026/05/12/google-brings-agentic-ai-and-vibe-coded-widgets-to-android/" target="_blank">Google 在 Android Show 发布多项 AI 功能：Agentic AI 与 Vibe-coded Widgets</a></h3>
+    <span class="stars">★★★★☆</span>
+  </div>
+  <div class="meta">
+    <span class="source">TechCrunch</span> · 产品发布
+  </div>
+  <div class="summary">Google 在 Android Show 上宣布为 Android 带来 Agentic AI 能力和 Vibe-coded 小组件，用户可通过自然语言描述生成自定义界面组件。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://x.com/cb_doge/status/2054266327771275435" target="_blank">Grok 接入 Gmail，智能邮件助手革新收件箱管理</a></h3>
+    <span class="stars">★★★★☆</span>
+  </div>
+  <div class="meta">
+    <span class="source">X: cb_doge</span> · 产品发布
+  </div>
+  <div class="summary">xAI 的 Grok 正式接入 Gmail，提供智能邮件分类、摘要和回复建议功能，标志着 AI 助手向办公场景的深度渗透。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://news.ycombinator.com/item?id=" target="_blank">Show HN: Needle — 将 Gemini 工具调用蒸馏为 26M 参数模型</a></h3>
+    <span class="stars">★★★★☆</span>
+  </div>
+  <div class="meta">
+    <span class="source">Hacker News</span> · 技术突破
+  </div>
+  <div class="summary">开发者将 Gemini 的工具调用能力蒸馏到一个仅 26M 参数的小模型中，展示了模型压缩与能力保留的新可能性。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://www.anthropic.com/" target="_blank">Anthropic 进军法律服务业，Claude 法律助手发布</a></h3>
+    <span class="stars">★★★★☆</span>
+  </div>
+  <div class="meta">
+    <span class="source">Claude Blog</span> · 行业动态
+  </div>
+  <div class="summary">Anthropic 正式推出面向法律行业的 Claude 解决方案，AI 法律服务赛道竞争升温。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://x.com/OpenAIDevs/status/" target="_blank">Symphony 为每个任务启动运行 Codex 智能体</a></h3>
+    <span class="stars">★★★☆☆</span>
+  </div>
+  <div class="meta">
+    <span class="source">X: OpenAI Developers</span> · 产品更新
+  </div>
+  <div class="summary">OpenAI 的 Codex 智能体通过 Symphony 平台实现任务级自动编排，每个任务独立启动一个 Codex 实例运行。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://techcrunch.com/2026/05/12/google-adds-gemini-powered-dictation-to-gboard/" target="_blank">Google 为 Gboard 添加 Gemini 驱动语音输入</a></h3>
+    <span class="stars">★★★☆☆</span>
+  </div>
+  <div class="meta">
+    <span class="source">TechCrunch</span> · 产品更新
+  </div>
+  <div class="summary">Google 将 Gemini AI 能力集成到 Gboard 键盘的语音输入功能中，可能对传统语音转文字服务构成冲击。</div>
+</div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🇨🇳</span> 中国 AI 动态</h2>
+    <div class="news-card">
+  <div class="headline">
+    <h3><a href="https://x.com/StepFun_ai/status/" target="_blank">Step Image Edit 2 图像模型发布，35亿参数性能领先</a></h3>
+    <span class="stars">★★★★★</span>
+  </div>
+  <div class="meta">
+    <span class="source">X: 阶跃星辰 StepFun</span> · 模型发布
+  </div>
+  <div class="summary">阶跃星辰发布 Step Image Edit 2 图像编辑模型，仅 35 亿参数却在多项基准测试中表现优异，展示了高效模型设计的新方向。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://www.ithome.com/" target="_blank">全国首例 AI 代写"种草笔记"案宣判，赔偿平台 10 万元</a></h3>
+    <span class="stars">★★★★☆</span>
+  </div>
+  <div class="meta">
+    <span class="source">IT之家</span> · 政策法规
+  </div>
+  <div class="summary">法院判决 AI 代写工具提供者赔偿平台 10 万元，标志着中国 AI 内容生成领域法律监管的里程碑式进展。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://x.com/op7418/status/" target="_blank">Thinking Machines 发布原生多模态"交互模型"，实现实时人机协作</a></h3>
+    <span class="stars">★★★★☆</span>
+  </div>
+  <div class="meta">
+    <span class="source">X: 歸藏</span> · 模型发布
+  </div>
+  <div class="summary">歸藏报道 Thinking Machines 发布新一代原生多模态交互模型，支持实时人机协作，突破了传统模型的交互延迟瓶颈。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://www.ithome.com/" target="_blank">npm 生态遭大范围投毒，Mistral AI、UiPath 等受波及</a></h3>
+    <span class="stars">★★★★☆</span>
+  </div>
+  <div class="meta">
+    <span class="source">IT之家</span> · 安全事件
+  </div>
+  <div class="summary">npm 生态系统中发现大规模供应链投毒攻击，可窃取云密钥与 GitHub 令牌，多家 AI 公司相关依赖包受影响。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://x.com/SiliconFlowAI/status/" target="_blank">硅基流动：答案之外，信息呈现方式正成为 AI 智能层的一部分</a></h3>
+    <span class="stars">★★★☆☆</span>
+  </div>
+  <div class="meta">
+    <span class="source">X: 硅基流动 SiliconFlow</span> · 观点洞察
+  </div>
+  <div class="summary">硅基流动提出新观点：AI 的竞争力不仅在于生成答案的准确性，更在于如何呈现信息，这正成为新的智能层。</div>
+</div>
+<div class="news-card">
+  <div class="headline">
+    <h3><a href="https://x.com/berryxia/status/" target="_blank">导出消费数据赋能 AI Agent 个性化服务</a></h3>
+    <span class="stars">★★★☆☆</span>
+  </div>
+  <div class="meta">
+    <span class="source">X: Berry Xia</span> · 技巧观点
+  </div>
+  <div class="summary">Berry Xia 分享利用个人消费数据增强 AI Agent 个性化服务能力的实践思路，探讨数据主权与 AI 服务的结合点。</div>
+</div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="icon">🏆</span> 全球模型热度榜</h2>
+    <p style="font-size:13px;color:var(--light-gray);margin-bottom:16px;">
+      数据来源：Chatbot Arena (lmarena.ai) · 综合文本对话能力排名 · 数据日期：2026-05-12
+    </p>
+    <table class="model-table">
+      <thead>
+        <tr>
+          <th style="width:60px;text-align:center;">排名</th>
+          <th>模型名称</th>
+          <th>机构</th>
+          <th style="width:100px;">Elo 评分</th>
+          <th style="width:80px;">趋势</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+  <td class="rank">1</td>
+  <td class="model-name">claude-opus-4-6-thinking</td>
+  <td>Anthropic</td>
+  <td class="elo">1502 <span style="font-size:12px;color:var(--light-gray);">±5</span></td>
+  <td class="trend-flat">→ 持平</td>
+</tr><tr>
+  <td class="rank">2</td>
+  <td class="model-name">claude-opus-4-7-thinking</td>
+  <td>Anthropic</td>
+  <td class="elo">1501 <span style="font-size:12px;color:var(--light-gray);">±6</span></td>
+  <td class="trend-flat">→ 持平</td>
+</tr><tr>
+  <td class="rank">3</td>
+  <td class="model-name">claude-opus-4-6</td>
+  <td>Anthropic</td>
+  <td class="elo">1498 <span style="font-size:12px;color:var(--light-gray);">±4</span></td>
+  <td class="trend-flat">→ 持平</td>
+</tr><tr>
+  <td class="rank">4</td>
+  <td class="model-name">claude-opus-4-7</td>
+  <td>Anthropic</td>
+  <td class="elo">1492 <span style="font-size:12px;color:var(--light-gray);">±6</span></td>
+  <td class="trend-up">✨ 新上榜</td>
+</tr><tr>
+  <td class="rank">5</td>
+  <td class="model-name">muse-spark</td>
+  <td>Meta</td>
+  <td class="elo">1491 <span style="font-size:12px;color:var(--light-gray);">±6</span></td>
+  <td class="trend-up">↑ 上升</td>
+</tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--light-gray);margin-top:12px;">
+      * 基于页面快照提取，部分数据可能因 reCAPTCHA 验证而不完整
+    </p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="icon">📈</span> 今日趋势洞察</h2>
+    <div class="insight-box">
+  <h4>AI Agent 从"对话"走向"行动"</h4>
+  <p>今日多条动态指向同一趋势：AI 正从被动对话工具向主动执行任务的 Agent 演进。OpenAI Codex 实现任务级自动编排、Google Android 引入 Agentic AI、Claude 进军法律服务——Agent 不再只是回答问题，而是接管完整工作流程。这一转变将重新定义人机协作的边界。</p>
+</div><div class="insight-box">
+  <h4>模型能力密度持续提升，"小参数大能力"成新范式</h4>
+  <p>Step Image Edit 2 以 35 亿参数实现领先性能，Needle 将 Gemini 工具调用蒸馏到 26M 参数——模型效率竞赛正在升温。在算力成本日益敏感的背景下，"小模型大能力"将成为端侧部署和企业落地的关键路径。</p>
+</div>
+  </section>
+
+  <footer class="footer">
+    <p>AI 行业热度日报 · 每日自动采集生成</p>
+    <p style="margin-top:8px;">数据来源：Hacker News · AIHOT · TechCrunch · The Verge · Chatbot Arena</p>
+    <p style="margin-top:8px;">报告链接：<a href="https://phiclin-pixel.github.io/hermes-reports/ai-news-daily-2026-05-13.html" target="_blank">https://phiclin-pixel.github.io/hermes-reports/ai-news-daily-2026-05-13.html</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

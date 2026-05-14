@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业日报 · 2026年5月14日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf8f5;
+  --ink: #1a1a1a;
+  --ink-light: #4a4a4a;
+  --cinnabar: #c23a30;
+  --cinnabar-light: #d4635a;
+  --warm-gray: #8c8279;
+  --border: #e8e4df;
+  --card-bg: #ffffff;
+  --highlight: #f5f0eb;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* 刊头 */
+.masthead {
+  text-align: center;
+  padding-bottom: 32px;
+  border-bottom: 3px solid var(--cinnabar);
+  margin-bottom: 32px;
+}
+.masthead h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 8px;
+  color: var(--cinnabar);
+  margin-bottom: 8px;
+}
+.masthead .subtitle {
+  font-size: 0.9rem;
+  color: var(--warm-gray);
+  letter-spacing: 2px;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+.masthead .date-line {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-family: 'Noto Sans SC', sans-serif;
+}
+.masthead .date-line span {
+  margin: 0 12px;
+}
+
+/* 主编导语 */
+.lead {
+  background: var(--card-bg);
+  border-left: 4px solid var(--cinnabar);
+  padding: 24px 28px;
+  margin-bottom: 36px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.lead h2 {
+  font-size: 1.1rem;
+  color: var(--cinnabar);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.lead p {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.9;
+}
+
+/* 版块标题 */
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 40px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title .icon {
+  font-size: 1.4rem;
+}
+.section-title.global { color: #2c5282; border-color: #bee3f8; }
+.section-title.china { color: var(--cinnabar); border-color: #fed7d7; }
+.section-title.trend { color: #276749; border-color: #c6f6d5; }
+.section-title.flash { color: var(--warm-gray); border-color: var(--border); }
+
+/* 新闻条目 */
+.news-item {
+  background: var(--card-bg);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s;
+}
+.news-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.news-item .num {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  background: var(--cinnabar);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-right: 10px;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+.news-item h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: inline;
+  line-height: 1.6;
+}
+.news-item .source {
+  font-size: 0.8rem;
+  color: var(--warm-gray);
+  margin-top: 6px;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+.news-item .source::before {
+  content: '— ';
+}
+.news-item .summary {
+  font-size: 0.92rem;
+  color: var(--ink-light);
+  margin-top: 10px;
+  line-height: 1.75;
+}
+.news-item .link {
+  margin-top: 10px;
+}
+.news-item .link a {
+  font-size: 0.8rem;
+  color: var(--cinnabar);
+  text-decoration: none;
+  word-break: break-all;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+.news-item .link a:hover {
+  text-decoration: underline;
+}
+.news-item .tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-left: 8px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 500;
+}
+.tag-model { background: #ebf8ff; color: #2b6cb0; }
+.tag-product { background: #faf5ff; color: #6b46c1; }
+.tag-industry { background: #fffaf0; color: #c05621; }
+.tag-paper { background: #f0fff4; color: #276749; }
+.tag-tip { background: #f7fafc; color: #4a5568; }
+
+/* 趋势洞察 */
+.trend-box {
+  background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+  border: 1px solid #c6f6d5;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 16px;
+}
+.trend-box ul {
+  list-style: none;
+  padding: 0;
+}
+.trend-box li {
+  padding: 10px 0;
+  padding-left: 24px;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--ink-light);
+  line-height: 1.7;
+}
+.trend-box li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--cinnabar);
+  font-weight: 700;
+}
+
+/* 快讯 */
+.flash-list {
+  background: var(--highlight);
+  border-radius: 6px;
+  padding: 20px 24px;
+}
+.flash-list li {
+  padding: 8px 0;
+  font-size: 0.9rem;
+  color: var(--ink-light);
+  border-bottom: 1px dashed var(--border);
+  list-style: none;
+}
+.flash-list li:last-child { border-bottom: none; }
+
+/* 页脚 */
+.footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--warm-gray);
+  font-family: 'Noto Sans SC', sans-serif;
+}
+.footer a {
+  color: var(--cinnabar);
+  text-decoration: none;
+}
+
+/* 影响指数 */
+.stars {
+  color: #d69e2e;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-left: 8px;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 24px 16px; }
+  .masthead h1 { font-size: 1.6rem; letter-spacing: 4px; }
+  .news-item { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 刊头 -->
+<div class="masthead">
+  <h1>AI 行业日报</h1>
+  <div class="subtitle">ARTIFICIAL INTELLIGENCE DAILY BRIEFING</div>
+  <div class="date-line">
+    <span>2026年5月14日</span>
+    <span>·</span>
+    <span>农历三月廿八</span>
+    <span>·</span>
+    <span>星期三</span>
+  </div>
+</div>
+
+<!-- 主编导语 -->
+<div class="lead">
+  <h2>主编导语</h2>
+  <p>今日AI行业聚焦模型发布、产品创新与行业格局变化。腾讯混元Hy3预览版登陆GMI，商汤发布SenseNova-U1技术报告，Anthropic推出面向小型企业的Claude服务包并传出巨额融资消息，Runway Agent革新AI视频创作流程。</p>
+</div>
+
+<!-- 全球 AI 动态 -->
+<div class="section-title global">
+  <span class="icon">🌍</span>
+  <span>全球 AI 动态</span>
+</div>
+
+<div class="news-item">
+  <span class="num">1</span>
+  <h3>Anthropic 推出面向小型企业的 Claude 服务包</h3>
+  <span class="stars">★★★★★</span>
+  <div class="source">Anthropic：Newsroom（网页）</div>
+  <div class="summary">Anthropic 推出"Claude for Small Business"服务包，包含一系列连接器和15个开箱即用的自动化工作流，能将Claude深度集成到QuickBooks、PayPal、HubSpot等企业日常工具中，自动化处理财务、运营、销售等领域的重复性任务。</div>
+  <div class="link"><a href="https://www.anthropic.com/news/claude-for-small-business" target="_blank">https://www.anthropic.com/news/claude-for-small-business</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">2</span>
+  <h3>Runway 正式发布 Runway Agent</h3>
+  <span class="stars">★★★★★</span>
+  <div class="source">Runway：News（网页）</div>
+  <div class="summary">Runway Agent 是一个能够通过单次对话将创意想法转化为完整、可发布视频的智能创作伙伴。用户只需用自然语言描述需求，Agent 便能自主完成概念提案、故事节奏设计、视觉方向规划，并最终生成包含多场景、旁白、对话和音乐的成片。</div>
+  <div class="link"><a href="https://runwayml.com/news/introducing-runway-agent" target="_blank">https://runwayml.com/news/introducing-runway-agent</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">3</span>
+  <h3>Krea 2 发布访问码，限量体验</h3>
+  <span class="stars">★★★★☆</span>
+  <div class="source">X：Krea AI (@krea_ai)</div>
+  <div class="summary">Krea 2 访问码发放！K2-PRFUF8 / K2-NRWW9E / K2-CAP48S — 每个码可使用50次。Krea 2 是首个完全从零开始构建的基础模型，专为美学多样性和风格控制而设计。</div>
+  <div class="link"><a href="https://x.com/krea_ai/status/2054611917365526793" target="_blank">https://x.com/krea_ai/status/2054611917365526793</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">4</span>
+  <h3>全球首个全 AI 运营的在线广播电台上线</h3>
+  <span class="stars">★★★★☆</span>
+  <div class="source">X：Kim (@kimmonismus)</div>
+  <div class="summary">全球首个完全由AI运营的在线广播电台在X平台正式开播，由五名具备独立编辑判断、记忆和个性的AI主播主持，能实时播报突发新闻、提供新闻综述、追踪初创公司融资，并整合社区讨论与行业真实观点进行实时辩论。</div>
+  <div class="link"><a href="https://x.com/kimmonismus/status/2054562237684051974" target="_blank">https://x.com/kimmonismus/status/2054562237684051974</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">5</span>
+  <h3>Claude 付费计划将提供月度编程使用额度</h3>
+  <span class="stars">★★★★☆</span>
+  <div class="source">X：Claude Devs (@ClaudeDevs)</div>
+  <div class="summary">Claude 付费计划用户将获得月度编程使用额度，进一步降低开发者使用 Claude 进行代码生成和调试的成本。</div>
+  <div class="link"><a href="https://x.com/ClaudeDevs" target="_blank">https://x.com/ClaudeDevs</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">6</span>
+  <h3>Codex 应用内浏览器升级，提升多视口测试与标注效率</h3>
+  <span class="stars">★★★☆☆</span>
+  <div class="source">X：Tibo (@thsottiaux)</div>
+  <div class="summary">Codex 应用内浏览器支持在不同视口尺寸下测试应用，可控制设备工具栏、在不同断点进行点击验证。隐藏浏览器可禁用动画使测试速度提升1-2倍，标注功能现在发送更快且消耗更少tokens。</div>
+  <div class="link"><a href="https://x.com/thsottiaux/status/2054398093886673260" target="_blank">https://x.com/thsottiaux/status/2054398093886673260</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">7</span>
+  <h3>Anthropic 首次在 B2B 采用率上超越 OpenAI</h3>
+  <span class="stars">★★★★★</span>
+  <div class="source">The Decoder：AI News（RSS）</div>
+  <div class="summary">Ramp 支出数据显示，Anthropic 首次在企业B2B采用率上超越 OpenAI，标志着 Claude 在企业市场的快速渗透和认可。</div>
+  <div class="link"><a href="https://the-decoder.com" target="_blank">https://the-decoder.com</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">8</span>
+  <h3>ExploitGym：AI 智能体能否将安全漏洞转化为真实攻击？</h3>
+  <span class="stars">★★★☆☆</span>
+  <div class="source">Berkeley RDI：Blog（AI 安全与评测）</div>
+  <div class="summary">伯克利 RDI 发布 ExploitGym 研究，探讨 AI 智能体在识别和利用安全漏洞方面的能力边界，为AI安全研究提供新的评测框架。</div>
+  <div class="link"><a href="https://rdi.berkeley.edu" target="_blank">https://rdi.berkeley.edu</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">9</span>
+  <h3>人形机器人已能自主完成 8 小时轮班</h3>
+  <span class="stars">★★★★☆</span>
+  <div class="source">X：Kim (@kimmonismus)</div>
+  <div class="summary">人形机器人在实际工作场景中已实现自主完成8小时轮班的能力，标志着具身智能向商业化落地迈出重要一步。</div>
+  <div class="link"><a href="https://x.com/kimmonismus" target="_blank">https://x.com/kimmonismus</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">10</span>
+  <h3>Claude 电脑与浏览器使用的最佳实践</h3>
+  <span class="stars">★★★☆☆</span>
+  <div class="source">Claude：Blog（网页）</div>
+  <div class="summary">Anthropic 官方发布 Claude 电脑与浏览器使用的最佳实践指南，帮助用户更高效地利用 Claude 的计算机使用能力。</div>
+  <div class="link"><a href="https://www.anthropic.com" target="_blank">https://www.anthropic.com</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">11</span>
+  <h3>开源 psql_bm25s，让 PostgreSQL 多智能体检索提速 23 倍</h3>
+  <span class="stars">★★★☆☆</span>
+  <div class="source">X：Emad Mostaque (@EMostaque)</div>
+  <div class="summary">开源项目 psql_bm25s 为 PostgreSQL 带来多智能体检索能力，性能提升达23倍，为AI应用的数据库检索层提供高效解决方案。</div>
+  <div class="link"><a href="https://x.com/EMostaque" target="_blank">https://x.com/EMostaque</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">12</span>
+  <h3>BestBlogs 早报：AI 智能体工程化实战与安全架构</h3>
+  <span class="stars">★★★☆☆</span>
+  <div class="source">X：洪明 (@hongming731)</div>
+  <div class="summary">BestBlogs 早报聚焦AI智能体的工程化实践和安全架构设计，为开发者提供构建可靠AI系统的参考框架。</div>
+  <div class="link"><a href="https://x.com/hongming731" target="_blank">https://x.com/hongming731</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">13</span>
+  <h3>Runway Agent 功能更新</h3>
+  <span class="stars">★★★★☆</span>
+  <div class="source">Runway：Changelog（网页）</div>
+  <div class="summary">Runway Agent 发布更新日志，进一步完善AI视频创作工作流和用户体验。</div>
+  <div class="link"><a href="https://runwayml.com" target="_blank">https://runwayml.com</a></div>
+</div>
+
+<!-- 中国 AI 动态 -->
+<div class="section-title china">
+  <span class="icon">🇨🇳</span>
+  <span>中国 AI 动态</span>
+</div>
+
+<div class="news-item">
+  <span class="num">14</span>
+  <h3>腾讯混元 Hy3 预览版登陆 GMI，开源最强模型领跑</h3>
+  <span class="stars">★★★★★</span>
+  <div class="source">X：腾讯混元 (@TencentHunyuan)</div>
+  <div class="summary">腾讯混元 Hy3 预览版现已登陆 GMI Cloud，作为开源最强模型之一，Hy3 在多模态理解和生成能力上表现突出，进一步巩固了国产大模型在国际开源社区的地位。</div>
+  <div class="link"><a href="https://x.com/TencentHunyuan/status/2054403079433572357" target="_blank">https://x.com/TencentHunyuan/status/2054403079433572357</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">15</span>
+  <h3>商汤 SenseNova-U1 技术报告深度发布</h3>
+  <span class="stars">★★★★★</span>
+  <div class="source">X：商汤 SenseTime (@SenseTime_AI)</div>
+  <div class="summary">SenseNova-U1 技术报告详尽披露了构建前沿原生多模态模型的方法，核心包括原生多模态统一建模、无损视觉接口、联合自回归与像素空间流匹配训练、以及原生混合专家骨干网络。开源版本仅激活30亿参数即实现高效性能。</div>
+  <div class="link"><a href="https://x.com/SenseTime_AI/status/2054446490420924558" target="_blank">https://x.com/SenseTime_AI/status/2054446490420924558</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">16</span>
+  <h3>阿里云 Qwen-Character 打造沉浸式角色扮演体验</h3>
+  <span class="stars">★★★★☆</span>
+  <div class="source">X：阿里云 / Alibaba Cloud (@alibaba_cloud)</div>
+  <div class="summary">Qwen-Character 实现AI角色的记忆、共情与主动交互能力，为游戏、虚拟AI伴侣和自适应学习等场景打造沉浸式角色扮演体验，推动参与度加深50%以上并提升用户终身价值。</div>
+  <div class="link"><a href="https://x.com/alibaba_cloud/status/2054653031472414864" target="_blank">https://x.com/alibaba_cloud/status/2054653031472414864</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">17</span>
+  <h3>百度 Miaoda 应用与企业版上线，自生成代码占比 90%</h3>
+  <span class="stars">★★★★☆</span>
+  <div class="source">X：百度 Baidu (@Baidu_Inc)</div>
+  <div class="summary">百度 Miaoda 应用及企业版正式上线，自生成代码占比高达90%，大幅提升开发效率，为企业级应用开发提供智能化解决方案。</div>
+  <div class="link"><a href="https://x.com/Baidu_Inc" target="_blank">https://x.com/Baidu_Inc</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">18</span>
+  <h3>消息称 Anthropic 正以超 9000 亿美元投前估值筹集至少 300 亿美元</h3>
+  <span class="stars">★★★★★</span>
+  <div class="source">IT之家（RSS）</div>
+  <div class="summary">Anthropic 正在就以超过9000亿美元的投前估值筹集至少300亿美元资金进行谈判，若达成将创造AI领域最大融资记录之一，反映市场对 Claude 技术路线的高度认可。</div>
+  <div class="link"><a href="https://www.ithome.com" target="_blank">https://www.ithome.com</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">19</span>
+  <h3>可灵 Kling AI 将亮相 2026 戛纳探讨 AI 电影制作</h3>
+  <span class="stars">★★★★☆</span>
+  <div class="source">X：可灵 Kling AI (@Kling_ai)</div>
+  <div class="summary">可灵 Kling AI 将亮相2026年戛纳电影节，探讨AI在电影制作领域的应用与前景，展示中国AI视频生成技术的国际影响力。</div>
+  <div class="link"><a href="https://x.com/Kling_ai" target="_blank">https://x.com/Kling_ai</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">20</span>
+  <h3>Browser Use 在 Telegram 内实现 AI Agent 即用即走</h3>
+  <span class="stars">★★★★☆</span>
+  <div class="source">X：Berry Xia (@berryxia)</div>
+  <div class="summary">Browser Use 在 Telegram 内实现 AI Agent 即用即走，无需注册付费，24/7自主运行+自改进，带 stealth browser 功能，几下点击即可拥有完整电脑+浏览器环境。</div>
+  <div class="link"><a href="https://x.com/browser_use/status/2054330495249564094" target="_blank">https://x.com/browser_use/status/2054330495249564094</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">21</span>
+  <h3>oMLX 更新强化苹果端侧 AI，本地能力直逼云端</h3>
+  <span class="stars">★★★☆☆</span>
+  <div class="source">X：Berry Xia (@berryxia)</div>
+  <div class="summary">oMLX 更新进一步强化苹果设备端侧AI能力，本地推理性能逼近云端水平，为隐私敏感型AI应用提供新的技术路径。</div>
+  <div class="link"><a href="https://x.com/berryxia" target="_blank">https://x.com/berryxia</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">22</span>
+  <h3>BenchLoop：本地大模型一键基准测试与排行榜发布</h3>
+  <span class="stars">★★★☆☆</span>
+  <div class="source">X：Berry Xia (@berryxia)</div>
+  <div class="summary">BenchLoop 工具发布，支持本地大模型一键基准测试与排行榜生成，降低模型评测门槛，帮助开发者快速评估模型性能。</div>
+  <div class="link"><a href="https://x.com/berryxia" target="_blank">https://x.com/berryxia</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">23</span>
+  <h3>Meta 首席 AI 官官宣 WhatsApp 和 Meta AI 推出 Incognito Chat</h3>
+  <span class="stars">★★★☆☆</span>
+  <div class="source">X：阿易 AI Notes (@AYi_AInotes)</div>
+  <div class="summary">Meta 首席 AI 科学家宣布 WhatsApp 和 Meta AI 推出 Incognito Chat 功能，增强用户隐私保护能力。</div>
+  <div class="link"><a href="https://x.com/AYi_AInotes" target="_blank">https://x.com/AYi_AInotes</a></div>
+</div>
+
+<div class="news-item">
+  <span class="num">24</span>
+  <h3>利用搜索垫图提升 AI 绘画准确性与质量</h3>
+  <span class="stars">★★★☆☆</span>
+  <div class="source">X：歸藏 (@op7418)</div>
+  <div class="summary">歸藏分享利用搜索垫图（reference images）提升AI绘画准确性与质量的技巧，为AI艺术创作提供实用方法论。</div>
+  <div class="link"><a href="https://x.com/op7418" target="_blank">https://x.com/op7418</a></div>
+</div>
+
+<!-- 今日趋势洞察 -->
+<div class="section-title trend">
+  <span class="icon">📈</span>
+  <span>今日趋势洞察</span>
+</div>
+<div class="trend-box">
+  <ul>
+    <li><strong>AI Agent 商业化加速：</strong>Runway Agent、Browser Use Telegram 集成、Codex 浏览器升级等产品密集发布，AI Agent 正从概念走向实际工作流，视频创作、软件开发、日常办公成为首批落地场景。</li>
+    <li><strong>多模态模型竞争白热化：</strong>腾讯混元 Hy3、商汤 SenseNova-U1、阿里云 Qwen-Character 同日发布，国产大模型在多模态理解和角色交互领域形成差异化竞争格局。</li>
+    <li><strong>Anthropic 企业市场崛起：</strong>B2B 采用率首次超越 OpenAI，同时推出小企业服务包并传出 9000 亿美元估值融资，Claude 正在企业市场建立稳固地位。</li>
+    <li><strong>端侧 AI 与隐私计算：</strong>oMLX 强化苹果端侧能力、Meta Incognito Chat 推出，端侧推理和隐私保护成为产品差异化的新焦点。</li>
+  </ul>
+</div>
+
+<!-- 页脚 -->
+<div class="footer">
+  <p>数据来源：aihot.virxact.com · 生成时间：2026-05-14 11:20 (UTC+8)</p>
+  <p style="margin-top:6px;">AIHOT — 中文 AI 创业者关心的每日行业动态</p>
+</div>
+
+</div>
+</body>
+</html>

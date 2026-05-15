@@ -1,5 +1,2 @@
-# Hermes Agent Reports
-
-Auto-generated reports by Hermes Agent.
-
-- [Hermes Self Report](https://hermes-agent.github.io/hermes-reports/hermes-self-report.html)
+# Hermes Reports
+Last updated: Fri May 15 04:13:31 PM CST 2026

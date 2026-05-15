@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hermes Agent 全面自检报告</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --bg-card: #161b22;
+  --bg-hover: #1c2128;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --text-muted: #8b949e;
+  --text-bright: #f0f6fc;
+  --accent: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-yellow: #d29922;
+  --accent-red: #f85149;
+  --accent-purple: #a371f7;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", Helvetica, Arial, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  padding: 20px;
+}
+.container { max-width: 1100px; margin: 0 auto; }
+.header {
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 2.2rem;
+  color: var(--text-bright);
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+.header .subtitle { color: var(--text-muted); font-size: 1rem; }
+.header .timestamp { color: var(--accent); font-size: 0.85rem; margin-top: 8px; }
+.status-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 15px;
+}
+.status-ok { background: rgba(63, 185, 80, 0.15); color: var(--accent-green); border: 1px solid rgba(63, 185, 80, 0.3); }
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.metric {
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+}
+.metric-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.metric-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.metric.green .metric-value { color: var(--accent-green); }
+.metric.yellow .metric-value { color: var(--accent-yellow); }
+.metric.purple .metric-value { color: var(--accent-purple); }
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: var(--accent); }
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-title .icon { font-size: 1.3rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+th {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+tr:hover { background: var(--bg-hover); }
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.status-ok { color: var(--accent-green); }
+.status-ok .status-dot { background: var(--accent-green); }
+.status-warn { color: var(--accent-yellow); }
+.status-warn .status-dot { background: var(--accent-yellow); }
+.status-err { color: var(--accent-red); }
+.status-err .status-dot { background: var(--accent-red); }
+
+pre {
+  background: #0d1117;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+code {
+  font-family: "SF Mono", "Fira Code", "JetBrains Mono", monospace;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .two-col { grid-template-columns: 1fr; }
+  .metric-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>🔮 Hermes Agent 全面自检报告</h1>
+  <div class="subtitle">系统健康状态与配置概览</div>
+  <div class="timestamp">生成时间: 2026-05-15 15:55:55</div>
+  <div class="status-badge status-ok">🟢 系统运行正常</div>
+</div>
+
+<div class="metric-grid">
+  <div class="metric"><div class="metric-value">ark-code-latest</div><div class="metric-label">当前模型</div></div>
+  <div class="metric green"><div class="metric-value">256K</div><div class="metric-label">上下文长度</div></div>
+  <div class="metric purple"><div class="metric-value">16</div><div class="metric-label">已启用工具</div></div>
+  <div class="metric"><div class="metric-value">61</div><div class="metric-label">历史会话</div></div>
+  <div class="metric green"><div class="metric-value">88</div><div class="metric-label">已加载技能</div></div>
+  <div class="metric yellow"><div class="metric-value">3</div><div class="metric-label">待修复问题</div></div>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="icon">🧠</span> 模型配置</div>
+  <table>
+    <tr><th>配置项</th><th>值</th></tr>
+    <tr><td>模型名称</td><td><code>ark-code-latest</code></td></tr>
+    <tr><td>提供商</td><td>Custom (火山方舟 / Volcano Ark)</td></tr>
+    <tr><td>Base URL</td><td><code>https://ark.cn-beijing.volces.com/api/plan/v3</code></td></tr>
+    <tr><td>上下文长度</td><td>256,000 tokens</td></tr>
+    <tr><td>API 模式</td><td>Anthropic Messages 兼容</td></tr>
+    <tr><td>推理模式</td><td>已关闭 (避免 thinking block 错误)</td></tr>
+    <tr><td>状态</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 工作正常</span></td></tr>
+  </table>
+</div>
+
+<div class="two-col">
+  <div class="card">
+    <div class="card-title"><span class="icon">⚙️</span> 运行环境</div>
+    <table>
+      <tr><th>组件</th><th>状态</th></tr>
+      <tr><td>Hermes 版本</td><td>v0.11.0 (2026.4.23)</td></tr>
+      <tr><td>Python 版本</td><td>3.11.15</td></tr>
+      <tr><td>虚拟环境</td><td><span class="status status-ok"><span class="status-dot"></span>已激活</span></td></tr>
+      <tr><td>终端后端</td><td>Local</td></tr>
+      <tr><td>配置文件版本</td><td>v22 (最新)</td></tr>
+      <tr><td>SOUL.md</td><td><span class="status status-ok"><span class="status-dot"></span>已配置</span></td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🔐</span> 认证与密钥</div>
+    <table>
+      <tr><th>提供商</th><th>状态</th></tr>
+      <tr><td>火山方舟 (当前)</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 已配置</span></td></tr>
+      <tr><td>DeepSeek API</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可访问</span></td></tr>
+      <tr><td>Nous Portal</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 未登录</span></td></tr>
+      <tr><td>OpenAI Codex</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 未登录</span></td></tr>
+      <tr><td>Google Gemini</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 未登录</span></td></tr>
+      <tr><td>OpenRouter</td><td><span class="status status-err"><span class="status-dot"></span>❌ 未配置</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="icon">🛠️</span> 工具集状态 (Toolsets)</div>
+  <table>
+    <tr><th>工具名称</th><th>描述</th><th>状态</th><th>备注</th></tr>
+    <tr><td><code>browser</code></td><td>浏览器自动化</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>clarify</code></td><td>澄清提问</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>code_execution</code></td><td>代码执行</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>cronjob</code></td><td>定时任务</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>terminal</code></td><td>终端命令</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>delegation</code></td><td>子代理</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>feishu_doc</code></td><td>飞书文档</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>feishu_drive</code></td><td>飞书云盘</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>file</code></td><td>文件操作</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>image_gen</code></td><td>图像生成</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>memory</code></td><td>持久记忆</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>messaging</code></td><td>消息发送</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>session_search</code></td><td>会话搜索</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>skills</code></td><td>技能管理</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>todo</code></td><td>任务列表</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>tts</code></td><td>语音合成</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>vision</code></td><td>图像分析</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 可用</span></td><td>已启用</td></tr>
+    <tr><td><code>web</code></td><td>网络搜索</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 部分可用</span></td><td>缺少 API Key</td></tr>
+    <tr><td><code>discord</code></td><td>Discord</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 未配置</span></td><td>缺少 DISCORD_BOT_TOKEN</td></tr>
+    <tr><td><code>discord_admin</code></td><td>Discord管理</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 未配置</span></td><td>缺少 DISCORD_BOT_TOKEN</td></tr>
+    <tr><td><code>homeassistant</code></td><td>智能家居</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 不可用</span></td><td>系统依赖未满足</td></tr>
+    <tr><td><code>moa</code></td><td>混合代理</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 未配置</span></td><td>缺少 OPENROUTER_API_KEY</td></tr>
+    <tr><td><code>rl</code></td><td>强化学习</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 未配置</span></td><td>缺少 TINKER_API_KEY</td></tr>
+    <tr><td><code>spotify</code></td><td>Spotify</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 不可用</span></td><td>系统依赖未满足</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="icon">📡</span> 消息平台连接状态</div>
+  <table>
+    <tr><th>平台</th><th>状态</th><th>频道/ID</th><th>说明</th></tr>
+    <tr><td>Feishu (飞书)</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 已连接</span></td><td><code>oc_11ad71ba307b0ba20bab5044168a1314</code></td><td>主平台</td></tr>
+    <tr><td>Telegram</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 已连接</span></td><td><code>973995847</code></td><td>备用平台</td></tr>
+    <tr><td>API Server</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 已连接</span></td><td><code>-</code></td><td>本地服务</td></tr>
+    <tr><td>Discord</td><td><span class="status status-err"><span class="status-dot"></span>❌ 未配置</span></td><td><code>-</code></td><td>缺少 Token</td></tr>
+    <tr><td>Slack</td><td><span class="status status-err"><span class="status-dot"></span>❌ 未配置</span></td><td><code>-</code></td><td>未设置</td></tr>
+    <tr><td>WhatsApp</td><td><span class="status status-err"><span class="status-dot"></span>❌ 未配置</span></td><td><code>-</code></td><td>未设置</td></tr>
+    <tr><td>Signal</td><td><span class="status status-err"><span class="status-dot"></span>❌ 未配置</span></td><td><code>-</code></td><td>未设置</td></tr>
+    <tr><td>Matrix</td><td><span class="status status-err"><span class="status-dot"></span>❌ 未配置</span></td><td><code>-</code></td><td>未设置</td></tr>
+    <tr><td>Email</td><td><span class="status status-err"><span class="status-dot"></span>❌ 未配置</span></td><td><code>-</code></td><td>未设置</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="icon">🩺</span> 健康检查结果 (hermes doctor)</div>
+  <table>
+    <tr><th>检查项</th><th>结果</th></tr>
+    <tr><td>Python 环境</td><td><span class="status status-ok"><span class="status-dot"></span>✅ Python 3.11.15, venv 已激活</span></td></tr>
+    <tr><td>必需包</td><td><span class="status status-ok"><span class="status-dot"></span>✅ OpenAI SDK, Rich, python-dotenv, PyYAML, HTTPX 全部安装</span></td></tr>
+    <tr><td>配置文件</td><td><span class="status status-ok"><span class="status-dot"></span>✅ .env 和 config.yaml 存在且版本最新 (v22)</span></td></tr>
+    <tr><td>目录结构</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 所有必需目录已创建</span></td></tr>
+    <tr><td>命令入口</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ ~/.local/bin/hermes 符号链接缺失</span></td></tr>
+    <tr><td>外部工具</td><td><span class="status status-ok"><span class="status-dot"></span>✅ git, ripgrep, docker, Node.js 可用</span></td></tr>
+    <tr><td>API 连通性</td><td><span class="status status-ok"><span class="status-dot"></span>✅ DeepSeek API 可访问</span></td></tr>
+    <tr><td>内存提供器</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 内置内存已激活</span></td></tr>
+    <tr><td>会话存储</td><td><span class="status status-ok"><span class="status-dot"></span>✅ 61 个会话已存储</span></td></tr>
+  </table>
+</div>
+
+<div class="two-col">
+  <div class="card">
+    <div class="card-title"><span class="icon">💾</span> 会话与存储</div>
+    <table>
+      <tr><th>项目</th><th>数值</th></tr>
+      <tr><td>历史会话总数</td><td>61</td></tr>
+      <tr><td>SQLite 数据库</td><td><span class="status status-ok"><span class="status-dot"></span>state.db 正常</span></td></tr>
+      <tr><td>内存文件</td><td>MEMORY.md (2,572 chars)</td></tr>
+      <tr><td>用户档案</td><td>USER.md (365 chars)</td></tr>
+      <tr><td>技能目录</td><td><span class="status status-ok"><span class="status-dot"></span>88 个技能</span></td></tr>
+      <tr><td>日志文件</td><td>agent.log, gateway.log, errors.log</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">⚡</span> 交互设置</div>
+    <table>
+      <tr><th>设置项</th><th>状态</th></tr>
+      <tr><td>记忆功能</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 已禁用</span></td></tr>
+      <tr><td>用户档案</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 已禁用</span></td></tr>
+      <tr><td>上下文压缩</td><td><span class="status status-warn"><span class="status-dot"></span>⚠️ 已禁用</span></td></tr>
+      <tr><td>命令审批</td><td>Manual (默认)</td></tr>
+      <tr><td>Secret 脱敏</td><td>已关闭 (默认)</td></tr>
+      <tr><td>PII 脱敏</td><td>已关闭 (默认)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="icon">🔧</span> 待修复问题</div>
+  <table>
+    <tr><th>#</th><th>问题</th><th>修复命令</th></tr>
+    <tr><td>1</td><td>~/.local/bin/hermes 符号链接缺失</td><td><code>hermes doctor --fix</code></td></tr>
+    <tr><td>2</td><td>tinker-atropos 子模块未安装</td><td><code>uv pip install -e ./tinker-atropos</code></td></tr>
+    <tr><td>3</td><td>部分工具缺少 API Key</td><td><code>hermes setup</code> 配置缺失的密钥</td></tr>
+  </table>
+  <p style="margin-top:12px;color:var(--text-muted);font-size:0.85rem;">💡 提示: 运行 <code>hermes doctor --fix</code> 可自动修复部分问题。</p>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="icon">📋</span> 配置摘要 (config.yaml)</div>
+  <pre><code>model:
+  default: ark-code-latest
+  provider: custom
+  base_url: https://ark.cn-beijing.volces.com/api/plan/v3
+  api_mode: anthropic_messages
+  context_length: 256000
+
+agent:
+  max_turns: 90
+  tool_use_enforcement: true
+
+display:
+  show_reasoning: true
+  show_cost: true
+
+memory:
+  memory_enabled: false
+  user_profile_enabled: false
+
+compression:
+  enabled: false
+  threshold: 0.50
+  target_ratio: 0.20</code></pre>
+</div>
+
+<div class="footer">
+  <p>🔮 Hermes Agent 自检报告 | 由系统自动生成</p>
+  <p>报告时间: 2026-05-15 15:55:55 | 数据来源: 实际系统检查</p>
+</div>
+
+</div>
+</body>
+</html>

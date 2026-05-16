@@ -4,439 +4,558 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 行业日报 · 2026-05-15</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #faf8f5;
-    color: #1a1a1a;
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
+  
+  :root {
+    --ink: #1a1a1a;
+    --cinnabar: #c23a30;
+    --paper: #faf8f5;
+    --warm-gray: #8c8279;
+    --light-gray: #e8e4df;
+    --section-bg: #f5f2ee;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Noto Serif SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
     line-height: 1.8;
-    padding: 40px 20px;
-    min-height: 100vh;
-}
-.container {
+    font-size: 15px;
+  }
+  
+  .container {
     max-width: 800px;
     margin: 0 auto;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-    overflow: hidden;
-}
-.header {
-    background: linear-gradient(135deg, #c23a30 0%, #a02820 100%);
-    color: white;
-    padding: 40px;
+    padding: 40px 24px;
+  }
+  
+  header {
     text-align: center;
-}
-.header h1 {
-    font-family: 'Noto Serif SC', serif;
+    padding-bottom: 32px;
+    border-bottom: 2px solid var(--cinnabar);
+    margin-bottom: 36px;
+  }
+  
+  .brand {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--cinnabar);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  
+  h1 {
     font-size: 32px;
     font-weight: 700;
+    letter-spacing: 2px;
     margin-bottom: 8px;
-    letter-spacing: 4px;
-}
-.header .date {
+  }
+  
+  .date-line {
     font-size: 14px;
-    opacity: 0.9;
-    font-weight: 300;
-}
-.lead {
-    padding: 32px 40px;
-    background: #fff9f5;
-    border-bottom: 1px solid #f0e8e0;
-}
-.lead-title {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 18px;
+    color: var(--warm-gray);
+    letter-spacing: 1px;
+  }
+  
+  .lead {
+    background: var(--section-bg);
+    border-left: 4px solid var(--cinnabar);
+    padding: 20px 24px;
+    margin-bottom: 36px;
+    font-size: 15px;
+    line-height: 1.9;
+  }
+  
+  .lead-title {
     font-weight: 600;
-    color: #c23a30;
-    line-height: 1.7;
-}
-.section {
-    padding: 32px 40px;
-    border-bottom: 1px solid #f5f0eb;
-}
-.section:last-child { border-bottom: none; }
-.section-title {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 24px;
+    color: var(--cinnabar);
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--light-gray);
     display: flex;
     align-items: center;
-    gap: 12px;
-    color: #2a2a2a;
-}
-.section-title .emoji { font-size: 24px; }
-.item {
+    gap: 10px;
+  }
+  
+  .section-icon {
+    font-size: 22px;
+  }
+  
+  .item {
     margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px dashed #e8e0d8;
-}
-.item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-.item-title {
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--light-gray);
+  }
+  
+  .item:last-child {
+    border-bottom: none;
+  }
+  
+  .item-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+  
+  .item-number {
+    font-weight: 700;
+    color: var(--cinnabar);
+    font-size: 16px;
+    min-width: 28px;
+  }
+  
+  .item-title {
     font-weight: 600;
     font-size: 16px;
-    color: #1a1a1a;
-    margin-bottom: 8px;
-    line-height: 1.6;
-}
-.item-meta {
-    font-size: 12px;
-    color: #8c8279;
-    margin-bottom: 10px;
+    flex: 1;
+  }
+  
+  .item-source {
+    font-size: 13px;
+    color: var(--warm-gray);
+    white-space: nowrap;
+  }
+  
+  .item-meta {
     display: flex;
     align-items: center;
     gap: 12px;
-}
-.item-source {
-    background: #f5f0eb;
-    padding: 2px 10px;
-    border-radius: 12px;
-    font-weight: 500;
-}
-.item-stars { color: #c23a30; letter-spacing: 2px; }
-.item-summary {
-    font-size: 14px;
-    color: #5a524a;
-    line-height: 1.8;
-    margin-bottom: 10px;
-}
-.item-url {
+    margin-bottom: 6px;
+    margin-left: 38px;
+  }
+  
+  .item-time {
+    font-size: 12px;
+    color: var(--warm-gray);
+  }
+  
+  .stars {
     font-size: 13px;
-}
-.item-url a {
-    color: #c23a30;
+    color: var(--cinnabar);
+    letter-spacing: 1px;
+  }
+  
+  .item-summary {
+    margin-left: 38px;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.75;
+  }
+  
+  .item-url {
+    margin-left: 38px;
+    margin-top: 6px;
+    font-size: 12px;
+  }
+  
+  .item-url a {
+    color: var(--warm-gray);
     text-decoration: none;
-    border-bottom: 1px solid rgba(194, 58, 48, 0.2);
-}
-.item-url a:hover { border-bottom-color: #c23a30; }
-.flash-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-.flash-item {
+    word-break: break-all;
+  }
+  
+  .item-url a:hover {
+    color: var(--cinnabar);
+    text-decoration: underline;
+  }
+  
+  /* Leaderboard table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
     font-size: 14px;
-    padding: 12px 16px;
-    background: #f8f6f3;
-    border-radius: 8px;
-    border-left: 3px solid #c23a30;
-}
-.flash-item .title { font-weight: 500; }
-.flash-item .source { color: #8c8279; font-size: 12px; margin-left: 8px; }
-.trends {
-    background: #f8f6f3;
-    padding: 24px 28px;
-    border-radius: 8px;
-}
-.trends h4 {
-    font-size: 15px;
-    color: #c23a30;
-    margin-bottom: 16px;
+  }
+  
+  th, td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+  }
+  
+  th {
     font-weight: 600;
-}
-.trends ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.trends li {
+    color: var(--warm-gray);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  td {
     font-size: 14px;
-    color: #5a524a;
-    padding-left: 20px;
-    position: relative;
-}
-.trends li::before {
-    content: "•";
-    position: absolute;
-    left: 4px;
-    color: #c23a30;
-    font-weight: bold;
-}
-.footer {
-    padding: 24px 40px;
+  }
+  
+  .rank {
+    font-weight: 700;
+    color: var(--cinnabar);
+    font-size: 16px;
+    text-align: center;
+    width: 50px;
+  }
+  
+  .model-name {
+    font-weight: 600;
+  }
+  
+  .company {
+    color: var(--warm-gray);
+    font-size: 13px;
+  }
+  
+  .score {
+    font-weight: 600;
+    text-align: right;
+  }
+  
+  .change-up {
+    color: #2e7d32;
+    font-size: 12px;
+  }
+  
+  .change-down {
+    color: var(--cinnabar);
+    font-size: 12px;
+  }
+  
+  .trend-box {
+    background: var(--section-bg);
+    padding: 18px 22px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+  
+  .trend-box p {
+    margin-bottom: 8px;
+  }
+  
+  .trend-box p:last-child {
+    margin-bottom: 0;
+  }
+  
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--light-gray);
     text-align: center;
     font-size: 12px;
-    color: #a09890;
-    background: #faf8f5;
-}
-.category-tag {
-    display: inline-block;
-    font-size: 11px;
-    background: #e8e0d8;
-    color: #6a625a;
-    padding: 1px 8px;
-    border-radius: 10px;
-    margin-left: 8px;
-}
-@media (max-width: 600px) {
-    body { padding: 0; }
-    .header { padding: 28px 20px; }
-    .header h1 { font-size: 24px; letter-spacing: 2px; }
-    .section { padding: 24px 20px; }
-    .lead { padding: 24px 20px; }
-}
+    color: var(--warm-gray);
+  }
+  
+  .footer-brand {
+    color: var(--cinnabar);
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  
+  @media (max-width: 600px) {
+    .container { padding: 24px 16px; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 18px; }
+    .item-header { flex-direction: column; gap: 4px; }
+    .item-meta { margin-left: 0; margin-top: 4px; }
+    .item-summary, .item-url { margin-left: 0; }
+    th, td { padding: 10px 8px; font-size: 13px; }
+  }
 </style>
 </head>
 <body>
 <div class="container">
-    <div class="header">
-        <h1>AI 行业日报</h1>
-        <div class="date">2026-05-15</div>
+
+<header>
+  <div class="brand">AI HOT · 行业日报</div>
+  <h1>AI 行业日报</h1>
+  <div class="date-line">2026年5月15日 · 农历三月廿九 · 星期五</div>
+</header>
+
+<div class="lead">
+  <div class="lead-title">今日导读</div>
+  <p>商汤 SenseNova U1 开源 MoE 架构新权重；Kimi K2.6 登顶金融智能体基准榜首；Anthropic 与盖茨基金会达成 2 亿美元合作；xAI 推出 Grok Build 早期测试版；Runway 进军日本市场投资 4000 万美元。AI 智能体与编程工具竞争白热化，国内外大厂密集发布新产品与开源项目。</p>
+</div>
+
+<section>
+  <h2><span class="section-icon">🌍</span> 全球 AI 动态</h2>
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">1</span>
+      <span class="item-title">SenseNova U1 技术报告发布，基于 MoE 架构开放模型权重</span>
+      <span class="item-source">商汤 SenseTime</span>
     </div>
-    
-    <div class="lead">
-        <div class="lead-title">今日AI热点：Granite Embedding Multilingual R2：开源多语言嵌入模型，具备32K上下文与领先检索性能、inclusionAI/Ring-2.6-1T、Kimi K2.6登顶金融智能体基准榜首</div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★★</span>
     </div>
-    
-    <div class="section">
-        <div class="section-title"><span class="emoji">🌍</span>全球 AI 动态</div>
+    <div class="item-summary">由联合创始人兼首席科学家李沐博士领导的团队发布了 SenseNova U1 技术报告，详细阐述了其架构、训练方案与创新突破。此次开源同步发布了基于混合专家模型（MoE）的新权重，旨在推动 AI 领域的透明度、可复现性与进一步创新。</div>
+    <div class="item-url"><a href="https://x.com/SenseTime_AI/status/2054876860711149780" target="_blank">https://x.com/SenseTime_AI/status/2054876860711149780</a></div>
+  </div>
 
-        <div class="item">
-            <div class="item-title">1. Granite Embedding Multilingual R2：开源多语言嵌入模型，具备32K上下文与领先检索性能</div>
-            <div class="item-meta">
-                <span class="item-source">Hugging Face：Blog（RSS）</span>
-                <span class="item-stars">★★★★☆</span>
-                <span class="category-tag">模型发布/更新</span>
-            </div>
-            <div class="item-summary">IBM Granite团队在Hugging Face发布了Granite Embedding Multilingual R2多语言文本嵌入模型。该模型采用Apache 2.0开源协议，上下文长度扩展至32K令牌，参数量低于1亿。在MTEB基...</div>
-            <div class="item-url"><a href="https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">2. inclusionAI/Ring-2.6-1T</div>
-            <div class="item-meta">
-                <span class="item-source">蚂蚁 inclusionAI：HuggingFace 新模型</span>
-                <span class="item-stars">★★★★☆</span>
-                <span class="category-tag">模型发布/更新</span>
-            </div>
-            <div class="item-summary">inclusionAI发布了Ring-2.6-1T模型。该模型在Claw-Eval基准测试中取得了两项关键评估结果：在通用能力评估（General）上得分为58.4，在多轮对话评估（Multi Turn）上得分为86.8。这些分数已记录在相...</div>
-            <div class="item-url"><a href="https://huggingface.co/inclusionAI/Ring-2.6-1T" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">3. Kimi K2.6登顶金融智能体基准榜首</div>
-            <div class="item-meta">
-                <span class="item-source">X：Kimi.ai (@Kimi_Moonshot)</span>
-                <span class="item-stars">★★★☆☆</span>
-                <span class="category-tag">模型发布/更新</span>
-            </div>
-            <div class="item-summary">Kimi K2.6 现已成为 Finance Agent Benchmark V2 开源权重排名第一。 [引用 @ValsAI]：AI 能胜任金融分析师的工作吗？</div>
-            <div class="item-url"><a href="https://x.com/Kimi_Moonshot/status/2054803169994272819" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">4. Kimi推出网页桥接扩展 支持多平台交互</div>
-            <div class="item-meta">
-                <span class="item-source">X：Kimi.ai (@Kimi_Moonshot)</span>
-                <span class="item-stars">★★★☆☆</span>
-                <span class="category-tag">产品发布/更新</span>
-            </div>
-            <div class="item-summary">认识Kimi网页桥接——Kimi的浏览器扩展。 现在智能体可以像人类一样与网站互动：搜索、滚动、点击、输入并完成任务。 支持Kimi Code CLI、Claude Code、Cursor、Codex、Hermes等平台。 现已在http:...</div>
-            <div class="item-url"><a href="https://x.com/Kimi_Moonshot/status/2054918374837322140" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">5. 随时随地使用 Codex</div>
-            <div class="item-meta">
-                <span class="item-source">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
-                <span class="item-stars">★★★★★</span>
-                <span class="category-tag">产品发布/更新</span>
-            </div>
-            <div class="item-summary">用户现可通过 ChatGPT 移动应用随时随地使用 Codex。该功能支持跨设备和远程环境实时监控、引导及批准编码任务，实现了对编程工作的无缝移动端管理。</div>
-            <div class="item-url"><a href="https://openai.com/index/work-with-codex-from-anywhere" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">6. OpenCode与Qwen 3.6 Plus再度免费开放</div>
-            <div class="item-meta">
-                <span class="item-source">X：opencode (@opencode)</span>
-                <span class="item-stars">★★★☆☆</span>
-                <span class="category-tag">产品发布/更新</span>
-            </div>
-            <div class="item-summary">OpenCode x Qwen 3.6 Plus - 再次免费 上次各位把我们的容量当成了自助餐。 我们找到了更多GPU。第二轮。</div>
-            <div class="item-url"><a href="https://x.com/opencode/status/2055068702538612784" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">7. Codex推出自动化钩子与程序化令牌</div>
-            <div class="item-meta">
-                <span class="item-source">X：OpenAI Developers (@OpenAIDevs)</span>
-                <span class="item-stars">★★★★★</span>
-                <span class="category-tag">产品发布/更新</span>
-            </div>
-            <div class="item-summary">Codex正变得更易于围绕用户代码实现自动化与定制。其核心更新包括“钩子”功能，允许在任务关键节点运行脚本，以进行工作验证、扫描密钥、记录对话或按仓库定制行为。同时，面向商业和企业团队推出“程序化访问令牌”，提供范围化凭证，可从ChatGP...</div>
-            <div class="item-url"><a href="https://x.com/OpenAIDevs/status/2055032115964870838" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">8. Luma Agents高效生成电商素材全流程</div>
-            <div class="item-meta">
-                <span class="item-source">X：Luma AI (@LumaLabsAI)</span>
-                <span class="item-stars">★★★☆☆</span>
-                <span class="category-tag">产品发布/更新</span>
-            </div>
-            <div class="item-summary">更多产品。更多市场。更多格式。再无瓶颈。 定义需求。设定风格。Luma Agents 从此处理所有电商活动素材。 立即扩展 → http://lumalabs.ai/app</div>
-            <div class="item-url"><a href="https://x.com/LumaLabsAI/status/2055046873740984429" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">9. SuperGrok Heavy限时六折，Grok Build开放测试</div>
-            <div class="item-meta">
-                <span class="item-source">X：cb_doge (@cb_doge)</span>
-                <span class="item-stars">★★★☆☆</span>
-                <span class="category-tag">产品发布/更新</span>
-            </div>
-            <div class="item-summary">SuperGrok Heavy 现提供约67%的半年折扣，即每月仅需99美元（原价300美元）。 强烈建议升级至Heavy版本，并试用Grok Build的测试版。</div>
-            <div class="item-url"><a href="https://x.com/cb_doge/status/2055017857352913319" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">10. xAI 推出 Grok Build 早期测试版</div>
-            <div class="item-meta">
-                <span class="item-source">xAI：News（网页）</span>
-                <span class="item-stars">★★★☆☆</span>
-                <span class="category-tag">产品发布/更新</span>
-            </div>
-            <div class="item-summary">xAI 面向 SuperGrok Heavy 订阅用户推出 Grok Build 早期测试版。这是一个直接在终端运行的新型编程智能体与命令行工具，专为专业软件工程和复杂任务设计。其核心功能包括：支持“计划模式”，允许用户在代码执行前审阅和修...</div>
-            <div class="item-url"><a href="https://x.ai/news/grok-build-cli" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">11. 开源工具html-anything助力Agent生成高质量HTML</div>
-            <div class="item-meta">
-                <span class="item-source">X：小互 (@xiaohu)</span>
-                <span class="item-stars">★★★☆☆</span>
-                <span class="category-tag">产品发布/更新</span>
-            </div>
-            <div class="item-summary">用户分享了对开源项目html-anything的积极体验。该项目旨在让AI Agent能将任何数据转换为具有世界级设计水准的HTML代码。该项目历时三天开发，包含约一万五千行代码，支持75套Skills和9种导出格式，并能兼容包括Claud...</div>
-            <div class="item-url"><a href="https://x.com/xiaohu/status/2054925632061231431" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">12. Anthropic与盖茨基金会达成2亿美元合作，聚焦全球健康与教育</div>
-            <div class="item-meta">
-                <span class="item-source">Anthropic：Newsroom（网页）</span>
-                <span class="item-stars">★★★★★</span>
-                <span class="category-tag">行业动态</span>
-            </div>
-            <div class="item-summary">Anthropic与盖茨基金会建立为期四年、总额2亿美元的合作，通过资金、Claude使用额度及技术支持，共同推进全球健康、生命科学、教育及经济流动项目。合作重点包括改善中低收入国家约46亿人口的基本医疗，利用AI加速疫苗与疗法研发，并开发...</div>
-            <div class="item-url"><a href="https://www.anthropic.com/news/gates-foundation-partnership" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">2</span>
+      <span class="item-title">Granite Embedding Multilingual R2：开源多语言嵌入模型，32K 上下文</span>
+      <span class="item-source">IBM / Hugging Face</span>
     </div>
-    
-    <div class="section">
-        <div class="section-title"><span class="emoji">🇨🇳</span>中国 AI 动态</div>
-
-        <div class="item">
-            <div class="item-title">1. SenseNova U1技术报告发布，基于MoE架构开放模型权重</div>
-            <div class="item-meta">
-                <span class="item-source">X：商汤 SenseTime (@SenseTime_AI)</span>
-                <span class="item-stars">★★★★☆</span>
-                <span class="category-tag">模型发布/更新</span>
-            </div>
-            <div class="item-summary">由联合创始人兼首席科学家李沐博士领导的团队发布了SenseNova U1技术报告，详细阐述了其架构、训练方案与创新突破。此次开源同步发布了基于混合专家模型（MoE）的新权重，旨在推动AI领域的透明度、可复现性与进一步创新。团队希望通过开放共...</div>
-            <div class="item-url"><a href="https://x.com/SenseTime_AI/status/2054876860711149780" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">2. OpenAI遭集体诉讼，被指通过追踪代码向Meta等泄露用户查询隐私</div>
-            <div class="item-meta">
-                <span class="item-source">X：阿易 AI Notes (@AYi_AInotes)</span>
-                <span class="item-stars">★★★★★</span>
-                <span class="category-tag">行业动态</span>
-            </div>
-            <div class="item-summary">南加州联邦法院已受理针对OpenAI的集体诉讼，指控其在ChatGPT网站中嵌入Facebook Pixel等代码，侵犯用户隐私。当用户提交查询时，查询主题会作为浏览器标题与含Facebook唯一ID的cookies一并实时发送给Meta。...</div>
-            <div class="item-url"><a href="https://x.com/AYi_AInotes/status/2054856518185439662" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">3. 百度推进智能体布局，以日活为关键指标</div>
-            <div class="item-meta">
-                <span class="item-source">X：百度 Baidu (@Baidu_Inc)</span>
-                <span class="item-stars">★★★★★</span>
-                <span class="category-tag">行业动态</span>
-            </div>
-            <div class="item-summary">百度推进智能体组合以拥抱智能体时代，主张将日活跃智能体作为关键指标 https://www.prnewswire.com/news-releases/baidu-advances-agent-portfolio-to-embrace-the...</div>
-            <div class="item-url"><a href="https://x.com/Baidu_Inc/status/2054815977477738549" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">4. AI 热潮引发民怨：七成美国民众反对家门口建数据中心</div>
-            <div class="item-meta">
-                <span class="item-source">IT之家（RSS）</span>
-                <span class="item-stars">★★★☆☆</span>
-                <span class="category-tag">行业动态</span>
-            </div>
-            <div class="item-summary">盖洛普调查显示，高达七成美国民众反对在住宅附近建设数据中心，反对率较去年大幅上升，抵触情绪甚至超过对核电站的接受度。全美已有69个辖区出台暂停令，多地项目因抗议和监管纠纷延期。数据中心建设推高批发电价，导致用电成本激增，并引发空气污染、水资...</div>
-            <div class="item-url"><a href="https://www.ithome.com/0/950/598.htm" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">5. MiMo V2.5 Pro 获设计竞技场季军</div>
-            <div class="item-meta">
-                <span class="item-source">X：小米 MiMo (@XiaomiMiMo)</span>
-                <span class="item-stars">★★★☆☆</span>
-                <span class="category-tag">行业动态</span>
-            </div>
-            <div class="item-summary">MiMo V2.5 Pro 在 @DesignArena 上刚刚获得第三名！🎉 MiMo V2.5 Pro (Thinking) 在总排行榜上比 MiMo-V2.5 提升了 8 个名次，在前端编码任务中达到与 Claude Sonnet 4...</div>
-            <div class="item-url"><a href="https://x.com/XiaomiMiMo/status/2054797221250683199" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">6. NousResearch推出Token Superposition Training技术，显著加速大语言模型预训练</div>
-            <div class="item-meta">
-                <span class="item-source">X：硅基流动 SiliconFlow (@SiliconFlowAI)</span>
-                <span class="item-stars">★★★★☆</span>
-                <span class="category-tag">论文研究</span>
-            </div>
-            <div class="item-summary">NousResearch发布了Token Superposition Training（TST），这是一种改进标准大语言模型预训练流程的方法。该技术无需改变模型架构、优化器、分词器或训练数据，即可在相同计算量（FLOPs）下实现2-3倍的训...</div>
-            <div class="item-url"><a href="https://x.com/SiliconFlowAI/status/2054755824309076359" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">7. 微信群聊总结Skill新增，依赖wx-cli配置</div>
-            <div class="item-meta">
-                <span class="item-source">X：宝玉 (@dotey)</span>
-                <span class="item-stars">★★★☆☆</span>
-                <span class="category-tag">技巧与观点</span>
-            </div>
-            <div class="item-summary">baoyu-skills 新加了一个 Skill： 微信群聊总结 Skill：https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-wechat-summary 依赖于 ...</div>
-            <div class="item-url"><a href="https://x.com/dotey/status/2054768295534846239" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
-        <div class="item">
-            <div class="item-title">8. UnslothAI发布Qwen3.6 MTP GGUF模型，实现推理速度大幅提升</div>
-            <div class="item-meta">
-                <span class="item-source">X：Berry Xia (@berryxia)</span>
-                <span class="item-stars">★★★★☆</span>
-                <span class="category-tag">技巧与观点</span>
-            </div>
-            <div class="item-summary">UnslothAI创始人Daniel Han发布了实验性的Qwen3.6 MTP GGUF模型，显著提升了推理速度。其中，27B模型在单GPU上达到每秒140个token，35B-A3B版本更是高达每秒220个token，相比原版GGUF速...</div>
-            <div class="item-url"><a href="https://x.com/berryxia/status/2054749585520890314" target="_blank" rel="noopener">阅读原文 →</a></div>
-        </div>
-
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★☆</span>
     </div>
-    
-    <div class="section">
-        <div class="section-title"><span class="emoji">📈</span>今日趋势洞察</div>
-        <div class="trends">
-            <ul>
-<li>各大厂持续迭代思考模型，Claude Opus 系列更新频率加快</li>
-<li>中文大模型能力稳步提升，DeepSeek、通义千问保持活跃</li>
-<li>AI 原生应用场景不断丰富，从代码到办公全面渗透</li>
+    <div class="item-summary">IBM Granite 团队发布 Granite Embedding Multilingual R2 多语言文本嵌入模型，采用 Apache 2.0 开源协议，上下文长度扩展至 32K 令牌，参数量低于 1 亿。在 MTEB 基准检索评估中取得同规模模型最佳性能。</div>
+    <div class="item-url"><a href="https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2" target="_blank">https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2</a></div>
+  </div>
 
-            </ul>
-        </div>
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">3</span>
+      <span class="item-title">Kimi K2.6 登顶金融智能体基准榜首</span>
+      <span class="item-source">Kimi.ai</span>
     </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★★</span>
+    </div>
+    <div class="item-summary">Kimi K2.6 现已成为 Finance Agent Benchmark V2 开源权重排名第一，展现了其在金融分析场景中的强大能力，AI 在金融领域的应用正加速落地。</div>
+    <div class="item-url"><a href="https://x.com/Kimi_Moonshot/status/2054803169994272819" target="_blank">https://x.com/Kimi_Moonshot/status/2054803169994272819</a></div>
+  </div>
 
-    <div class="footer">
-        数据来源：AIHOT · aihot.virxact.com · 自动生成于 2026-05-15 11:22
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">4</span>
+      <span class="item-title">Anthropic 与盖茨基金会达成 2 亿美元合作</span>
+      <span class="item-source">Anthropic Newsroom</span>
     </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★★</span>
+    </div>
+    <div class="item-summary">Anthropic 与盖茨基金会建立为期四年、总额 2 亿美元的合作，通过资金、Claude 使用额度及技术支持，共同推进全球健康、生命科学、教育及经济流动项目，重点改善中低收入国家约 46 亿人口的基本服务。</div>
+    <div class="item-url"><a href="https://www.anthropic.com/news/gates-foundation-partnership" target="_blank">https://www.anthropic.com/news/gates-foundation-partnership</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">5</span>
+      <span class="item-title">xAI 推出 Grok Build 早期测试版</span>
+      <span class="item-source">xAI</span>
+    </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★☆</span>
+    </div>
+    <div class="item-summary">xAI 面向 SuperGrok Heavy 订阅用户推出 Grok Build 早期测试版，这是一个直接在终端运行的新型编程智能体与命令行工具，专为专业软件工程和复杂任务设计。SuperGrok Heavy 现提供约 67% 的半年折扣。</div>
+    <div class="item-url"><a href="https://x.ai/news/grok-build-cli" target="_blank">https://x.ai/news/grok-build-cli</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">6</span>
+      <span class="item-title">Runway 进军日本市场，投资 4000 万美元开设东京办公室</span>
+      <span class="item-source">Runway</span>
+    </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★☆</span>
+    </div>
+    <div class="item-summary">Runway 宣布扩张至日本，在东京设立办公室并初始投资 4000 万美元。日本已成为 Runway 最大且增长最快的市场之一，过去 12 个月企业客户基础增长三倍，跃升为全球第三大市场。</div>
+    <div class="item-url"><a href="https://x.com/runwayml/status/2055065978762051830" target="_blank">https://x.com/runwayml/status/2055065978762051830</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">7</span>
+      <span class="item-title">OpenAI 推出 Codex 自动化钩子与程序化令牌</span>
+      <span class="item-source">OpenAI Developers</span>
+    </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★☆</span>
+    </div>
+    <div class="item-summary">Codex 核心更新包括"钩子"功能，允许在任务关键节点运行脚本进行工作验证、扫描密钥、记录对话或按仓库定制行为。同时面向商业和企业团队推出"程序化访问令牌"，支持自动化集成。</div>
+    <div class="item-url"><a href="https://x.com/OpenAIDevs/status/2055032115964870838" target="_blank">https://x.com/OpenAIDevs/status/2055032115964870838</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">8</span>
+      <span class="item-title">OpenEvidence 覆盖 65% 美国医生，shadow AI 模式引关注</span>
+      <span class="item-source">X：小北</span>
+    </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★☆</span>
+    </div>
+    <div class="item-summary">OpenEvidence 已覆盖 65% 的美国医生，4 月单月临床场景使用达 2700 万次，平均每位医生每月使用 41 次。平台由医生个人通过执业编号在手机上注册，医院最初不知情，展现了 AI 在医疗领域的渗透速度。</div>
+    <div class="item-url"><a href="https://x.com/frxiaobei/status/2054981573150449754" target="_blank">https://x.com/frxiaobei/status/2054981573150449754</a></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="section-icon">🇨🇳</span> 中国 AI 动态</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">9</span>
+      <span class="item-title">蚂蚁 inclusionAI 发布 Ring-2.6-1T 模型</span>
+      <span class="item-source">蚂蚁 inclusionAI</span>
+    </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★☆</span>
+    </div>
+    <div class="item-summary">inclusionAI 发布了 Ring-2.6-1T 模型，在 Claw-Eval 基准测试中通用能力评估得分 58.4，多轮对话评估得分 86.8，展现了蚂蚁在开源大模型领域的持续投入。</div>
+    <div class="item-url"><a href="https://huggingface.co/inclusionAI/Ring-2.6-1T" target="_blank">https://huggingface.co/inclusionAI/Ring-2.6-1T</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">10</span>
+      <span class="item-title">Kimi 推出网页桥接扩展，支持多平台交互</span>
+      <span class="item-source">Kimi.ai</span>
+    </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★★</span>
+    </div>
+    <div class="item-summary">Kimi 推出浏览器扩展"网页桥接"，智能体可以像人类一样与网站互动：搜索、滚动、点击、输入并完成任务。支持 Kimi Code CLI、Claude Code、Cursor、Codex CLI 等多种工具集成。</div>
+    <div class="item-url"><a href="https://x.com/Kimi_Moonshot/status/2054918374837322140" target="_blank">https://x.com/Kimi_Moonshot/status/2054918374837322140</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">11</span>
+      <span class="item-title">百度推进智能体布局，以日活为关键指标</span>
+      <span class="item-source">百度 Baidu</span>
+    </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★☆</span>
+    </div>
+    <div class="item-summary">百度推进智能体组合以拥抱智能体时代，主张将日活跃智能体作为关键指标，体现了国内大厂对 AI Agent 赛道的高度重视和战略投入。</div>
+    <div class="item-url"><a href="https://www.prnewswire.com/news-releases/baidu-advances-agent-portfolio" target="_blank">https://www.prnewswire.com/news-releases/baidu-advances-agent-portfolio</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">12</span>
+      <span class="item-title">小米 MiMo V2.5 Pro 获设计竞技场季军</span>
+      <span class="item-source">小米 MiMo</span>
+    </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★☆</span>
+    </div>
+    <div class="item-summary">MiMo V2.5 Pro 在 DesignArena 上获得第三名，MiMo V2.5 Pro (Thinking) 在总排行榜上比 MiMo-V2.5 提升了 8 个名次，在前端编码任务上表现尤为突出。</div>
+    <div class="item-url"><a href="https://x.com/XiaomiMiMo/status/2054797221250683199" target="_blank">https://x.com/XiaomiMiMo/status/2054797221250683199</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">13</span>
+      <span class="item-title">腾讯开源 Agent Memory，Token 消耗降低 61%</span>
+      <span class="item-source">IT之家</span>
+    </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★★☆</span>
+    </div>
+    <div class="item-summary">腾讯云开源 TencentDB Agent Memory，采用"上下文卸载"与"Mermaid 任务画布"两项核心技术，将完整信息结构化存储，在 Agent 长任务中显著降低 Token 消耗，解决上下文窗口易满、成本高的问题。</div>
+    <div class="item-url"><a href="https://www.ithome.com/0/950/415.htm" target="_blank">https://www.ithome.com/0/950/415.htm</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-number">14</span>
+      <span class="item-title">七成美国民众反对家门口建数据中心，AI 热潮引发民怨</span>
+      <span class="item-source">IT之家</span>
+    </div>
+    <div class="item-meta">
+      <span class="item-time">05/15</span>
+      <span class="stars">★★★☆☆</span>
+    </div>
+    <div class="item-summary">盖洛普调查显示，高达七成美国民众反对在住宅附近建设数据中心，反对率较去年大幅上升，抵触情绪甚至超过对核电站的接受度。全美已有 69 个辖区出台暂停令，多地项目因抗议和监管纠纷延期。</div>
+    <div class="item-url"><a href="https://www.ithome.com/0/950/598.htm" target="_blank">https://www.ithome.com/0/950/598.htm</a></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="section-icon">🏆</span> 全球模型热度榜</h2>
+  <p style="font-size:13px;color:var(--warm-gray);margin-bottom:12px;">基于 OpenRouter 部署数据 · 按上下文长度与系列代表性排序</p>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:center;width:50px;">排名</th>
+        <th>模型</th>
+        <th>机构</th>
+        <th style="text-align:right;">上下文长度</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank">1</td>
+        <td class="model-name">Llama 4 Scout</td>
+        <td class="company">Meta</td>
+        <td class="score">10M</td>
+      </tr>
+      <tr>
+        <td class="rank">2</td>
+        <td class="model-name">Grok 4.20 Multi-Agent</td>
+        <td class="company">xAI</td>
+        <td class="score">2M</td>
+      </tr>
+      <tr>
+        <td class="rank">3</td>
+        <td class="model-name">GPT-5.5 Pro</td>
+        <td class="company">OpenAI</td>
+        <td class="score">1.05M</td>
+      </tr>
+      <tr>
+        <td class="rank">4</td>
+        <td class="model-name">Claude Opus 4.7</td>
+        <td class="company">Anthropic</td>
+        <td class="score">1M</td>
+      </tr>
+      <tr>
+        <td class="rank">5</td>
+        <td class="model-name">DeepSeek V4 Pro</td>
+        <td class="company">DeepSeek</td>
+        <td class="score">1M</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="section-icon">📈</span> 今日趋势洞察</h2>
+  
+  <div class="trend-box">
+    <p><strong>🤖 AI 智能体竞争白热化</strong> — 今日多家公司密集发布智能体相关产品：Kimi 推出网页桥接扩展让 AI 像人类一样操作浏览器；xAI 发布 Grok Build 编程智能体 CLI 工具；OpenAI Codex 新增自动化钩子支持深度定制。智能体正从"概念验证"走向"生产力工具"，浏览器自动化和代码生成是两大主战场。</p>
+  </div>
+  
+  <div class="trend-box">
+    <p><strong>🏛️ AI 治理与社会接受度面临挑战</strong> — OpenAI 遭集体诉讼被指通过追踪代码泄露用户隐私；英国多部门联合警告最先进 AI 模型网络攻击能力已超专业人员；七成美国民众反对在住宅附近建设数据中心。AI 技术快速迭代的同时，监管、隐私和公众接受度问题日益突出，成为行业发展的关键变量。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">AI HOT · 行业日报</div>
+  <p>数据来自 aihot.virxact.com · 报告生成于 2026-05-16 09:00 (UTC+8)</p>
+  <p>本报告由 Hermes Agent 自动生成，仅供参考</p>
+</footer>
+
 </div>
 </body>
 </html>

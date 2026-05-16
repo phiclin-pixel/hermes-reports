@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业热度日报 · 2026-05-16</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a1a;
+  --cinnabar: #c23a30;
+  --paper: #faf8f5;
+  --paper-dark: #f0ece6;
+  --gray: #666;
+  --light-gray: #999;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Serif SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.8;
+  font-size: 15px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  padding: 48px 0 36px;
+  border-bottom: 2px solid var(--cinnabar);
+  margin-bottom: 40px;
+}
+header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+header .subtitle {
+  font-size: 14px;
+  color: var(--gray);
+  letter-spacing: 2px;
+}
+header .date {
+  font-size: 16px;
+  color: var(--cinnabar);
+  margin-top: 8px;
+  font-weight: 600;
+}
+.section {
+  margin-bottom: 48px;
+}
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 24px;
+  padding-left: 16px;
+  border-left: 4px solid var(--cinnabar);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.news-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+.news-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.news-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.news-title a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.news-title a:hover {
+  color: var(--cinnabar);
+}
+.news-meta {
+  font-size: 12px;
+  color: var(--light-gray);
+  margin-bottom: 8px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.news-summary {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+.impact {
+  color: var(--cinnabar);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.leaderboard-table th {
+  background: var(--ink);
+  color: #fff;
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+}
+.leaderboard-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--paper-dark);
+  font-size: 14px;
+}
+.leaderboard-table tr:hover td {
+  background: var(--paper);
+}
+.rank {
+  font-weight: 700;
+  color: var(--cinnabar);
+  font-size: 18px;
+}
+.model-name {
+  font-weight: 600;
+}
+.elo {
+  font-weight: 700;
+  color: var(--cinnabar);
+}
+.change {
+  font-size: 12px;
+  color: var(--gray);
+}
+.insight-box {
+  background: linear-gradient(135deg, var(--paper-dark) 0%, #fff 100%);
+  border-radius: 8px;
+  padding: 24px;
+  border-left: 4px solid var(--cinnabar);
+}
+.insight-box h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+.insight-box p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid var(--paper-dark);
+  margin-top: 48px;
+  font-size: 12px;
+  color: var(--light-gray);
+}
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+.badge-model { background: #e8f4fd; color: #0066cc; }
+.badge-product { background: #e8f8e8; color: #228822; }
+.badge-industry { background: #fff3e0; color: #cc7700; }
+.badge-paper { background: #f3e8ff; color: #6600cc; }
+.badge-tip { background: #f0f0f0; color: #666; }
+@media (max-width: 600px) {
+  .container { padding: 20px 16px; }
+  header h1 { font-size: 24px; }
+  .news-item { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>AI 行业热度日报</h1>
+  <div class="subtitle">GLOBAL AI INDUSTRY DAILY</div>
+  <div class="date">2026年05月16日 星期六 · 农历三月三十</div>
+</header>
+
+<section class="section">
+  <h2 class="section-title">🌍 全球 AI 动态</h2>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://twitter.com/mitchellh/status/2055380239711457578" target="_blank">I believe there are entire companies right now under AI psychosis</a></div>
+    <div class="news-meta">
+      <span>📰 Hacker News / reasonableklout</span>
+      <span class="impact">★★★★★</span>
+    </div>
+    <div class="news-summary">Hacker News 热门讨论，820 points · 355 comments</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://scottjg.com/posts/2026-05-05-egpu-mac-gaming/" target="_blank">RTX 5090 and M4 MacBook Air: Can It Game?</a></div>
+    <div class="news-meta">
+      <span>📰 Hacker News / allenleee</span>
+      <span class="impact">★★★★★</span>
+    </div>
+    <div class="news-summary">Hacker News 热门讨论，675 points · 172 comments</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://www.anthropic.com/news/claude-for-small-business" target="_blank">Claude for Small Business</a></div>
+    <div class="news-meta">
+      <span>📰 Hacker News / neilfrndes</span>
+      <span class="impact">★★★★★</span>
+    </div>
+    <div class="news-summary">Hacker News 热门讨论，532 points · 465 comments</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://jpain.io/god-damn-ai-is-making-me-dumb/" target="_blank">AI is making me dumb</a></div>
+    <div class="news-meta">
+      <span>📰 Hacker News / Eighth</span>
+      <span class="impact">★★★★★</span>
+    </div>
+    <div class="news-summary">Hacker News 热门讨论，531 points · 302 comments</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://openai.com/index/work-with-codex-from-anywhere/" target="_blank">Codex is now in the ChatGPT mobile app</a></div>
+    <div class="news-meta">
+      <span>📰 Hacker News / mikeevans</span>
+      <span class="impact">★★★★☆</span>
+    </div>
+    <div class="news-summary">Hacker News 热门讨论，469 points · 244 comments</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.143" target="_blank">Claude Code v2.1.143 版本更新：插件管理与用户体验增强</a></div>
+    <div class="news-meta">
+      <span>📰 Claude Code：GitHub Releases（RSS）</span>
+      <span class="impact">★★★★★</span>
+    </div>
+    <div class="news-summary">Claude Code 发布 v2.1.143 版本，重点增强了插件管理功能，包括强制执行插件依赖关系，并新增了插件市场的预估上下文成本显示。为方便直接编辑工作副本，增加了 `worktree.bgIsolation： "none"` 设置...</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://x.com/steipete/status/2055405041843052792" target="_blank">无视令牌成本，用百个AI实例自动化驱动开源项目</a></div>
+    <div class="news-meta">
+      <span>📰 X：Peter Steinberger (@steipete)</span>
+      <span class="impact">★★★☆☆</span>
+    </div>
+    <div class="news-summary">作者在OpenClaw项目中大规模运用AI，探索在"令牌成本无关紧要"的未来如何构建软件。团队持续运行约100个Codex实例，自动化处理多项核心工作：审查代码与安全问题、去重归类议题、自动重现复杂测试环境并录制验证视频、从会议讨论中主动创...</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://x.com/kimmonismus/status/2055403142913884288" target="_blank">英伟达CEO称技工前景优于计算机科学毕业生</a></div>
+    <div class="news-meta">
+      <span>📰 X：Kim (@kimmonismus)</span>
+      <span class="impact">★★★☆☆</span>
+    </div>
+    <div class="news-summary">英伟达CEO Jensen Huang在卡内基梅隆大学告诉2026届计算机科学毕业生，电工、水管工等技工比他们更有前景。数据支持这一观点：Randstad分析显示技工需求增长是白领职位的三倍，机器人技术员职位增长107%，而斯坦福研究发现A...</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🇨🇳 中国 AI 动态</h2>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://x.com/berryxia/status/2055444087684407505" target="_blank">智能体驱动系统Articraft实现3D资产生成自动化，开源万件数据集降低门槛</a></div>
+    <div class="news-meta">
+      <span>📰 X：Berry Xia (@berryxia)</span>
+      <span class="impact">★★★☆☆</span>
+    </div>
+    <div class="news-summary">剑桥大学团队推出Articraft，这是一个由智能体驱动的编码系统，能全自动生成带关节、可运动的交互式3D资产。系统通过AI智能体自主编写代码、执行并接收物理反馈迭代优化，将以往需数日甚至数周的创作过程极大简化。团队同时开源了Articra...</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://x.com/MiniMax_AI/status/2055331545402245246" target="_blank">MiniMax M2.7模型上线OrcaRouter平台</a></div>
+    <div class="news-meta">
+      <span>📰 X：MiniMax (@MiniMax_AI)</span>
+      <span class="impact">★★★★☆</span>
+    </div>
+    <div class="news-summary">M2.7已在@OrcaRouter上线--可通过单一OpenAI兼容API访问。
+
+今天就来试试吧！🐋</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://x.com/SenseTime_AI/status/2055315819165597702" target="_blank">SenseNova发布增强版信息图表生成模型SenseNova-U1-8B-MoT-Infographic</a></div>
+    <div class="news-meta">
+      <span>📰 X：商汤 SenseTime (@SenseTime_AI)</span>
+      <span class="impact">★★★★☆</span>
+    </div>
+    <div class="news-summary">SenseNova近日推出专为信息图表生成设计的增强模型SenseNova-U1-8B-MoT-Infographic。该模型能够根据指令生成多种视觉格式内容，包括海报、图表、食谱卡、明信片以及学术风格的arXiv页面等。在性能方面，模型在...</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://x.com/dotey/status/2055307775417139447" target="_blank">Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？</a></div>
+    <div class="news-meta">
+      <span>📰 X：宝玉 (@dotey)</span>
+      <span class="impact">★★★☆☆</span>
+    </div>
+    <div class="news-summary">Forward Deployed Engineer（FDE）是AI落地应用的关键角色，负责在客户现场部署和集成AI系统。近期，OpenAI成立独立部署公司，Anthropic与华尔街巨头合作，Google也简化流程大力招聘，显示行业重心正从...</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://www.ithome.com/0/951/144.htm" target="_blank">英国多部门联合警告：当前最先进 AI 模型网络攻击能力已远超专业人员，企业应做好防范措施</a></div>
+    <div class="news-meta">
+      <span>📰 IT之家（RSS）</span>
+      <span class="impact">★★★★☆</span>
+    </div>
+    <div class="news-summary">英国财政部、英格兰银行及金融行为监管局联合警告，当前最先进的AI模型已具备远超普通专业人员的网络攻击能力，其攻击速度更快、范围更广、成本更低。若被恶意利用，将严重威胁企业运营安全、客户数据、金融市场稳定性乃至整个金融体系。英格兰银行行长安德...</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://x.com/Kling_ai/status/2055302191129473502" target="_blank">戛纳倒计时 | Kling AI大会主讲阵容揭晓！</a></div>
+    <div class="news-meta">
+      <span>📰 X：可灵 Kling AI (@Kling_ai)</span>
+      <span class="impact">★★★★☆</span>
+    </div>
+    <div class="news-summary">2026年戛纳电影节Kling AI大会将汇聚三位世界级电影制作人，展示他们运用Kling AI技术创作的标杆作品。中国动画导演魏立将分享AI生成动画《Born of the Tide》；Jon Erwin将解析为Amazon Prime制...</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://x.com/AYi_AInotes/status/2055263164145504501" target="_blank">飞书开源CLI工具45天获万星，AI操作可见可控引关注</a></div>
+    <div class="news-meta">
+      <span>📰 X：阿易 AI Notes (@AYi_AInotes)</span>
+      <span class="impact">★★★☆☆</span>
+    </div>
+    <div class="news-summary">飞书开源命令行工具lark-cli在45天内获得超过1万GitHub star，成为国内首个破万星的办公套件开源项目。该工具允许AI通过命令行直接操作飞书，执行建群、建文档等任务，且每一步操作都可预览、可审查，与云端不可见的MCP模式形成对...</div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-title"><a href="https://www.ithome.com/0/950/728.htm" target="_blank">为 OpenAI 累计投入超 1000 亿美元，纳德拉称微软当年投资时"没人愿意下注"</a></div>
+    <div class="news-meta">
+      <span>📰 IT之家（RSS）</span>
+      <span class="impact">★★★★★</span>
+    </div>
+    <div class="news-summary">在"马斯克诉奥尔特曼"庭审中，微软企业发展负责人确认，微软对OpenAI的累计投入已超过1000亿美元，其中包括130亿美元原始投资及大量Azure基础设施成本。此次合作已为微软带来约300亿美元营收。CEO纳德拉表示，微软是在"没人愿意下...</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">🏆 全球模型热度榜</h2>
+  <p style="font-size:12px;color:#999;margin-bottom:16px;">数据来源：Chatbot Arena (lmarena.ai) · 6,225,144 votes · 357 models</p>
+  <table class="leaderboard-table">
+    <thead>
+      <tr>
+        <th>排名</th>
+        <th>模型</th>
+        <th>机构</th>
+        <th>Elo 评分</th>
+        <th>变动</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td><span class="rank">1</span></td>
+        <td><span class="model-name">claude-opus-4-6-thinking</span></td>
+        <td>Anthropic</td>
+        <td><span class="elo">1502</span></td>
+        <td><span class="change">1→4</span></td>
+      </tr>
+
+      <tr>
+        <td><span class="rank">2</span></td>
+        <td><span class="model-name">claude-opus-4-7-thinking</span></td>
+        <td>Anthropic</td>
+        <td><span class="elo">1500</span></td>
+        <td><span class="change">1→5</span></td>
+      </tr>
+
+      <tr>
+        <td><span class="rank">3</span></td>
+        <td><span class="model-name">claude-opus-4-6</span></td>
+        <td>Anthropic</td>
+        <td><span class="elo">1498</span></td>
+        <td><span class="change">1→5</span></td>
+      </tr>
+
+      <tr>
+        <td><span class="rank">4</span></td>
+        <td><span class="model-name">claude-opus-4-7</span></td>
+        <td>Anthropic</td>
+        <td><span class="elo">1492</span></td>
+        <td><span class="change">1→8</span></td>
+      </tr>
+
+      <tr>
+        <td><span class="rank">5</span></td>
+        <td><span class="model-name">muse-spark</span> <small style='color:#999'>(Preliminary)</small></td>
+        <td>Meta</td>
+        <td><span class="elo">1490</span></td>
+        <td><span class="change">2→8</span></td>
+      </tr>
+
+    </tbody>
+  </table>
+</section>
+
+<section class="section">
+  <h2 class="section-title">📈 今日趋势洞察</h2>
+  <div class="insight-box">
+    <h3>🔥 Anthropic 霸榜 Arena，Claude Opus 4 系列包揽前四</h3>
+    <p>Chatbot Arena 最新排行榜显示，Anthropic 的 Claude Opus 4 系列以绝对优势占据前四位，Elo 评分均突破 1490 分。其中 claude-opus-4-6-thinking 以 1502 分登顶，领先第二名 2 分。Meta 的 muse-spark 以 1490 分位列第五，但标注为"Preliminary"（初步数据）。这一格局表明 Anthropic 在对话质量上已建立起显著的技术壁垒。</p>
+  </div>
+  <div class="insight-box" style="margin-top:16px;">
+    <h3>🌏 国内 AI 生态持续活跃，MiniMax、商汤、可灵多点开花</h3>
+    <p>今日国内 AI 动态涵盖模型发布（MiniMax M2.7、商汤 SenseNova-U1）、产品迭代（可灵 Kling AI 戛纳大会）及开源工具（飞书 CLI 万星、OpenSquilla 智能路由）多个维度。值得关注的是，蚂蚁集团开源 ARGenSeg-8B 模型，显示国内大厂在开源领域的持续投入。同时，英国多部门联合警告 AI 网络攻击能力已超专业人员，反映出 AI 安全议题正从学术讨论走向政策行动。</p>
+  </div>
+</section>
+
+<footer>
+  <p>AI 行业热度日报 · 数据来源：AIHOT、Hacker News、Chatbot Arena</p>
+  <p style="margin-top:8px;">Generated by Hermes Agent · Nous Research</p>
+</footer>
+</div>
+</body>
+</html>

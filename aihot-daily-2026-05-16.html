@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业日报 · 2026-05-16</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --ink: #1a1a1a;
+    --accent: #c23a30;
+    --muted: #8c8279;
+    --border: #e8e4df;
+    --card-bg: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+    padding: 40px 20px;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  header {
+    text-align: center;
+    padding-bottom: 32px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 32px;
+  }
+  .masthead {
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .date-line {
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .date-line span {
+    margin: 0 8px;
+  }
+  .lead {
+    background: var(--card-bg);
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    font-size: 15px;
+    line-height: 1.9;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .lead-label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  section {
+    margin-bottom: 36px;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .item {
+    background: var(--card-bg);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+  }
+  .item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .item-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .item-num {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    min-width: 28px;
+  }
+  .item-title {
+    font-size: 15px;
+    font-weight: 600;
+    flex: 1;
+  }
+  .item-source {
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .item-summary {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-left: 38px;
+  }
+  .item-url {
+    font-size: 12px;
+    margin-left: 38px;
+    margin-top: 6px;
+  }
+  .item-url a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .item-url a:hover {
+    text-decoration: underline;
+  }
+  .insights {
+    background: var(--card-bg);
+    padding: 20px 24px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .insights ul {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  .insights li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  footer {
+    text-align: center;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .stars {
+    color: var(--accent);
+    font-size: 13px;
+    margin-left: 38px;
+    margin-top: 4px;
+  }
+  @media (max-width: 600px) {
+    body { padding: 20px 12px; }
+    h1 { font-size: 24px; }
+    .item-header { flex-wrap: wrap; }
+    .item-source { width: 100%; margin-top: 4px; }
+    .item-summary, .item-url, .stars { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div class="masthead">AI 行业日报</div>
+  <h1>AI HOT 日报</h1>
+  <div class="date-line">
+    2026年5月16日 <span>·</span> 农历三月廿九 <span>·</span> 星期六
+  </div>
+</header>
+
+<div class="lead">
+  <div class="lead-label">主编导语</div>
+  <div>今日AI热点：Runway Agent一键生成完整广告、Krea 2正式上线面向专业用户、X平台开源"For You"信息流推荐算法。AI视频生成工具持续升温，开源生态与平台算法透明度成为焦点。</div>
+</div>
+
+<section>
+  <h2>🌍 全球 AI 动态</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">1</span>
+      <span class="item-title">Runway Agent一键生成完整广告</span>
+      <span class="item-source">X：Runway</span>
+    </div>
+    <div class="item-summary">Runway Agent 让你仅需一次会话，就能从产品照片和想法转变为完全制作完成的广告。</div>
+    <div class="stars">★★★★★</div>
+    <div class="item-url"><a href="https://x.com/runwayml/status/2055364605979869229" target="_blank">https://x.com/runwayml/status/2055364605979869229</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">2</span>
+      <span class="item-title">Krea 2正式上线面向专业用户</span>
+      <span class="item-source">X：Krea AI</span>
+    </div>
+    <div class="item-summary">从今天起，Krea 2 正式为 Pro 用户上线，提供新一代AI图像生成与编辑能力。</div>
+    <div class="stars">★★★★★</div>
+    <div class="item-url"><a href="https://x.com/krea_ai/status/2055371934452642107" target="_blank">https://x.com/krea_ai/status/2055371934452642107</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">3</span>
+      <span class="item-title">X平台开源"For You"信息流推荐算法</span>
+      <span class="item-source">X：cb_doge</span>
+    </div>
+    <div class="item-summary">X平台在GitHub开源了其"For You"信息流的最新推荐算法，融合已关注账号内容和网络外内容，利用基于Grok架构的Phoenix Transformer模型进行统一评分，提供完整的可运行管道和预训练模型。</div>
+    <div class="stars">★★★★★</div>
+    <div class="item-url"><a href="https://x.com/cb_doge/status/2055280665583898691" target="_blank">https://x.com/cb_doge/status/2055280665583898691</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">4</span>
+      <span class="item-title">ChatGPT 推出全新个人理财体验</span>
+      <span class="item-source">OpenAI 官网</span>
+    </div>
+    <div class="item-summary">OpenAI 在 ChatGPT 中推出全新个人理财功能，进一步拓展AI助手在日常生活中的应用场景。</div>
+    <div class="stars">★★★★☆</div>
+    <div class="item-url"><a href="https://openai.com" target="_blank">https://openai.com</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">5</span>
+      <span class="item-title">语义代码审查工具clawpatch发布</span>
+      <span class="item-source">X：Peter Steinberger</span>
+    </div>
+    <div class="item-summary">clawpatch 0.1.0 将代码库映射成语义功能切片，审查错误和质量问题，并记录经过验证的明确修复尝试。</div>
+    <div class="stars">★★★★☆</div>
+    <div class="item-url"><a href="https://x.com/steipete/status/2055364630709448970" target="_blank">https://x.com/steipete/status/2055364630709448970</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">6</span>
+      <span class="item-title">OpenRouter BYOK三大升级 支持多密钥轮换</span>
+      <span class="item-source">X：OpenRouter</span>
+    </div>
+    <div class="item-summary">OpenRouter BYOK 三项重大升级：可在同一工作空间为同一服务商添加多个密钥并设置调用顺序，便于在速率限制间轮换、区分开发与生产凭证。</div>
+    <div class="stars">★★★★☆</div>
+    <div class="item-url"><a href="https://x.com/OpenRouter/status/205" target="_blank">https://x.com/OpenRouter/status/205...</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">7</span>
+      <span class="item-title">将Grok接入Hermes智能体</span>
+      <span class="item-source">xAI News</span>
+    </div>
+    <div class="item-summary">xAI 发布将 Grok 模型接入 Hermes 智能体框架的技术方案，拓展 Grok 在自动化工作流中的应用场景。</div>
+    <div class="stars">★★★★☆</div>
+    <div class="item-url"><a href="https://x.ai" target="_blank">https://x.ai</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">8</span>
+      <span class="item-title">Anthropic估值与营收飙升</span>
+      <span class="item-source">X：Kim</span>
+    </div>
+    <div class="item-summary">Anthropic 近期估值与营收均实现大幅增长，AI大模型商业化进程持续加速。</div>
+    <div class="stars">★★★★☆</div>
+    <div class="item-url"><a href="https://x.com/kimmonismus" target="_blank">https://x.com/kimmonismus</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">9</span>
+      <span class="item-title">微软研究院发布AI新工具与模型</span>
+      <span class="item-source">X：Microsoft Research</span>
+    </div>
+    <div class="item-summary">微软研究院发布多项AI新工具与模型，持续投入前沿AI技术研发。</div>
+    <div class="stars">★★★☆☆</div>
+    <div class="item-url"><a href="https://x.com/MSFTResearch" target="_blank">https://x.com/MSFTResearch</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">10</span>
+      <span class="item-title">Show HN: 根据基准测试排名寻找最适合的本地LLM</span>
+      <span class="item-source">Hacker News</span>
+    </div>
+    <div class="item-summary">根据基准测试排名，为您的硬件寻找最适合的本地 LLM，帮助开发者在本地部署时做出最优选择。</div>
+    <div class="stars">★★★☆☆</div>
+    <div class="item-url"><a href="https://news.ycombinator.com" target="_blank">https://news.ycombinator.com</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">11</span>
+      <span class="item-title">开源项目OpenSquilla：智能路由降低AI成本近十倍</span>
+      <span class="item-source">X：小互</span>
+    </div>
+    <div class="item-summary">OpenSquilla 通过智能路由策略降低AI调用成本近十倍，兼容多平台与模型，为AI应用开发者提供成本优化方案。</div>
+    <div class="stars">★★★☆☆</div>
+    <div class="item-url"><a href="https://x.com/xiaohu" target="_blank">https://x.com/xiaohu</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">12</span>
+      <span class="item-title">无视令牌成本，用百个AI实例自动化驱动开源项目</span>
+      <span class="item-source">X：Peter Steinberger</span>
+    </div>
+    <div class="item-summary">探索如何利用数百个AI实例自动化驱动开源项目开发，突破传统令牌成本限制。</div>
+    <div class="stars">★★★☆☆</div>
+    <div class="item-url"><a href="https://x.com/steipete" target="_blank">https://x.com/steipete</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">13</span>
+      <span class="item-title">推理的一阶导数：AI浪潮下的增长逻辑</span>
+      <span class="item-source">Tomer Tunguz 博客</span>
+    </div>
+    <div class="item-summary">VC 分析师 Tomer Tunguz 从增长逻辑角度剖析AI浪潮下的投资与创业机会。</div>
+    <div class="stars">★★★☆☆</div>
+    <div class="item-url"><a href="https://tomtunguz.com" target="_blank">https://tomtunguz.com</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">14</span>
+      <span class="item-title">英伟达CEO称技工前景优于计算机科学毕业生</span>
+      <span class="item-source">X：Kim</span>
+    </div>
+    <div class="item-summary">黄仁勋发表观点称技工（trade skills）的职业前景可能优于传统计算机科学毕业生，引发行业对AI时代技能需求的讨论。</div>
+    <div class="stars">★★★☆☆</div>
+    <div class="item-url"><a href="https://x.com/kimmonismus" target="_blank">https://x.com/kimmonismus</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">15</span>
+      <span class="item-title">杨立昆访谈：剖析LLM局限，畅谈AI未来与创业新途</span>
+      <span class="item-source">X：Yann LeCun</span>
+    </div>
+    <div class="item-summary">Meta首席科学家杨立昆深入剖析大语言模型的局限性，并探讨AI技术未来的发展方向与创业机会。</div>
+    <div class="stars">★★★☆☆</div>
+    <div class="item-url"><a href="https://x.com/ylecun" target="_blank">https://x.com/ylecun</a></div>
+  </div>
+</section>
+
+<section>
+  <h2>🇨🇳 中国 AI 动态</h2>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">16</span>
+      <span class="item-title">MiniMax M2.7模型上线OrcaRouter平台</span>
+      <span class="item-source">X：MiniMax</span>
+    </div>
+    <div class="item-summary">MiniMax M2.7 已在 OrcaRouter 上线，可通过单一 OpenAI 兼容 API 访问，为开发者提供更便捷的模型调用方式。</div>
+    <div class="stars">★★★★★</div>
+    <div class="item-url"><a href="https://x.com/MiniMax_AI/status/2055331545402245246" target="_blank">https://x.com/MiniMax_AI/status/2055331545402245246</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">17</span>
+      <span class="item-title">SenseNova发布增强版信息图表生成模型</span>
+      <span class="item-source">X：商汤 SenseTime</span>
+    </div>
+    <div class="item-summary">商汤推出 SenseNova-U1-8B-MoT-Infographic 模型，专为信息图表生成设计，支持海报、图表、食谱卡等多种视觉格式，在 BizGenEval 和 IGenBench 基准上分别提升6.8分和18.2分，已在 Hugging Face 开源。</div>
+    <div class="stars">★★★★★</div>
+    <div class="item-url"><a href="https://x.com/SenseTime_AI/status/2055315819165597702" target="_blank">https://x.com/SenseTime_AI/status/2055315819165597702</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">18</span>
+      <span class="item-title">蚂蚁inclusionAI发布ARGenSeg-8B开源模型</span>
+      <span class="item-source">蚂蚁 inclusionAI</span>
+    </div>
+    <div class="item-summary">蚂蚁包容性AI团队发布 ARGenSeg-8B 模型，致力于通过开源和开放科学推动AI技术进步与普及，促进技术民主化。</div>
+    <div class="stars">★★★★☆</div>
+    <div class="item-url"><a href="https://huggingface.co/inclusionAI/ARGenSeg-8B" target="_blank">https://huggingface.co/inclusionAI/ARGenSeg-8B</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">19</span>
+      <span class="item-title">开源3D生成工具包：单张图片快速构建可交互3D世界</span>
+      <span class="item-source">X：Berry Xia</span>
+    </div>
+    <div class="item-summary">开源3D生成工具包实现从单张图片快速构建可交互3D世界，降低3D内容创作门槛。</div>
+    <div class="stars">★★★★☆</div>
+    <div class="item-url"><a href="https://x.com/berryxia" target="_blank">https://x.com/berryxia</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">20</span>
+      <span class="item-title">戛纳倒计时：可灵Kling AI大会主讲阵容揭晓</span>
+      <span class="item-source">X：可灵 Kling AI</span>
+    </div>
+    <div class="item-summary">可灵AI即将在戛纳举办大会，主讲阵容正式揭晓，展示中国AI视频生成技术的国际影响力。</div>
+    <div class="stars">★★★★☆</div>
+    <div class="item-url"><a href="https://x.com/Kling_ai" target="_blank">https://x.com/Kling_ai</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">21</span>
+      <span class="item-title">飞书开源CLI工具45天获万星，AI操作可见可控引关注</span>
+      <span class="item-source">X：阿易 AI Notes</span>
+    </div>
+    <div class="item-summary">飞书开源CLI工具在45天内获得万星关注，其AI操作可见可控的设计理念引发开发者社区广泛讨论。</div>
+    <div class="stars">★★★★☆</div>
+    <div class="item-url"><a href="https://x.com/AYi_AInotes" target="_blank">https://x.com/AYi_AInotes</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">22</span>
+      <span class="item-title">牛津大学博士后开源视频翻译工具Violin</span>
+      <span class="item-source">X：Berry Xia</span>
+    </div>
+    <div class="item-summary">Violin 视频翻译工具支持多语言翻译与视频对话功能，由牛津大学博士后团队开源发布。</div>
+    <div class="stars">★★★☆☆</div>
+    <div class="item-url"><a href="https://x.com/berryxia" target="_blank">https://x.com/berryxia</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">23</span>
+      <span class="item-title">微软为OpenAI累计投入超1000亿美元</span>
+      <span class="item-source">IT之家</span>
+    </div>
+    <div class="item-summary">纳德拉称微软当年投资OpenAI时"没人愿意下注"，如今累计投入已超1000亿美元，成为AI领域最大单笔投资之一。</div>
+    <div class="stars">★★★★☆</div>
+    <div class="item-url"><a href="https://www.ithome.com" target="_blank">https://www.ithome.com</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <span class="item-num">24</span>
+      <span class="item-title">英国多部门联合警告：最先进AI模型网络攻击能力已远超专业人员</span>
+      <span class="item-source">IT之家</span>
+    </div>
+    <div class="item-summary">英国多部门联合发布警告，称当前最先进AI模型的网络攻击能力已远超专业人员，呼吁企业做好防范措施。</div>
+    <div class="stars">★★★☆☆</div>
+    <div class="item-url"><a href="https://www.ithome.com" target="_blank">https://www.ithome.com</a></div>
+  </div>
+</section>
+
+<section>
+  <h2>📈 今日趋势洞察</h2>
+  <div class="insights">
+    <ul>
+      <li><strong>AI视频生成工具竞争白热化</strong>：Runway Agent、Krea 2、可灵Kling AI同日发布重大更新，AI视频/图像生成赛道进入密集产品发布期，各厂商在易用性和专业功能上展开差异化竞争。</li>
+      <li><strong>平台算法开源成新趋势</strong>：X平台开源"For You"推荐算法，标志着大型社交平台开始向算法透明化迈进，可能引发行业连锁反应。</li>
+      <li><strong>中国模型出海加速</strong>：MiniMax M2.7上线OrcaRouter、商汤SenseNova开源Infographic模型，中国AI厂商通过开源和平台合作加速国际化布局。</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>数据来源：aihot.virxact.com · 生成时间：2026-05-16 11:20 CST</p>
+  <p style="margin-top:4px;">AI HOT 日报 · 每日精选 AI 行业动态</p>
+</footer>
+
+</div>
+</body>
+</html>

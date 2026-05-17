@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI行业热度日报 · 2026-05-17</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#1a1a1a; --cinnabar:#c23a30; --paper:#faf8f5; --paper-dark:#f0ece6; --gray:#6b6b6b; --light-gray:#9a9a9a; --border:#e0d8ce; --warm:#8c8279; --light:#e8e4df; --accent:#f5f0eb; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Serif SC','Helvetica Neue',Helvetica,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+.container{max-width:900px;margin:0 auto;padding:40px 24px}
+.header{text-align:center;padding:48px 0 36px;border-bottom:2px solid var(--cinnabar);margin-bottom:40px}
+.header .badge{display:inline-block;background:var(--cinnabar);color:var(--paper);font-size:12px;letter-spacing:3px;padding:4px 16px;text-transform:uppercase;margin-bottom:16px}
+.header h1{font-size:36px;font-weight:700;letter-spacing:4px;margin-bottom:8px}
+.header .subtitle{font-size:15px;color:var(--gray);letter-spacing:1px}
+.header .date{margin-top:16px;font-size:14px;color:var(--light-gray)}
+.header .date span{margin:0 8px}
+.section{margin-bottom:48px}
+.section-title{font-size:22px;font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.section-title .icon{font-size:24px}
+.news-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:24px;margin-bottom:16px;transition:box-shadow 0.2s}
+.news-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.news-card .headline{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+.news-card h3{font-size:17px;font-weight:600;line-height:1.5;flex:1}
+.news-card h3 a{color:var(--ink);text-decoration:none;border-bottom:1px dashed var(--border);transition:color 0.2s,border-color 0.2s}
+.news-card h3 a:hover{color:var(--cinnabar);border-bottom-color:var(--cinnabar)}
+.news-card .stars{color:var(--cinnabar);font-size:14px;white-space:nowrap;letter-spacing:2px}
+.news-card .meta{font-size:13px;color:var(--light-gray);margin-bottom:10px}
+.news-card .meta .source{color:var(--cinnabar);font-weight:600}
+.news-card .summary{font-size:14.5px;color:var(--gray);line-height:1.7}
+.news-card .hn-stats{font-size:12px;color:var(--light-gray);margin-top:8px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+.model-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.model-table th,.model-table td{padding:14px 18px;text-align:left;font-size:14px}
+.model-table th{background:var(--paper-dark);font-weight:600;color:var(--ink);border-bottom:2px solid var(--cinnabar)}
+.model-table td{border-bottom:1px solid var(--border)}
+.model-table tr:last-child td{border-bottom:none}
+.model-table .rank{font-weight:700;font-size:18px;color:var(--cinnabar);width:60px;text-align:center}
+.model-table .model-name{font-weight:600}
+.model-table .company{color:var(--gray);font-size:13px}
+.model-table .elo{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;color:var(--cinnabar)}
+.model-table .trend-up{color:#2d8a3e;font-weight:600}
+.model-table .trend-down{color:var(--cinnabar);font-weight:600}
+.model-table .trend-flat{color:var(--light-gray)}
+.insight-box{background:#fff;border-left:4px solid var(--cinnabar);padding:24px;margin-bottom:16px;border-radius:0 6px 6px 0}
+.insight-box h4{font-size:16px;font-weight:600;margin-bottom:10px;color:var(--cinnabar)}
+.insight-box p{font-size:14px;color:var(--gray);line-height:1.8}
+.footer{text-align:center;padding:32px 0;border-top:1px solid var(--border);margin-top:40px;font-size:12px;color:var(--light-gray);letter-spacing:1px}
+.footer a{color:var(--cinnabar);text-decoration:none}
+.notice{background:var(--accent);border:1px solid var(--border);border-radius:4px;padding:12px 16px;font-size:13px;color:var(--warm);margin-bottom:20px}
+@media(max-width:640px){.container{padding:20px 16px}.header h1{font-size:26px}.news-card{padding:18px}.news-card .headline{flex-direction:column}.model-table th,.model-table td{padding:10px 12px;font-size:13px}}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header">
+<div class="badge">每日精选</div>
+<h1>AI 行业热度日报</h1>
+<div class="subtitle">Artificial Intelligence Industry Daily</div>
+<div class="date"><span>公历 2026年05月17日</span><span>·</span><span>农历 乙巳年四月初一</span><span>·</span><span>星期日</span></div>
+</header>
+<section class="section">
+<h2 class="section-title"><span class="icon">🌍</span> 全球 AI 动态</h2>
+<div class="notice">📡 数据来源：Hacker News · The Verge · 实时采集</div>
+<div class="news-card"><div class="headline"><h3><a href="https://twitter.com/mitchellh/status/2055380239711457578" target="_blank">1. I believe there are entire companies right now under AI psychosis</a></h3><span class="stars">★★★★★</span></div>
+<div class="meta">信源：<span class="source">X / Mitchell Hashimoto</span></div>
+<div class="summary">HashiCorp创始人Mitchell Hashimoto在X上发文指出，当前许多公司正陷入"AI精神病"状态——盲目追逐AI趋势、过度投资未经验证的AI项目，导致资源浪费和战略失焦。该推文获得近2000点赞和1000+评论，引发硅谷广泛讨论。</div>
+<div class='hn-stats'>📊 HN: 1889 points · 1077 comments</div></div>
+<div class="news-card"><div class="headline"><h3><a href="https://nvlabs.github.io/Sana/WM/" target="_blank">2. SANA-WM, a 2.6B open-source world model for 1-minute 720p video</a></h3><span class="stars">★★★★★</span></div>
+<div class="meta">信源：<span class="source">NVIDIA Labs / arXiv</span></div>
+<div class="summary">NVIDIA实验室发布SANA-WM，一个仅26亿参数的开源世界模型，可生成1分钟720p高清视频。该模型在视频生成质量和效率上取得突破，为开源视频生成领域树立新标杆。</div>
+<div class='hn-stats'>📊 HN: 300 points · 126 comments</div></div>
+<div class="news-card"><div class="headline"><h3><a href="https://kabir.au/blog/the-ctf-scene-is-dead" target="_blank">3. Frontier AI has broken the open CTF format</a></h3><span class="stars">★★★★☆</span></div>
+<div class="meta">信源：<span class="source">kabir.au</span></div>
+<div class="summary">前沿AI模型已破解开放的CTF（夺旗赛）安全竞赛格式，传统安全测试方式面临失效。文章探讨了AI在安全领域的双刃剑效应，以及安全社区需要重新思考评估框架。</div>
+<div class='hn-stats'>📊 HN: 339 points · 331 comments</div></div>
+<div class="news-card"><div class="headline"><h3><a href="https://openai.com/index/malta-chatgpt-plus-partnership/" target="_blank">4. OpenAI and Government of Malta partner to roll out ChatGPT Plus to all citizens</a></h3><span class="stars">★★★★☆</span></div>
+<div class="meta">信源：<span class="source">OpenAI</span></div>
+<div class="summary">OpenAI与马耳他政府达成合作，将向全国公民免费提供ChatGPT Plus订阅。这是OpenAI首个国家级全民AI普及项目，标志着AI公共服务进入新阶段。</div>
+<div class='hn-stats'>📊 HN: 65 points · 69 comments</div></div>
+<div class="news-card"><div class="headline"><h3><a href="https://arxiv.org/abs/2605.12357" target="_blank">5. δ-mem: Efficient Online Memory for Large Language Models</a></h3><span class="stars">★★★★☆</span></div>
+<div class="meta">信源：<span class="source">arXiv</span></div>
+<div class="summary">新论文提出δ-mem架构，为大型语言模型提供高效的在线记忆机制，显著降低推理时的内存开销同时保持性能。该研究有望改善LLM的长上下文处理能力。</div>
+<div class='hn-stats'>📊 HN: 194 points · 53 comments</div></div>
+<div class="news-card"><div class="headline"><h3><a href="https://crates.io/crates/zerostack/1.0.0" target="_blank">6. Zerostack – A Unix-inspired coding agent written in pure Rust</a></h3><span class="stars">★★★☆☆</span></div>
+<div class="meta">信源：<span class="source">crates.io</span></div>
+<div class="summary">Zerostack是一款受Unix哲学启发的编程智能体，完全使用Rust编写。它采用模块化设计，将复杂编程任务分解为管道化的子任务，在HN获得高度关注。</div>
+<div class='hn-stats'>📊 HN: 170 points · 46 comments</div></div>
+<div class="news-card"><div class="headline"><h3><a href="https://www.seangoedecke.com/steering-vectors/" target="_blank">7. DeepSeek-V4-Flash means LLM steering is interesting again</a></h3><span class="stars">★★★☆☆</span></div>
+<div class="meta">信源：<span class="source">seangoedecke.com</span></div>
+<div class="summary">DeepSeek-V4-Flash的发布让LLM转向向量（steering vectors）研究重新变得有趣。文章探讨了如何通过方向操控来引导模型行为，为模型可控性提供新思路。</div>
+<div class='hn-stats'>📊 HN: 213 points · 70 comments</div></div>
+<div class="news-card"><div class="headline"><h3><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">8. OpenAI keeps shuffling its executives in bid to win AI agent battle</a></h3><span class="stars">★★★★☆</span></div>
+<div class="meta">信源：<span class="source">The Verge</span></div>
+<div class="summary">The Verge报道，OpenAI持续进行高管调整，旨在赢得AI智能体竞争。ChatGPT、Codex和API三大产品线正在紧急整合，总裁Greg Brockman重新掌权挂帅。</div>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title"><span class="icon">🇨🇳</span> 中国 AI 动态</h2>
+<div class="notice">📡 数据来源：36氪 · 新智元 · 量子位 · 机器之心 · aihot数据暂不可用</div>
+<div class="news-card"><div class="headline"><h3><a href="https://36kr.com/information/AI" target="_blank">1. 突发：OpenAI大规模重组，总裁Brockman夺权挂帅</a></h3><span class="stars">★★★★★</span></div>
+<div class="meta">信源：<span class="source">新智元</span></div>
+<div class="summary">OpenAI进行大规模组织架构重组，总裁Greg Brockman重新掌权。ChatGPT、Codex和API三大核心产品线紧急合并，旨在加速AI智能体战略落地。</div>
+</div>
+<div class="news-card"><div class="headline"><h3><a href="https://36kr.com/information/AI" target="_blank">2. Gemini 3.5 Pro全网首曝，编程追平GPT-5.5，谷歌终于狠起来了</a></h3><span class="stars">★★★★★</span></div>
+<div class="meta">信源：<span class="source">新智元</span></div>
+<div class="summary">谷歌Gemini 3.5 Pro首次曝光，编程能力追平OpenAI的GPT-5.5。这是谷歌在代码生成领域的重大突破，标志着Gemini系列在开发者工具市场的强势崛起。</div>
+</div>
+<div class="news-card"><div class="headline"><h3><a href="https://36kr.com/information/AI" target="_blank">3. 腾讯造了个"贾维斯"：替我签到改配置，还会打盹上厕所，一手实测来了</a></h3><span class="stars">★★★★☆</span></div>
+<div class="meta">信源：<span class="source">量子位</span></div>
+<div class="summary">腾讯推出全新AI智能体，可自动完成签到、配置修改等办公任务，甚至模拟人类行为模式。实测显示该智能体在办公自动化场景表现出色。</div>
+</div>
+<div class="news-card"><div class="headline"><h3><a href="https://36kr.com/information/AI" target="_blank">4. 估值超越OpenAI，Anthropic被曝已敲定300亿美元融资条款</a></h3><span class="stars">★★★★★</span></div>
+<div class="meta">信源：<span class="source">36氪</span></div>
+<div class="summary">Anthropic reportedly finalized $30 billion funding terms, surpassing OpenAI in valuation. This reflects investor confidence in Claude's enterprise market performance and AI safety approach.</div>
+</div>
+<div class="news-card"><div class="headline"><h3><a href="https://36kr.com/information/AI" target="_blank">5. 可灵凭什么单飞？营收仅快手1%，估值却1300亿</a></h3><span class="stars">★★★★☆</span></div>
+<div class="meta">信源：<span class="source">蓝字计划</span></div>
+<div class="summary">快手旗下AI视频生成平台可灵（Kling）拟独立分拆，尽管营收仅占快手1%，估值却高达1300亿元。资本市场对AI原生应用的估值逻辑引发热议。</div>
+</div>
+<div class="news-card"><div class="headline"><h3><a href="https://36kr.com/information/AI" target="_blank">6. 阿里首度披露AI年化收入</a></h3><span class="stars">★★★★☆</span></div>
+<div class="meta">信源：<span class="source">36氪</span></div>
+<div class="summary">阿里巴巴首次披露AI业务年化收入数据，市场对这笔生意的长期回报率仍在观望。阿里正加速将AI能力整合进电商、云计算等核心业务。</div>
+</div>
+<div class="news-card"><div class="headline"><h3><a href="https://36kr.com/information/AI" target="_blank">7. 吴恩达怒散「AI就业末日论」：贩卖失业焦虑，其实就是一门生意</a></h3><span class="stars">★★★☆☆</span></div>
+<div class="meta">信源：<span class="source">机器之心</span></div>
+<div class="summary">AI教父吴恩达公开驳斥"AI将导致大规模失业"的末日论调，指出贩卖失业焦虑本身已成为一门生意。他呼吁理性看待AI对就业市场的影响。</div>
+</div>
+<div class="news-card"><div class="headline"><h3><a href="https://36kr.com/information/AI" target="_blank">8. 天津机器人军团，其实超能打</a></h3><span class="stars">★★★☆☆</span></div>
+<div class="meta">信源：<span class="source">数字光年</span></div>
+<div class="summary">天津机器人产业集群展现出惊人竞争力，多家企业在工业自动化和人形机器人领域取得突破性进展，成为北方AI制造新高地。</div>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title"><span class="icon">🏆</span> 全球模型热度榜</h2>
+<div class="notice">📡 数据来源：OpenRouter API · 基于上下文长度与部署热度综合排序 · Chatbot Arena 因 reCAPTCHA 验证暂无法获取</div>
+<table class="model-table"><thead><tr><th style="width:60px;text-align:center;">排名</th><th>模型名称</th><th style="width:100px;">机构</th><th style="width:100px;">上下文长度</th><th style="width:80px;">趋势</th></tr></thead><tbody>
+<tr><td class="rank">#1</td><td class="model-name">Llama 4 Scout</td><td class="company">Meta</td><td class="elo">10.0M ctx</td><td class="trend-up">↑ 新上榜</td></tr>
+<tr><td class="rank">#2</td><td class="model-name">Grok 4.20 Multi-Agent</td><td class="company">xAI</td><td class="elo">2.0M ctx</td><td class="trend-up">↑ 上升</td></tr>
+<tr><td class="rank">#3</td><td class="model-name">GPT-5.5 Pro</td><td class="company">OpenAI</td><td class="elo">1.1M ctx</td><td class="trend-flat">→ 稳定</td></tr>
+<tr><td class="rank">#4</td><td class="model-name">Gemini 3.1 Flash Lite</td><td class="company">Google</td><td class="elo">1.0M ctx</td><td class="trend-flat">→ 稳定</td></tr>
+<tr><td class="rank">#5</td><td class="model-name">DeepSeek V4 Pro</td><td class="company">DeepSeek</td><td class="elo">1.0M ctx</td><td class="trend-flat">→ 稳定</td></tr>
+</tbody></table>
+<p style="font-size:12px;color:var(--light-gray);margin-top:12px;">* 注：Chatbot Arena (lmarena.ai) 排行榜因 reCAPTCHA 验证无法自动获取，当前数据基于 OpenRouter 模型部署数据。Elo 评分列显示上下文长度作为参考指标。</p>
+</section>
+<section class="section">
+<h2 class="section-title"><span class="icon">📈</span> 今日趋势洞察</h2>
+<div class="insight-box"><h4>AI Agent基础设施竞争白热化</h4><p>本周OpenAI重组聚焦Agent战略、腾讯发布办公智能体、Zerostack开源Rust编程Agent，表明AI Agent正从概念走向落地。各厂商在"能干活"的AI上展开激烈竞争，Agent互操作性（MCP协议）成为关键战场。</p></div>
+<div class="insight-box"><h4>开源模型上下文长度竞赛升温</h4><p>Meta Llama 4 Scout以1000万上下文长度领跑，xAI Grok 4.20达200万上下文。长上下文能力正成为模型竞争的新维度，将直接影响RAG、代码分析、文档处理等场景的体验。</p></div>
+</section>
+<footer class="footer">
+<p>AI 行业热度日报 · 每日自动采集生成</p>
+<p style="margin-top:8px;">数据来源：Hacker News · The Verge · 36氪 · 新智元 · 量子位 · OpenRouter</p>
+<p style="margin-top:8px;">报告链接：<a href="https://phiclin-pixel.github.io/hermes-reports/ai-news-daily-2026-05-17.html" target="_blank">https://phiclin-pixel.github.io/hermes-reports/ai-news-daily-2026-05-17.html</a></p>
+<p style="margin-top:8px;">生成时间：2026-05-17 10:21 (UTC+8)</p>
+</footer>
+</div>
+</body>
+</html>

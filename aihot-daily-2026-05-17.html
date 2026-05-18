@@ -6,514 +6,316 @@
 <title>AI 行业日报 · 2026-05-17</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #faf8f5;
-  --ink: #1a1a1a;
-  --accent: #c23a30;
-  --gray: #8c8279;
-  --light-gray: #e8e4df;
-  --section-bg: #f5f2ed;
-}
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
-  background: var(--bg);
-  color: var(--ink);
+  font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  background: #faf8f5;
+  color: #1a1a1a;
   line-height: 1.8;
-  font-size: 16px;
+  padding: 40px 20px;
 }
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px 24px;
+  background: #fff;
+  padding: 48px 56px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
-header {
+.header {
   text-align: center;
-  padding-bottom: 32px;
-  border-bottom: 2px solid var(--accent);
-  margin-bottom: 40px;
+  border-bottom: 2px solid #c23a30;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
 }
-.badge {
-  display: inline-block;
-  background: var(--accent);
-  color: white;
-  padding: 4px 16px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
-}
-h1 {
-  font-size: 32px;
+.header h1 {
+  font-size: 28px;
   font-weight: 700;
-  letter-spacing: 4px;
-  margin-bottom: 8px;
+  color: #1a1a1a;
+  letter-spacing: 2px;
 }
-.subtitle {
-  color: var(--gray);
+.header .subtitle {
   font-size: 14px;
-  letter-spacing: 1px;
+  color: #8c8279;
+  margin-top: 8px;
+}
+.header .date {
+  font-size: 16px;
+  color: #c23a30;
+  margin-top: 4px;
+  font-weight: 600;
 }
 .lead {
-  background: var(--section-bg);
-  padding: 24px;
-  margin-bottom: 40px;
-  border-left: 4px solid var(--accent);
+  background: #fdf6f0;
+  border-left: 4px solid #c23a30;
+  padding: 20px 24px;
+  margin-bottom: 32px;
+  border-radius: 0 4px 4px 0;
 }
 .lead h2 {
-  font-size: 18px;
+  font-size: 16px;
+  color: #c23a30;
+  margin-bottom: 8px;
   font-weight: 600;
-  margin-bottom: 12px;
-  color: var(--accent);
 }
 .lead p {
   font-size: 15px;
-  color: var(--gray);
+  color: #4a4a4a;
   line-height: 1.9;
 }
 .section {
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 .section-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 20px;
+  color: #1a1a1a;
+  margin-bottom: 16px;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--light-gray);
+  border-bottom: 1px solid #e8e4df;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 .item {
-  padding: 20px 0;
-  border-bottom: 1px solid var(--light-gray);
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed #e8e4df;
 }
 .item:last-child {
   border-bottom: none;
 }
-.item-header {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin-bottom: 8px;
-  flex-wrap: wrap;
-}
-.item-num {
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 18px;
-  min-width: 28px;
-}
 .item-title {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
-  flex: 1;
+  color: #1a1a1a;
+  margin-bottom: 4px;
 }
 .item-source {
-  color: var(--gray);
-  font-size: 13px;
+  font-size: 12px;
+  color: #8c8279;
+  margin-bottom: 6px;
 }
 .item-summary {
-  color: var(--gray);
   font-size: 14px;
-  line-height: 1.8;
-  margin: 8px 0;
-}
-.item-meta {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 13px;
-  margin-top: 8px;
-}
-.item-score {
-  color: var(--accent);
-  letter-spacing: 2px;
+  color: #4a4a4a;
+  line-height: 1.7;
+  margin-bottom: 6px;
 }
 .item-url {
-  color: var(--gray);
+  font-size: 12px;
+  color: #c23a30;
   text-decoration: none;
-  border-bottom: 1px dotted var(--gray);
+  word-break: break-all;
 }
 .item-url:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  text-decoration: underline;
 }
-.insights {
-  background: var(--section-bg);
-  padding: 24px;
-  margin-bottom: 40px;
-}
-.insights h2 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: var(--accent);
-}
-.insights ul {
-  list-style: none;
-}
-.insights li {
-  padding: 8px 0;
-  padding-left: 20px;
-  position: relative;
-  font-size: 15px;
-}
-.insights li::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-}
-.leaderboard {
-  background: var(--section-bg);
-  padding: 24px;
-  margin-bottom: 40px;
-}
-.leaderboard h2 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: var(--accent);
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-}
-th, td {
-  padding: 10px 12px;
-  text-align: left;
-  border-bottom: 1px solid var(--light-gray);
-}
-th {
-  font-weight: 600;
-  color: var(--gray);
-  font-size: 13px;
-}
-footer {
+.footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #e8e4df;
   text-align: center;
-  padding-top: 32px;
-  border-top: 1px solid var(--light-gray);
-  color: var(--gray);
-  font-size: 13px;
+  font-size: 12px;
+  color: #8c8279;
 }
-@media (max-width: 600px) {
-  h1 { font-size: 24px; }
-  .container { padding: 24px 16px; }
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: #f0ece6;
+  color: #8c8279;
+  margin-right: 6px;
+}
+.stars {
+  color: #c23a30;
+  font-size: 13px;
+  margin-left: 4px;
 }
 </style>
 </head>
 <body>
 <div class="container">
-<header>
-  <div class="badge">AI HOT DAILY</div>
-  <h1>AI 行业日报</h1>
-  <div class="subtitle">2026-05-17 · 农历四月廿一</div>
-</header>
+  <div class="header">
+    <h1>AI 行业日报</h1>
+    <div class="date">2026-05-17 · 四月初一</div>
+    <div class="subtitle">数据来自 aihot.virxact.com · 每日精选 AI 动态</div>
+  </div>
 
-<div class="lead">
-  <h2>主编导语</h2>
-  <p><strong>今日AI热点：SANA-WM：一个用于生成1分钟720p视频的26亿级开源世界模型、Codex新增键盘快捷键自定义功能、Notion推出开发者平台及CLI工具</strong></p>
-  
-</div>
+  <div class="lead">
+    <h2>主编导语</h2>
+    <p><strong>今日AI热点</strong> — SANA-WM：一个用于生成1分钟720p视频的26亿级开源世界模型、Codex新增键盘快捷键自定义功能、Notion推出开发者平台及CLI工具、社区协作再创佳绩，vLLM支持万亿级模型。</p>
+  </div>
 
-<div class="section">
-  <div class="section-title">🌍 全球 AI 动态</div>
+  <div class="section">
+    <div class="section-title">🌍 全球 AI 动态</div>
 
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">1</span>
-      <span class="item-title">SANA-WM：一个用于生成1分钟720p视频的26亿级开源世界模型</span>
-      <span class="item-source">— Hacker News 热门（buzzing.cc 中文翻译）</span>
+    <div class="item">
+      <div class="item-title">1. SANA-WM：一个用于生成1分钟720p视频的26亿级开源世界模型 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">模型发布/更新</span>Hacker News 热门（buzzing.cc 中文翻译）</div>
+      <div class="item-summary">NVIDIA研究团队发布了SANA-WM，这是一个参数规模达26亿的开源世界模型，专门用于生成长达1分钟、分辨率为720p的视频。该模型已在GitHub页面开源，旨在推动高质量长视频生成的研发。其在Hacker News社区获得了107点热度，显示出业界对该技术进展的关注。</div>
+      <a class="item-url" href="https://nvlabs.github.io/Sana/WM" target="_blank">https://nvlabs.github.io/Sana/WM</a>
     </div>
-    <div class="item-summary">NVIDIA研究团队发布了SANA-WM，这是一个参数规模达26亿的开源世界模型，专门用于生成长达1分钟、分辨率为720p的视频。该模型已在GitHub页面开源，旨在推动高质量长视频生成的研发。其在Hacker News社区获得了107点热度，显示出业界对该技术进展的关注。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★☆</span>
-      <a class="item-url" href="https://nvlabs.github.io/Sana/WM" target="_blank">查看原文 ↗</a>
+
+    <div class="item">
+      <div class="item-title">2. Codex新增键盘快捷键自定义功能 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">产品发布/更新</span>X：Tibo (@thsottiaux)</div>
+      <div class="item-summary">不知为何我们选择周六发布更新，但Codex确实迎来了一系列优化。 这些改进让使用体验愉悦许多，实在不该拖到周二再公布。 键盘快捷键现已支持自定义。 根据实际工作方式配置Codex，通过设置调整快捷键，不必再迁就默认设定。</div>
+      <a class="item-url" href="https://x.com/thsottiaux/status/2055735802894954612" target="_blank">https://x.com/thsottiaux/status/2055735802894954612</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">3. Notion推出开发者平台及CLI工具 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">产品发布/更新</span>X：Oran Ge (@oran_ge)</div>
+      <div class="item-summary">Notion正式推出开发者平台，核心组件包括Notion CLI终端工具、Workers计算服务、数据库同步功能以及多种Agent工具与API。平台旨在让开发者更便捷地在Notion基础设施上运行代码、连接外部数据源并构建自动化工作流。未来，即使非开发者也能通过AI Agent在Notion上构建应用。</div>
+      <a class="item-url" href="https://x.com/oran_ge/status/2055539910212460878" target="_blank">https://x.com/oran_ge/status/2055539910212460878</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">4. 按需定制快捷键，优化工作流效率 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">产品发布/更新</span>X：OpenAI Developers (@OpenAIDevs)</div>
+      <div class="item-summary">处理大家的反馈让我们感到太有趣了。 （请继续反馈。） 键盘快捷键现已支持自定义。 围绕你的实际工作方式设置 Codex，然后通过设置调整快捷键，无需再适应我们的默认配置。</div>
+      <a class="item-url" href="https://x.com/OpenAIDevs/status/2055717793841221796" target="_blank">https://x.com/OpenAIDevs/status/2055717793841221796</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">5. 美国开始出现人工智能相关岗位的大规模裁员 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">行业动态</span>Hacker News 热门（buzzing.cc 中文翻译）</div>
+      <div class="item-summary">美国人工智能相关岗位正出现大规模裁员。根据彭博社报道，受AI影响的职位开始经历严重的就业岗位流失。这一趋势表明AI技术对劳动力市场的冲击已从理论讨论进入现实阶段，具体裁员数字和涉及的行业领域在进一步显现中。</div>
+      <a class="item-url" href="https://www.bloomberg.com/news/articles/2026-05-15/us-is-starting-to-see-heavy-job-losses-in-roles-exposed-to-ai" target="_blank">https://www.bloomberg.com/news/articles/2026-05-15/us-is-starting-to-see-heavy-job-losses-in-roles-exposed-to-ai</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">6. 研究人员利用Anthropic Mythos工具构建macOS内核漏洞，绕过苹果M5芯片内存完整性执行安全系统 <span class="stars">★★★★★</span></div>
+      <div class="item-source"><span class="tag">行业动态</span>X：Kim (@kimmonismus)</div>
+      <div class="item-summary">三名研究人员借助Anthropic的Mythos工具，成功开发出一个可绕过苹果M5芯片内存完整性执行（MIE）安全机制的macOS内核漏洞利用程序。MIE是苹果耗时五年、投入巨资为M5和A19芯片打造的旗舰安全功能，旨在彻底消除内存损坏漏洞。研究团队于4月25日发现漏洞，5月1日即完成开发，并亲自前往苹果园区提交报告。该攻击采用纯数据攻击方式，无需操纵指针，仅通过非特权用户的标准系统调用即可获取根权限。完整技术报告将在苹果发布补丁后公开。</div>
+      <a class="item-url" href="https://x.com/kimmonismus/status/2055571960260645125" target="_blank">https://x.com/kimmonismus/status/2055571960260645125</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">7. OpenAI 与马耳他合作，向所有公民提供 ChatGPT Plus <span class="stars">★★★★★</span></div>
+      <div class="item-source"><span class="tag">行业动态</span>OpenAI：官网动态（RSS · 排除企业/客户案例）</div>
+      <div class="item-summary">OpenAI 与马耳他政府达成合作，将向该国所有公民免费提供 ChatGPT Plus 订阅服务。此次合作旨在扩大人工智能技术的普及范围，并包含面向公民的 AI 技能实践培训，以帮助民众负责任地使用 AI。该计划是国家级大规模推广 ChatGPT Plus 的首例，预计将提升马耳他全民的 AI 素养与应用能力。</div>
+      <a class="item-url" href="https://openai.com/index/malta-chatgpt-plus-partnership" target="_blank">https://openai.com/index/malta-chatgpt-plus-partnership</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">8. Show HN: 烧吧，宝贝，烧吧（那些代币） <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">技巧与观点</span>Hacker News 热门（buzzing.cc 中文翻译）</div>
+      <div class="item-summary">开发者发布了一个名为“烧吧，宝贝，烧吧”的开源项目，旨在通过销毁代币来应对加密货币领域的通胀问题。该项目提供了一个工具，允许用户主动销毁自己持有的代币，从而减少总供应量。此举可能提升剩余代币的稀缺性与潜在价值。项目已在GitHub上开源，并在Hacker News上获得了100点的社区热度。</div>
+      <a class="item-url" href="https://github.com/dtnewman/burn-baby-burn" target="_blank">https://github.com/dtnewman/burn-baby-burn</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">9. 工具使用代理认知与行动脱节机制研究 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">技巧与观点</span>X：Elvis Saravia (@omarsar0, DAIR.AI)</div>
+      <div class="item-summary">该可解释性论文聚焦工具使用代理，通过探测隐藏状态发现模型常能识别应调用工具，但实际调用失败，不匹配率达26%-54%。问题完全集中于认知到行动的过渡阶段，而非认知本身。内部探测方向可解码，但后期层的最后令牌机制使信号旋转，几乎与产生的行动正交。研究旨在预测干预措施效果，指出常见归因如提示或训练不足可能忽略后期层几何结构，这为工具使用提示A/B测试中的性能上限提供了合理解释。</div>
+      <a class="item-url" href="https://x.com/omarsar0/status/2055750162526715926" target="_blank">https://x.com/omarsar0/status/2055750162526715926</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">10. Eric Jang分享从零构建AlphaGo的经历与见解 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">技巧与观点</span>X：Marc Andreessen (@pmarca, a16z)</div>
+      <div class="item-summary">Eric Jang在过去几个月从零开始实现AlphaGo，这是2016年激发他进入深度学习的AI突破。他最初理解AlphaGo为“通过自我对弈训练的搜索增强深度神经网络”，但通过亲手构建获得了更深层次的理解。他指出，前沿深度学习研究虽昂贵，但特定能力的实现成本下降迅速；在2026年，训练强大围棋AI仅需几千美元租赁算力，无需DeepMind级别的资源。他荣幸受邀在播客中分享这一过程，并提供了详细教程和代码，同时谦虚自称围棋与AlphaGo学徒，对任何事实错误负责。</div>
+      <a class="item-url" href="https://x.com/pmarca/status/2055723987850690927" target="_blank">https://x.com/pmarca/status/2055723987850690927</a>
     </div>
   </div>
 
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">2</span>
-      <span class="item-title">Codex新增键盘快捷键自定义功能</span>
-      <span class="item-source">— X：Tibo (@thsottiaux)</span>
+  <div class="section">
+    <div class="section-title">🇨🇳 中国 AI 动态</div>
+
+    <div class="item">
+      <div class="item-title">1. 社区协作再创佳绩，vLLM支持万亿级模型 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">模型发布/更新</span>X：蚂蚁百灵 (@AntLingAGI)</div>
+      <div class="item-summary">又一次Day0协作，又一次社区胜利。感谢@vllm_project团队始终可靠的支持~ 🫡🫡</div>
+      <a class="item-url" href="https://x.com/AntLingAGI/status/2055689329339760829" target="_blank">https://x.com/AntLingAGI/status/2055689329339760829</a>
     </div>
-    <div class="item-summary">不知为何我们选择周六发布更新，但Codex确实迎来了一系列优化。 这些改进让使用体验愉悦许多，实在不该拖到周二再公布。 键盘快捷键现已支持自定义。 根据实际工作方式配置Codex，通过设置调整快捷键，不必再迁就默认设定。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★☆</span>
-      <a class="item-url" href="https://x.com/thsottiaux/status/2055735802894954612" target="_blank">查看原文 ↗</a>
+
+    <div class="item">
+      <div class="item-title">2. Ring-2.6-1T开源并上线OpenRouter，专为智能体工作流设计 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">模型发布/更新</span>X：蚂蚁百灵 (@AntLingAGI)</div>
+      <div class="item-summary">Ring-2.6-1T模型现已开源，并上线OpenRouter平台，5月底前享有75%折扣。该模型由AntLingAGI开发，是一个为现实世界智能体构建的万亿级推理模型，其核心设计目标不仅是回答问题，更是执行任务。它专注于规划步骤、使用工具、维持上下文和完成复杂工作流，具备强大的智能体执行能力和高推理模式，并采用了Async RL与IcePop训练方法。</div>
+      <a class="item-url" href="https://x.com/AntLingAGI/status/2055681163033997815" target="_blank">https://x.com/AntLingAGI/status/2055681163033997815</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">3. 突发！OpenAI 大规模重组，总裁 Brockman 夺权挂帅 <span class="stars">★★★★★</span></div>
+      <div class="item-source"><span class="tag">行业动态</span>IT之家（RSS）</div>
+      <div class="item-summary">OpenAI宣布进行史上最大规模重组，将ChatGPT、Codex和API三大核心产品线合并为统一组织。联合创始人兼总裁Greg Brockman正式全面接管产品战略，成为实际掌权者，而ChatGPT原负责人Nick Turley被调离核心岗位。此次重组旨在整合资源，聚焦“智能体时代”，并秘密开发集成多项功能的“超级应用”桌面端产品。与此同时，竞争对手Anthropic估值飙升至9000亿美元，使OpenAI面临严峻挑战。</div>
+      <a class="item-url" href="https://www.ithome.com/0/951/258.htm" target="_blank">https://www.ithome.com/0/951/258.htm</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">4. 杭州基地启用，机器人有了国家级职业技能训练场 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">行业动态</span>IT之家（RSS）</div>
+      <div class="item-summary">国家人工智能应用中试基地（具身智能）5月16日在浙江杭州挂牌启用，为机器人提供国家级职业技能训练场。该基地是集场景体验、技术展示、研发合作、产业赋能于一体的综合性平台，旨在推动具身智能技术从实验室迈向现实应用。杭州市于5月1日施行首部具身智能机器人地方性法规，支持核心研发、平台建设和场景开放。目前杭州已集聚机器人产业相关企业700余家，2025年具身智能产业集群产值达1068亿元。</div>
+      <a class="item-url" href="https://www.ithome.com/0/951/390.htm" target="_blank">https://www.ithome.com/0/951/390.htm</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">5. 智能体驱动系统Articraft实现3D资产生成自动化，开源万件数据集降低门槛 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">论文研究</span>X：Berry Xia (@berryxia)</div>
+      <div class="item-summary">剑桥大学团队推出Articraft，这是一个由智能体驱动的编码系统，能全自动生成带关节、可运动的交互式3D资产。系统通过AI智能体自主编写代码、执行并接收物理反馈迭代优化，将以往需数日甚至数周的创作过程极大简化。团队同时开源了Articraft-10K数据集，包含超1万个物体，覆盖250个类别，所有资产均仿真就绪。此举显著降低了机器人训练和物理AI领域对高质量3D资产的数据门槛，为解决“数据饥渴”问题提供了高效的自动化方案。</div>
+      <a class="item-url" href="https://x.com/berryxia/status/2055444087684407505" target="_blank">https://x.com/berryxia/status/2055444087684407505</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">6. 藏师傅PPT Skills更新，AI自动美化截图 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">技巧与观点</span>X：歸藏 (@op7418)</div>
+      <div class="item-summary">藏师傅PPT Skills产品更新，新增截图美化功能。该功能无需消耗GPT-Image 2.0资源，即可根据用户截图的大小、长宽比以及当前PPT的模板类型和颜色主题，自动匹配合适的背景图，实现类似CleanShot X等专业软件的截图美化效果。AI还能处理过长等有问题的图片，例如将其自动裁剪并排成两列展示。</div>
+      <a class="item-url" href="https://x.com/op7418/status/2055477163579891897" target="_blank">https://x.com/op7418/status/2055477163579891897</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">7. MagicPath与Codex深度整合，设计开发流程合二为一 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">技巧与观点</span>X：Berry Xia (@berryxia)</div>
+      <div class="item-summary">MagicPath AI CEO @skirano 演示了其产品与Codex的深度整合。用户现可将MagicPath作为原生画布直接在Codex中运行，通过拖拽设计UI，Codex能实时感知项目并自动生成、编辑代码，实现设计与开发的无缝衔接，无需在Figma和IDE间切换。安装简便，只需在Codex中粘贴一条命令即可完成配置。此举将“设计-开发-迭代”流程整合于单一窗口，显著缩短了从创意到可运行应用的距离。</div>
+      <a class="item-url" href="https://x.com/berryxia/status/2055766210512560416" target="_blank">https://x.com/berryxia/status/2055766210512560416</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">8. Codex实现多设备远程控制与上下文共享 <span class="stars">★★★★☆</span></div>
+      <div class="item-source"><span class="tag">技巧与观点</span>X：歸藏 (@op7418)</div>
+      <div class="item-summary">Codex除了通过ChatGPT连接和远程控制外，还能控制另一台电脑，实现在ChatGPT上直接管理多台设备而无需切换，只需切换项目即可访问不同设备的上下文和文件。引用推文补充，此功能还支持通过远程SSH设置其他VMs等，增强了多设备协作的灵活性和实用性。</div>
+      <a class="item-url" href="https://x.com/op7418/status/2055561525633642762" target="_blank">https://x.com/op7418/status/2055561525633642762</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">9. Anthropic《Founder's Playbook》：AI提高创业失败率的警示 <span class="stars">★★★★★</span></div>
+      <div class="item-source"><span class="tag">技巧与观点</span>X：Berry Xia (@berryxia)</div>
+      <div class="item-summary">Anthropic发布内部手册《Founder's Playbook》，核心观点是AI（如Claude Code）将提高创业失败率，而非降低。手册指出，AI能快速生成原型，易使创始人混淆“能运行”与“有市场需求”，并通过确认偏误和研究引擎强化错误想法。它将创业分为Idea、MVP、Launch、Scale四阶段，剖析AI放大的风险：如原型不等于验证、Agentic技术债、创始人成为决策瓶颈等。最终结论是，AI极大降低执行成本，使得判断力成为最稀缺资源，真正护城河在于将垂直领域知识结构化沉淀为专属Skills。</div>
+      <a class="item-url" href="https://x.com/berryxia/status/2055635826462130227" target="_blank">https://x.com/berryxia/status/2055635826462130227</a>
+    </div>
+
+    <div class="item">
+      <div class="item-title">10. 最新开源成果（#21）：开源模型盛宴！Gemma 4、DeepSeek V4、Kimi K2.6、MiMo 2.5、GLM-5.1 等。基于CAISI的V4评估。 <span class="stars">★★★★★</span></div>
+      <div class="item-source"><span class="tag">技巧与观点</span>Nathan Lambert：Interconnects（RSS）</div>
+      <div class="item-summary">本月开源AI模型领域迎来密集发布，包括Gemma 4、DeepSeek V4、Kimi K2.6、MiMo 2.5和GLM-5.1等一系列重要新版本。这些模型均在CAISI的V4评估框架下进行了性能评测。多个团队几乎同期推出旗舰级更新，反映出开源社区当前高速迭代的竞争态势。</div>
+      <a class="item-url" href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model" target="_blank">https://www.interconnects.ai/p/latest-open-artifacts-21-open-model</a>
     </div>
   </div>
 
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">3</span>
-      <span class="item-title">Notion推出开发者平台及CLI工具</span>
-      <span class="item-source">— X：Oran Ge (@oran_ge)</span>
+  <div class="section">
+    <div class="section-title">📈 今日趋势洞察</div>
+    <div class="item">
+      <div class="item-title">智能体工作流成新焦点</div>
+      <div class="item-summary">Ring-2.6-1T 专为智能体工作流设计并上线 OpenRouter，vLLM 支持万亿级模型推理，表明大模型基础设施正从"通用推理"向"智能体原生"演进。</div>
     </div>
-    <div class="item-summary">Notion正式推出开发者平台，核心组件包括Notion CLI终端工具、Workers计算服务、数据库同步功能以及多种Agent工具与API。平台旨在让开发者更便捷地在Notion基础设施上运行代码、连接外部数据源并构建自动化工作流。未来，即使非开发者也能通过AI Agent在Notion上构建应用。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★☆</span>
-      <a class="item-url" href="https://x.com/oran_ge/status/2055539910212460878" target="_blank">查看原文 ↗</a>
+    <div class="item">
+      <div class="item-title">AI 产品生态加速整合</div>
+      <div class="item-summary">Notion 推出开发者平台、Codex 新增快捷键自定义、MagicPath 与 Codex 深度整合，AI 工具正从单一功能走向平台化与深度集成。</div>
     </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">4</span>
-      <span class="item-title">按需定制快捷键，优化工作流效率</span>
-      <span class="item-source">— X：OpenAI Developers (@OpenAIDevs)</span>
-    </div>
-    <div class="item-summary">处理大家的反馈让我们感到太有趣了。 （请继续反馈。） 键盘快捷键现已支持自定义。 围绕你的实际工作方式设置 Codex，然后通过设置调整快捷键，无需再适应我们的默认配置。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★☆</span>
-      <a class="item-url" href="https://x.com/OpenAIDevs/status/2055717793841221796" target="_blank">查看原文 ↗</a>
+    <div class="item">
+      <div class="item-title">OpenAI 重组引发关注</div>
+      <div class="item-summary">OpenAI 大规模重组，总裁 Brockman 挂帅，结合美国 AI 岗位裁员趋势，行业正经历从"扩张期"到"整合期"的关键转折。</div>
     </div>
   </div>
 
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">5</span>
-      <span class="item-title">美国开始出现人工智能相关岗位的大规模裁员</span>
-      <span class="item-source">— Hacker News 热门（buzzing.cc 中文翻译）</span>
-    </div>
-    <div class="item-summary">美国人工智能相关岗位正出现大规模裁员。根据彭博社报道，受AI影响的职位开始经历严重的就业岗位流失。这一趋势表明AI技术对劳动力市场的冲击已从理论讨论进入现实阶段，具体裁员数字和涉及的行业领域在进一步显现中。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★☆</span>
-      <a class="item-url" href="https://www.bloomberg.com/news/articles/2026-05-15/us-is-starting-to-see-heavy-job-losses-in-roles-exposed-to-ai" target="_blank">查看原文 ↗</a>
-    </div>
+  <div class="footer">
+    <p>AIHOT 日报 · 2026-05-17 · 北京时间 08:00 自动生成</p>
+    <p style="margin-top:4px;">数据来源：aihot.virxact.com · 本报告仅供信息参考</p>
   </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">6</span>
-      <span class="item-title">研究人员利用Anthropic Mythos工具构建macOS内核漏洞，绕过苹果M5芯片内存完整性执行安全系统</span>
-      <span class="item-source">— X：Kim (@kimmonismus)</span>
-    </div>
-    <div class="item-summary">三名研究人员借助Anthropic的Mythos工具，成功开发出一个可绕过苹果M5芯片内存完整性执行（MIE）安全机制的macOS内核漏洞利用程序。MIE是苹果耗时五年、投入巨资为M5和A19芯片打造的旗舰安全功能，旨在彻底消除内存损坏漏洞。研究团队于4月25日发现漏洞，5月1日即完成开发，并亲自前往苹果园区提交报告。该攻击采用纯数据攻击方式，无需操纵指针，仅通过非特权用户的标准系统调用即可获取根权限。完整技术报告将在苹果发布补丁后公开。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★★</span>
-      <a class="item-url" href="https://x.com/kimmonismus/status/2055571960260645125" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">7</span>
-      <span class="item-title">OpenAI 与马耳他合作，向所有公民提供 ChatGPT Plus</span>
-      <span class="item-source">— OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
-    </div>
-    <div class="item-summary">OpenAI 与马耳他政府达成合作，将向该国所有公民免费提供 ChatGPT Plus 订阅服务。此次合作旨在扩大人工智能技术的普及范围，并包含面向公民的 AI 技能实践培训，以帮助民众负责任地使用 AI。该计划是国家级大规模推广 ChatGPT Plus 的首例，预计将提升马耳他全民的 AI 素养与应用能力。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★★</span>
-      <a class="item-url" href="https://openai.com/index/malta-chatgpt-plus-partnership" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">8</span>
-      <span class="item-title">Show HN: 烧吧，宝贝，烧吧（那些代币）</span>
-      <span class="item-source">— Hacker News 热门（buzzing.cc 中文翻译）</span>
-    </div>
-    <div class="item-summary">开发者发布了一个名为“烧吧，宝贝，烧吧”的开源项目，旨在通过销毁代币来应对加密货币领域的通胀问题。该项目提供了一个工具，允许用户主动销毁自己持有的代币，从而减少总供应量。此举可能提升剩余代币的稀缺性与潜在价值。项目已在GitHub上开源，并在Hacker News上获得了100点的社区热度。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★☆</span>
-      <a class="item-url" href="https://github.com/dtnewman/burn-baby-burn" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">9</span>
-      <span class="item-title">工具使用代理认知与行动脱节机制研究</span>
-      <span class="item-source">— X：Elvis Saravia (@omarsar0, DAIR.AI)</span>
-    </div>
-    <div class="item-summary">该可解释性论文聚焦工具使用代理，通过探测隐藏状态发现模型常能识别应调用工具，但实际调用失败，不匹配率达26%-54%。问题完全集中于认知到行动的过渡阶段，而非认知本身。内部探测方向可解码，但后期层的最后令牌机制使信号旋转，几乎与产生的行动正交。研究旨在预测干预措施效果，指出常见归因如提示或训练不足可能忽略后期层几何结构，这为工具使用提示A/B测试中的性能上限提供了合理解释。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★☆</span>
-      <a class="item-url" href="https://x.com/omarsar0/status/2055750162526715926" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">10</span>
-      <span class="item-title">Eric Jang分享从零构建AlphaGo的经历与见解</span>
-      <span class="item-source">— X：Marc Andreessen (@pmarca, a16z)</span>
-    </div>
-    <div class="item-summary">Eric Jang在过去几个月从零开始实现AlphaGo，这是2016年激发他进入深度学习的AI突破。他最初理解AlphaGo为“通过自我对弈训练的搜索增强深度神经网络”，但通过亲手构建获得了更深层次的理解。他指出，前沿深度学习研究虽昂贵，但特定能力的实现成本下降迅速；在2026年，训练强大围棋AI仅需几千美元租赁算力，无需DeepMind级别的资源。他荣幸受邀在播客中分享这一过程，并提供了详细教程和代码，同时谦虚自称围棋与AlphaGo学徒，对任何事实错误负责。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★☆☆</span>
-      <a class="item-url" href="https://x.com/pmarca/status/2055723987850690927" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="section-title">🇨🇳 中国 AI 动态</div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">11</span>
-      <span class="item-title">社区协作再创佳绩，vLLM支持万亿级模型</span>
-      <span class="item-source">— X：蚂蚁百灵 (@AntLingAGI)</span>
-    </div>
-    <div class="item-summary">又一次Day0协作，又一次社区胜利。感谢@vllm_project团队始终可靠的支持~ 🫡🫡</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★☆</span>
-      <a class="item-url" href="https://x.com/AntLingAGI/status/2055689329339760829" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">12</span>
-      <span class="item-title">Ring-2.6-1T开源并上线OpenRouter，专为智能体工作流设计</span>
-      <span class="item-source">— X：蚂蚁百灵 (@AntLingAGI)</span>
-    </div>
-    <div class="item-summary">Ring-2.6-1T模型现已开源，并上线OpenRouter平台，5月底前享有75%折扣。该模型由AntLingAGI开发，是一个为现实世界智能体构建的万亿级推理模型，其核心设计目标不仅是回答问题，更是执行任务。它专注于规划步骤、使用工具、维持上下文和完成复杂工作流，具备强大的智能体执行能力和高推理模式，并采用了Async RL与IcePop训练方法。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★☆</span>
-      <a class="item-url" href="https://x.com/AntLingAGI/status/2055681163033997815" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">13</span>
-      <span class="item-title">突发！OpenAI 大规模重组，总裁 Brockman 夺权挂帅</span>
-      <span class="item-source">— IT之家（RSS）</span>
-    </div>
-    <div class="item-summary">OpenAI宣布进行史上最大规模重组，将ChatGPT、Codex和API三大核心产品线合并为统一组织。联合创始人兼总裁Greg Brockman正式全面接管产品战略，成为实际掌权者，而ChatGPT原负责人Nick Turley被调离核心岗位。此次重组旨在整合资源，聚焦“智能体时代”，并秘密开发集成多项功能的“超级应用”桌面端产品。与此同时，竞争对手Anthropic估值飙升至9000亿美元，使OpenAI面临严峻挑战。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★★</span>
-      <a class="item-url" href="https://www.ithome.com/0/951/258.htm" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">14</span>
-      <span class="item-title">杭州基地启用，机器人有了国家级职业技能训练场</span>
-      <span class="item-source">— IT之家（RSS）</span>
-    </div>
-    <div class="item-summary">国家人工智能应用中试基地（具身智能）5月16日在浙江杭州挂牌启用，为机器人提供国家级职业技能训练场。该基地是集场景体验、技术展示、研发合作、产业赋能于一体的综合性平台，旨在推动具身智能技术从实验室迈向现实应用。杭州市于5月1日施行首部具身智能机器人地方性法规，支持核心研发、平台建设和场景开放。目前杭州已集聚机器人产业相关企业700余家，2025年具身智能产业集群产值达1068亿元。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★☆</span>
-      <a class="item-url" href="https://www.ithome.com/0/951/390.htm" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">15</span>
-      <span class="item-title">智能体驱动系统Articraft实现3D资产生成自动化，开源万件数据集降低门槛</span>
-      <span class="item-source">— X：Berry Xia (@berryxia)</span>
-    </div>
-    <div class="item-summary">剑桥大学团队推出Articraft，这是一个由智能体驱动的编码系统，能全自动生成带关节、可运动的交互式3D资产。系统通过AI智能体自主编写代码、执行并接收物理反馈迭代优化，将以往需数日甚至数周的创作过程极大简化。团队同时开源了Articraft-10K数据集，包含超1万个物体，覆盖250个类别，所有资产均仿真就绪。此举显著降低了机器人训练和物理AI领域对高质量3D资产的数据门槛，为解决“数据饥渴”问题提供了高效的自动化方案。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★☆</span>
-      <a class="item-url" href="https://x.com/berryxia/status/2055444087684407505" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">16</span>
-      <span class="item-title">藏师傅PPT Skills更新，AI自动美化截图</span>
-      <span class="item-source">— X：歸藏 (@op7418)</span>
-    </div>
-    <div class="item-summary">藏师傅PPT Skills产品更新，新增截图美化功能。该功能无需消耗GPT-Image 2.0资源，即可根据用户截图的大小、长宽比以及当前PPT的模板类型和颜色主题，自动匹配合适的背景图，实现类似CleanShot X等专业软件的截图美化效果。AI还能处理过长等有问题的图片，例如将其自动裁剪并排成两列展示。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★★</span>
-      <a class="item-url" href="https://x.com/op7418/status/2055477163579891897" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">17</span>
-      <span class="item-title">MagicPath与Codex深度整合，设计开发流程合二为一</span>
-      <span class="item-source">— X：Berry Xia (@berryxia)</span>
-    </div>
-    <div class="item-summary">MagicPath AI CEO @skirano 演示了其产品与Codex的深度整合。用户现可将MagicPath作为原生画布直接在Codex中运行，通过拖拽设计UI，Codex能实时感知项目并自动生成、编辑代码，实现设计与开发的无缝衔接，无需在Figma和IDE间切换。安装简便，只需在Codex中粘贴一条命令即可完成配置。此举将“设计-开发-迭代”流程整合于单一窗口，显著缩短了从创意到可运行应用的距离。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★☆☆</span>
-      <a class="item-url" href="https://x.com/berryxia/status/2055766210512560416" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">18</span>
-      <span class="item-title">Codex实现多设备远程控制与上下文共享</span>
-      <span class="item-source">— X：歸藏 (@op7418)</span>
-    </div>
-    <div class="item-summary">Codex除了通过ChatGPT连接和远程控制外，还能控制另一台电脑，实现在ChatGPT上直接管理多台设备而无需切换，只需切换项目即可访问不同设备的上下文和文件。引用推文补充，此功能还支持通过远程SSH设置其他VMs等，增强了多设备协作的灵活性和实用性。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★★</span>
-      <a class="item-url" href="https://x.com/op7418/status/2055561525633642762" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">19</span>
-      <span class="item-title">Anthropic《Founder's Playbook》：AI提高创业失败率的警示</span>
-      <span class="item-source">— X：Berry Xia (@berryxia)</span>
-    </div>
-    <div class="item-summary">Anthropic发布内部手册《Founder's Playbook》，核心观点是AI（如Claude Code）将提高创业失败率，而非降低。手册指出，AI能快速生成原型，易使创始人混淆“能运行”与“有市场需求”，并通过确认偏误和研究引擎强化错误想法。它将创业分为Idea、MVP、Launch、Scale四阶段，剖析AI放大的风险：如原型不等于验证、Agentic技术债、创始人成为决策瓶颈等。最终结论是，AI极大降低执行成本，使得判断力成为最稀缺资源，真正护城河在于将垂直领域知识结构化沉淀为专属Skills。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★★</span>
-      <a class="item-url" href="https://x.com/berryxia/status/2055635826462130227" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="item-header">
-      <span class="item-num">20</span>
-      <span class="item-title">最新开源成果（#21）：开源模型盛宴！Gemma 4、DeepSeek V4、Kimi K2.6、MiMo 2.5、GLM-5.1 等。基于CAISI的V4评估。</span>
-      <span class="item-source">— Nathan Lambert：Interconnects（RSS）</span>
-    </div>
-    <div class="item-summary">本月开源AI模型领域迎来密集发布，包括Gemma 4、DeepSeek V4、Kimi K2.6、MiMo 2.5和GLM-5.1等一系列重要新版本。这些模型均在CAISI的V4评估框架下进行了性能评测。多个团队几乎同期推出旗舰级更新，反映出开源社区当前高速迭代的竞争态势。</div>
-    <div class="item-meta">
-      <span class="item-score">★★★★★</span>
-      <a class="item-url" href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model" target="_blank">查看原文 ↗</a>
-    </div>
-  </div>
-</div>
-
-<div class="leaderboard">
-  <h2>🏆 模型部署热度（基于 OpenRouter）</h2>
-  <table>
-    <tr><th>系列</th><th>代表模型</th><th>上下文长度</th></tr>
-    <tr><td>Anthropic Claude</td><td>claude-opus-4.7</td><td>1,000,000</td></tr>
-    <tr><td>OpenAI GPT</td><td>gpt-5.5-pro</td><td>1,050,000</td></tr>
-    <tr><td>Google Gemini</td><td>gemini-3.1-flash-lite</td><td>1,048,576</td></tr>
-    <tr><td>Meta Llama</td><td>llama-4-scout</td><td>10,000,000</td></tr>
-    <tr><td>DeepSeek</td><td>deepseek-v4-pro</td><td>1,048,576</td></tr>
-    <tr><td>阿里通义 Qwen</td><td>qwen3-coder</td><td>1,048,576</td></tr>
-  </table>
-  <p style="color: var(--gray); font-size: 12px; margin-top: 12px;">* 数据来自 OpenRouter API，按上下文窗口长度排序，排除 preview/beta/fast/nano 变体</p>
-</div>
-
-<div class="insights">
-  <h2>📈 今日趋势洞察</h2>
-  <ul>
-    <li><strong>智能体生态加速成型：</strong>蚂蚁百灵 Ring-2.6-1T 万亿级模型开源并上线 OpenRouter，专为智能体工作流设计；Notion 推出开发者平台，让 AI Agent 在 Notion 上构建应用成为现实。智能体从概念走向基础设施。</li>
-    <li><strong>OpenAI 深度重组应对竞争：</strong>Greg Brockman 全面接管产品战略，ChatGPT/Codex/API 三线合一，同时与马耳他达成国家级 ChatGPT Plus 合作。面对 Anthropic 9000 亿美元估值压力，OpenAI 正在加速整合。</li>
-    <li><strong>开源模型密集发布：</strong>Gemma 4、DeepSeek V4、Kimi K2.6、MiMo 2.5、GLM-5.1 等旗舰模型几乎同期更新，开源社区进入"模型盛宴"阶段，竞争白热化。</li>
-    <li><strong>AI 安全与伦理新挑战：</strong>研究人员利用 Anthropic Mythos 工具成功绕过苹果 M5 芯片核心安全机制；美国开始出现 AI 相关岗位大规模裁员——技术突破与社会冲击同步到来。</li>
-  </ul>
-</div>
-
-<footer>
-  <p>数据来自 aihot.virxact.com · 生成于 2026-05-17 11:22 北京时间</p>
-  <p style="margin-top: 8px;">AI HOT 日报 · 每日精选 AI 行业动态</p>
-</footer>
-
 </div>
 </body>
 </html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业日报 · 2026-05-18</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#1a1a1a; --cinnabar:#c23a30; --paper:#faf8f5; --warm:#6b6b6b; --light:#e0d8ce; --accent:#f5f0eb; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Serif SC','Helvetica Neue',Helvetica,Arial,sans-serif; background:var(--paper); color:var(--ink); line-height:1.8; font-size:15px; }
+.container { max-width:780px; margin:0 auto; padding:48px 28px; }
+header { text-align:center; padding-bottom:32px; border-bottom:2px solid var(--cinnabar); margin-bottom:40px; }
+.badge { display:inline-block; background:var(--cinnabar); color:white; font-size:11px; font-weight:600; letter-spacing:2px; padding:4px 16px; border-radius:2px; }
+h1 { font-size:34px; font-weight:700; margin-top:16px; letter-spacing:3px; }
+.subtitle { color:var(--warm); font-size:14px; margin-top:10px; }
+.lead { background:var(--accent); padding:24px; border-left:4px solid var(--cinnabar); margin-bottom:40px; font-size:16px; font-weight:600; line-height:1.7; }
+.section { margin-bottom:44px; }
+.section-title { font-size:20px; font-weight:700; color:var(--cinnabar); margin-bottom:20px; padding-bottom:8px; border-bottom:1px solid var(--light); }
+.item { margin-bottom:24px; padding-bottom:20px; border-bottom:1px dashed var(--light); }
+.item:last-child { border-bottom:none; }
+.item-header { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:8px; }
+.item-title { font-size:16px; font-weight:600; flex:1; line-height:1.5; }
+.item-meta { font-size:12px; color:var(--warm); white-space:nowrap; }
+.item-source { font-size:12px; color:var(--cinnabar); font-weight:500; margin-bottom:6px; }
+.item-summary { font-size:14px; color:var(--warm); line-height:1.7; margin-bottom:8px; }
+.item-url { font-size:12px; color:#9a9a9a; word-break:break-all; }
+.item-url a { color:#9a9a9a; text-decoration:none; border-bottom:1px dotted var(--light); }
+.item-url a:hover { color:var(--cinnabar); }
+.stars { color:var(--cinnabar); font-size:13px; letter-spacing:1px; }
+.leaderboard { background:var(--accent); padding:20px; border-radius:4px; }
+.leaderboard table { width:100%; border-collapse:collapse; font-size:14px; }
+.leaderboard th { text-align:left; padding:10px 8px; border-bottom:2px solid var(--cinnabar); font-weight:600; }
+.leaderboard td { padding:10px 8px; border-bottom:1px solid var(--light); }
+.rank { font-weight:700; color:var(--cinnabar); width:50px; }
+.trend-up { color:#2e7d32; } .trend-down { color:var(--cinnabar); } .trend-flat { color:var(--warm); }
+.insight { background:var(--accent); padding:20px; border-radius:4px; font-size:14px; line-height:1.8; }
+.insight-item { margin-bottom:14px; padding-left:18px; position:relative; }
+.insight-item::before { content:"▸"; position:absolute; left:0; color:var(--cinnabar); font-weight:700; }
+.note { font-size:12px; color:var(--warm); background:#fff8f0; padding:10px 14px; border-radius:3px; margin-bottom:20px; border-left:3px solid #f0a030; }
+footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--light); text-align:center; font-size:12px; color:var(--warm); }
+@media(max-width:600px) { .container { padding:24px 16px; } h1 { font-size:24px; } .item-header { flex-direction:column; gap:4px; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="badge">AI HOT DAILY</div>
+<h1>AI 行业日报</h1>
+<div class="subtitle">2026年5月18日 · 乙巳年四月初二 · 周一 · 北京时间 10:00</div>
+</header>
+
+<div class="note">⚠️ 注：aihot.virxact.com 数据暂不可用，本报告采自 Hacker News、The Verge、36氪等多源聚合。</div>
+
+<div class="lead">今日AI热点：OpenAI与马耳他达成全民ChatGPT合作、Anthropic CEO预言软件免费时代、谷歌/阿里/微软决战云端AI、腾讯发布系统级AI助手"贾维斯"</div>
+
+<div class="section">
+<div class="section-title">🌍 全球 AI 动态</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">1. OpenAI与马耳他政府合作，向全国公民免费提供ChatGPT Plus</span><span class="stars">★★★★★</span></div>
+<div class="item-source">OpenAI Blog / Hacker News</div>
+<div class="item-summary">OpenAI与马耳他政府达成合作，将向全国公民免费提供ChatGPT Plus订阅。这是首个国家层面全民普及AI聊天机器人的案例，标志着AI公共服务进入新阶段。</div>
+<div class="item-url"><a href="https://openai.com/index/malta-chatgpt-plus-partnership/" target="_blank">https://openai.com/index/malta-chatgpt-plus-partnership/</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">2. Zerostack – 纯Rust编写的类Unix编码智能体发布</span><span class="stars">★★★★☆</span></div>
+<div class="item-source">crates.io / Hacker News</div>
+<div class="item-summary">一款用纯Rust编写的类Unix编码智能体发布，获542分高赞、297条评论。该项目将操作系统哲学引入AI编程工具，引发开发者社区对AI Agent架构的热烈讨论。</div>
+<div class="item-url"><a href="https://crates.io/crates/zerostack/1.0.0" target="_blank">https://crates.io/crates/zerostack/1.0.0</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">3. AI是技术而非产品——Daring Fireball深度评论</span><span class="stars">★★★★☆</span></div>
+<div class="item-source">Daring Fireball / Hacker News</div>
+<div class="item-summary">知名科技评论人John Gruber撰文指出，AI本质是底层技术而非独立产品。真正的价值在于将AI嵌入现有产品工作流，而非单独售卖AI功能。文章获331分高赞。</div>
+<div class="item-url"><a href="https://daringfireball.net/2026/05/ai_is_technology_not_a_product" target="_blank">https://daringfireball.net/2026/05/ai_is_technology_not_a_product</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">4. Semble – 比grep减少98% token消耗的代码搜索工具</span><span class="stars">★★★★☆</span></div>
+<div class="item-source">GitHub / Hacker News</div>
+<div class="item-summary">Semble是一款专为AI Agent设计的代码搜索工具，相比传统grep减少98%的token消耗。这一突破将显著降低AI编程助手的运行成本，获174分关注。</div>
+<div class="item-url"><a href="https://github.com/MinishLab/semble" target="_blank">https://github.com/MinishLab/semble</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">5. 苹果重塑Siri：新增聊天记录自动删除功能</span><span class="stars">★★★★☆</span></div>
+<div class="item-source">The Verge</div>
+<div class="item-summary">苹果正在重塑Siri，新版本将支持聊天记录自动删除功能，以隐私保护作为其AI差异化竞争的核心卖点，与OpenAI等竞品形成鲜明对比。</div>
+<div class="item-url"><a href="https://www.theverge.com/" target="_blank">https://www.theverge.com/</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">6. Seth Rogen戛纳痛批AI写作："用AI写作的不应该当作家"</span><span class="stars">★★★☆☆</span></div>
+<div class="item-source">The Verge / Cannes Film Festival</div>
+<div class="item-summary">演员Seth Rogen在戛纳电影节采访中痛批AI写作，称其为"愚蠢的狗屎"，并直言用AI写作的人"不应该当作家"。这一言论引发好莱坞对AI创作的激烈争论。</div>
+<div class="item-url"><a href="https://www.theverge.com/" target="_blank">https://www.theverge.com/</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">7. YouTube将AI深度伪造检测工具扩展至所有成年用户</span><span class="stars">★★★★☆</span></div>
+<div class="item-source">The Verge</div>
+<div class="item-summary">YouTube将其AI深度伪造检测工具扩展至所有成年用户，帮助识别平台上的AI生成内容，应对日益严重的虚假信息问题。</div>
+<div class="item-url"><a href="https://www.theverge.com/" target="_blank">https://www.theverge.com/</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">8. AI不会让你的开发流程变快——开发者反思</span><span class="stars">★★★☆☆</span></div>
+<div class="item-source">Frederick Vanbrabant / HN</div>
+<div class="item-summary">开发者反思文章指出，AI工具虽然能加速编码，但未必能加速整体开发流程。组织流程、沟通成本、技术债务等因素往往抵消了AI带来的效率提升。</div>
+<div class="item-url"><a href="https://frederickvanbrabant.com/blog/2026-05-15-i-dont-think-ai-will-make-your-processes-go-faster/" target="_blank">https://frederickvanbrabant.com/blog/2026-05-15...</a></div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">🇨🇳 中国 AI 动态</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">1. 谷歌/阿里/微软决战云端AI，云电脑概念复活</span><span class="stars">★★★★★</span></div>
+<div class="item-source">36氪 / 雷科技AGI</div>
+<div class="item-summary">谷歌向PC行业发起挑战，阿里云、微软Azure同步加码云端AI算力。云电脑概念借助AI浪潮重获新生，三大巨头在云端AI工作站领域展开激烈竞争。</div>
+<div class="item-url"><a href="https://36kr.com/information/AI" target="_blank">https://36kr.com/information/AI</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">2. "龙虾之父"自曝单月130万美元token账单，OpenAI全包</span><span class="stars">★★★★★</span></div>
+<div class="item-source">36氪 / 机器之心</div>
+<div class="item-summary">知名AI项目创始人公开账单：3人团队带领100个AI程序员，单月消耗130万美元token费用，全部由OpenAI承担。引发对AI开发成本模式的广泛讨论。</div>
+<div class="item-url"><a href="https://36kr.com/information/AI" target="_blank">https://36kr.com/information/AI</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">3. Anthropic CEO专访：Claude新功能几乎完全由AI自主开发</span><span class="stars">★★★★★</span></div>
+<div class="item-source">36氪 / 划重点</div>
+<div class="item-summary">Anthropic CEO Dario Amodei透露，Claude最新功能几乎完全由AI自主开发完成。他预言软件将步入免费时代，但高增长与高失业率将首次同时出现。</div>
+<div class="item-url"><a href="https://36kr.com/information/AI" target="_blank">https://36kr.com/information/AI</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">4. 突发：OpenAI大规模重组，总裁Brockman夺权挂帅</span><span class="stars">★★★★★</span></div>
+<div class="item-source">36氪 / 新智元</div>
+<div class="item-summary">OpenAI内部发生重大组织架构调整，ChatGPT、Codex和API三大业务线紧急合并，总裁Greg Brockman重新掌权。此举被解读为应对竞争压力的激进改革。</div>
+<div class="item-url"><a href="https://36kr.com/information/AI" target="_blank">https://36kr.com/information/AI</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">5. Gemini 3.5 Pro首曝：编程追平GPT-5.5，谷歌发力Agent</span><span class="stars">★★★★★</span></div>
+<div class="item-source">36氪 / 新智元</div>
+<div class="item-summary">谷歌Gemini 3.5 Pro（代号"卡布奇诺"）提前曝光，编程能力追平GPT-5.5。全新24小时Agent"Spark"能管理邮件、执行任务，甚至自主下单消费。</div>
+<div class="item-url"><a href="https://36kr.com/information/AI" target="_blank">https://36kr.com/information/AI</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">6. 腾讯发布系统级AI助手"贾维斯"：能签到改配置还会打盹</span><span class="stars">★★★★☆</span></div>
+<div class="item-source">36氪 / 智东西</div>
+<div class="item-summary">腾讯发布操作系统层个人AI助手，可自动完成签到、修改配置等日常任务，甚至模拟人类行为模式。这是国内首个系统级AI助手产品。</div>
+<div class="item-url"><a href="https://36kr.com/information/AI" target="_blank">https://36kr.com/information/AI</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">7. 可灵即将单飞：营收仅占快手1%，估值却达1300亿</span><span class="stars">★★★★☆</span></div>
+<div class="item-source">36氪 / 蓝字计划</div>
+<div class="item-summary">快手旗下AI视频生成工具可灵即将独立发展，尽管营收仅占快手1%，估值却高达1300亿元。字节跳动旗下即梦等竞品也在加速布局。</div>
+<div class="item-url"><a href="https://36kr.com/information/AI" target="_blank">https://36kr.com/information/AI</a></div>
+</div>
+
+<div class="item">
+<div class="item-header"><span class="item-title">8. Hermes团队预训练新方法：算力成本降低六成</span><span class="stars">★★★★☆</span></div>
+<div class="item-source">36氪 / AI前线</div>
+<div class="item-summary">Nous Research的Hermes团队提出新的预训练方法，在不改变模型架构的情况下将算力成本降低60%。这是继DeepSeek之后又一重要的训练效率突破。</div>
+<div class="item-url"><a href="https://36kr.com/information/AI" target="_blank">https://36kr.com/information/AI</a></div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">🏆 全球模型热度榜</div>
+<div class="leaderboard">
+<table>
+<tr><th>排名</th><th>模型</th><th>机构</th><th>上下文长度</th><th>趋势</th></tr>
+<tr><td class="rank">#1</td><td>Llama 4 Scout</td><td>Meta</td><td>10.0M</td><td class="trend-up">↑ 新上榜</td></tr>
+<tr><td class="rank">#2</td><td>Grok 4.20 Multi-Agent</td><td>xAI</td><td>2.0M</td><td class="trend-up">↑ 上升</td></tr>
+<tr><td class="rank">#3</td><td>GPT-5.5 Pro</td><td>OpenAI</td><td>1.1M</td><td class="trend-flat">→ 稳定</td></tr>
+<tr><td class="rank">#4</td><td>Gemini 3.1 Flash Lite</td><td>Google</td><td>1.0M</td><td class="trend-flat">→ 稳定</td></tr>
+<tr><td class="rank">#5</td><td>DeepSeek V4 Pro</td><td>DeepSeek</td><td>1.0M</td><td class="trend-flat">→ 稳定</td></tr>
+</table>
+<p style="font-size:12px;color:var(--warm);margin-top:12px">数据来源：OpenRouter API · 基于上下文长度与部署热度综合排序 · Chatbot Arena数据暂不可用</p>
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">📈 今日趋势洞察</div>
+<div class="insight">
+<div class="insight-item"><b>AI Agent 基础设施加速落地</b>：从 Zerostack（Rust 编码智能体）到腾讯"贾维斯"（系统级 AI 助手），再到 Gemini Spark（24 小时自主 Agent），多平台智能体互操作性成为竞争焦点。AI 正从"聊天工具"进化为"操作系统"。</div>
+<div class="insight-item"><b>成本与效率的双重博弈</b>：一方面，龙虾之父团队单月 130 万美元 token 账单凸显 AI 开发的高昂成本；另一方面，Hermes 团队将预训练成本降低 60%、Semble 减少 98% 代码搜索 token 消耗，效率优化正在对冲成本压力。</div>
+</div>
+</div>
+
+<footer>
+<p>数据来自 Hacker News、The Verge、36氪、OpenRouter · 生成于 2026-05-18 10:00 (UTC+8)</p>
+<p style="margin-top:4px">AI 行业日报 · 聚焦全球 AI 大事</p>
+</footer>
+</div>
+</body>
+</html>

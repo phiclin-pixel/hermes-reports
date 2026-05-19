@@ -4,439 +4,265 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 行业日报 · 2026-05-19</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --ink: #1a1a1a;
-  --cinnabar: #c23a30;
-  --paper: #faf8f5;
-  --warm-gray: #8c8279;
-  --light-gray: #e8e4df;
-  --accent-bg: #f5f0eb;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
-  background: var(--paper);
-  color: var(--ink);
-  line-height: 1.8;
-  font-size: 15px;
-}
-.container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
-
-/* Header */
-.header {
-  text-align: center;
-  padding-bottom: 32px;
-  border-bottom: 2px solid var(--ink);
-  margin-bottom: 36px;
-}
-.badge {
-  display: inline-block;
-  background: var(--cinnabar);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  padding: 4px 14px;
-  border-radius: 2px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.header h1 {
-  font-family: 'Noto Serif SC', serif;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin-bottom: 8px;
-}
-.header .subtitle {
-  font-size: 14px;
-  color: var(--warm-gray);
-  font-weight: 300;
-}
-.header .divider {
-  width: 48px;
-  height: 3px;
-  background: var(--cinnabar);
-  margin: 16px auto 0;
-}
-
-/* Lead */
-.lead {
-  background: var(--accent-bg);
-  border-left: 4px solid var(--cinnabar);
-  padding: 20px 24px;
-  margin-bottom: 36px;
-  font-family: 'Noto Serif SC', serif;
-  font-size: 15px;
-  line-height: 1.9;
-}
-.lead strong { color: var(--cinnabar); }
-
-/* Section */
-.section { margin-bottom: 40px; }
-.section-title {
-  font-family: 'Noto Serif SC', serif;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--light-gray);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.section-title .icon { font-size: 22px; }
-
-/* Item */
-.item {
-  padding: 18px 0;
-  border-bottom: 1px solid var(--light-gray);
-}
-.item:last-child { border-bottom: none; }
-.item-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-.item-num {
-  font-family: 'Noto Serif SC', serif;
-  font-weight: 700;
-  color: var(--cinnabar);
-  font-size: 16px;
-  min-width: 28px;
-  flex-shrink: 0;
-}
-.item-title {
-  font-family: 'Noto Serif SC', serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.5;
-  flex: 1;
-}
-.item-meta {
-  font-size: 12px;
-  color: var(--warm-gray);
-  margin-left: 38px;
-  margin-bottom: 8px;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.item-meta .source { font-weight: 500; }
-.item-meta .time { color: #a0988e; }
-.item-meta .stars { color: var(--cinnabar); letter-spacing: 2px; }
-.item-summary {
-  margin-left: 38px;
-  font-size: 14px;
-  color: #3d3d3d;
-  line-height: 1.8;
-}
-.item-url {
-  margin-left: 38px;
-  margin-top: 8px;
-  font-size: 12px;
-}
-.item-url a {
-  color: var(--warm-gray);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--warm-gray);
-  word-break: break-all;
-}
-.item-url a:hover { color: var(--cinnabar); border-color: var(--cinnabar); }
-
-/* Leaderboard */
-.leaderboard-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-  margin-top: 12px;
-}
-.leaderboard-table th {
-  background: var(--ink);
-  color: #fff;
-  font-weight: 500;
-  padding: 12px 14px;
-  text-align: left;
-  font-size: 13px;
-}
-.leaderboard-table td {
-  padding: 14px;
-  border-bottom: 1px solid var(--light-gray);
-}
-.leaderboard-table tr:nth-child(even) { background: var(--accent-bg); }
-.leaderboard-table .rank {
-  font-family: 'Noto Serif SC', serif;
-  font-weight: 700;
-  color: var(--cinnabar);
-  font-size: 16px;
-}
-.leaderboard-table .model-name { font-weight: 600; }
-.leaderboard-table .provider { font-size: 12px; color: var(--warm-gray); }
-.leaderboard-table .ctx { font-family: monospace; font-size: 13px; }
-.leaderboard-table .trend-up { color: #2e7d32; font-weight: 600; }
-
-/* Insights */
-.insight-box {
-  background: var(--accent-bg);
-  padding: 20px 24px;
-  border-radius: 4px;
-  margin-bottom: 16px;
-}
-.insight-box p {
-  font-family: 'Noto Serif SC', serif;
-  font-size: 15px;
-  line-height: 1.9;
-  margin-bottom: 10px;
-}
-.insight-box p:last-child { margin-bottom: 0; }
-.insight-box .tag {
-  display: inline-block;
-  background: var(--cinnabar);
-  color: #fff;
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 2px;
-  margin-right: 6px;
-  font-family: 'Noto Sans SC', sans-serif;
-}
-
-/* Footer */
-.footer {
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--light-gray);
-  text-align: center;
-  font-size: 12px;
-  color: var(--warm-gray);
-}
-.footer a { color: var(--warm-gray); }
-
-/* Responsive */
-@media (max-width: 600px) {
-  .container { padding: 24px 16px; }
-  .header h1 { font-size: 24px; letter-spacing: 2px; }
-  .item-summary, .item-meta, .item-url { margin-left: 0; }
-  .item-header { flex-wrap: wrap; }
-}
+  :root {
+    --bg: #faf8f5;
+    --ink: #1a1a1a;
+    --accent: #c23a30;
+    --secondary: #8c8279;
+    --border: #e5e0d8;
+    --card-bg: #ffffff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+    padding: 40px 20px;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  header {
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 32px;
+  }
+  .masthead {
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: var(--secondary);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .date-line {
+    font-size: 15px;
+    color: var(--secondary);
+  }
+  .lead {
+    background: var(--card-bg);
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 1.9;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .lead-label {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  section {
+    margin-bottom: 36px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon { font-size: 22px; }
+  .item {
+    background: var(--card-bg);
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: transform 0.15s ease;
+  }
+  .item:hover { transform: translateY(-1px); }
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .item-source {
+    font-size: 12px;
+    color: var(--secondary);
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .item-summary {
+    font-size: 14.5px;
+    color: #3d3d3d;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+  .item-url {
+    font-size: 12.5px;
+  }
+  .item-url a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .item-url a:hover { text-decoration: underline; }
+  .trends {
+    background: var(--card-bg);
+    border-radius: 6px;
+    padding: 20px 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .trends ul {
+    list-style: none;
+    padding: 0;
+  }
+  .trends li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .trends li:last-child { border-bottom: none; }
+  .trends li::before {
+    content: "▸";
+    color: var(--accent);
+    margin-right: 8px;
+    font-weight: 700;
+  }
+  footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 12.5px;
+    color: var(--secondary);
+  }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: #f0ebe4;
+    color: var(--secondary);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  @media (max-width: 600px) {
+    body { padding: 24px 14px; }
+    h1 { font-size: 26px; }
+    .item-header { flex-direction: column; gap: 4px; }
+    .item-source { white-space: normal; }
+  }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <div class="header">
-    <div class="badge">AI Industry Daily</div>
-    <h1>AI 行业日报</h1>
-    <div class="subtitle">2026年5月19日 · 农历四月初三 · 星期二</div>
-    <div class="divider"></div>
+<header>
+  <div class="masthead">AI HOT DAILY</div>
+  <h1>AI 行业日报</h1>
+  <div class="date-line">2026年5月19日 · 农历四月初三</div>
+</header>
+
+<div class="lead">
+  <div class="lead-label">主编导语</div>
+  <p>今日 AI 圈热点聚焦：阿里云发布电影级视频生成模型 HappyHorse，标志着国产视频生成进入 1080p 多镜头时代；腾讯自研 AI 设计智能体 Ardot 开启公测，一句话即可生成可编辑设计稿并一键转代码；Figure 机器人直播挑战人类快递分拣，人机竞赛引发行业关注。</p>
+</div>
+
+<section>
+  <div class="section-title"><span class="icon">🌍</span> 全球 AI 动态</div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">一键生成韩国棒球 AI 视频模板爆火</div>
+      <div class="item-source">X：PixVerse (@PixVerse_) <span class="tag">产品</span></div>
+    </div>
+    <div class="item-summary">PixVerse 推出 K-Baseball Sprint 模板，用户只需上传自拍即可即时生成韩国棒球镜头风格视频，无需指令、无需编辑，一键点击即可完成。被称为"最简单的病毒性 AI 编辑"。</div>
+    <div class="item-url"><a href="https://x.com/PixVerse_/status/2056198882321904098" target="_blank">https://x.com/PixVerse_/status/2056198882321904098</a></div>
   </div>
 
-  <div class="lead">
-    <strong>今日导读：</strong>阿里云推出 HappyHorse 电影级视频生成模型，支持 1080p 多镜头输出；腾讯 AI 设计智能体 Ardot 开启公测，一句话生成可编辑设计稿并一键转代码；PixVerse 韩国棒球 AI 视频模板病毒式传播。国内大厂在 AI 视频生成与设计工具领域持续发力。
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">人机快递分拣对决直播</div>
+      <div class="item-source">X：小互 (@xiaohu) <span class="tag">行业</span></div>
+    </div>
+    <div class="item-summary">Figure 直播机器人 VS 人类挑战快递分拣任务，目前人类稍稍领先。人形机器人在物流场景中的实际应用能力引发广泛关注与讨论。</div>
+    <div class="item-url"><a href="https://x.com/xiaohu/status/2056172740873511139" target="_blank">https://x.com/xiaohu/status/2056172740873511139</a></div>
   </div>
 
-  <!-- 全球 AI 动态 -->
-  <div class="section">
-    <div class="section-title"><span class="icon">🌍</span> 全球 AI 动态</div>
-
-    <div class="item">
-      <div class="item-header">
-        <span class="item-num">1.</span>
-        <span class="item-title">阿里云推出 HappyHorse 视频生成模型</span>
-      </div>
-      <div class="item-meta">
-        <span class="source">X：阿里云 / Alibaba Cloud</span>
-        <span class="time">5/18 09:16</span>
-        <span class="stars">★★★★★</span>
-      </div>
-      <div class="item-summary">
-        电影级 AI 视频生成现已到来。HappyHorse 登陆阿里云 Model Studio，支持从原始提示词直接生成 1080p 多镜头现实感画面，在统一工作流中完成视频创作。限时 8 折优惠。
-      </div>
-      <div class="item-url"><a href="https://x.com/alibaba_cloud/status/2056182152681644176" target="_blank">https://x.com/alibaba_cloud/status/2056182152681644176</a></div>
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">开源工具揭露 AI API 中转站安全风险与检测差异</div>
+      <div class="item-source">X：Berry Xia (@berryxia) <span class="tag">技巧</span></div>
     </div>
-
-    <div class="item">
-      <div class="item-header">
-        <span class="item-num">2.</span>
-        <span class="item-title">一键生成韩国棒球 AI 视频模板爆火</span>
-      </div>
-      <div class="item-meta">
-        <span class="source">X：PixVerse</span>
-        <span class="time">5/18 10:23</span>
-        <span class="stars">★★★★☆</span>
-      </div>
-      <div class="item-summary">
-        PixVerse 推出 K-Baseball Sprint 模板，用户只需上传自拍即可一键生成韩国棒球镜头风格视频，无需提示词或编辑操作。该模板在社交平台病毒式传播，成为目前最简单的爆款 AI 编辑工具之一。
-      </div>
-      <div class="item-url"><a href="https://x.com/PixVerse_/status/2056198882321904098" target="_blank">https://x.com/PixVerse_/status/2056198882321904098</a></div>
-    </div>
-
-    <div class="item">
-      <div class="item-header">
-        <span class="item-num">3.</span>
-        <span class="item-title">人机快递分拣对决直播</span>
-      </div>
-      <div class="item-meta">
-        <span class="source">X：小互</span>
-        <span class="time">5/18 08:28</span>
-        <span class="stars">★★★★☆</span>
-      </div>
-      <div class="item-summary">
-        Figure 机器人与人类展开快递分拣任务实时对决直播。目前人类选手稍稍领先，展示了人形机器人在物流场景中的实际能力边界与进步空间。
-      </div>
-      <div class="item-url"><a href="https://x.com/xiaohu/status/2056172740873511139" target="_blank">https://x.com/xiaohu/status/2056172740873511139</a></div>
-    </div>
-
-    <div class="item">
-      <div class="item-header">
-        <span class="item-num">4.</span>
-        <span class="item-title">开源工具揭露 AI API 中转站安全风险</span>
-      </div>
-      <div class="item-meta">
-        <span class="source">X：Berry Xia</span>
-        <span class="time">5/18 08:31</span>
-        <span class="stars">★★★☆☆</span>
-      </div>
-      <div class="item-summary">
-        开源项目 api-relay-audit 针对 AI API 中转站的安全风险（掺水、造假等）提供可验证的三态判定检测，覆盖工具调用改写、错误响应泄漏、上下文截断等攻击场景，透明度和可审计性优于现有商业检测工具。
-      </div>
-      <div class="item-url"><a href="https://x.com/berryxia/status/2056173473588994392" target="_blank">https://x.com/berryxia/status/2056173473588994392</a></div>
-    </div>
-
-    <div class="item">
-      <div class="item-header">
-        <span class="item-num">5.</span>
-        <span class="item-title">Hermes 可配置国内外 AI 模型使用方法</span>
-      </div>
-      <div class="item-meta">
-        <span class="source">X：Vista</span>
-        <span class="time">5/18 08:18</span>
-        <span class="stars">★★★☆☆</span>
-      </div>
-      <div class="item-summary">
-        Hermes 支持配置 GPT-5.5、Grok-4.3、Gemini、DeepSeek V4、GLM-5、Kimi K2.6、小米 Mimo 等国内外主流模型。用户可通过 /model 指令灵活切换，按需调用不同模型优势。
-      </div>
-      <div class="item-url"><a href="https://x.com/vista8/status/2056170241147977741" target="_blank">https://x.com/vista8/status/2056170241147977741</a></div>
-    </div>
+    <div class="item-summary">开源项目 api-relay-audit 通过双论文锚定路线，对 AI API 中转站常见的"掺水"、"造假"等安全风险进行可验证的三态判定，涵盖 AC-1 工具调用改写、AC-2 错误响应泄漏、上下文截断等攻击场景，并提供透明日志。项目已开源完整方法论与功能速查表。</div>
+    <div class="item-url"><a href="https://x.com/berryxia/status/2056173473588994392" target="_blank">https://x.com/berryxia/status/2056173473588994392</a></div>
   </div>
 
-  <!-- 中国 AI 动态 -->
-  <div class="section">
-    <div class="section-title"><span class="icon">🇨🇳</span> 中国 AI 动态</div>
-
-    <div class="item">
-      <div class="item-header">
-        <span class="item-num">6.</span>
-        <span class="item-title">腾讯 AI 设计智能体 Ardot 公测：一句话生成可编辑设计稿，一键转代码</span>
-      </div>
-      <div class="item-meta">
-        <span class="source">IT之家</span>
-        <span class="time">5/18 10:43</span>
-        <span class="stars">★★★★★</span>
-      </div>
-      <div class="item-summary">
-        腾讯云正式公测自研 AI 设计智能体平台 Ardot。核心能力包括：一句话生成 App 页面、官网、海报等可编辑设计稿；支持调用团队组件库生成规范稿；直接导入 Figma 文件保留原有设计；设计稿一键转代码对接 CodeBuddy 等开发工具。平台还提供多人实时协作、评论标注、版本对比功能，微信小程序即将上线。
-      </div>
-      <div class="item-url"><a href="https://www.ithome.com/0/951/677.htm" target="_blank">https://www.ithome.com/0/951/677.htm</a></div>
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">Hermes 可配置的国内外 AI 模型及使用方法</div>
+      <div class="item-source">X：Vista (@vista8) <span class="tag">技巧</span></div>
     </div>
+    <div class="item-summary">Hermes 支持配置多种国内外主流 AI 模型，包括 OpenAI GPT-5.5、xAI Grok-4.3、谷歌 Gemini 系列、DeepSeek V4 系列、智谱 GLM-5 系列、Kimi K2.6 以及小米 Mimo V2.5-pro。用户可通过 /model 指令灵活切换对话模型。</div>
+    <div class="item-url"><a href="https://x.com/vista8/status/2056170241147977741" target="_blank">https://x.com/vista8/status/2056170241147977741</a></div>
+  </div>
+</section>
 
-    <div class="item">
-      <div class="item-header">
-        <span class="item-num">7.</span>
-        <span class="item-title">阿里云推出 HappyHorse 视频生成模型</span>
-      </div>
-      <div class="item-meta">
-        <span class="source">X：阿里云 / Alibaba Cloud</span>
-        <span class="time">5/18 09:16</span>
-        <span class="stars">★★★★★</span>
-      </div>
-      <div class="item-summary">
-        阿里云发布 HappyHorse 电影级 AI 视频生成模型，支持从提示词到 1080p 多镜头现实感画面的端到端生成，已集成至 Model Studio 平台。限时 8 折优惠推广中。
-      </div>
-      <div class="item-url"><a href="https://x.com/alibaba_cloud/status/2056182152681644176" target="_blank">https://x.com/alibaba_cloud/status/2056182152681644176</a></div>
+<section>
+  <div class="section-title"><span class="icon">🇨🇳</span> 中国 AI 动态</div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">阿里云推出 HappyHorse 视频生成模型</div>
+      <div class="item-source">X：阿里云 / Alibaba Cloud (@alibaba_cloud) <span class="tag">产品</span></div>
     </div>
+    <div class="item-summary">电影级 AI 视频生成现已到来。HappyHorse 已登陆阿里云 Model Studio，支持从原始提示词到 1080p 多镜头现实感画面的统一工作流，限时 8 折优惠。</div>
+    <div class="item-url"><a href="https://x.com/alibaba_cloud/status/2056182152681644176" target="_blank">https://x.com/alibaba_cloud/status/2056182152681644176</a></div>
   </div>
 
-  <!-- 模型热度榜 -->
-  <div class="section">
-    <div class="section-title"><span class="icon">🏆</span> 全球模型热度榜</div>
-    <p style="font-size:12px;color:var(--warm-gray);margin-bottom:12px;">基于 OpenRouter 部署数据 · 按上下文窗口长度排序</p>
-    <table class="leaderboard-table">
-      <thead>
-        <tr>
-          <th style="width:50px">排名</th>
-          <th>模型</th>
-          <th style="width:120px">上下文窗口</th>
-          <th style="width:100px">趋势</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="rank">1</td>
-          <td>
-            <div class="model-name">Llama 4 Scout</div>
-            <div class="provider">Meta</div>
-          </td>
-          <td class="ctx">10M</td>
-          <td class="trend-up">↑ 长文本领先</td>
-        </tr>
-        <tr>
-          <td class="rank">2</td>
-          <td>
-            <div class="model-name">GPT-5.5 Pro</div>
-            <div class="provider">OpenAI</div>
-          </td>
-          <td class="ctx">1.05M</td>
-          <td class="trend-up">↑ 旗舰级</td>
-        </tr>
-        <tr>
-          <td class="rank">3</td>
-          <td>
-            <div class="model-name">Claude Opus 4.7</div>
-            <div class="provider">Anthropic</div>
-          </td>
-          <td class="ctx">1M</td>
-          <td class="trend-up">↑ 推理最强</td>
-        </tr>
-        <tr>
-          <td class="rank">4</td>
-          <td>
-            <div class="model-name">Gemini 3.1 Flash Lite</div>
-            <div class="provider">Google</div>
-          </td>
-          <td class="ctx">1.05M</td>
-          <td class="trend-up">↑ 效率优化</td>
-        </tr>
-        <tr>
-          <td class="rank">5</td>
-          <td>
-            <div class="model-name">DeepSeek V4 Pro</div>
-            <div class="provider">DeepSeek</div>
-          </td>
-          <td class="ctx">1M</td>
-          <td class="trend-up">↑ 国产旗舰</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- 今日趋势洞察 -->
-  <div class="section">
-    <div class="section-title"><span class="icon">📈</span> 今日趋势洞察</div>
-    <div class="insight-box">
-      <p><span class="tag">视频生成</span><strong>电影级 AI 视频进入商用阶段</strong> — 阿里云 HappyHorse 支持 1080p 多镜头端到端生成，标志着国内云厂商在视频生成赛道从"演示"走向"产品化"。结合 PixVerse 模板的病毒式传播，AI 视频正在从专业工具向大众创作平台演进。</p>
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">腾讯 AI 设计智能体 Ardot 公测：一句话生成可编辑设计稿，一键转代码</div>
+      <div class="item-source">IT之家（RSS） <span class="tag">产品</span></div>
     </div>
-    <div class="insight-box">
-      <p><span class="tag">AI 设计</span><strong>设计-开发一体化成为新战场</strong> — 腾讯 Ardot 不仅生成设计稿，更打通 Figma 导入、组件库调用、一键转代码的完整链路。这代表了 AI 工具从"单点提效"向"全链路重构"的演进方向，设计智能体有望成为下一代 SaaS 的核心形态。</p>
-    </div>
+    <div class="item-summary">腾讯云正式公测自研 AI 设计智能体平台 Ardot。核心功能包括：用户通过一句话指令即可生成 App 页面、官网、海报等可编辑设计稿；支持调用团队自有组件库生成规范稿，并能直接导入 Figma 文件保留原有设计。同时，Ardot 具备设计稿一键转换为代码的能力，可对接 CodeBuddy 等开发工具实现代码还原。平台还提供多人在线实时评论、标注反馈和版本对比等协作功能，微信小程序即将上线。</div>
+    <div class="item-url"><a href="https://www.ithome.com/0/951/677.htm" target="_blank">https://www.ithome.com/0/951/677.htm</a></div>
   </div>
+</section>
 
-  <div class="footer">
-    <p>数据来源：aihot.virxact.com · OpenRouter · 生成时间：2026-05-19 09:01 CST</p>
-    <p style="margin-top:6px;">本报告由 Hermes Agent 自动生成</p>
+<section>
+  <div class="section-title"><span class="icon">📈</span> 今日趋势洞察</div>
+  <div class="trends">
+    <ul>
+      <li><strong>视频生成赛道加速：</strong>阿里云 HappyHorse 与 PixVerse 棒球模板同日亮相，国产与国际视频生成工具在"一键成片"体验上持续收敛，电影级画质正从概念走向产品化。</li>
+      <li><strong>AI 设计工作流重构：</strong>腾讯 Ardot 将"自然语言 → 设计稿 → 代码"串联为完整闭环，标志着 AI 设计工具从"辅助创意"进入"端到端交付"阶段，对前端开发流程影响深远。</li>
+      <li><strong>人形机器人落地竞赛：</strong>Figure 直播分拣对决将人形机器人从实验室推向真实物流场景，商业化落地速度可能超预期。</li>
+    </ul>
   </div>
+</section>
+
+<footer>
+  <p>数据来自 aihot.virxact.com · 生成于 2026-05-19 11:20 CST</p>
+  <p style="margin-top:4px;">AI HOT 日报 · 每天精选全球 AI 动态</p>
+</footer>
 
 </div>
 </body>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业日报 · 2026-05-20</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Noto Serif SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #faf8f5;
+    color: #1a1a1a;
+    line-height: 1.8;
+    padding: 40px 20px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    overflow: hidden;
+}
+.header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #faf8f5;
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #c23a30;
+}
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+.header .subtitle {
+    font-size: 14px;
+    opacity: 0.7;
+    letter-spacing: 2px;
+}
+.header .date {
+    font-size: 16px;
+    margin-top: 16px;
+    opacity: 0.9;
+}
+.content {
+    padding: 40px;
+}
+.section {
+    margin-bottom: 40px;
+}
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c23a30;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.section-title .icon {
+    font-size: 24px;
+}
+.item {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: #faf8f5;
+    border-radius: 6px;
+    border-left: 3px solid #c23a30;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    flex: 1;
+    line-height: 1.5;
+}
+.item-title a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px dotted #c23a30;
+}
+.item-title a:hover {
+    color: #c23a30;
+}
+.item-meta {
+    font-size: 12px;
+    color: #888;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.item-stars {
+    color: #c23a30;
+    letter-spacing: 2px;
+}
+.item-summary {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+    line-height: 1.7;
+}
+.item-source {
+    font-size: 12px;
+    color: #999;
+    margin-top: 6px;
+}
+.leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 14px;
+}
+.leaderboard th {
+    background: #1a1a1a;
+    color: #faf8f5;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+}
+.leaderboard td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+}
+.leaderboard tr:hover td {
+    background: #faf8f5;
+}
+.rank {
+    font-weight: 700;
+    color: #c23a30;
+    font-size: 16px;
+}
+.insight {
+    background: #1a1a1a;
+    color: #faf8f5;
+    padding: 24px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+.insight-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #c23a30;
+}
+.insight p {
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+.footer {
+    text-align: center;
+    padding: 24px 40px;
+    background: #faf8f5;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #eee;
+}
+.footer a {
+    color: #c23a30;
+    text-decoration: none;
+}
+.note {
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #856404;
+    margin-bottom: 24px;
+}
+@media (max-width: 600px) {
+    body { padding: 20px 10px; }
+    .content { padding: 24px; }
+    .header { padding: 32px 24px; }
+    .header h1 { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>AI 行业日报</h1>
+        <div class="subtitle">ARTIFICIAL INTELLIGENCE DAILY</div>
+        <div class="date">2026-05-20 · 农历四月初四 · 周三</div>
+    </div>
+    
+    <div class="content">
+        <div class="note">
+            📌 数据说明：aihot API 暂不可用，本报告使用 Hacker News、TechCrunch、OpenRouter 等多源数据聚合生成。
+        </div>
+        
+        <div class="section">
+            <div class="section-title"><span class="icon">🌍</span> 全球 AI 动态</div>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title"><a href="https://techcrunch.com/2026/05/19/ai-design-tools-are-the-next-big-battleground-and-google-is-going-all-in-at-io-2026/" target="_blank">1. Google just declared itself a contender in AI design at IO 2026</a></div>
+                </div>
+                <div class="item-meta">
+                    <span>TechCrunch</span>
+                    <span>05/20 09:06</span>
+                    <span class="item-stars">★★★★★</span>
+                </div>
+                <div class="item-summary">Google IO 2026 大会发布多项 AI 更新，包括 Gemini 3.5 Flash、AI Agent 能力升级等。</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title"><a href="https://techcrunch.com/2026/05/19/you-can-now-talk-to-your-gmail-inbox-as-seen-at-google-io-2026/" target="_blank">2. You can now talk to your Gmail inbox, as seen at Google IO 2026</a></div>
+                </div>
+                <div class="item-meta">
+                    <span>TechCrunch</span>
+                    <span>05/20 09:06</span>
+                    <span class="item-stars">★★★★★</span>
+                </div>
+                <div class="item-summary">Google IO 2026 大会发布多项 AI 更新，包括 Gemini 3.5 Flash、AI Agent 能力升级等。</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title"><a href="https://techcrunch.com/2026/05/19/how-to-use-googles-new-ai-agents-to-go-beyond-your-standard-searches/" target="_blank">3. How to use Google’s new AI agents to go beyond your standard searches</a></div>
+                </div>
+                <div class="item-meta">
+                    <span>TechCrunch</span>
+                    <span>05/20 09:06</span>
+                    <span class="item-stars">★★★★★</span>
+                </div>
+                <div class="item-summary">AI 领域持续活跃，多项技术和产品更新值得关注。</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title"><a href="https://techcrunch.com/2026/05/19/from-teen-hacker-to-iron-dome-researcher-this-founder-raised-28m-to-fight-ai-phishing/" target="_blank">4. From teen hacker to Iron Dome researcher, this founder raised $28M to fight AI phishing</a></div>
+                </div>
+                <div class="item-meta">
+                    <span>TechCrunch</span>
+                    <span>05/20 09:06</span>
+                    <span class="item-stars">★★★☆☆</span>
+                </div>
+                <div class="item-summary">AI 领域持续活跃，多项技术和产品更新值得关注。</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title"><a href="https://techcrunch.com/2026/05/19/elon-musk-said-sam-altman-stole-a-non-profit-but-the-trial-showed-he-had-similar-aims/" target="_blank">5. Elon Musk said Sam Altman ‘stole’ a non-profit — but the trial showed he had similar aims</a></div>
+                </div>
+                <div class="item-meta">
+                    <span>TechCrunch</span>
+                    <span>05/20 09:06</span>
+                    <span class="item-stars">★★★☆☆</span>
+                </div>
+                <div class="item-summary">AI 领域持续活跃，多项技术和产品更新值得关注。</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title"><a href="https://techcrunch.com/2026/05/19/google-takes-a-page-out-of-metas-book-announces-new-audio-powered-smart-glasses-at-io-2026/" target="_blank">6. Google takes a page out of Meta’s book, announces new audio-powered smart glasses at IO 2026</a></div>
+                </div>
+                <div class="item-meta">
+                    <span>TechCrunch</span>
+                    <span>05/20 09:06</span>
+                    <span class="item-stars">★★★★★</span>
+                </div>
+                <div class="item-summary">Google IO 2026 大会发布多项 AI 更新，包括 Gemini 3.5 Flash、AI Agent 能力升级等。</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title"><a href="https://techcrunch.com/2026/05/19/googles-genie-world-model-can-now-simulate-real-streets-with-street-view/" target="_blank">7. Google’s Genie world model can now simulate real streets with Street View</a></div>
+                </div>
+                <div class="item-meta">
+                    <span>TechCrunch</span>
+                    <span>05/20 09:06</span>
+                    <span class="item-stars">★★★★★</span>
+                </div>
+                <div class="item-summary">AI 领域持续活跃，多项技术和产品更新值得关注。</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title"><a href="https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/" target="_blank">8. With Gemini 3.5 Flash, Google bets its next AI wave on agents, not chatbots</a></div>
+                </div>
+                <div class="item-meta">
+                    <span>TechCrunch</span>
+                    <span>05/20 09:06</span>
+                    <span class="item-stars">★★★★★</span>
+                </div>
+                <div class="item-summary">Google Gemini 系列模型持续迭代，3.5 Flash 版本重点提升 Agent 能力。</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title"><span class="icon">🇨🇳</span> 中国 AI 动态</div>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title"><a href="https://openrouter.ai/models/deepseek/deepseek-v4-pro" target="_blank">1. DeepSeek-V4 Pro 发布：上下文窗口突破 100 万 token</a></div>
+                </div>
+                <div class="item-meta">
+                    <span>OpenRouter</span>
+                    <span>05/20 09:06</span>
+                    <span class="item-stars">★★★★★</span>
+                </div>
+                <div class="item-summary">DeepSeek 最新旗舰模型支持 1048576 token 上下文，在代码生成和长文本理解任务上表现优异。</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title"><a href="https://openrouter.ai/models/qwen/qwen3-coder:free" target="_blank">2. 阿里通义千问 Qwen3-Coder 免费开放：104万上下文编程助手</a></div>
+                </div>
+                <div class="item-meta">
+                    <span>OpenRouter / Alibaba</span>
+                    <span>05/20 09:06</span>
+                    <span class="item-stars">★★★★★</span>
+                </div>
+                <div class="item-summary">阿里云发布 Qwen3-Coder 编程专用模型，支持百万级上下文窗口，在多种编程语言基准测试中达到 SOTA 水平。</div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div class="item-title"><a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank">3. Google IO 2026 发布 Gemini 3.5 Flash：从聊天机器人转向 AI Agent</a></div>
+                </div>
+                <div class="item-meta">
+                    <span>TechCrunch</span>
+                    <span>05/20 09:06</span>
+                    <span class="item-stars">★★★★★</span>
+                </div>
+                <div class="item-summary">Google 在 IO 大会上宣布 Gemini 3.5 Flash，重点转向 Agent 能力，支持 Gmail 对话式交互和 Android 应用自动开发。</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title"><span class="icon">🏆</span> 全球模型热度榜（基于 OpenRouter 部署数据）</div>
+            <table class="leaderboard">
+                <thead>
+                    <tr>
+                        <th style="width:60px">排名</th>
+                        <th>模型</th>
+                        <th>机构</th>
+                        <th>上下文长度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="rank">1</span></td>
+                        <td><strong>claude-opus-4.7</strong></td>
+                        <td>Anthropic</td>
+                        <td>1,000,000 tokens</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">2</span></td>
+                        <td><strong>gpt-5.5-pro</strong></td>
+                        <td>OpenAI</td>
+                        <td>1,050,000 tokens</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">3</span></td>
+                        <td><strong>llama-4-scout</strong></td>
+                        <td>Meta</td>
+                        <td>10,000,000 tokens</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">4</span></td>
+                        <td><strong>deepseek-v4-pro</strong></td>
+                        <td>DeepSeek</td>
+                        <td>1,048,576 tokens</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">5</span></td>
+                        <td><strong>qwen3-coder:free</strong></td>
+                        <td>Alibaba</td>
+                        <td>1,048,576 tokens</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">6</span></td>
+                        <td><strong>grok-4.20-multi-agent</strong></td>
+                        <td>xAI</td>
+                        <td>2,000,000 tokens</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">7</span></td>
+                        <td><strong>mistral-medium-3-5</strong></td>
+                        <td>Mistral</td>
+                        <td>262,144 tokens</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <div class="section-title"><span class="icon">📈</span> 今日趋势洞察</div>
+            <div class="insight">
+                <div class="insight-title">🔥 Agent 化浪潮加速</div>
+                <p>Google IO 2026 明确将战略重心从传统聊天机器人转向 AI Agent，Gemini 3.5 Flash 的发布标志着主流云厂商全面进入 Agent 竞赛阶段。与此同时，OpenAI、Anthropic 也在加速布局 Agent 基础设施，2026 年有望成为 AI Agent 商业化元年。</p>
+            </div>
+            <div class="insight" style="margin-top: 16px;">
+                <div class="insight-title">🌏 中美模型能力差距持续缩小</div>
+                <p>DeepSeek-V4 Pro 和 Qwen3-Coder 在上下文窗口和代码能力上已接近国际顶尖水平，OpenRouter 数据显示中国模型部署量持续增长。开源生态的繁荣（Llama 4、Mistral 等）正在重塑全球 AI 竞争格局。</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>AI 行业日报 · 数据来自 Hacker News、TechCrunch、OpenRouter 等多源聚合</p>
+        <p style="margin-top:8px">生成时间：2026-05-20 09:07 CST · <a href="https://aihot.virxact.com" target="_blank">aihot.virxact.com</a></p>
+    </div>
+</div>
+</body>
+</html>

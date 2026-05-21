@@ -3,364 +3,442 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI HOT 日报 · 2026-05-21</title>
+<title>AI 行业日报 · 2026-05-21</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-    --ink: #1a1a1a;
-    --cinnabar: #c23a30;
-    --rice: #faf8f5;
-    --light-gray: #f0eee9;
-    --medium-gray: #8a8a85;
-}
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    font-family: 'Noto Serif SC', 'Inter', serif;
-    background: var(--rice);
-    color: var(--ink);
+    font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+    background: #faf8f5;
+    color: #2c2c2c;
     line-height: 1.8;
+}
+.container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 30px;
 }
 header {
     text-align: center;
-    padding: 30px 0 40px;
-    border-bottom: 2px solid var(--cinnabar);
+    border-bottom: 3px solid #c23a30;
+    padding-bottom: 30px;
     margin-bottom: 40px;
 }
 h1 {
-    font-size: 2.2em;
+    font-size: 32px;
     font-weight: 700;
-    color: var(--cinnabar);
-    letter-spacing: 0.1em;
+    color: #c23a30;
+    letter-spacing: 4px;
     margin-bottom: 10px;
 }
-.date {
-    font-size: 1.1em;
-    color: var(--medium-gray);
+.date-meta {
+    font-size: 15px;
+    color: #666;
 }
 .lead {
-    font-size: 1.2em;
-    font-weight: 600;
-    text-align: center;
-    padding: 20px 40px;
-    background: var(--light-gray);
-    border-radius: 8px;
+    background: #fff5f0;
+    border-left: 4px solid #c23a30;
+    padding: 25px 30px;
     margin-bottom: 40px;
+    font-size: 17px;
+    line-height: 1.9;
 }
-section {
+.section {
     margin-bottom: 50px;
 }
 .section-title {
-    font-size: 1.4em;
-    font-weight: 700;
-    color: var(--cinnabar);
+    font-size: 22px;
+    font-weight: 600;
+    color: #c23a30;
+    border-bottom: 2px solid #e8d8d0;
+    padding-bottom: 12px;
     margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
 }
 .item {
-    margin-bottom: 25px;
-    padding: 20px;
     background: white;
     border-radius: 8px;
+    padding: 22px 25px;
+    margin-bottom: 18px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #f0ebe7;
 }
 .item-title {
-    font-size: 1.15em;
+    font-size: 18px;
     font-weight: 600;
+    color: #1a1a1a;
     margin-bottom: 10px;
-    color: var(--ink);
-}
-.item-meta {
-    font-size: 0.9em;
-    color: var(--medium-gray);
-    margin-bottom: 12px;
-    font-family: 'Inter', sans-serif;
 }
 .item-source {
+    font-size: 13px;
+    color: #c23a30;
     display: inline-block;
-    background: var(--light-gray);
-    padding: 2px 10px;
-    border-radius: 4px;
-    margin-right: 10px;
+    margin-right: 15px;
 }
-.item-score {
-    color: var(--cinnabar);
+.item-rating {
+    font-size: 13px;
+    color: #d48b28;
+    display: inline-block;
 }
 .item-summary {
-    font-size: 0.98em;
-    color: #444;
-    line-height: 1.9;
+    font-size: 15px;
+    color: #555;
+    margin: 12px 0;
+    line-height: 1.8;
 }
-.item-link {
-    display: inline-block;
-    margin-top: 12px;
-    font-size: 0.9em;
-    color: var(--cinnabar);
+.item-url {
+    font-size: 13px;
+    color: #2563eb;
+}
+.item-url a {
+    color: #2563eb;
     text-decoration: none;
-    font-family: 'Inter', sans-serif;
 }
-.item-link:hover {
+.item-url a:hover {
     text-decoration: underline;
 }
-.stats {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 30px;
-    font-family: 'Inter', sans-serif;
+.insights {
+    background: #f0f7ff;
+    border-radius: 8px;
+    padding: 25px 30px;
+    margin-top: 20px;
 }
-.stat-box {
+.insights ul {
+    padding-left: 25px;
+}
+.insights li {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.footer {
     text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #e0ddd8;
+    font-size: 13px;
+    color: #888;
 }
-.stat-num {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--cinnabar);
-}
-.stat-label {
-    font-size: 0.9em;
-    color: var(--medium-gray);
-}
-footer {
-    text-align: center;
-    padding: 30px 0;
-    border-top: 1px solid #ddd;
-    color: var(--medium-gray);
-    font-size: 0.9em;
-    font-family: 'Inter', sans-serif;
-}
-@media (max-width: 600px) {
-    h1 { font-size: 1.6em; }
-    .lead { padding: 15px 20px; font-size: 1.05em; }
-    .stats { gap: 20px; }
+@media (max-width: 640px) {
+    .container { padding: 20px 15px; }
+    h1 { font-size: 24px; }
+    .item { padding: 18px 15px; }
 }
 </style>
 </head>
 <body>
+<div class="container">
 <header>
-    <h1>AI HOT 日报</h1>
-    <div class="date">2026-05-21 · 农历四月十五</div>
+<h1>AI 行业日报</h1>
+<div class="date-meta">2026-05-21 · 周三</div>
 </header>
 
-<div class="stats">
-    <div class="stat-box">
-        <div class="stat-num">21</div>
-        <div class="stat-label">🌍 国际动态</div>
-    </div>
-    <div class="stat-box">
-        <div class="stat-num">7</div>
-        <div class="stat-label">🇨🇳 国内动态</div>
-    </div>
-    <div class="stat-box">
-        <div class="stat-num">28</div>
-        <div class="stat-label">📋 总计</div>
-    </div>
+<div class="lead">
+<strong>主编导读：</strong>今日AI热点：Qwen3.7：智能体前沿、GPT-5即将发布、Google Stitch更新：AI设计助手实现全流程构建
 </div>
 
-<div class="lead">今日AI热点：Qwen3.7：智能体前沿、GPT-5即将发布、Kling AI推出全球首个原...</div>
+<div class="section">
+<div class="section-title">🌍 全球 AI 动态</div>
 
-<section>
-    <div class="section-title">🌍 全球 AI 动态</div>
+<div class="item">
+<div class="item-title">1. Qwen3.7：智能体前沿</div>
+<div>
+<span class="item-source">Qwen：Blog Retrieval（API）</span>
+<span class="item-rating">★★★☆☆</span>
+</div>
+<div class="item-summary">Qwen Studio推出Qwen3.7模型，提供覆盖聊天机器人、图像与视频理解、图像生成、文档处理、网页搜索集成、工具调用及工件生成等功能。该模型整合了当前AI智能体的关键能力，旨在推动多模态交互与实际任务执行向更综合、自主的方向发展。</div>
+<div class="item-url"><a href="https://qwen.ai/blog?id=qwen3.7" target="_blank">https://qwen.ai/blog?id=qwen3.7</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">1. Qwen3.7：智能体前沿</div>
-        <div class="item-meta">
-            <span class="item-source">Qwen：Blog Retrieval（API）</span>
-            <span class="item-score">★★★☆☆</span>
-        </div>
-        <div class="item-summary">Qwen Studio推出Qwen3.7模型，提供覆盖聊天机器人、图像与视频理解、图像生成、文档处理、网页搜索集成、工具调用及工件生成等功能。该模型整合了当前AI智能体的关键能力，旨在推动多模态交互与实际任务执行向更综合、自主的方向发展。</div>
-        <a class="item-link" href="https://qwen.ai/blog?id=qwen3.7" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">2. GPT-5即将发布</div>
+<div>
+<span class="item-source">X：ChatGPT (@ChatGPTapp)</span>
+<span class="item-rating">★★★★★</span>
+</div>
+<div class="item-summary">GPT-5即将发布 🚢</div>
+<div class="item-url"><a href="https://x.com/ChatGPTapp/status/2057178633249394819" target="_blank">https://x.com/ChatGPTapp/status/2057178633249394819</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">2. GPT-5即将发布</div>
-        <div class="item-meta">
-            <span class="item-source">X：ChatGPT (@ChatGPTapp)</span>
-            <span class="item-score">★★★★★</span>
-        </div>
-        <div class="item-summary">GPT-5即将发布 🚢</div>
-        <a class="item-link" href="https://x.com/ChatGPTapp/status/2057178633249394819" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">3. Google Stitch更新：AI设计助手实现全流程构建</div>
+<div>
+<span class="item-source">X：Google AI for Developers (@googleaidevs)</span>
+<span class="item-rating">★★★★★</span>
+</div>
+<div class="item-summary">Google推出了其AI设计伙伴Stitch的多项重要更新。新功能支持实时流式构建设计，允许用户在不中断流程的情况下直接进行编辑和互动反馈。Stitch现已能够导入现有代码库或Design.md文件，基于实际生产组件进行设计以保持品牌一致性。同时，工具新增了动态界面生成功能，并可将设计项目直接导出为可分享的线上URL，简化了从原型到生产的部署流程。该工具现已面向全球用户开放。</div>
+<div class="item-url"><a href="https://x.com/googleaidevs/status/2057209295763300785" target="_blank">https://x.com/googleaidevs/status/2057209295763300785</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">3. Google Stitch更新：AI设计助手实现全流程构建</div>
-        <div class="item-meta">
-            <span class="item-source">X：Google AI for Developers (@googleaidevs)</span>
-            <span class="item-score">★★★★★</span>
-        </div>
-        <div class="item-summary">Google推出了其AI设计伙伴Stitch的多项重要更新。新功能支持实时流式构建设计，允许用户在不中断流程的情况下直接进行编辑和互动反馈。Stitch现已能够导入现有代码库或Design.md文件，基于实际生产组件进行设计以保持品牌一致性。同时，工具新增了动态界面生成功能，并可将设计项目直接导出为可分享的线上URL，简化了从原型到生产的部署流程。该工具现已面向全球用户开放。</div>
-        <a class="item-link" href="https://x.com/googleaidevs/status/2057209295763300785" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">4. ChatGPT移动端支持Codex，实现跨设备协作</div>
+<div>
+<span class="item-source">X：OpenAI Developers (@OpenAIDevs)</span>
+<span class="item-rating">★★★★★</span>
+</div>
+<div class="item-summary">你的笔记本电脑可以留在家里。 通过ChatGPT移动应用使用Codex，随时随地回答问题，之后还能在电脑上继续同一对话。</div>
+<div class="item-url"><a href="https://x.com/OpenAIDevs/status/2057142816497906045" target="_blank">https://x.com/OpenAIDevs/status/2057142816497906045</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">4. ChatGPT移动端支持Codex，实现跨设备协作</div>
-        <div class="item-meta">
-            <span class="item-source">X：OpenAI Developers (@OpenAIDevs)</span>
-            <span class="item-score">★★★★★</span>
-        </div>
-        <div class="item-summary">你的笔记本电脑可以留在家里。 通过ChatGPT移动应用使用Codex，随时随地回答问题，之后还能在电脑上继续同一对话。</div>
-        <a class="item-link" href="https://x.com/OpenAIDevs/status/2057142816497906045" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">5. V8.1新增反向提示功能</div>
+<div>
+<span class="item-source">X：Midjourney (@midjourney)</span>
+<span class="item-rating">★★★☆☆</span>
+</div>
+<div class="item-summary">今日小幅更新。许多用户要求为V8模型恢复“反向提示”功能（旧版本已有），我们称之为--no标志。该功能现已在V8.1中上线！如果您想从图像中排除某些元素（例如人物），可以尝试使用--no people。玩得开心！</div>
+<div class="item-url"><a href="https://x.com/midjourney/status/2057184157869199429" target="_blank">https://x.com/midjourney/status/2057184157869199429</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">5. V8.1新增反向提示功能</div>
-        <div class="item-meta">
-            <span class="item-source">X：Midjourney (@midjourney)</span>
-            <span class="item-score">★★★☆☆</span>
-        </div>
-        <div class="item-summary">今日小幅更新。许多用户要求为V8模型恢复“反向提示”功能（旧版本已有），我们称之为--no标志。该功能现已在V8.1中上线！如果您想从图像中排除某些元素（例如人物），可以尝试使用--no people。玩得开心！</div>
-        <a class="item-link" href="https://x.com/midjourney/status/2057184157869199429" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">6. OpenClaw 2026.5.19版本发布</div>
+<div>
+<span class="item-source">X：OpenClaw (@openclaw)</span>
+<span class="item-rating">★★★★☆</span>
+</div>
+<div class="item-summary">OpenClaw 2026.5.19 🦞 📱 Android Talk Mode 实现实时化 🍎 Mac 设置界面更清爽 🔐 xAI 登录支持无头模式 🧵 Telegram 话题功能更稳定 大版本更新，简短公告。 https://github.com/openclaw/openclaw/releases/tag/v2026.5.19</div>
+<div class="item-url"><a href="https://x.com/openclaw/status/2057202955581809093" target="_blank">https://x.com/openclaw/status/2057202955581809093</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">6. OpenClaw 2026.5.19版本发布</div>
-        <div class="item-meta">
-            <span class="item-source">X：OpenClaw (@openclaw)</span>
-            <span class="item-score">★★★★☆</span>
-        </div>
-        <div class="item-summary">OpenClaw 2026.5.19 🦞 📱 Android Talk Mode 实现实时化 🍎 Mac 设置界面更清爽 🔐 xAI 登录支持无头模式 🧵 Telegram 话题功能更稳定 大版本更新，简短公告。 https://github.com/openclaw/openclaw/releases/tag/v2026.5.19</div>
-        <a class="item-link" href="https://x.com/openclaw/status/2057202955581809093" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">7. Gemini 3.5 Flash登陆OpenCode平台</div>
+<div>
+<span class="item-source">X：opencode (@opencode)</span>
+<span class="item-rating">★★★☆☆</span>
+</div>
+<div class="item-summary">Gemini 3.5 Flash现已在OpenCode上线 - 速度极快 - 100万上下文 - 定价与GLM、Kimi和DeepSeek Pro相近</div>
+<div class="item-url"><a href="https://x.com/opencode/status/2057017380941795667" target="_blank">https://x.com/opencode/status/2057017380941795667</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">7. Gemini 3.5 Flash登陆OpenCode平台</div>
-        <div class="item-meta">
-            <span class="item-source">X：opencode (@opencode)</span>
-            <span class="item-score">★★★★★</span>
-        </div>
-        <div class="item-summary">Gemini 3.5 Flash现已在OpenCode上线 - 速度极快 - 100万上下文 - 定价与GLM、Kimi和DeepSeek Pro相近</div>
-        <a class="item-link" href="https://x.com/opencode/status/2057017380941795667" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">8. SpaceX与Anthropic合作提供大规模AI算力服务</div>
+<div>
+<span class="item-source">X：Elon Musk (@elonmusk, xAI)</span>
+<span class="item-rating">★★★★★</span>
+</div>
+<div class="item-summary">正如最近与@AnthropicAI扩大合作所展示的，@SpaceX正在大规模提供AI算力服务。 我们正在与其他公司进行类似合作的讨论。 随着时间的推移，特别是通过轨道数据中心，我们预计将以极高的规模提供AI服务。</div>
+<div class="item-url"><a href="https://x.com/elonmusk/status/2057228707606196434" target="_blank">https://x.com/elonmusk/status/2057228707606196434</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">8. SpaceX与Anthropic合作提供大规模AI算力服务</div>
-        <div class="item-meta">
-            <span class="item-source">X：Elon Musk (@elonmusk, xAI)</span>
-            <span class="item-score">★★★★★</span>
-        </div>
-        <div class="item-summary">正如最近与@AnthropicAI扩大合作所展示的，@SpaceX正在大规模提供AI算力服务。 我们正在与其他公司进行类似合作的讨论。 随着时间的推移，特别是通过轨道数据中心，我们预计将以极高的规模提供AI服务。</div>
-        <a class="item-link" href="https://x.com/elonmusk/status/2057228707606196434" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">9. OpenAI向所有YC创业公司提供200万美元API投资</div>
+<div>
+<span class="item-source">X：Greg Brockman (@gdb)</span>
+<span class="item-rating">★★★★★</span>
+</div>
+<div class="item-summary">OpenAI宣布向Y Combinator当前批次的每家创业公司提供价值200万美元的API信用额度投资，以换取股权。此举旨在为初创公司提供AI算力资源，支持下一代创新。这让人联想到Sam Altman在YC合伙人时期，Yuri Milner向每家创业公司提供投资的先例。OpenAI希望通过此举释放创业者潜力，推动AI应用创新。</div>
+<div class="item-url"><a href="https://x.com/gdb/status/2056948285038887255" target="_blank">https://x.com/gdb/status/2056948285038887255</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">9. OpenAI向所有YC创业公司提供200万美元API投资</div>
-        <div class="item-meta">
-            <span class="item-source">X：Greg Brockman (@gdb)</span>
-            <span class="item-score">★★★★★</span>
-        </div>
-        <div class="item-summary">OpenAI宣布向Y Combinator当前批次的每家创业公司提供价值200万美元的API信用额度投资，以换取股权。此举旨在为初创公司提供AI算力资源，支持下一代创新。这让人联想到Sam Altman在YC合伙人时期，Yuri Milner向每家创业公司提供投资的先例。OpenAI希望通过此举释放创业者潜力，推动AI应用创新。</div>
-        <a class="item-link" href="https://x.com/gdb/status/2056948285038887255" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">10. 欧盟委员会发布《欧盟人工智能法》高风险AI系统分类指导草案并开启公众咨询</div>
+<div>
+<span class="item-source">DataGuidance：Artificial Intelligence（网页）</span>
+<span class="item-rating">★★★★☆</span>
+</div>
+<div class="item-summary">欧盟委员会于2026年5月19日发布了关于《欧盟人工智能法》第六条项下高风险AI系统分类的指导草案。该草案旨在为AI系统的提供商、部署者及市场监管机构提供明确的分类标准，以确保在欧盟范围内执法的一致性。分类主要依据AI系统的预期用途，例如作为受监管产品的组件或用于特定高风险场景。草案也规定了部分豁免条件，例如仅执行辅助性任务时可能不被视为高风险。公众咨询期至206月23日。</div>
+<div class="item-url"><a href="https://www.dataguidance.com/news/eu-commission-publishes-draft-guidelines-classifying" target="_blank">https://www.dataguidance.com/news/eu-commission-publishes-draft-guidelines-classifying</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">10. 欧盟委员会发布《欧盟人工智能法》高风险AI系统分类指导草案并开启公众咨询</div>
-        <div class="item-meta">
-            <span class="item-source">DataGuidance：Artificial Intelligence（网页）</span>
-            <span class="item-score">★★★★☆</span>
-        </div>
-        <div class="item-summary">欧盟委员会于2026年5月19日发布了关于《欧盟人工智能法》第六条项下高风险AI系统分类的指导草案。该草案旨在为AI系统的提供商、部署者及市场监管机构提供明确的分类标准，以确保在欧盟范围内执法的一致性。分类主要依据AI系统的预期用途，例如作为受监管产品的组件或用于特定高风险场景。草案也规定了部分豁免条件，例如仅执行辅助性任务时可能不被视为高风险。公众咨询期至206月23日。</div>
-        <a class="item-link" href="https://www.dataguidance.com/news/eu-commission-publishes-draft-guidelines-classifying" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">11. Meta万人重组：裁员与AI转型并举</div>
+<div>
+<span class="item-source">X：Rohan Paul (@rohanpaul_ai)</span>
+<span class="item-rating">★★★☆☆</span>
+</div>
+<div class="item-summary">Meta启动大规模裁员，计划削减约8000个岗位。与此同时，约7000名员工将被调配至新的AI相关职位。此次调整并非单纯的削减成本，更是公司围绕AI进行内部结构重塑的关键举措，重点将资源集中于AI基础设施、基础模型的构建以及AI技术的商业化，旨在打造从模型训练、产品开发到实现盈利的完整链条。</div>
+<div class="item-url"><a href="https://x.com/rohanpaul_ai/status/2057177976492720363" target="_blank">https://x.com/rohanpaul_ai/status/2057177976492720363</a></div>
+</div>
 
-</section>
+<div class="item">
+<div class="item-title">12. 谷歌的人工智能正遭到操纵。这家搜索巨头正在悄然反击</div>
+<div>
+<span class="item-source">Hacker News 热门（buzzing.cc 中文翻译）</span>
+<span class="item-rating">★★★☆☆</span>
+</div>
+<div class="item-summary">谷歌的AI系统正面临被操纵的风险。为应对这一挑战，这家科技巨头已悄然启动防御措施，以保护其AI生成内容的结果免受恶意干扰。此举旨在确保搜索和AI服务的可靠性与可信度，反映了当前人工智能安全领域日益增长的对抗性问题。谷歌在未公开宣传的情况下，正在通过技术手段加强对其AI系统的防护。</div>
+<div class="item-url"><a href="https://www.bbc.com/future/article/20260519-google-tackles-attempts-to-hack-its-ai-results" target="_blank">https://www.bbc.com/future/article/20260519-google-tackles-attempts-to-hack-its-ai-results</a></div>
+</div>
 
-<section>
-    <div class="section-title">🇨🇳 中国 AI 动态</div>
+<div class="item">
+<div class="item-title">13. Gemini与XPRIZE联合举办全球黑客松</div>
+<div>
+<span class="item-source">X：Google AI for Developers (@googleaidevs)</span>
+<span class="item-rating">★★★★★</span>
+</div>
+<div class="item-summary">用Gemini构建，改变世界🌍 我们正与@xprize合作，发起一场全球黑客松，旨在利用我们全新的智能体工具解决现实世界的挑战。 点击加入：https://www.geminixprize.com/</div>
+<div class="item-url"><a href="https://x.com/googleaidevs/status/2057166550243872920" target="_blank">https://x.com/googleaidevs/status/2057166550243872920</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">1. Kling AI推出全球首个原生4K视频生成模型</div>
-        <div class="item-meta">
-            <span class="item-source">X：可灵 Kling AI (@Kling_ai)</span>
-            <span class="item-score">★★★★☆</span>
-        </div>
-        <div class="item-summary">4月23日，Kling AI正式推出全球首个原生4K视频生成模型，专为专业内容创作设计。该功能支持一键生成真4K画质视频，显著提升画面细节与制作效率。模型已获得好莱坞团队、动画工作室等多方采用。好莱坞制片人指出，这是其工作流中首个使用的原生4K基础模型；Wonder Studios强调，原生4K从底层生成避免了传统放大技术的角色变形问题，保持了画面一致性；动画导演则认为，该模型在保留艺术色调与复杂特效纹理方面优于同类产品。</div>
-        <a class="item-link" href="https://x.com/Kling_ai/status/2056950317712101599" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">14. OpenAI模型证伪了离散几何中的一个核心猜想</div>
+<div>
+<span class="item-source">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+<span class="item-rating">★★★★★</span>
+</div>
+<div class="item-summary">OpenAI开发的人工智能模型成功解决了数学界悬而未决逾80年的“单元距离问题”，并由此推翻了离散几何领域的一个核心猜想。这一突破被视作人工智能驱动数学研究的里程碑事件，标志着AI在基础科学理论探索中取得了实质性进展。该模型通过创新算法处理复杂的几何问题，展示了机器在自动化发现与验证数学猜想方面的巨大潜力。</div>
+<div class="item-url"><a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture" target="_blank">https://openai.com/index/model-disproves-discrete-geometry-conjecture</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">2. SenseNova U1：同时思考文本与图像的AI</div>
-        <div class="item-meta">
-            <span class="item-source">X：商汤 SenseTime (@SenseTime_AI)</span>
-            <span class="item-score">★★★☆☆</span>
-        </div>
-        <div class="item-summary">将你的想法转化为激发故事的视觉画面 🧨 [引用 @Adamaestr0_]：大多数AI工具可以写作或生成图像。 但这个能同时做这两件事。 向你介绍 SenseNova U1。 一个能同时思考文本和图像的AI。 这改变了一切 🧵</div>
-        <a class="item-link" href="https://x.com/SenseTime_AI/status/2057049434782097851" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">15. 开源油猴脚本实现多平台截图上传与内容处理</div>
+<div>
+<span class="item-source">X：Vista (@vista8)</span>
+<span class="item-rating">★★★★☆</span>
+</div>
+<div class="item-summary">开源油猴脚本实现小红书、抖音、微信公众号的截图粘贴自动上传，并支持YouTube字幕复制、倍速调节及内容导出至NotebookLM、ChatGPT等工具。主推文作者表示，该工具增强了将X平台内容同步至国内平台的意愿，尽管部分平台体验欠佳。</div>
+<div class="item-url"><a href="https://x.com/vista8/status/2056982823169568779" target="_blank">https://x.com/vista8/status/2056982823169568779</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">3. 腾讯张军官宣操作系统层级 AI 助手“马维斯”正式上工，Windows、Mac、安卓端同步上线</div>
-        <div class="item-meta">
-            <span class="item-source">IT之家（RSS）</span>
-            <span class="item-score">★★★★★</span>
-        </div>
-        <div class="item-summary">腾讯于5月21日发布了操作系统层级AI助手“马维斯”，支持Windows、Mac和安卓平台同步上线。该助手具备文档归类解析、图片智能识别处理、系统维护等功能，并强调与操作系统深度集成，可调度不同模型处理任务，部分功能可在离线状态下使用。腾讯表示“马维斯”能完成市面主流Agent的大部分工作，并具备桌面操控手机应用等能力。这是继3月WorkBuddy和“龙虾”产品矩阵后，腾讯推出的又一AI助手产品。</div>
-        <a class="item-link" href="https://www.ithome.com/0/953/096.htm" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">16. 开源插件为Codex App增添高级功能</div>
+<div>
+<span class="item-source">X：Vista (@vista8)</span>
+<span class="item-rating">★★★★☆</span>
+</div>
+<div class="item-summary">一个开源项目允许用户增强Codex App的功能。即使通过API登录，也能通过安装插件的方式启用Computer Use特性并添加Goal指令。项目还支持界面自定义，例如调整为类似Chrome浏览器的顶部Tab样式，并可设置任务开始和完成的提醒音效。相关开源项目地址已在评论区提供。</div>
+<div class="item-url"><a href="https://x.com/vista8/status/2057124658927812758" target="_blank">https://x.com/vista8/status/2057124658927812758</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">4. MiniMax语音模型新增600余种声音</div>
-        <div class="item-meta">
-            <span class="item-source">X：MiniMax (@MiniMax_AI)</span>
-            <span class="item-score">★★★☆☆</span>
-        </div>
-        <div class="item-summary">600多种由MiniMax Speech 2.8 Turbo驱动的新声音现已登陆Together AI @togethercompute 🎙️✨ 立即体验：https://voicefinder.together.ai/minimax--speech-2.8-turbo</div>
-        <a class="item-link" href="https://x.com/MiniMax_AI/status/2057177048356180296" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">17. OpenRouter自动路由缓存机制说明</div>
+<div>
+<span class="item-source">X：OpenRouter (@OpenRouter)</span>
+<span class="item-rating">★★★☆☆</span>
+</div>
+<div class="item-summary">提示💡 你无需担心自动路由（以及所有单独模型）的缓存未命中问题 OpenRouter会将你的会话固定在一个模型/提供商上，直到缓存过期</div>
+<div class="item-url"><a href="https://x.com/OpenRouter/status/2057128446300737702" target="_blank">https://x.com/OpenRouter/status/2057128446300737702</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">5. 投资超 600 亿美元，孙正义豪赌 OpenAI 引发内部质疑“迷信奥尔特曼如追星”</div>
-        <div class="item-meta">
-            <span class="item-source">IT之家（RSS）</span>
-            <span class="item-score">★★★★★</span>
-        </div>
-        <div class="item-summary">软银对OpenAI的投资承诺已超600亿美元，引发内部对孙正义过度信任其创始人奥尔特曼的担忧。部分高管质疑将巨额资本集中于单一公司存在风险，且软银虽持股超10%却无董事会席位，缺乏决策影响力。同时，Anthropic等竞争对手的崛起加剧了对OpenAI领先地位的挑战。尽管软银表示对OpenAI抱有“高度信心”，并已从中获得账面收益，但其股价下跌及信用展望被下调反映出市场对其豪赌的顾虑。</div>
-        <a class="item-link" href="https://www.ithome.com/0/953/021.htm" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">18. Ramp工程师如何用Codex加速代码审查</div>
+<div>
+<span class="item-source">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+<span class="item-rating">★★★★★</span>
+</div>
+<div class="item-summary">Ramp工程师团队通过集成Codex与GPT-5.5模型，实现了代码审查流程的显著提速。该工具能够在数分钟内为代码变更提供实质性反馈与改进建议，将传统需耗时数小时的审查周期大幅压缩，从而加快了产品迭代与上线的效率。</div>
+<div class="item-url"><a href="https://openai.com/index/ramp" target="_blank">https://openai.com/index/ramp</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">6. 消息称微软内部示警：GitHub 面临生存级风险，AI 编程工具削弱托管必要性</div>
-        <div class="item-meta">
-            <span class="item-source">IT之家（RSS）</span>
-            <span class="item-score">★★★☆☆</span>
-        </div>
-        <div class="item-summary">微软内部发出警告，称其代码托管平台GitHub正面临“生存级风险”。主要原因是Cursor、Claude Code等AI编程助手兴起，改变了开发者工作流，削弱了持续将代码上传至GitHub的必要性。为统一工具链并控制成本，微软已要求部分团队在2026年6月底前停止试用Claude Code，转而使用自有工具GitHub Copilot CLI。同时，OpenAI曾考虑自建替代平台，也加剧了对GitHub地位的潜在威胁。</div>
-        <a class="item-link" href="https://www.ithome.com/0/952/645.htm" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">19. Prompt驱动AI生成超真实足球自拍视频</div>
+<div>
+<span class="item-source">X：PixVerse (@PixVerse_)</span>
+<span class="item-rating">★★★☆☆</span>
+</div>
+<div class="item-summary">这条推文展示了一个用于在PixVerse平台生成视频的复杂提示词。核心目标是制作一段在大型体育场内，五位朋友进行超真实智能手机自拍风格的视频。提示词的关键在于，它通过极其详细的设定来确保生成内容的连贯性和真实感：包括对五个角色外貌的严格一致性要求、具体的球场环境、模拟真实手机拍摄的镜头运动（如抖动、失焦）以及一系列自然的动作序列。</div>
+<div class="item-url"><a href="https://x.com/PixVerse_/status/2057003487716876505" target="_blank">https://x.com/PixVerse_/status/2057003487716876505</a></div>
+</div>
 
-    <div class="item">
-        <div class="item-title">7. ZCube:超大规模大模型推理的网络优化</div>
-        <div class="item-meta">
-            <span class="item-source">智谱：研究（网页内嵌数据）</span>
-            <span class="item-score">★★★☆☆</span>
-        </div>
-        <div class="item-summary">针对超大规模大模型推理，ZCube网络架构通过取消Spine层、将Leaf交换机分组并全互联等创新设计，有效解决了推理网络的拥塞问题。该架构在集群实测中，实现了交换机与光模块资本支出减少33%、GPU平均推理吞吐提升15%，同时将首token延迟的P99值大幅降低40.6%，在降低成本的同时显著提升了推理性能。</div>
-        <a class="item-link" href="https://www.zhipuai.cn/zh/research/160" target="_blank">🔗 查看原文</a>
-    </div>
+<div class="item">
+<div class="item-title">20. Anthropic销售负责人如何利用Claude Cowork管理4000个客户账户</div>
+<div>
+<span class="item-source">Claude：Blog（网页）</span>
+<span class="item-rating">★★★★★</span>
+</div>
+<div class="item-summary">Anthropic美国中端市场业务负责人Travis Bryant利用Claude Cowork自动化销售管理工作。该工具帮助他高效完成客户倾向性评分、每日客户简报准备及每周销售预测报告生成，每晚自动处理4000个账户数据，替代了以往跨部门团队需数百小时完成的工作。通过自动化日常任务调度，他每天节省约90分钟，并将数据整合为可交互的销售仪表板，使其能更专注于客户沟通与战略决策。</div>
+<div class="item-url"><a href="https://claude.com/blog/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book" target="_blank">https://claude.com/blog/how-an-anthropic-sales-leader-uses-claude-cowork-to-run-a-4-000-account-book</a></div>
+</div>
 
-</section>
+<div class="item">
+<div class="item-title">21. 生成式AI是否会沦为科技行业的“越南战争”？公众抵制能否引领AI走向更优的发展路径？</div>
+<div>
+<span class="item-source">Gary Marcus：The Road to AI We Can Trust（RSS）</span>
+<span class="item-rating">★★★☆☆</span>
+</div>
+<div class="item-summary">当前生成式AI的狂飙突进正引发深度审视，其潜在风险与社会反弹可能将该技术拖入类似“越南战争”的漫长泥潭。公众的担忧与抵制运动，正从数据隐私、内容真实性到伦理冲击等多方面施加压力，迫使行业进行根本性反思。这些反作用力虽可能延缓发展，却也可能成为校准方向的关键力量，推动技术在安全、透明和负责任的基础上重新定义进步。我们正身处一个充满挑战与不确定性的“有趣时代”。</div>
+<div class="item-url"><a href="https://garymarcus.substack.com/p/could-generative-ai-could-turn-out" target="_blank">https://garymarcus.substack.com/p/could-generative-ai-could-turn-out</a></div>
+</div>
 
-<section>
-    <div class="section-title">📈 今日趋势洞察</div>
-    <div class="item">
-        <div class="item-summary">
-            <ul style="margin-left: 20px;">
-                <li style="margin-bottom: 10px;">模型发布节奏加快：今日有超过 5 条模型相关新闻，显示行业竞争加剧</li>
-                <li style="margin-bottom: 10px;">中国力量崛起：国内 AI 公司活跃度提升，产品迭代速度加快</li>
-                <li style="margin-bottom: 10px;">科技巨头主导：OpenAI 和 Google 继续引领行业创新方向</li>
+</div>
 
-            </ul>
-        </div>
-    </div>
-</section>
+<div class="section">
+<div class="section-title">🇨🇳 中国 AI 动态</div>
 
-<footer>
-    <p>数据来源：AI HOT · 自动生成</p>
-    <p style="margin-top: 5px;">Generated by Hermes Agent</p>
-</footer>
+<div class="item">
+<div class="item-title">22. Kling AI推出全球首个原生4K视频生成模型</div>
+<div>
+<span class="item-source">X：可灵 Kling AI (@Kling_ai)</span>
+<span class="item-rating">★★★★☆</span>
+</div>
+<div class="item-summary">4月23日，Kling AI正式推出全球首个原生4K视频生成模型，专为专业内容创作设计。该功能支持一键生成真4K画质视频，显著提升画面细节与制作效率。模型已获得好莱坞团队、动画工作室等多方采用。好莱坞制片人指出，这是其工作流中首个使用的原生4K基础模型；Wonder Studios强调，原生4K从底层生成避免了传统放大技术的角色变形问题，保持了画面一致性；动画导演则认为，该模型在保留艺术色调与复杂特效纹理方面优于同类产品。</div>
+<div class="item-url"><a href="https://x.com/Kling_ai/status/2056950317712101599" target="_blank">https://x.com/Kling_ai/status/2056950317712101599</a></div>
+</div>
+
+<div class="item">
+<div class="item-title">23. SenseNova U1：同时思考文本与图像的AI</div>
+<div>
+<span class="item-source">X：商汤 SenseTime (@SenseTime_AI)</span>
+<span class="item-rating">★★★☆☆</span>
+</div>
+<div class="item-summary">将你的想法转化为激发故事的视觉画面 🧨 [引用 @Adamaestr0_]：大多数AI工具可以写作或生成图像。 但这个能同时做这两件事。 向你介绍 SenseNova U1。 一个能同时思考文本和图像的AI。 这改变了一切 🧵</div>
+<div class="item-url"><a href="https://x.com/SenseTime_AI/status/2057049434782097851" target="_blank">https://x.com/SenseTime_AI/status/2057049434782097851</a></div>
+</div>
+
+<div class="item">
+<div class="item-title">24. 腾讯张军官宣操作系统层级 AI 助手“马维斯”正式上工，Windows、Mac、安卓端同步上线</div>
+<div>
+<span class="item-source">IT之家（RSS）</span>
+<span class="item-rating">★★★★★</span>
+</div>
+<div class="item-summary">腾讯于5月21日发布了操作系统层级AI助手“马维斯”，支持Windows、Mac和安卓平台同步上线。该助手具备文档归类解析、图片智能识别处理、系统维护等功能，并强调与操作系统深度集成，可调度不同模型处理任务，部分功能可在离线状态下使用。腾讯表示“马维斯”能完成市面主流Agent的大部分工作，并具备桌面操控手机应用等能力。这是继3月WorkBuddy和“龙虾”产品矩阵后，腾讯推出的又一AI助手产品。</div>
+<div class="item-url"><a href="https://www.ithome.com/0/953/096.htm" target="_blank">https://www.ithome.com/0/953/096.htm</a></div>
+</div>
+
+<div class="item">
+<div class="item-title">25. MiniMax语音模型新增600余种声音</div>
+<div>
+<span class="item-source">X：MiniMax (@MiniMax_AI)</span>
+<span class="item-rating">★★★★☆</span>
+</div>
+<div class="item-summary">600多种由MiniMax Speech 2.8 Turbo驱动的新声音现已登陆Together AI @togethercompute 🎙️✨ 立即体验：https://voicefinder.together.ai/minimax--speech-2.8-turbo</div>
+<div class="item-url"><a href="https://x.com/MiniMax_AI/status/2057177048356180296" target="_blank">https://x.com/MiniMax_AI/status/2057177048356180296</a></div>
+</div>
+
+<div class="item">
+<div class="item-title">26. 投资超 600 亿美元，孙正义豪赌 OpenAI 引发内部质疑“迷信奥尔特曼如追星”</div>
+<div>
+<span class="item-source">IT之家（RSS）</span>
+<span class="item-rating">★★★★★</span>
+</div>
+<div class="item-summary">软银对OpenAI的投资承诺已超600亿美元，引发内部对孙正义过度信任其创始人奥尔特曼的担忧。部分高管质疑将巨额资本集中于单一公司存在风险，且软银虽持股超10%却无董事会席位，缺乏决策影响力。同时，Anthropic等竞争对手的崛起加剧了对OpenAI领先地位的挑战。尽管软银表示对OpenAI抱有“高度信心”，并已从中获得账面收益，但其股价下跌及信用展望被下调反映出市场对其豪赌的顾虑。</div>
+<div class="item-url"><a href="https://www.ithome.com/0/953/021.htm" target="_blank">https://www.ithome.com/0/953/021.htm</a></div>
+</div>
+
+<div class="item">
+<div class="item-title">27. 消息称微软内部示警：GitHub 面临生存级风险，AI 编程工具削弱托管必要性</div>
+<div>
+<span class="item-source">IT之家（RSS）</span>
+<span class="item-rating">★★★☆☆</span>
+</div>
+<div class="item-summary">微软内部发出警告，称其代码托管平台GitHub正面临“生存级风险”。主要原因是Cursor、Claude Code等AI编程助手兴起，改变了开发者工作流，削弱了持续将代码上传至GitHub的必要性。为统一工具链并控制成本，微软已要求部分团队在2026年6月底前停止试用Claude Code，转而使用自有工具GitHub Copilot CLI。同时，OpenAI曾考虑自建替代平台，也加剧了对GitHub地位的潜在威胁。</div>
+<div class="item-url"><a href="https://www.ithome.com/0/952/645.htm" target="_blank">https://www.ithome.com/0/952/645.htm</a></div>
+</div>
+
+<div class="item">
+<div class="item-title">28. ZCube:超大规模大模型推理的网络优化</div>
+<div>
+<span class="item-source">智谱：研究（网页内嵌数据）</span>
+<span class="item-rating">★★★★☆</span>
+</div>
+<div class="item-summary">针对超大规模大模型推理，ZCube网络架构通过取消Spine层、将Leaf交换机分组并全互联等创新设计，有效解决了推理网络的拥塞问题。该架构在集群实测中，实现了交换机与光模块资本支出减少33%、GPU平均推理吞吐提升15%，同时将首token延迟的P99值大幅降低40.6%，在降低成本的同时显著提升了推理性能。</div>
+<div class="item-url"><a href="https://www.zhipuai.cn/zh/research/160" target="_blank">https://www.zhipuai.cn/zh/research/160</a></div>
+</div>
+
+</div>
+
+<div class="section">
+<div class="section-title">📈 今日趋势洞察</div>
+<div class="insights">
+<ul>
+<li>国际方面，大模型领域竞争持续加剧，各头部厂商均在加速迭代。</li><li>国内厂商聚焦垂直领域落地，开源生态持续活跃。</li><li>模型多模态能力成为竞争焦点，长上下文与推理能力并重。</li><li>关注重点转向实际业务场景的 ROI 与落地效率。</li>
+</ul>
+</div>
+</div>
+
+<div class="footer">
+数据来源：AIHOT · 生成时间：2026-05-21 11:21
+</div>
+</div>
 </body>
 </html>

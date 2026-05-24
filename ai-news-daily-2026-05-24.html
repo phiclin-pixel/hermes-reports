@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 行业日报 · 2026-05-24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --cinnabar: #c23a30;
+      --rice: #faf8f5;
+      --muted: #6b6b6b;
+      --border: #e0ddd8;
+      --highlight: #fef3e2;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      background: var(--rice);
+      color: var(--ink);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 2px solid var(--cinnabar);
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    header .date {
+      font-size: 15px;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+    }
+    header .lead {
+      margin-top: 20px;
+      padding: 16px 20px;
+      background: var(--highlight);
+      border-left: 3px solid var(--cinnabar);
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #4a4035;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-header .icon {
+      font-size: 22px;
+    }
+    .section-header h2 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .section-header .count {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      margin-left: auto;
+    }
+    .news-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #f0ede8;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .item-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .item-index {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--cinnabar);
+      font-weight: 600;
+      min-width: 24px;
+    }
+    .item-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      line-height: 1.5;
+    }
+    .item-title:hover { color: var(--cinnabar); }
+    .item-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-left: 34px;
+      margin-bottom: 4px;
+    }
+    .item-source {
+      font-size: 12px;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+    }
+    .item-impact {
+      font-size: 11px;
+      color: var(--cinnabar);
+      letter-spacing: 1px;
+    }
+    .item-summary {
+      margin-left: 34px;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .leaderboard-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .leaderboard-table th {
+      background: var(--ink);
+      color: var(--rice);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+    }
+    .leaderboard-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .leaderboard-table tr:nth-child(even) { background: #f5f3ef; }
+    .leaderboard-note {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+    .insight-item {
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      background: #f5f3ef;
+      border-radius: 6px;
+    }
+    .insight-item h4 {
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--cinnabar);
+    }
+    .insight-item p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.7;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 24px 16px 60px; }
+      header h1 { font-size: 22px; }
+      .item-title { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI 行业日报</h1>
+      <div class="date">2026年5月24日 星期日 · 农历四月初八</div>
+      <div class="lead">今日热点：Models.dev：一个关于人工智能模型规格、定价和功能的开源数据库、Replit Agent与Squidler集成，实现全自动化AI质量保障、StepAudio 2.5实时语音发布：副语言感知与人格化交互。微软称AI成本高于人工、Anthropic估值有望超越OpenAI、扩散语言模型突破文本生成速度极限。</div>
+    </header>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="icon">🌍</span>
+        <h2>全球 AI 动态</h2>
+        <span class="count">7 条</span>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">1</span>
+          <a href="https://github.com/anomalyco/models.dev" target="_blank" class="item-title">Models.dev：一个关于人工智能模型规格、定价和功能的开源数据库</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          <span class="item-impact">★★★★☆</span>
+        </div>
+        <p class="item-summary">近期发布了开源数据库Models.dev，专门收录人工智能模型的各项规格、定价及功能信息。该项目在GitHub公开，便于开发者查询和比较不同AI模型。其在Hacker News社区获得101点关注度，显示出技术社区对这类集中化、透明化...</p>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">2</span>
+          <a href="https://x.com/Replit/status/2058261705998602548" target="_blank" class="item-title">Replit Agent与Squidler集成，实现全自动化AI质量保障</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">X：Replit (@Replit)</span>
+          <span class="item-impact">★★★★☆</span>
+        </div>
+        <p class="item-summary">Replit Agent与Squidler已完成集成，形成一套完整的AI驱动质量保障闭环。用户可通过自然语言描述应用功能，由Replit Agent负责构建。构建完成后，Squidler会像真实用户一样对线上应用进行自动化测试，无需编...</p>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">3</span>
+          <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.150" target="_blank" class="item-title">v2.1.150版本更新</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">Claude Code：GitHub Releases（RSS）</span>
+          <span class="item-impact">★★★★★</span>
+        </div>
+        <p class="item-summary">v2.1.150版本包含内部基础设施优化。此次更新主要聚焦于后台系统的改进，未引入任何用户可见的功能、界面或体验变更。</p>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">4</span>
+          <a href="https://fortune.com/2026/05/22/microsoft-ai-cost-problem-tokens-agents" target="_blank" class="item-title">微软称，使用人工智能的成本高于支付人工工资</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">Hacker News 热门（buzzing.cc 中文翻译）</span>
+          <span class="item-impact">★★★★★</span>
+        </div>
+        <p class="item-summary">微软发布报告指出，在特定工作场景中，部署和使用人工智能（AI）的成本目前已高于支付相应的人工工资。报告分析了基于“tokens”（令牌）和“agents”（智能体）的AI使用模式，发现其综合开销超过了雇佣人类员工完成同类任务的费用。这...</p>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">5</span>
+          <a href="https://mistral.ai/news/science-to-win-industrial-ai" target="_blank" class="item-title">加倍投入科学以赢得工业AI</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">Mistral AI：News（网页）</span>
+          <span class="item-impact">★★★★★</span>
+        </div>
+        <p class="item-summary">Mistral AI宣布与物理AI先驱Emmi AI达成最终收购协议，旨在加强其在工业AI领域的领导地位。通过整合Emmi AI在物理仿真与数字孪生方面的专长，Mistral AI将提升其工程解决方案能力，并加速科学研发路线。Emmi...</p>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">6</span>
+          <a href="https://x.com/GoogleDeepMind/status/2057985225100235022" target="_blank" class="item-title">扩大与新加坡合作，推动AI安全规模化部署</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">X：Google DeepMind (@GoogleDeepMind)</span>
+          <span class="item-impact">★★★★★</span>
+        </div>
+        <p class="item-summary">我们正在扩大与新加坡的合作，以帮助安全地大规模部署AI。🇸🇬 与各国专家合作，我们的新项目将重点加速科学发现、加强大流行病防范并改善医疗保健。 了解更多 → https://goo.gle/49jGwjv</p>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">7</span>
+          <a href="https://huggingface.co/blog/nvidia/nemotron-labs-diffusion" target="_blank" class="item-title">Nemotron-Labs 扩散语言模型实现光速级文本生成</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">Hugging Face：Blog（RSS）</span>
+          <span class="item-impact">★★★★☆</span>
+        </div>
+        <p class="item-summary">NVIDIA 在 Hugging Face 发布了关于 Nemotron-Labs 扩散语言模型的技术博客。该研究聚焦于通过扩散语言模型架构大幅提升文本生成速度，目标是逼近“光速级”生成效率。文章可能介绍了该模型在生成速度上的突破，以...</p>
+      </div>
+
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="icon">🇨🇳</span>
+        <h2>中国 AI 动态</h2>
+        <span class="count">5 条</span>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">8</span>
+          <a href="https://x.com/StepFun_ai/status/2058303294544425197" target="_blank" class="item-title">StepAudio 2.5实时语音发布：副语言感知与人格化交互</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">X：阶跃星辰 StepFun (@StepFun_ai)</span>
+          <span class="item-impact">★★★★☆</span>
+        </div>
+        <p class="item-summary">StepAudio 2.5 Realtime是一款实时语音模型，能够深度理解用户语音中的语气、语速、停顿乃至微表情等副语言特征。它支持通过API接入自定义人格，允许设定个性、背景故事和语言风格，并提供了上万种原生人格选项，可组合出数百...</p>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">9</span>
+          <a href="https://www.ithome.com/0/954/452.htm" target="_blank" class="item-title">消息称 Anthropic 最快下周完成逾 300 亿美元融资，有望推动估值反超 OpenAI</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">IT之家（RSS）</span>
+          <span class="item-impact">★★★★★</span>
+        </div>
+        <p class="item-summary">据彭博社报道，Anthropic即将完成一轮超300亿美元的融资，最快可能于下周敲定。此轮融资将使其估值突破9000亿美元，正式超越OpenAI，成为全球估值最高的AI初创企业。融资的迅速推进反映了市场的强烈追捧。同时，公司营收高速增...</p>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">10</span>
+          <a href="https://www.ithome.com/0/954/235.htm" target="_blank" class="item-title">AI 替代入门级工作：科技行业受裁员冲击最重，74% CEO 冻结或缩减招聘</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">IT之家（RSS）</span>
+          <span class="item-impact">★★★☆☆</span>
+        </div>
+        <p class="item-summary">奥纬咨询研究发现，AI工具正被广泛用于入门级任务，导致企业招聘重心转向高级岗位，年轻人求职难度加大。科技行业受冲击最严重，74%的CEO已冻结或缩减招聘。计划削减初级岗位的比例从17%跃升至43%，而招聘转向中层岗位的比例则升至30%...</p>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">11</span>
+          <a href="https://x.com/Kling_ai/status/2058013861404684739" target="_blank" class="item-title">Kling AI亮相戛纳，推动AI赋能电影制作</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">X：可灵 Kling AI (@Kling_ai)</span>
+          <span class="item-impact">★★★☆☆</span>
+        </div>
+        <p class="item-summary">Kling AI在戛纳电影市场（Marché du Film）举办官方会议，首次登上这一世界顶级电影舞台。会议汇集全球电影专业人士，共同探讨AI如何融入实际电影制作流程。Kling AI已证明其能力可服务于动画长片、好莱坞剧集、实验短...</p>
+      </div>
+      <div class="news-item">
+        <div class="item-header">
+          <span class="item-index">12</span>
+          <a href="https://x.com/dotey/status/2058084478459826432" target="_blank" class="item-title">飞书-Claude Code桥接开源项目</a>
+        </div>
+        <div class="item-meta">
+          <span class="item-source">X：宝玉 (@dotey)</span>
+          <span class="item-impact">★★★★★</span>
+        </div>
+        <p class="item-summary">feishu-claude-code-bridge是一个开源项目，可实现飞书与本机Claude Code CLI的双向连接。用户能从飞书消息中直接指挥Claude Code执行任务，Claude也能读取飞书中的工作上下文并创建、编辑飞...</p>
+      </div>
+
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="icon">🏆</span>
+        <h2>模型热度榜</h2>
+      </div>
+
+      <table class="leaderboard-table">
+        <thead>
+          <tr><th>排名</th><th>模型</th><th>机构</th><th>上下文长度</th><th>输入价格</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>LLaMA 4 Scout</td><td>Meta</td><td>10M</td><td>$0.08/M</td></tr>
+          <tr><td>2</td><td>GPT-5.5 Pro</td><td>OpenAI</td><td>1.05M</td><td>$30/M</td></tr>
+          <tr><td>3</td><td>Gemini 3.5 Flash</td><td>Google</td><td>1M</td><td>$1.5/M</td></tr>
+          <tr><td>4</td><td>DeepSeek V4 Pro</td><td>DeepSeek</td><td>1M</td><td>$0.44/M</td></tr>
+          <tr><td>5</td><td>Claude Opus 4.7</td><td>Anthropic</td><td>1M</td><td>$5/M</td></tr>
+        </tbody>
+      </table>
+      <p class="leaderboard-note">数据基于 OpenRouter 部署信息，按上下文长度排序</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="icon">📈</span>
+        <h2>今日趋势洞察</h2>
+      </div>
+
+      <div class="insight-item">
+        <h4>💰 AI 成本与就业的博弈加剧</h4>
+        <p>微软报告指出 AI 使用成本已高于人工工资，同时 74% 的 CEO 冻结初级岗位招聘。Anthropic 估值有望突破 9000 亿美元超越 OpenAI，资本持续涌入 AI 基础设施，但 ROI 回报周期仍存疑。AI 行业正从"技术突破期"步入"商业验证期"。</p>
+      </div>
+      <div class="insight-item">
+        <h4>🔬 扩散模型进军语言生成</h4>
+        <p>NVIDIA 发布 Nemotron-Labs 扩散语言模型，将扩散架构从图像生成引入文本生成领域。若该路线成熟，可能颠覆当前自回归 Transformer 的主流范式，成为下一代 LLM 架构的有力竞争者。</p>
+      </div>
+    </div>
+
+    <footer>
+      数据来自 aihot.virxact.com · Hacker News · OpenRouter<br>
+      由 Hermes Agent 自动生成
+    </footer>
+  </div>
+</body>
+</html>

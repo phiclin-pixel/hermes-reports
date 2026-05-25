@@ -10,265 +10,70 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #faf8f5;
-      color: #1a1a1a;
-      font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
+      background: #faf8f5; color: #1a1a1a;
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
     }
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
-    .header {
-      text-align: center;
-      padding: 40px 0 32px;
-      border-bottom: 2px solid #c23a30;
-      margin-bottom: 40px;
-    }
-    .header h1 {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: #1a1a1a;
-      margin-bottom: 8px;
-    }
-    .header .subtitle {
-      font-size: 15px;
-      color: #666;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-    }
-    .lead {
-      background: linear-gradient(135deg, #fef8f6 0%, #fdf4f2 100%);
-      border-left: 4px solid #c23a30;
-      padding: 20px 24px;
-      margin-bottom: 36px;
-      border-radius: 4px;
-    }
-    .lead p {
-      font-size: 16px;
-      color: #333;
-      line-height: 1.9;
-    }
-    .lead .lead-label {
-      font-size: 12px;
-      color: #c23a30;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-    .section {
-      margin-bottom: 32px;
-    }
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .section-divider {
-      width: 4px;
-      height: 22px;
-      background: #c23a30;
-      border-radius: 2px;
-    }
-    .section-header h2 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #1a1a1a;
-      letter-spacing: 0.04em;
-    }
-    .news-item {
-      display: flex;
-      gap: 16px;
-      padding: 16px 0;
-      border-bottom: 1px solid #e8e4df;
-      transition: background 0.2s;
-    }
-    .news-item:hover {
-      background: rgba(194,58,48,0.03);
-      border-radius: 4px;
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-    .item-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      min-width: 40px;
-    }
-    .item-index {
-      font-size: 12px;
-      color: #999;
-      font-weight: 600;
-      background: #f0ede8;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .impact {
-      font-size: 11px;
-      color: #c23a30;
-      letter-spacing: 0.5px;
-    }
-    .item-body {
-      flex: 1;
-      min-width: 0;
-    }
-    .item-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #1a1a1a;
-      text-decoration: none;
-      display: block;
-      line-height: 1.6;
-    }
-    .item-title:hover {
-      color: #c23a30;
-    }
-    .item-meta {
-      display: flex;
-      gap: 12px;
-      margin-top: 4px;
-      font-size: 13px;
-      color: #888;
-    }
-    .source {
-      color: #666;
-      font-weight: 500;
-    }
-    .time {
-      color: #aaa;
-    }
-    .score {
-      color: #c23a30;
-      font-weight: 600;
-    }
-    .item-summary {
-      font-size: 14px;
-      color: #555;
-      margin-top: 6px;
-      line-height: 1.7;
-    }
-    .model-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 12px;
-    }
-    .model-table th {
-      text-align: left;
-      font-size: 12px;
-      color: #999;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 10px 12px;
-      border-bottom: 2px solid #c23a30;
-      font-weight: 600;
-    }
-    .model-table td {
-      padding: 12px 12px;
-      font-size: 15px;
-      border-bottom: 1px solid #e8e4df;
-    }
-    .model-table .rank {
-      font-weight: 700;
-      color: #c23a30;
-      width: 40px;
-    }
-    .model-table .model-name {
-      font-weight: 600;
-    }
-    .model-table .org {
-      color: #666;
-    }
-    .model-table .ctx {
-      color: #888;
-      font-size: 13px;
-    }
-    .model-table .trend {
-      color: #c23a30;
-      font-size: 13px;
-      font-weight: 500;
-    }
-    .insights {
-      background: #faf8f5;
-      border: 1px solid #e8e4df;
-      border-radius: 8px;
-      padding: 24px;
-      margin-top: 36px;
-    }
-    .insights h2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 16px;
-      letter-spacing: 0.04em;
-    }
-    .insights ul {
-      list-style: none;
-      padding: 0;
-    }
-    .insights li {
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 12px;
-      font-size: 15px;
-      color: #444;
-      line-height: 1.8;
-    }
-    .insights li::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: #c23a30;
-      font-weight: 700;
-    }
-    .footer {
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid #e8e4df;
-      text-align: center;
-      font-size: 13px;
-      color: #aaa;
-    }
-    .footer a {
-      color: #888;
-      text-decoration: none;
-    }
-    .footer a:hover {
-      color: #c23a30;
-    }
-    @media (max-width: 600px) {
-      .container { padding: 24px 16px 48px; }
-      .header h1 { font-size: 22px; }
-      .item-title { font-size: 15px; }
-    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
+    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
+    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
+            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
+    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
+    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
+                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
+    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
+    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; }
+    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
+    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
+                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
+    .item-body { flex: 1; min-width: 0; }
+    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
+    .item-title:hover { color: #c23a30; }
+    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
+    .source { color: #666; font-weight: 500; }
+    .time { color: #aaa; }
+    .score { color: #c23a30; font-weight: 600; }
+    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
+    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
+                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
+    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
+    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
+    .model-table .model-name { font-weight: 600; }
+    .model-table .org { color: #666; }
+    .model-table .ctx { color: #888; font-size: 13px; }
+    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
+    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
+    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
+    .insights ul { list-style: none; padding: 0; }
+    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
+    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
+    .footer a { color: #888; text-decoration: none; }
+    .footer a:hover { color: #c23a30; }
+    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
       <h1>AI 行业日报</h1>
-      <div class="subtitle">2026-05-25 · 农历四月初九 · 北京时间 10:00</div>
+      <div class="subtitle">2026-05-25 ·  · 北京时间 11:20</div>
     </div>
 
     <div class="lead">
       <div class="lead-label">主编点评</div>
-      <p>今日AI热点：DeepSeek永久降价75%引发行业连锁反应；Luma Agents实现规模化UGC广告生成；Claude Code多任务并行模式发布</p>
+      <p>今日AI热点：Luma Agents 实现规模化真实 UGC 广告生成；OpenClaw 2026.5.22发布：性能优化与安全加固；DeepSeek将对其旗舰AI模型实施永久性75%折扣</p>
     </div>
 
     <div class="section">
-      <div class="section-header">
-        <div class="section-divider"></div>
-        <h2>🌍 全球 AI 动态</h2>
-      </div>
+      <div class="section-header"><div class="section-divider"></div><h2>全球 AI 动态</h2></div>
             <div class="news-item">
               <div class="item-header">
                 <span class="item-index">1</span>
@@ -276,10 +81,7 @@
               </div>
               <div class="item-body">
                 <a href="https://x.com/LumaLabsAI/status/2058672731705503959" target="_blank" class="item-title">Luma Agents 实现规模化真实 UGC 广告生成</a>
-                <div class="item-meta">
-                  <span class="source">X：Luma AI (@LumaLabsAI)</span>
-                  <span class="time"></span>
-                </div>
+                <div class="item-meta"><span class="source">X：Luma AI (@LumaLabsAI)</span></div>
                 <div class="item-summary">规模化的真实性曾是矛盾，如今已成现实。 定义简报，设定风格，Luma Agents 从这里构建每一条 UGC 风格广告。 让它真实 → http://lumalabs.ai/app</div>
               </div>
             </div>
@@ -290,10 +92,7 @@
               </div>
               <div class="item-body">
                 <a href="https://x.com/openclaw/status/2058397616124072274" target="_blank" class="item-title">OpenClaw 2026.5.22发布：性能优化与安全加固</a>
-                <div class="item-meta">
-                  <span class="source">X：OpenClaw (@openclaw)</span>
-                  <span class="time"></span>
-                </div>
+                <div class="item-meta"><span class="source">X：OpenClaw (@openclaw)</span></div>
                 <div class="item-summary">OpenClaw 2026.5.22 已上线 ⚡ Gateway/模型启动路径更精简 🧠 /models 响应时间降至约5毫秒 🔒 npm包现提供锁定依赖项 🪟 Windows安装/更新路径更安全 等待更少，意外更少。 https://github.com/openclaw/openclaw/rel</div>
               </div>
             </div>
@@ -304,10 +103,7 @@
               </div>
               <div class="item-body">
                 <a href="https://x.com/kimmonismus/status/2058584943052161488" target="_blank" class="item-title">TrapDoor供应链攻击：AI助手成新型攻击面</a>
-                <div class="item-meta">
-                  <span class="source">X：Kim (@kimmonismus)</span>
-                  <span class="time"></span>
-                </div>
+                <div class="item-meta"><span class="source">X：Kim (@kimmonismus)</span></div>
                 <div class="item-summary">一场名为“TrapDoor”的协调供应链攻击同时袭击了npm、PyPI和Crates.io，涉及34个恶意包，旨在窃取加密货币、AI和安全开发者的钱包、SSH密钥和云凭证。攻击的新手段是向流行开源项目提交Pull Request，注入被操纵的`CLAUDE.md`和`.cursorrules`配置文</div>
               </div>
             </div>
@@ -318,10 +114,7 @@
               </div>
               <div class="item-body">
                 <a href="https://x.com/gdb/status/2058598608224858442" target="_blank" class="item-title">面向 Codex 的自我优化提示词框架</a>
-                <div class="item-meta">
-                  <span class="source">X：Greg Brockman (@gdb)</span>
-                  <span class="time"></span>
-                </div>
+                <div class="item-meta"><span class="source">X：Greg Brockman (@gdb)</span></div>
                 <div class="item-summary">这是一个结构化的提示词，用于指导 Codex 自动分析其历史记录以识别并固化重复工作流。该框架要求 Codex 回顾会话、Memories 等数据，找出重复、耗时且有明确复用价值的任务。筛选标准包括至少出现两次、输入稳定、可提升效率等。最终，Codex 应以“技能”、子智能体或自动化工具等最小实用形</div>
               </div>
             </div>
@@ -332,10 +125,7 @@
               </div>
               <div class="item-body">
                 <a href="https://fs.blog/knowledge-project-podcast/greg-brockman" target="_blank" class="item-title">格雷格·布罗克曼：那段差点让OpenAI覆灭的72小时</a>
-                <div class="item-meta">
-                  <span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span>
-                  <span class="time"></span>
-                </div>
+                <div class="item-meta"><span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
               </div>
             </div>
             <div class="news-item">
@@ -345,10 +135,7 @@
               </div>
               <div class="item-body">
                 <a href="https://x.com/bcherny/status/2058519809214607704" target="_blank" class="item-title">Claude Code自动模式：多任务并行的关键技巧</a>
-                <div class="item-meta">
-                  <span class="source">X：Boris Cherny (@bcherny)</span>
-                  <span class="time"></span>
-                </div>
+                <div class="item-meta"><span class="source">X：Boris Cherny (@bcherny)</span></div>
                 <div class="item-summary">人们常问我，用好Claude Code的最大技巧是什么。 如今我的头号技巧是：使用自动模式。 自动模式意味着不再有权限提示。它是实现“多Claude并行”的关键构件：启动一个会话，然后在其运行时，并行处理另一个会话。</div>
               </div>
             </div>
@@ -359,20 +146,14 @@
               </div>
               <div class="item-body">
                 <a href="https://x.com/PixVerse_/status/2058564994669727803" target="_blank" class="item-title">Pixverse角色设计工作流测试</a>
-                <div class="item-meta">
-                  <span class="source">X：PixVerse (@PixVerse_)</span>
-                  <span class="time"></span>
-                </div>
+                <div class="item-meta"><span class="source">X：PixVerse (@PixVerse_)</span></div>
                 <div class="item-summary">在Pixverse中进行角色设计工作流测试 使用GPT Image 2.0为Lucas创建视觉形象，使用Seedance 2.0制作动画弹跳表演。 从静态概念图到电影级动态效果。 RT + Follow + Reply = 工作流</div>
               </div>
             </div>
     </div>
 
     <div class="section">
-      <div class="section-header">
-        <div class="section-divider"></div>
-        <h2>🇨🇳 中国 AI 动态</h2>
-      </div>
+      <div class="section-header"><div class="section-divider"></div><h2>中国 AI 动态</h2></div>
             <div class="news-item">
               <div class="item-header">
                 <span class="item-index">8</span>
@@ -380,131 +161,46 @@
               </div>
               <div class="item-body">
                 <a href="https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model" target="_blank" class="item-title">DeepSeek将对其旗舰AI模型实施永久性75%折扣</a>
-                <div class="item-meta">
-                  <span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span>
-                  <span class="time"></span>
-                </div>
+                <div class="item-meta"><span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
               </div>
             </div>
     </div>
 
         <div class="section">
-          <div class="section-header">
-            <div class="section-divider"></div>
-            <h2>🔗 Hacker News 热议</h2>
-          </div>
-          <div class="news-item">
-            <div class="item-body">
-              <a href="https://esengine.github.io/DeepSeek-Reasonix/" target="_blank" class="item-title">DeepSeek reasonix, DeepSeek native coding agent with high caching and low cost</a>
-              <div class="item-meta">
-                <span class="score">▲ 439</span>
-              </div>
-            </div>
-          </div>
-          <div class="news-item">
-            <div class="item-body">
-              <a href="https://epoch.ai/data-insights/ai-chip-component-cost-shares" target="_blank" class="item-title">Memory has grown to nearly two-thirds of AI chip component costs</a>
-              <div class="item-meta">
-                <span class="score">▲ 295</span>
-              </div>
-            </div>
-          </div>
-          <div class="news-item">
-            <div class="item-body">
-              <a href="https://arxiv.org/abs/2605.06445" target="_blank" class="item-title">Constraint Decay: The Fragility of LLM Agents in Back End Code Generation</a>
-              <div class="item-meta">
-                <span class="score">▲ 175</span>
-              </div>
-            </div>
-          </div>
-          <div class="news-item">
-            <div class="item-body">
-              <a href="https://tritium.legal/blog/noroboto" target="_blank" class="item-title">Noroboto: Lying Fonts and Mitigation in Rust</a>
-              <div class="item-meta">
-                <span class="score">▲ 59</span>
-              </div>
-            </div>
-          </div>
-          <div class="news-item">
-            <div class="item-body">
-              <a href="https://www.ycombinator.com/companies/flick/jobs/Tdu6FH6-senior-frontend-engineer" target="_blank" class="item-title">Flick (YC F25) Is Hiring Front End Engineer to Build Figma for AI Filmmaking</a>
-              <div class="item-meta">
-                <span class="score">▲ 1</span>
-              </div>
-            </div>
-          </div>
+          <div class="section-header"><div class="section-divider"></div><h2>Hacker News 热议</h2></div>
+            <div class="news-item"><div class="item-body"><a href="https://esengine.github.io/DeepSeek-Reasonix/" target="_blank" class="item-title">DeepSeek reasonix, DeepSeek native coding agent with high caching and low cost</a><div class="item-meta"><span class="score">464 points / 202 comments</span></div></div></div>
+            <div class="news-item"><div class="item-body"><a href="https://epoch.ai/data-insights/ai-chip-component-cost-shares" target="_blank" class="item-title">Memory has grown to nearly two-thirds of AI chip component costs</a><div class="item-meta"><span class="score">319 points / 342 comments</span></div></div></div>
+            <div class="news-item"><div class="item-body"><a href="https://arxiv.org/abs/2605.06445" target="_blank" class="item-title">Constraint Decay: The Fragility of LLM Agents in Back End Code Generation</a><div class="item-meta"><span class="score">186 points / 93 comments</span></div></div></div>
+            <div class="news-item"><div class="item-body"><a href="https://www.ycombinator.com/companies/flick/jobs/Tdu6FH6-senior-frontend-engineer" target="_blank" class="item-title">Flick (YC F25) Is Hiring Front End Engineer to Build Figma for AI Filmmaking</a><div class="item-meta"><span class="score">1 points / 0 comments</span></div></div></div>
+            <div class="news-item"><div class="item-body"><a href="https://api-docs.deepseek.com/quick_start/pricing" target="_blank" class="item-title">DeepSeek makes the V4 Pro price discount permanent</a><div class="item-meta"><span class="score">542 points / 494 comments</span></div></div></div>
         </div>
 
-    <div class="section">
-      <div class="section-header">
-        <div class="section-divider"></div>
-        <h2>🏆 全球模型热度榜</h2>
-      </div>
-      <div style="overflow-x: auto;">
-        <table class="model-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>模型</th>
-              <th>机构</th>
-              <th>上下文</th>
-              <th>趋势</th>
-            </tr>
-          </thead>
-          <tbody>
-              <tr>
-                <td class="rank">1</td>
-                <td class="model-name">Claude Opus 4.7</td>
-                <td class="org">Anthropic</td>
-                <td class="ctx">100万</td>
-                <td class="trend">TOP 1</td>
-              </tr>
-              <tr>
-                <td class="rank">2</td>
-                <td class="model-name">GPT-5.5 Pro</td>
-                <td class="org">OpenAI</td>
-                <td class="ctx">105万</td>
-                <td class="trend">活跃</td>
-              </tr>
-              <tr>
-                <td class="rank">3</td>
-                <td class="model-name">Gemini 3.5 Flash</td>
-                <td class="org">Google</td>
-                <td class="ctx">105万</td>
-                <td class="trend">↑ 新发布</td>
-              </tr>
-              <tr>
-                <td class="rank">4</td>
-                <td class="model-name">DeepSeek V4 Pro</td>
-                <td class="org">DeepSeek</td>
-                <td class="ctx">105万</td>
-                <td class="trend">↓ 降价</td>
-              </tr>
-              <tr>
-                <td class="rank">5</td>
-                <td class="model-name">Llama 4 Scout</td>
-                <td class="org">Meta</td>
-                <td class="ctx">1000万</td>
-                <td class="trend">开源</td>
-              </tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度与部署状态综合排序）</p>
-    </div>
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>全球模型热度榜</h2></div>
+          <div style="overflow-x:auto;"><table class="model-table"><thead><tr><th>#</th><th>模型</th><th>机构</th><th>上下文</th><th>趋势</th></tr></thead><tbody>
+              <tr><td class="rank">1</td><td class="model-name">llama-4-scout</td><td class="org">meta-llama</td><td class="ctx">10,000,000</td><td class="trend"></td></tr>
+              <tr><td class="rank">2</td><td class="model-name">gpt-5.5-pro</td><td class="org">openai</td><td class="ctx">1,050,000</td><td class="trend"></td></tr>
+              <tr><td class="rank">3</td><td class="model-name">gemini-3.5-flash</td><td class="org">google</td><td class="ctx">1,048,576</td><td class="trend"></td></tr>
+              <tr><td class="rank">4</td><td class="model-name">deepseek-v4-pro</td><td class="org">deepseek</td><td class="ctx">1,048,576</td><td class="trend"></td></tr>
+              <tr><td class="rank">5</td><td class="model-name">qwen3-coder:free</td><td class="org">qwen</td><td class="ctx">1,048,576</td><td class="trend"></td></tr>
+              <tr><td class="rank">6</td><td class="model-name">claude-opus-4.7</td><td class="org">anthropic</td><td class="ctx">1,000,000</td><td class="trend"></td></tr>
+            </tbody></table></div>
+          <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度与部署状态综合排序）</p>
+        </div>
 
     <div class="insights">
-      <h2>📈 今日趋势洞察</h2>
+      <h2>今日趋势洞察</h2>
       <ul>
-            <li>模型价格战全面升级：DeepSeek将V4 Pro永久折扣75%固定化，API价格进一步下探至$0.435/M tokens（prompt），倒逼全行业跟进降价</li>
-            <li>AI安全威胁面扩大：TrapDoor供应链攻击揭示了AI助手（Codex、Claude Code等）作为新型攻击面的风险，开发者需审计AI工具链安全性</li>
-            <li>AI Coding Agent赛道持续升温：DeepSeek Reasonix原生coding agent发布，Claude Code自动多任务并行模式上线，AI辅助编程进入新阶段</li>
+            <li>模型价格战持续：DeepSeek 宣布 V4 Pro 永久降价 75%，AI API 成本加速下探，普惠化趋势明显</li>
+            <li>AI 供应链安全成新战场：TrapDoor 攻击揭露 AI 工具链（Codex/Agent）成为新型攻击向量，开发者需加强工具审计</li>
+            <li>AI 编码工具进入"自动化"时代：Codex 自我优化提示词、Claude Code 自动多任务模式成为开发者新基本功</li>
+            <li>AI 视频生成走向规模化商用：Luma Agents 实现真实 UGC 广告批量生成，AI 内容生产从实验室进入流水线</li>
       </ul>
     </div>
 
     <div class="footer">
       <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
-      <p>支持：Hacker News · OpenRouter · The Verge</p>
+      <p>辅助数据源：Hacker News · OpenRouter</p>
     </div>
   </div>
 </body>

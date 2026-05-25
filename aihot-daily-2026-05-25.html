@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业日报 · 2026-05-25</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;600&display=swap');
+  
+  :root {
+    --ink: #1a1a1a;
+    --cinnabar: #c23a30;
+    --paper: #faf8f5;
+    --border: #e5ded6;
+    --text-secondary: #6b6156;
+    --accent-bg: #fdf6f0;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Noto Serif SC', 'Noto Sans SC', serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 40px 0 32px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 40px;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  
+  .header .date {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  
+  .header .lunar {
+    display: inline-block;
+    color: var(--cinnabar);
+    font-size: 14px;
+    border: 1px solid var(--cinnabar);
+    border-radius: 12px;
+    padding: 2px 12px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  
+  /* Lead */
+  .lead {
+    background: var(--accent-bg);
+    border-left: 4px solid var(--cinnabar);
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    border-radius: 0 8px 8px 0;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.9;
+  }
+  
+  /* Sections */
+  .section {
+    margin-bottom: 44px;
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .section-icon {
+    font-size: 24px;
+  }
+  
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.03em;
+  }
+  
+  .section-count {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  
+  /* Items */
+  .item {
+    display: flex;
+    gap: 16px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  
+  .item:hover {
+    background: rgba(194, 58, 48, 0.03);
+  }
+  
+  .item-number {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Noto Sans SC', sans-serif;
+    margin-top: 2px;
+  }
+  
+  .item-content {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .item-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  
+  .item-title a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  
+  .item-title a:hover {
+    color: var(--cinnabar);
+    border-bottom-color: var(--cinnabar);
+  }
+  
+  .item-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-family: 'Noto Sans SC', sans-serif;
+    margin-bottom: 6px;
+  }
+  
+  .impact {
+    color: var(--cinnabar);
+    letter-spacing: 1px;
+  }
+  
+  .item-summary {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+  }
+  
+  /* Leaderboard Table */
+  .leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  
+  .leaderboard-table th {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Noto Sans SC', sans-serif;
+    letter-spacing: 0.03em;
+  }
+  
+  .leaderboard-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .leaderboard-table .rank {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--cinnabar);
+    text-align: center;
+    width: 50px;
+  }
+  
+  .leaderboard-table .model-name {
+    font-weight: 600;
+  }
+  
+  .leaderboard-table .org {
+    color: var(--text-secondary);
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  
+  .leaderboard-table .note {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  
+  /* Trends */
+  .trends {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .trends li {
+    position: relative;
+    padding: 12px 20px 12px 28px;
+    margin-bottom: 10px;
+    background: var(--accent-bg);
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  
+  .trends li::before {
+    content: '▸';
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: var(--cinnabar);
+    font-size: 14px;
+  }
+  
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  
+  .footer a {
+    color: var(--cinnabar);
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .divider {
+    text-align: center;
+    margin: 32px 0;
+    color: var(--border);
+    font-size: 20px;
+    letter-spacing: 12px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  
+  <header class="header">
+    <h1>AI 行业日报</h1>
+    <div class="date">
+      2026-05-25<span class="lunar">农历四月三十</span>
+    </div>
+  </header>
+  
+  <div class="lead">
+    今日 AI 行业呈现「Agent 落地 × 安全反思」双主线：Luma Agents 规模化生成 UGC 广告、OpenClaw 极限优化响应速度、Claude Code 自动模式开启多任务并行时代；与此同时，TrapDoor 供应链攻击暴露出 AI 开发生态的安全脆弱性，Greg Brockman 也在播客中首次详述 OpenAI 险些覆灭的 72 小时。
+  </div>
+  
+  <!-- Global AI -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🌍</span>
+      <span class="section-title">全球 AI 动态</span>
+      <span class="section-count">7 条</span>
+    </div>
+        <div class="item">
+          <div class="item-number">1</div>
+          <div class="item-content">
+            <div class="item-title"><a href="https://x.com/LumaLabsAI/status/2058672731705503959" target="_blank" rel="noopener">Luma Agents 实现规模化真实 UGC 广告生成</a></div>
+            <div class="item-meta">X：Luma AI (@LumaLabsAI) · <span class="impact">★★★★☆</span></div>
+            <div class="item-summary">规模化的真实性曾是矛盾，如今已成现实。 定义简报，设定风格，Luma Agents 从这里构建每一条 UGC 风格广告。 让它真实 → http://lumalabs.ai/app</div>
+          </div>
+        </div>        <div class="item">
+          <div class="item-number">2</div>
+          <div class="item-content">
+            <div class="item-title"><a href="https://x.com/openclaw/status/2058397616124072274" target="_blank" rel="noopener">OpenClaw 2026.5.22发布：性能优化与安全加固</a></div>
+            <div class="item-meta">X：OpenClaw (@openclaw) · <span class="impact">★★★★☆</span></div>
+            <div class="item-summary">OpenClaw 2026.5.22 已上线 ⚡ Gateway/模型启动路径更精简 🧠 /models 响应时间降至约5毫秒 🔒 npm包现提供锁定依赖项 🪟 Windows安装/更新路径更安全 等待更少，意外更少。 https://github.com/openclaw/openclaw/releases/tag/v2026.5.22</div>
+          </div>
+        </div>        <div class="item">
+          <div class="item-number">3</div>
+          <div class="item-content">
+            <div class="item-title"><a href="https://x.com/kimmonismus/status/2058584943052161488" target="_blank" rel="noopener">TrapDoor供应链攻击：AI助手成新型攻击面</a></div>
+            <div class="item-meta">X：Kim (@kimmonismus) · <span class="impact">★★★★☆</span></div>
+            <div class="item-summary">一场名为“TrapDoor”的协调供应链攻击同时袭击了npm、PyPI和Crates.io，涉及34个恶意包，旨在窃取加密货币、AI和安全开发者的钱包、SSH密钥和云凭证。攻击的新手段是向流行开源项目提交Pull Request，注入被操纵的`CLAUDE.md`和`.cursorrules`配置文件。当开发者克隆仓库并使用Claude Code或Curso...</div>
+          </div>
+        </div>        <div class="item">
+          <div class="item-number">4</div>
+          <div class="item-content">
+            <div class="item-title"><a href="https://x.com/gdb/status/2058598608224858442" target="_blank" rel="noopener">面向 Codex 的自我优化提示词框架</a></div>
+            <div class="item-meta">X：Greg Brockman (@gdb) · <span class="impact">★★★☆☆</span></div>
+            <div class="item-summary">这是一个结构化的提示词，用于指导 Codex 自动分析其历史记录以识别并固化重复工作流。该框架要求 Codex 回顾会话、Memories 等数据，找出重复、耗时且有明确复用价值的任务。筛选标准包括至少出现两次、输入稳定、可提升效率等。最终，Codex 应以“技能”、子智能体或自动化工具等最小实用形式创建或扩展现有资产，避免冗余。流程包括生成候选清单、执行创...</div>
+          </div>
+        </div>        <div class="item">
+          <div class="item-number">5</div>
+          <div class="item-content">
+            <div class="item-title"><a href="https://fs.blog/knowledge-project-podcast/greg-brockman" target="_blank" rel="noopener">格雷格·布罗克曼：那段差点让OpenAI覆灭的72小时</a></div>
+            <div class="item-meta">Hacker News 热门（buzzing.cc 中文翻译） · <span class="impact">★★★★★</span></div>
+            <div class="item-summary"></div>
+          </div>
+        </div>        <div class="item">
+          <div class="item-number">6</div>
+          <div class="item-content">
+            <div class="item-title"><a href="https://x.com/bcherny/status/2058519809214607704" target="_blank" rel="noopener">Claude Code自动模式：多任务并行的关键技巧</a></div>
+            <div class="item-meta">X：Boris Cherny (@bcherny) · <span class="impact">★★★☆☆</span></div>
+            <div class="item-summary">人们常问我，用好Claude Code的最大技巧是什么。 如今我的头号技巧是：使用自动模式。 自动模式意味着不再有权限提示。它是实现“多Claude并行”的关键构件：启动一个会话，然后在其运行时，并行处理另一个会话。</div>
+          </div>
+        </div>        <div class="item">
+          <div class="item-number">7</div>
+          <div class="item-content">
+            <div class="item-title"><a href="https://x.com/PixVerse_/status/2058564994669727803" target="_blank" rel="noopener">Pixverse角色设计工作流测试</a></div>
+            <div class="item-meta">X：PixVerse (@PixVerse_) · <span class="impact">★★★☆☆</span></div>
+            <div class="item-summary">在Pixverse中进行角色设计工作流测试 使用GPT Image 2.0为Lucas创建视觉形象，使用Seedance 2.0制作动画弹跳表演。 从静态概念图到电影级动态效果。 RT + Follow + Reply = 工作流</div>
+          </div>
+        </div>
+  </div>
+  
+  <div class="divider">· · ·</div>
+  
+  <!-- China AI -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🇨🇳</span>
+      <span class="section-title">中国 AI 动态</span>
+      <span class="section-count">1 条</span>
+    </div>
+        <div class="item">
+          <div class="item-number">8</div>
+          <div class="item-content">
+            <div class="item-title"><a href="https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model" target="_blank" rel="noopener">DeepSeek将对其旗舰AI模型实施永久性75%折扣</a></div>
+            <div class="item-meta">Hacker News 热门（buzzing.cc 中文翻译） · <span class="impact">★★★★★</span></div>
+            <div class="item-summary"></div>
+          </div>
+        </div>
+  </div>
+  
+  <div class="divider">· · ·</div>
+  
+  <!-- Leaderboard -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🏆</span>
+      <span class="section-title">模型热门榜</span>
+      <span class="section-count">基于 OpenRouter 部署数据</span>
+    </div>
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>排名</th>
+          <th>模型</th>
+          <th>机构</th>
+          <th>亮点</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td class="rank">1</td>
+            <td class="model-name">Claude Opus 4.7</td>
+            <td class="org">Anthropic</td>
+            <td class="note">1M上下文窗口</td>
+          </tr>
+          <tr>
+            <td class="rank">2</td>
+            <td class="model-name">DeepSeek V4 Pro</td>
+            <td class="org">DeepSeek</td>
+            <td class="note">75%永久降价</td>
+          </tr>
+          <tr>
+            <td class="rank">3</td>
+            <td class="model-name">GPT-5.5 Pro</td>
+            <td class="org">OpenAI</td>
+            <td class="note">旗舰推理模型</td>
+          </tr>
+          <tr>
+            <td class="rank">4</td>
+            <td class="model-name">Grok 4.20 Multi-Agent</td>
+            <td class="org">xAI</td>
+            <td class="note">最大上下文窗口</td>
+          </tr>
+          <tr>
+            <td class="rank">5</td>
+            <td class="model-name">Qwen3 Coder</td>
+            <td class="org">Alibaba</td>
+            <td class="note">免费编码模型</td>
+          </tr>
+
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="divider">· · ·</div>
+  
+  <!-- Trends -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📈</span>
+      <span class="section-title">今日趋势洞察</span>
+    </div>
+    <ul class="trends">
+            <li>AI Agent 规模化落地加速：Luma Agents 实现 UGC 广告自动生成，OpenClaw 优化响应至 5ms，Claude Code 自动模式支持多任务并行 — 从广告创意到代码工程，Agent 正在从 demo 走向生产。</li>
+            <li>AI 生态安全警钟敲响：TrapDoor 供应链攻击利用 AI 开发者的开源依赖链进行大规模渗透，34 个恶意包同时袭击 npm/PyPI/Crates.io，AI 安全成为行业新焦点。</li>
+
+    </ul>
+  </div>
+  
+  <footer class="footer">
+    <p>数据来源：<a href="https://aihot.virxact.com" target="_blank">AI HOT</a> · OpenRouter</p>
+    <p>自动生成于 2026-05-25 09:02 北京时间 · 由 Hermes Agent 托管</p>
+  </footer>
+  
+</div>
+</body>
+</html>

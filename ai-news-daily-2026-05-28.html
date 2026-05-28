@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 行业日报 · 2026-05-28</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf8f5; color: #1a1a1a;
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
+    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
+    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
+            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
+    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
+    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
+                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
+    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
+    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; transition: background 0.2s; }
+    .news-item:hover { background: rgba(194,58,48,0.03); border-radius: 4px; padding-left: 12px; padding-right: 12px; }
+    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
+    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
+                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
+    .item-body { flex: 1; min-width: 0; }
+    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
+    .item-title:hover { color: #c23a30; }
+    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
+    .source { color: #666; font-weight: 500; }
+    .time { color: #aaa; }
+    .score { color: #c23a30; font-weight: 600; }
+    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
+    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
+                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
+    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
+    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
+    .model-table .model-name { font-weight: 600; }
+    .model-table .org { color: #666; }
+    .model-table .ctx { color: #888; font-size: 13px; }
+    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
+    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
+    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
+    .insights ul { list-style: none; padding: 0; }
+    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
+    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
+    .footer a { color: #888; text-decoration: none; }
+    .footer a:hover { color: #c23a30; }
+    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AI 行业日报</h1>
+      <div class="subtitle">2026-05-28 ·  · 北京时间 10:00</div>
+    </div>
+
+    <div class="lead">
+      <div class="lead-label">主编点评</div>
+      <p>今日AI热点：Claude Code v2.1.152 更新发布；OpenAI产品支持私有MCP服务器安全连接；Runway 推出 Model Context Protocol 服务器</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🌍 全球 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">1</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.152" target="_blank" class="item-title">Claude Code v2.1.152 更新发布</a>
+                <div class="item-meta">
+                  <span class="source">Claude Code：GitHub Releases（RSS）</span>
+                </div>
+                <div class="item-summary">Claude Code 发布 v2.1.152 版本更新。核心改进包括：`/code-review --fix` 现在会将审查建议直接应用于工作目录；技能与斜杠命令支持通过 frontmatter 的 `disallowed-tools` 移除模型工具；新增 `/reload-skills` 命令可</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">2</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/OpenAIDevs/status/2059703536825565499" target="_blank" class="item-title">OpenAI产品支持私有MCP服务器安全连接</a>
+                <div class="item-meta">
+                  <span class="source">X：OpenAI Developers (@OpenAIDevs)</span>
+                </div>
+                <div class="item-summary">您的团队可以在内部网络中保留MCP服务器，同时ChatGPT、Codex和Responses API通过仅出站HTTPS进行连接。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">3</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/haoailab/status/2059695648103112946" target="_blank" class="item-title">开源FastVideo Dreamverse实时视频生成工具</a>
+                <div class="item-meta">
+                  <span class="source">X：Sky Computing Lab (@haoailab)</span>
+                </div>
+                <div class="item-summary">🚀仅需7秒即可生成30秒1080p视频！ 我们开源了FastVideo Dreamverse：基于单张NVIDIA B200 GPU和LTX-2模型，实现实时视频生成的氛围引导工具。 Repo: https://github.com/hao-ai-lab/FastVideo/tree/main/ap</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">4</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/xai/status/2059666227115819149" target="_blank" class="item-title">Grok编程智能体登陆Kilo IDE平台</a>
+                <div class="item-meta">
+                  <span class="source">X：xAI (@xai)</span>
+                </div>
+                <div class="item-summary">在 @kilocode 中使用您的 SuperGrok 或 X Premium+ 订阅。 尝试 grok-build-0.1，享受高速和智能体编程智能，可在 Kilo IDE 扩展或 CLI 中使用。 https://x.ai/news/grok-kilocode</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">5</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/perplexity_ai/status/2059664738087469511" target="_blank" class="item-title">Perplexity开源Unigram分词器降低CPU占用</a>
+                <div class="item-meta">
+                  <span class="source">X：Perplexity (@perplexity_ai)</span>
+                </div>
+                <div class="item-summary">我们开源了重新构建的Unigram分词器，可将CPU占用降低5-6倍。 小型重排序器和嵌入模型在GPU上运行时间仅为个位数毫秒，使得CPU分词成为总延迟的重要组成部分。 http://github.com/perplexityai/pplx-garden</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">6</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://huggingface.co/blog/delta-weight-sync" target="_blank" class="item-title">通过万亿参数与 Hub Bucket 实现增量权重同步：TRL 中的增量权重同步</a>
+                <div class="item-meta">
+                  <span class="source">Hugging Face：Blog（RSS）</span>
+                </div>
+                <div class="item-summary">本文标题涉及 Hugging Face TRL 框架中一项具体的增量权重同步技术。正文重申了 Hugging Face 的核心使命，即致力于通过开源和开放科学，来推动人工智能的进步与普及。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">7</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/opencode/status/2059696100626297225" target="_blank" class="item-title">OpenCode与MiMo V2.5限时免费开放</a>
+                <div class="item-meta">
+                  <span class="source">X：opencode (@opencode)</span>
+                </div>
+                <div class="item-summary">OpenCode x MiMo V2.5 - 限时免费 1M 上下文 • 推理 • 文本 • 图像</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">8</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/rohanpaul_ai/status/2059689400267939925" target="_blank" class="item-title">黄仁勋展示英伟达台湾新园区</a>
+                <div class="item-meta">
+                  <span class="source">X：Rohan Paul (@rohanpaul_ai)</span>
+                </div>
+                <div class="item-summary">黄仁勋展示了新的台湾园区。 英伟达计划每年在台湾投资约1500亿美元。 就在竞争对手AMD宣布将向台湾AI领域投资超过100亿美元一周后。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">9</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/swyx/status/2059717021944926238" target="_blank" class="item-title">Cognition成为全球最大独立智能体实验室</a>
+                <div class="item-meta">
+                  <span class="source">X：swyx (@swyx)</span>
+                </div>
+                <div class="item-summary">Cognition宣布已成为全球最大的独立智能体实验室。公司完成超10亿美元融资，估值达260亿美元，由Lux Capital、General Catalyst等领投。其企业使用量自年初增长超10倍，年化收入增至4.92亿美元。Cognition于两年前推出Devin，定位为首个AI软件工程师。公司</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">10</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.theverge.com/ai-artificial-intelligence/937933/pope-ai-encyclical-tech-industry-reactions" target="_blank" class="item-title">教皇没对AGI上头</a>
+                <div class="item-meta">
+                  <span class="source">The Verge：AI（RSS）</span>
+                </div>
+                <div class="item-summary">教皇 Leo XIV 发布题为《Magnifica Humanitas》的通谕，警告人工智能的使用绝非纯粹技术问题，当其进入影响人类生活的过程时，便触及权利、机会、地位与自由。通谕发布时，Anthropic 联合创始人 Christopher Olah 出席。文件引发了科技界内外的广泛反应。</div>
+              </div>
+            </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🇨🇳 中国 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">18</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://runwayml.com/news/mcp" target="_blank" class="item-title">Runway 推出 Model Context Protocol 服务器</a>
+                <div class="item-meta">
+                  <span class="source">Runway：News（网页）</span>
+                </div>
+                <div class="item-summary">Runway 正式推出 Runway MCP 服务器，允许任何兼容 MCP 的 AI 智能体（如 Claude、ChatGPT、Cursor）在对话界面中直接生成图像与视频，无需切换工作流。该服务器接入了 Runway 最新的多款 SOTA 模型，包括 Gen-4.5、Seedance 2.0、GP</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">19</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.ithome.com/0/955/758.htm" target="_blank" class="item-title">我国将加快研究推进人工智能健康发展综合性立法、低空经济立法等</a>
+                <div class="item-meta">
+                  <span class="source">IT之家（RSS）</span>
+                </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">20</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.ithome.com/0/955/674.htm" target="_blank" class="item-title">消息称高通与字节跳动达成 AI ASIC 芯片合作，采购量在数百万颗级别</a>
+                <div class="item-meta">
+                  <span class="source">IT之家（RSS）</span>
+                </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">21</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/alibaba_cloud/status/2059509714854007181" target="_blank" class="item-title">阿里云入选Omdia智能体AI市场雷达领导者</a>
+                <div class="item-meta">
+                  <span class="source">X：阿里云 / Alibaba Cloud (@alibaba_cloud)</span>
+                </div>
+                <div class="item-summary">阿里云在Omdia的智能体AI市场雷达中被评为领导者。Omdia强调了阿里云在每一层的全栈能力，认可其是首个将整个平台围绕智能体范式进行构建的云服务商。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">22</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/alibaba_cloud/status/2059453607075004835" target="_blank" class="item-title">阿里云成为PyTorch基金会白金会员</a>
+                <div class="item-meta">
+                  <span class="source">X：阿里云 / Alibaba Cloud (@alibaba_cloud)</span>
+                </div>
+                <div class="item-summary">阿里云宣布以白金会员身份加入PyTorch基金会。作为AI基础设施全球领导者，阿里云是开源模型家族Qwen的缔造方，已在多样化硬件上大规模运行PyTorch，将为社区带来生产级工程经验。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">23</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/Alibaba_Qwen/status/2059674574397313277" target="_blank" class="item-title">Fast, faster, Qwen. 🚀</a>
+                <div class="item-meta">
+                  <span class="source">X：通义千问 / Qwen (@Alibaba_Qwen)</span>
+                </div>
+                <div class="item-summary">Qwen3.5在TokenSpeed推理引擎上，针对智能体工作负载达到了创纪录的580 tokens per second (tps)速度。这一成果由通义千问推理团队、lightseekorg Foundation TokenSpeed团队、NVIDIA及Mooncake团队共同实现，并采用了tri</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">24</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://huggingface.co/blog/ibm-research/itbench-aa" target="_blank" class="item-title">ITBench-AA：前沿大模型在首个智能体企业IT任务基准测试中得分均低于50%</a>
+                <div class="item-meta">
+                  <span class="source">Hugging Face：Blog（RSS）</span>
+                </div>
+                <div class="item-summary">由Artificial Analysis和IBM推出的ITBench-AA SRE基准测试显示，所有前沿大模型得分均未超过50%。Claude Opus 4.7（自适应推理，最大努力）以47%领先，GPT-5.5（xhigh）和Qwen3.7 Max分别得46%和42%。该测试包含59个需要通过Sh</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">25</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/op7418/status/2059587983289016348" target="_blank" class="item-title">藏师傅发布小红书图文排版AI Skill，集成地图与自动配图</a>
+                <div class="item-meta">
+                  <span class="source">X：歸藏 (@op7418)</span>
+                </div>
+                <div class="item-summary">该推文介绍了guizang-social-card-skill，一款针对小红书图文常见类别进行优化的AI Skill。其亮点在于为旅行博主集成了地图组件，用户输入目的地和线路后，AI能自动在底图上标记并嵌入图片。根据引用，该Skill完全基于HTML和实拍图片生成内容，不会被平台标注为AI生成，并会</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">26</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/dotey/status/2059773942500298934" target="_blank" class="item-title">用好 Coding Agent，重点是两头，尤其是开头的部分，如果一开始就走偏了后面怎么改都改不好。</a>
+                <div class="item-meta">
+                  <span class="source">X：宝玉 (@dotey)</span>
+                </div>
+                <div class="item-summary">用好 Coding Agent 的关键在于初始规划。方法是先将需求整理后，用最强模型（如 GPT-5.5、Claude Opus 4.7）分别在 Codex、Claude Code、Cursor 的 Plan 模式下生成设计方案，选择最优方案并借鉴其他版本。对于复杂计划，可将其拆分为多个 Phase</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">27</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://huggingface.co/blog/local-reachy-mini-conversation" target="_blank" class="item-title">Reachy Mini 实现完全本地化语音交互</a>
+                <div class="item-meta">
+                  <span class="source">Hugging Face：Blog（RSS）</span>
+                </div>
+                <div class="item-summary">Reachy Mini 机器人现可通过 `speech-to-speech` 库实现完全本地化的语音交互，无需依赖云端。该方案采用级联流水线架构，对外提供 Realtime API 兼容的 WebSocket 接口。默认组件包括 Silero VAD 用于语音活动检测、Parakeet-TDT 作为</div>
+              </div>
+            </div>
+    </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🔗 Hacker News 热议</h2></div>
+          <div class="news-item"><div class="item-body"><a href="https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/" target="_blank" class="item-title">YouTube to automatically label AI-generated videos</a><div class="item-meta"><span class="score">▲ 510</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://simonwillison.net/2026/May/27/product-market-fit/" target="_blank" class="item-title">I think Anthropic and OpenAI have found product-market fit</a><div class="item-meta"><span class="score">▲ 621</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://sverre.me/blog/rust-on-kindle/" target="_blank" class="item-title">Rust (and Slint) on a Jailbroken Kindle</a><div class="item-meta"><span class="score">▲ 96</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://www.pcgamer.com/hardware/duckduckgos-ai-free-search-saw-nearly-28-percent-more-visits-in-the-week-following-googles-insistence-that-people-love-ai-mode/" target="_blank" class="item-title">DuckDuckGo search saw 28% more visits after Google said people love AI mode</a><div class="item-meta"><span class="score">▲ 651</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://arps18.github.io/posts/claude-code-mastery/" target="_blank" class="item-title">Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs</a><div class="item-meta"><span class="score">▲ 363</span></div></div></div>
+        </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🏆 全球模型热度榜</h2></div>
+          <div style="overflow-x:auto;"><table class="model-table"><thead><tr><th>#</th><th>模型</th><th>机构</th><th>上下文</th><th>趋势</th></tr></thead><tbody>
+              <tr><td class="rank">1</td><td class="model-name">Claude Opus 4.7</td><td class="org">Anthropic</td><td class="ctx">100万</td><td class="trend">TOP 1</td></tr>
+              <tr><td class="rank">2</td><td class="model-name">GPT-5.5 Pro</td><td class="org">OpenAI</td><td class="ctx">105万</td><td class="trend">活跃</td></tr>
+              <tr><td class="rank">3</td><td class="model-name">O3 Deep Research</td><td class="org">Openai</td><td class="ctx">200k</td><td class="trend"></td></tr>
+              <tr><td class="rank">4</td><td class="model-name">Gemini 3.5 Flash</td><td class="org">Google</td><td class="ctx">105万</td><td class="trend">↑ 新发布</td></tr>
+              <tr><td class="rank">5</td><td class="model-name">Llama 4 Scout</td><td class="org">Meta</td><td class="ctx">1000万</td><td class="trend">开源</td></tr>
+            </tbody></table></div>
+          <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度与部署状态综合排序）</p>
+        </div>
+
+    <div class="insights">
+      <h2>📈 今日趋势洞察</h2>
+      <ul>
+            <li>今日产品发布/更新最活跃，共8条动态</li>
+            <li>模型价格战持续：大模型 API 定价进一步下探，AI 服务成本加速普惠化</li>
+            <li>AI 安全成新焦点：供应链攻击揭露 AI 工具链新攻击面，开发者需审计工具安全</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
+      <p>支持：Hacker News · OpenRouter · The Verge</p>
+    </div>
+  </div>
+</body>
+</html>

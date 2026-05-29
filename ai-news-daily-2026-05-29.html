@@ -1,519 +1,352 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 行业日报 · 2026-05-29</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
-  
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  
-  body {
-    font-family: 'Noto Serif SC', 'Georgia', serif;
-    background: #faf8f5;
-    color: #1a1a1a;
-    line-height: 1.8;
-    padding: 2rem 1rem;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .header {
-    text-align: center;
-    padding: 3rem 0 2rem;
-    border-bottom: 3px double #c23a30;
-    margin-bottom: 2rem;
-  }
-  
-  .header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #c23a30;
-    letter-spacing: 0.1em;
-  }
-  
-  .header .date {
-    font-size: 1.1rem;
-    color: #666;
-    margin-top: 0.5rem;
-  }
-  
-  .lead {
-    font-size: 1.1rem;
-    color: #333;
-    padding: 1.5rem;
-    background: #f5f0eb;
-    border-left: 4px solid #c23a30;
-    margin-bottom: 2rem;
-    line-height: 2;
-  }
-  
-  .section {
-    margin-bottom: 2.5rem;
-  }
-  
-  .section-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 1rem;
-  }
-  
-  .section-title .emoji {
-    margin-right: 0.5rem;
-  }
-  
-  .news-item {
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .news-item:last-child {
-    border-bottom: none;
-  }
-  
-  .news-header {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-  
-  .news-idx {
-    font-weight: 600;
-    color: #c23a30;
-    min-width: 2rem;
-  }
-  
-  .news-title {
-    font-weight: 600;
-    color: #1a1a1a;
-    text-decoration: none;
-    flex: 1;
-  }
-  
-  .news-title:hover {
-    color: #c23a30;
-    text-decoration: underline;
-  }
-  
-  .impact-score {
-    font-size: 0.85rem;
-    color: #c23a30;
-    letter-spacing: 0.05em;
-  }
-  
-  .news-source {
-    font-size: 0.9rem;
-    color: #888;
-    margin-left: 2.5rem;
-  }
-  
-  .news-summary {
-    font-size: 0.95rem;
-    color: #555;
-    margin-left: 2.5rem;
-    margin-top: 0.3rem;
-    line-height: 1.6;
-  }
-  
-  .leaderboard {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
-  
-  .leaderboard th {
-    background: #1a1a1a;
-    color: #faf8f5;
-    padding: 0.8rem;
-    text-align: left;
-    font-weight: 600;
-  }
-  
-  .leaderboard td {
-    padding: 0.7rem 0.8rem;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .leaderboard tr:nth-child(even) {
-    background: #f5f0eb;
-  }
-  
-  .footer {
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-    border-top: 3px double #c23a30;
-    color: #888;
-    font-size: 0.9rem;
-  }
-  
-  .footer a {
-    color: #c23a30;
-    text-decoration: none;
-  }
-  
-  .trend-insight {
-    background: linear-gradient(135deg, #f5f0eb 0%, #faf8f5 100%);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-top: 1rem;
-  }
-  
-  .trend-insight h4 {
-    color: #c23a30;
-    margin-bottom: 0.8rem;
-  }
-  
-  .trend-insight ul {
-    padding-left: 1.5rem;
-  }
-  
-  .trend-insight li {
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-  }
-  
-  @media (max-width: 600px) {
-    body { padding: 1rem 0.5rem; }
-    .header h1 { font-size: 1.5rem; }
-    .news-header { flex-direction: column; }
-    .impact-score { margin-left: 2.5rem; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 行业日报 · 2026-05-29</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf8f5; color: #1a1a1a;
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
+    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
+    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
+            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
+    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
+    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
+                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
+    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
+    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; transition: background 0.2s; }
+    .news-item:hover { background: rgba(194,58,48,0.03); border-radius: 4px; padding-left: 12px; padding-right: 12px; }
+    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
+    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
+                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
+    .item-body { flex: 1; min-width: 0; }
+    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
+    .item-title:hover { color: #c23a30; }
+    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
+    .source { color: #666; font-weight: 500; }
+    .time { color: #aaa; }
+    .score { color: #c23a30; font-weight: 600; }
+    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
+    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
+                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
+    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
+    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
+    .model-table .model-name { font-weight: 600; }
+    .model-table .org { color: #666; }
+    .model-table .ctx { color: #888; font-size: 13px; }
+    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
+    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
+    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
+    .insights ul { list-style: none; padding: 0; }
+    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
+    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
+    .footer a { color: #888; text-decoration: none; }
+    .footer a:hover { color: #c23a30; }
+    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
+  </style>
 </head>
 <body>
-<div class="container">
-  <div class="header">
-    <h1>📰 AI 行业日报</h1>
-    <div class="date">2026年05月29日（农历五月初四）· 共 45 条</div>
-  </div>
-  
-  <div class="lead">
-    <strong>主编导语：</strong>今日AI热点：Claude Opus 4.8 发布：在编码、智能体技能与推理方面实现全面升级、Grok Build 0.1 on API、商汤发布信息图生成模型升级，增强多项核心能力
-  </div>
-  
-  <div class="section">
-    <h2 class="section-title"><span class="emoji">🌍</span>全球 AI 动态</h2>
-    
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">1.</span>
-        <a href="https://www.anthropic.com/news/claude-opus-4-8" class="news-title" target="_blank">Claude Opus 4.8 发布：在编码、智能体技能与推理方面实现全面升级</a>
-        <span class="impact-score">★★★★★</span>
-      </div>
-      <div class="news-source">Anthropic：Newsroom（网页） · </div>
-      <div class="news-summary">Anthropic 发布了新一代模型 Claude Opus 4.8，作为 Opus 4.7 的升级版本，其在编码、智能体技能、推理和实用知识工作等各项基准测试中均取得进步。Claude Opus 4.8 现已可用，价格与前代相同。同步推出的新功能包括：用户可控制任务投入程度、Claude Code 新增“动态工作流”特性，以及 Opus 4.8 的 2.5 倍速模式价格降低为以往的三分之一。早期测试者反馈其在智能体任务中的判断力更可靠、工具调用更高效。该模型在 Online-Mind2Web 测评中得分 84%，超越了 Opus 4.7 和 GPT-5.5。此外，其诚实度与对齐表现也得到提升，代码错误漏检率降低了约 75%。</div>
+  <div class="container">
+    <div class="header">
+      <h1>AI 行业日报</h1>
+      <div class="subtitle">2026-05-29 ·  · 北京时间 10:00</div>
     </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">2.</span>
-        <a href="https://x.ai/news/grok-build-0-1" class="news-title" target="_blank">Grok Build 0.1 on API</a>
-        <span class="impact-score">★★★★★</span>
-      </div>
-      <div class="news-source">xAI：News（网页） · </div>
-      <div class="news-summary">xAI 的最新编码模型 Grok Build 0.1 已通过 xAI API 进入公开测试阶段。该模型专为智能体编码任务训练，支持网页开发、调试和 MCP，同时也是驱动 Grok Build CLI 的同一模型。其推理速度超过 100 tokens/秒，定价为输入 $1/m tokens，输出 $2/m tokens。除编码外，它也适用于通用智能体及工具调用场景，并可通过 OpenRouter 和 Vercel AI Gateway 获取。</div>
+
+    <div class="lead">
+      <div class="lead-label">主编点评</div>
+      <p>今日AI热点：Claude Opus 4.8 发布：在编码、智能体技能与推理方面实现全面升级；Grok Build 0.1 on API；商汤发布信息图生成模型升级，增强多项核心能力</p>
     </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">3.</span>
-        <a href="https://x.com/googleaidevs/status/2060049962356916377" class="news-title" target="_blank">Nano Banana Pro与Nano Banana 2正式发布</a>
-        <span class="impact-score">★★★★☆</span>
-      </div>
-      <div class="news-source">X：Google AI for Developers (@googleaidevs) · </div>
-      <div class="news-summary">🍌 Nano Banana Pro [gemini-3-pro-image] 和 Nano Banana 2 [gemini-3.1-flash-image] 现已正式发布，可通过 Gemini API 投入生产使用。查看这些优秀的社区示例，了解两个模型的实际能力 🧵↓</div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🌍 全球 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">1</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.anthropic.com/news/claude-opus-4-8" target="_blank" class="item-title">Claude Opus 4.8 发布：在编码、智能体技能与推理方面实现全面升级</a>
+                <div class="item-meta">
+                  <span class="source">Anthropic：Newsroom（网页）</span>
+                </div>
+                <div class="item-summary">Anthropic 发布了新一代模型 Claude Opus 4.8，作为 Opus 4.7 的升级版本，其在编码、智能体技能、推理和实用知识工作等各项基准测试中均取得进步。Claude Opus 4.8 现已可用，价格与前代相同。同步推出的新功能包括：用户可控制任务投入程度、Claude Code</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">2</span>
+                <span class="impact">★★☆☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.ai/news/grok-build-0-1" target="_blank" class="item-title">Grok Build 0.1 on API</a>
+                <div class="item-meta">
+                  <span class="source">xAI：News（网页）</span>
+                </div>
+                <div class="item-summary">xAI 的最新编码模型 Grok Build 0.1 已通过 xAI API 进入公开测试阶段。该模型专为智能体编码任务训练，支持网页开发、调试和 MCP，同时也是驱动 Grok Build CLI 的同一模型。其推理速度超过 100 tokens/秒，定价为输入 $1/m tokens，输出 $2</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">3</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/googleaidevs/status/2060049962356916377" target="_blank" class="item-title">Nano Banana Pro与Nano Banana 2正式发布</a>
+                <div class="item-meta">
+                  <span class="source">X：Google AI for Developers (@googleaidevs)</span>
+                </div>
+                <div class="item-summary">🍌 Nano Banana Pro [gemini-3-pro-image] 和 Nano Banana 2 [gemini-3.1-flash-image] 现已正式发布，可通过 Gemini API 投入生产使用。查看这些优秀的社区示例，了解两个模型的实际能力 🧵↓</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">4</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code" target="_blank" class="item-title">在Claude Code中引入动态工作流</a>
+                <div class="item-meta">
+                  <span class="source">Claude：Blog（网页）</span>
+                </div>
+                <div class="item-summary">Claude Code 推出“动态工作流”功能，使 Claude 能端到端处理复杂任务。该功能通过动态编写脚本，在单个会话中并行运行数十到数百个子智能体来完成工作，并会在结果呈现前进行验证。它适用于跨代码库的 bug 查找、大规模迁移（如将 Bun 从 Zig 移植到 Rust）等需要多角度分析的任</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">5</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/perplexity_ai/status/2060013442720010598" target="_blank" class="item-title">Perplexity Computer现已集成微软Office套件</a>
+                <div class="item-meta">
+                  <span class="source">X：Perplexity (@perplexity_ai)</span>
+                </div>
+                <div class="item-summary">Perplexity Computer现已登陆Microsoft Excel、Word、PowerPoint和Outlook。 您可以在应用程序的侧边栏中直接使用Computer来协调工作，起草文档、建模、制作演示文稿并处理电子邮件。 现已推出：https://www.perplexity.ai/h</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">6</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mistral.ai/news/search-toolkit" target="_blank" class="item-title">发布 Search Toolkit</a>
+                <div class="item-meta">
+                  <span class="source">Mistral AI：News（网页）</span>
+                </div>
+                <div class="item-summary">Mistral AI 发布了 Search Toolkit 的公共预览版。这是一个用于构建 AI 应用生产级搜索管道的可组合框架。该框架旨在解决团队在搭建搜索基础设施时，因数据摄取、检索和评估工具分散而耗费过多工程时间的问题。Search Toolkit 将这三者整合到单一框架与共享接口中，使团队能</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">7</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/Replit/status/2060097656207413613" target="_blank" class="item-title">Replit Canvas：智能体设计工具发布</a>
+                <div class="item-meta">
+                  <span class="source">X：Replit (@Replit)</span>
+                </div>
+                <div class="item-summary">最好的设计工作不会在聊天框里发生。你需要空间来探索想法、创建变体并进行迭代。 认识新的 Replit Canvas。 你的智能体设计工具，用于构建精美的网站、应用、营销资产等。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">8</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://developers.googleblog.com/supercharge-your-integration-workflow-with-the-google-pay-wallet-developer-mcp-server" target="_blank" class="item-title">使用 Google Pay & Wallet Developer MCP server 加速你的集成工作流</a>
+                <div class="item-meta">
+                  <span class="source">Google Developers Blog（RSS）</span>
+                </div>
+                <div class="item-summary">Google 推出 Google Pay & Wallet Developer MCP server，这是一款开放标准工具，旨在将 AI 开发助手和 IDE 安全连接到实时的 API 与账户上下文。开发者无需离开开发环境，即可搜索官方文档、验证 Wallet pass 定义、检查集成状态以及管理商户</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">9</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://techcrunch.com/2026/05/28/sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app" target="_blank" class="item-title">Sesame，这家由Oculus创始人创办的对话式AI初创公司，发布其iOS应用</a>
+                <div class="item-meta">
+                  <span class="source">TechCrunch：AI（RSS）</span>
+                </div>
+                <div class="item-summary">由Oculus创始人创办的AI初创公司Sesame发布了其iOS应用，该应用将对话式AI智能体带给公众。应用提供更自然的来回交互体验，设计上区别于传统聊天机器人，旨在让用户感觉更像在和真人对话。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">10</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.anthropic.com/news/series-h" target="_blank" class="item-title">Anthropic 完成 650 亿美元 H 轮融资，估值达 9650 亿美元</a>
+                <div class="item-meta">
+                  <span class="source">Anthropic：Newsroom（网页）</span>
+                </div>
+                <div class="item-summary">Anthropic 宣布完成由 Altimeter Capital 等领投的 650 亿美元 H 轮融资，投后估值达 9650 亿美元。公司表示其旗舰模型 Claude 的企业部署持续增长，年化收入已突破 470 亿美元。此轮融资将用于推进 AI 安全与可解释性研究、扩展算力以满足 Claude 的</div>
+              </div>
+            </div>
     </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">4.</span>
-        <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code" class="news-title" target="_blank">在Claude Code中引入动态工作流</a>
-        <span class="impact-score">★★★★★</span>
-      </div>
-      <div class="news-source">Claude：Blog（网页） · </div>
-      <div class="news-summary">Claude Code 推出“动态工作流”功能，使 Claude 能端到端处理复杂任务。该功能通过动态编写脚本，在单个会话中并行运行数十到数百个子智能体来完成工作，并会在结果呈现前进行验证。它适用于跨代码库的 bug 查找、大规模迁移（如将 Bun 从 Zig 移植到 Rust）等需要多角度分析的任务。该功能现已在研究预览阶段可用，支持 Claude Code CLI、桌面端、VS Code 扩展以及 API、Amazon Bedrock、Vertex AI 等平台，面向 Max、Team 及已启用的 Enterprise 计划用户。</div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🇨🇳 中国 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">23</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/SenseTime_AI/status/2060015749826240724" target="_blank" class="item-title">商汤发布信息图生成模型升级，增强多项核心能力</a>
+                <div class="item-meta">
+                  <span class="source">X：商汤 SenseTime (@SenseTime_AI)</span>
+                </div>
+                <div class="item-summary">商汤科技介绍了其升级后的信息图生成模型 SenseNova-U1-8B-MoT-Infographic。该模型参数为8B，在四个关键维度进行了优化：文本准确性与可读性增强，减少了重复和不当放大；布局的一致性与合理性提升，背景更稳定；图表与示意图的质量提高；并新增了学术内容的渲染支持。推文提供了在 H</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">24</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/MiniMax_AI/status/2060071852970844377" target="_blank" class="item-title">MiniMax M2.7 免费智能体编程限时开放</a>
+                <div class="item-meta">
+                  <span class="source">X：MiniMax (@MiniMax_AI)</span>
+                </div>
+                <div class="item-summary">在 @OpenHandsDev 上使用 MiniMax M2.7 进行免费智能体编程？ 是的，请给我！限时提供 ⚡👀</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">25</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/alibaba_cloud/status/2059821825140367565" target="_blank" class="item-title">MuleRun登陆阿里云市场，提供全天候AI劳动力</a>
+                <div class="item-meta">
+                  <span class="source">X：阿里云 / Alibaba Cloud (@alibaba_cloud)</span>
+                </div>
+                <div class="item-summary">在阿里云市场遇见 MuleRun——一个全天候的AI劳动力，用于研究、报告、代码、设计等。功能强大，适合个人使用；企业就绪，适合团队协作——支持SSO、RBAC、私有网络、团队知识管理和无缝集成。 想得更大。让 MuleRun 处理其余事务。 方案起价 $20/月 → https://int.ali</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">26</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/thexpin/status/2059947998302679059" target="_blank" class="item-title">DeepSeek计划在完成融资后立即申请科创板IPO</a>
+                <div class="item-meta">
+                  <span class="source">X：X.PIN (@thexpin)</span>
+                </div>
+                <div class="item-summary">独家：DeepSeek计划在完成当前约500亿美元（3500亿人民币）融资轮后，立即申请科创板（A股）IPO。 来源：参与本轮融资的一位大型基金经理。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">27</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/alibaba_cloud/status/2059918150997623004" target="_blank" class="item-title">Qwen3.7-Max 登顶 OpenRouter 热门大模型榜</a>
+                <div class="item-meta">
+                  <span class="source">X：阿里云 / Alibaba Cloud (@alibaba_cloud)</span>
+                </div>
+                <div class="item-summary">Qwen3.7-Max 以 77.3B tokens 的使用量登顶 @OpenRouter 热门大语言模型榜单。 而我们才刚刚开始。 👇 https://int.alibabacloud.com/m/1000413314/</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">28</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.lmsys.org/blog/2026-05-28-mori" target="_blank" class="item-title">SGLang 团队与 AMD 合作，使 AMD Instinct™ MI355X GPU 的大规模 DeepSeek-R1 分离式推理在总拥有成本上具备竞争力</a>
+                <div class="item-meta">
+                  <span class="source">LMSYS：Blog（Chatbot Arena 团队）</span>
+                </div>
+                <div class="item-summary">SGLang 与 AMD 团队合作，通过一系列全栈优化，使 AMD Instinct™ MI355X GPU 在运行 DeepSeek-R1 大模型推理时实现了极具竞争力的总拥有成本。在 129 tok/s/user 的交互延迟下，其成本为每百万 token $0.169，比 NVIDIA B200</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">29</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.ithome.com/0/956/274.htm" target="_blank" class="item-title">人民日报专访华为何庭波：今年秋季的新麒麟手机芯片，性能等相比去年是“跳跃性”提升</a>
+                <div class="item-meta">
+                  <span class="source">IT之家（RSS）</span>
+                </div>
+                <div class="item-summary">华为何庭波提出半导体新演进路径“韬（τ）定律”，以“时间缩微”（如逻辑折叠）替代“几何缩微”作为新指导原则。她表示，过去6年华为已基于此自主研发381款芯片。今年秋季将发布新的麒麟手机芯片，这是首个完整的“韬芯片”，其性能、集成度相比去年是“跳跃性”提升。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">30</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.ithome.com/0/956/293.htm" target="_blank" class="item-title">英伟达推出 AI 框架 Polar，让 Codex 跑分暴涨 594.74%</a>
+                <div class="item-meta">
+                  <span class="source">IT之家（RSS）</span>
+                </div>
+                <div class="item-summary">英伟达研究团队开源了智能体强化学习框架 Polar。该框架无需重写现有智能体执行框架（如 Codex CLI、Claude Code、Qwen Code、Pi），通过在模型 API 边界放置智能体来接入 GRPO 训练。实验显示，基于 Qwen3.5-4B 模型，Polar 将 Codex 在 SW</div>
+              </div>
+            </div>
     </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">5.</span>
-        <a href="https://x.com/perplexity_ai/status/2060013442720010598" class="news-title" target="_blank">Perplexity Computer现已集成微软Office套件</a>
-        <span class="impact-score">★★★☆☆</span>
-      </div>
-      <div class="news-source">X：Perplexity (@perplexity_ai) · </div>
-      <div class="news-summary">Perplexity Computer现已登陆Microsoft Excel、Word、PowerPoint和Outlook。 您可以在应用程序的侧边栏中直接使用Computer来协调工作，起草文档、建模、制作演示文稿并处理电子邮件。 现已推出：https://www.perplexity.ai/hub/products/integrations/microsoft</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">6.</span>
-        <a href="https://mistral.ai/news/search-toolkit" class="news-title" target="_blank">发布 Search Toolkit</a>
-        <span class="impact-score">★★★★☆</span>
-      </div>
-      <div class="news-source">Mistral AI：News（网页） · </div>
-      <div class="news-summary">Mistral AI 发布了 Search Toolkit 的公共预览版。这是一个用于构建 AI 应用生产级搜索管道的可组合框架。该框架旨在解决团队在搭建搜索基础设施时，因数据摄取、检索和评估工具分散而耗费过多工程时间的问题。Search Toolkit 将这三者整合到单一框架与共享接口中，使团队能更专注于提升搜索质量。该工具开源，可部署在云端、本地或边缘环境，并支持企业搜索、RAG 等多种检索场景。</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">7.</span>
-        <a href="https://x.com/Replit/status/2060097656207413613" class="news-title" target="_blank">Replit Canvas：智能体设计工具发布</a>
-        <span class="impact-score">★★★★☆</span>
-      </div>
-      <div class="news-source">X：Replit (@Replit) · </div>
-      <div class="news-summary">最好的设计工作不会在聊天框里发生。你需要空间来探索想法、创建变体并进行迭代。 认识新的 Replit Canvas。 你的智能体设计工具，用于构建精美的网站、应用、营销资产等。</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">8.</span>
-        <a href="https://developers.googleblog.com/supercharge-your-integration-workflow-with-the-google-pay-wallet-developer-mcp-server" class="news-title" target="_blank">使用 Google Pay & Wallet Developer MCP server 加速你的集成工作流</a>
-        <span class="impact-score">★★★★★</span>
-      </div>
-      <div class="news-source">Google Developers Blog（RSS） · </div>
-      <div class="news-summary">Google 推出 Google Pay & Wallet Developer MCP server，这是一款开放标准工具，旨在将 AI 开发助手和 IDE 安全连接到实时的 API 与账户上下文。开发者无需离开开发环境，即可搜索官方文档、验证 Wallet pass 定义、检查集成状态以及管理商户账户。该集成旨在通过减少上下文切换并提供实时、可靠的 AI 支持来减少开发摩擦，从而加速开发工作流。</div>
-    </div>
-  </div>
-  
-  <div class="section">
-    <h2 class="section-title"><span class="emoji">🇨🇳</span>中国 AI 动态</h2>
-    
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">9.</span>
-        <a href="https://x.com/SenseTime_AI/status/2060015749826240724" class="news-title" target="_blank">商汤发布信息图生成模型升级，增强多项核心能力</a>
-        <span class="impact-score">★★★★☆</span>
-      </div>
-      <div class="news-source">X：商汤 SenseTime (@SenseTime_AI) · </div>
-      <div class="news-summary">商汤科技介绍了其升级后的信息图生成模型 SenseNova-U1-8B-MoT-Infographic。该模型参数为8B，在四个关键维度进行了优化：文本准确性与可读性增强，减少了重复和不当放大；布局的一致性与合理性提升，背景更稳定；图表与示意图的质量提高；并新增了学术内容的渲染支持。推文提供了在 Hugging Face 上的模型页面链接及能力展示页面。</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">10.</span>
-        <a href="https://x.com/MiniMax_AI/status/2060071852970844377" class="news-title" target="_blank">MiniMax M2.7 免费智能体编程限时开放</a>
-        <span class="impact-score">★★★☆☆</span>
-      </div>
-      <div class="news-source">X：MiniMax (@MiniMax_AI) · </div>
-      <div class="news-summary">在 @OpenHandsDev 上使用 MiniMax M2.7 进行免费智能体编程？ 是的，请给我！限时提供 ⚡👀</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">11.</span>
-        <a href="https://x.com/alibaba_cloud/status/2059821825140367565" class="news-title" target="_blank">MuleRun登陆阿里云市场，提供全天候AI劳动力</a>
-        <span class="impact-score">★★★★★</span>
-      </div>
-      <div class="news-source">X：阿里云 / Alibaba Cloud (@alibaba_cloud) · </div>
-      <div class="news-summary">在阿里云市场遇见 MuleRun——一个全天候的AI劳动力，用于研究、报告、代码、设计等。功能强大，适合个人使用；企业就绪，适合团队协作——支持SSO、RBAC、私有网络、团队知识管理和无缝集成。 想得更大。让 MuleRun 处理其余事务。 方案起价 $20/月 → https://int.alibabacloud.com/m/1000413520/ #AlibabaCloud #AIAgents #AIWorkforce #FutureOfWork #EnterpriseAI</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">12.</span>
-        <a href="https://x.com/thexpin/status/2059947998302679059" class="news-title" target="_blank">DeepSeek计划在完成融资后立即申请科创板IPO</a>
-        <span class="impact-score">★★★★★</span>
-      </div>
-      <div class="news-source">X：X.PIN (@thexpin) · </div>
-      <div class="news-summary">独家：DeepSeek计划在完成当前约500亿美元（3500亿人民币）融资轮后，立即申请科创板（A股）IPO。 来源：参与本轮融资的一位大型基金经理。</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">13.</span>
-        <a href="https://x.com/alibaba_cloud/status/2059918150997623004" class="news-title" target="_blank">Qwen3.7-Max 登顶 OpenRouter 热门大模型榜</a>
-        <span class="impact-score">★★★★☆</span>
-      </div>
-      <div class="news-source">X：阿里云 / Alibaba Cloud (@alibaba_cloud) · </div>
-      <div class="news-summary">Qwen3.7-Max 以 77.3B tokens 的使用量登顶 @OpenRouter 热门大语言模型榜单。 而我们才刚刚开始。 👇 https://int.alibabacloud.com/m/1000413314/</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">14.</span>
-        <a href="https://openrouter.ai/announcements/series-b" class="news-title" target="_blank">OpenRouter 获得1.13亿美元B轮融资</a>
-        <span class="impact-score">★★★☆☆</span>
-      </div>
-      <div class="news-source">OpenRouter：Announcements（RSS） · </div>
-      <div class="news-summary">AI模型聚合平台OpenRouter宣布完成1.13亿美元B轮融资。本轮融资由CapitalG领投，NVentures、ServiceNow Ventures等多家机构参投，现有投资者Andreessen Horowitz与Menlo Ventures也参与了本轮融资。</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">15.</span>
-        <a href="https://www.lmsys.org/blog/2026-05-28-mori" class="news-title" target="_blank">SGLang 团队与 AMD 合作，使 AMD Instinct™ MI355X GPU 的大规模 DeepSeek-R1 分离式推理在总拥有成本上具备竞争力</a>
-        <span class="impact-score">★★★★★</span>
-      </div>
-      <div class="news-source">LMSYS：Blog（Chatbot Arena 团队） · </div>
-      <div class="news-summary">SGLang 与 AMD 团队合作，通过一系列全栈优化，使 AMD Instinct™ MI355X GPU 在运行 DeepSeek-R1 大模型推理时实现了极具竞争力的总拥有成本。在 129 tok/s/user 的交互延迟下，其成本为每百万 token $0.169，比 NVIDIA B200（Dynamo TRT-LLM）方案低 5%，比 B200（SGLang）方案低 40%。吞吐量方面，24 块 AMD GPU 达到 2,436 tok/s/GPU，比使用 48 块 GPU 的 B200 SGLang 方案每 GPU 吞吐量高 1.25 倍。核心优化包括：MoRI 混合 FP4/FP8 量化全到全通信、MoRI-IO K…</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">16.</span>
-        <a href="https://www.ithome.com/0/956/274.htm" class="news-title" target="_blank">人民日报专访华为何庭波：今年秋季的新麒麟手机芯片，性能等相比去年是“跳跃性”提升</a>
-        <span class="impact-score">★★★☆☆</span>
-      </div>
-      <div class="news-source">IT之家（RSS） · </div>
-      <div class="news-summary">华为何庭波提出半导体新演进路径“韬（τ）定律”，以“时间缩微”（如逻辑折叠）替代“几何缩微”作为新指导原则。她表示，过去6年华为已基于此自主研发381款芯片。今年秋季将发布新的麒麟手机芯片，这是首个完整的“韬芯片”，其性能、集成度相比去年是“跳跃性”提升。</div>
-    </div>
-  </div>
-  
-  <div class="section">
-    <h2 class="section-title"><span class="emoji">🔥</span>Hacker News 热议</h2>
-    
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">17.</span>
-        <a href="https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/" class="news-title" target="_blank">YouTube to automatically label AI-generated videos</a>
-        <span class="impact-score">★★★☆☆</span>
-      </div>
-      <div class="news-source">Hacker News · </div>
-      <div class="news-summary">🔺 1275 points</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">18.</span>
-        <a href="https://www.anthropic.com/news/claude-opus-4-8" class="news-title" target="_blank">Claude Opus 4.8</a>
-        <span class="impact-score">★★★★★</span>
-      </div>
-      <div class="news-source">Hacker News · </div>
-      <div class="news-summary">🔺 1239 points</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">19.</span>
-        <a href="https://www.anthropic.com/news/series-h" class="news-title" target="_blank">Anthropic raises $65B in Series H funding at $965B post-money valuation</a>
-        <span class="impact-score">★★★★★</span>
-      </div>
-      <div class="news-source">Hacker News · </div>
-      <div class="news-summary">🔺 257 points</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">20.</span>
-        <a href="https://llmgame.scalex.dev" class="news-title" target="_blank">Show HN: Continue? Y/N: A 60-second game about AI agent permission fatigue</a>
-        <span class="impact-score">★★★☆☆</span>
-      </div>
-      <div class="news-source">Hacker News · </div>
-      <div class="news-summary">🔺 242 points</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">21.</span>
-        <a href="https://shvbsle.in/various-llm-smells/" class="news-title" target="_blank">Various LLM Smells</a>
-        <span class="impact-score">★★★☆☆</span>
-      </div>
-      <div class="news-source">Hacker News · </div>
-      <div class="news-summary">🔺 228 points</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">22.</span>
-        <a href="https://fortune.com/2026/05/26/sam-altman-dario-amodei-walking-back-ai-jobs-apocalypse-prophecies-ipo/" class="news-title" target="_blank">Sam Altman and Dario Amodei are both walking back AI jobs apocalypse predictions</a>
-        <span class="impact-score">★★★☆☆</span>
-      </div>
-      <div class="news-source">Hacker News · </div>
-      <div class="news-summary">🔺 179 points</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">23.</span>
-        <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code" class="news-title" target="_blank">Dynamic Workflows in Claude Code</a>
-        <span class="impact-score">★★★★★</span>
-      </div>
-      <div class="news-source">Hacker News · </div>
-      <div class="news-summary">🔺 139 points</div>
-    </div>
-    <div class="news-item">
-      <div class="news-header">
-        <span class="news-idx">24.</span>
-        <a href="https://arxiv.org/abs/2510.04950" class="news-title" target="_blank">Investigating how prompt politeness affects LLM accuracy (2025)</a>
-        <span class="impact-score">★★★☆☆</span>
-      </div>
-      <div class="news-source">Hacker News · </div>
-      <div class="news-summary">🔺 138 points</div>
-    </div>
-  </div>
-  
-  <div class="section">
-    <h2 class="section-title"><span class="emoji">🏆</span>全球模型热度榜</h2>
-    <p style="color: #888; font-size: 0.9rem; margin-bottom: 1rem;">基于 OpenRouter 部署数据，按上下文窗口排序</p>
-    <table class="leaderboard">
-      <thead>
-        <tr>
-          <th>排名</th>
-          <th>模型</th>
-          <th>机构</th>
-          <th>上下文窗口</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-    <tr>
-      <td>1</td>
-      <td>Meta: Llama 4 Scout</td>
-      <td>Meta</td>
-      <td>10000K</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>xAI: Grok 4.20 Multi-Agent</td>
-      <td>xAI</td>
-      <td>2000K</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>OpenAI: GPT-5.5 Pro</td>
-      <td>OpenAI</td>
-      <td>1050K</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Google: Gemini 3.5 Flash</td>
-      <td>Google</td>
-      <td>1048K</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>DeepSeek: DeepSeek V4 Pro</td>
-      <td>DeepSeek</td>
-      <td>1048K</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Qwen: Qwen3 Coder 480B A35B</td>
-      <td>Qwen</td>
-      <td>1048K</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>Anthropic: Claude Opus 4.8</td>
-      <td>Anthropic</td>
-      <td>1000K</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>Mistral: Mistral Medium 3.5</td>
-      <td>Mistral</td>
-      <td>262K</td>
-    </tr>
-      </tbody>
-    </table>
-  </div>
-  
-  <div class="section">
-    <h2 class="section-title"><span class="emoji">📈</span>今日趋势洞察</h2>
-    <div class="trend-insight">
-      <h4>跨版块综合分析</h4>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🔗 Hacker News 热议</h2></div>
+          <div class="news-item"><div class="item-body"><a href="https://www.anthropic.com/news/claude-opus-4-8" target="_blank" class="item-title">Claude Opus 4.8</a><div class="item-meta"><span class="score">▲ 1287</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://llmgame.scalex.dev" target="_blank" class="item-title">Show HN: Continue? Y/N: A 60-second game about AI agent permission fatigue</a><div class="item-meta"><span class="score">▲ 257</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://sfstandard.com/2026/05/28/sf-startup-secretly-testing-robots-airbnbs-trashing-lawsuit-claims/" target="_blank" class="item-title">SF startup is testing robots in Airbnbs, and trashing them, lawsuit claims</a><div class="item-meta"><span class="score">▲ 116</span></div></div></div>
+        </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🏆 全球模型热度榜</h2></div>
+          <div style="overflow-x:auto;"><table class="model-table"><thead><tr><th>#</th><th>模型</th><th>机构</th><th>上下文</th><th>趋势</th></tr></thead><tbody>
+              <tr><td class="rank">1</td><td class="model-name">Llama 4 Scout</td><td class="org">Meta</td><td class="ctx">1000万</td><td class="trend">开源</td></tr>
+              <tr><td class="rank">2</td><td class="model-name">GPT-5.5 Pro</td><td class="org">OpenAI</td><td class="ctx">105万</td><td class="trend">活跃</td></tr>
+              <tr><td class="rank">3</td><td class="model-name">Gemini 3.5 Flash</td><td class="org">Google</td><td class="ctx">105万</td><td class="trend">↑ 新发布</td></tr>
+              <tr><td class="rank">4</td><td class="model-name">DeepSeek V4 Pro</td><td class="org">DeepSeek</td><td class="ctx">105万</td><td class="trend">↓ 降价</td></tr>
+              <tr><td class="rank">5</td><td class="model-name">Qwen3 Coder:Free</td><td class="org">Qwen</td><td class="ctx">1,048k</td><td class="trend"></td></tr>
+            </tbody></table></div>
+          <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度与部署状态综合排序）</p>
+        </div>
+
+    <div class="insights">
+      <h2>📈 今日趋势洞察</h2>
       <ul>
-        <li><strong>Anthropic 持续领跑：</strong>Claude Opus 4.8 发布，在编码、智能体技能与推理方面实现全面升级，同时完成 650 亿美元 H 轮融资，估值达 9650 亿美元，巩固其在 AI 领域的领先地位。</li>
-        <li><strong>AI Agent 生态加速：</strong>从 Claude Code 动态工作流到 Perplexity 集成 Office 套件，AI 工具正从单一功能向深度集成演进，开发者工作流正在被重新定义。</li>
-        <li><strong>国内外竞争格局：</strong>DeepSeek 计划科创板 IPO，MiniMax M2.7 免费开放智能体编程，国产大模型在商业化和开源策略上持续发力。</li>
+            <li>今日产品发布/更新最活跃，共8条动态</li>
+            <li>AI 安全成新焦点：供应链攻击揭露 AI 工具链新攻击面，开发者需审计工具安全</li>
       </ul>
     </div>
+
+    <div class="footer">
+      <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
+      <p>支持：Hacker News · OpenRouter · The Verge</p>
+    </div>
   </div>
-  
-  <div class="footer">
-    <p>数据来自 <a href="https://aihot.virxact.com">aihot.virxact.com</a> · Hacker News · OpenRouter</p>
-    <p>由 <a href="https://github.com/nousresearch/hermes-agent">Hermes Agent</a> 自动生成</p>
-  </div>
-</div>
 </body>
 </html>

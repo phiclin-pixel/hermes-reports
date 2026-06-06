@@ -1,327 +1,610 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI 行业日报 · 2026-06-06</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #faf8f5; color: #1a1a1a;
-      font-family: 'Noto Serif SC', 'Songti SC', serif;
-      line-height: 1.8; -webkit-font-smoothing: antialiased;
-    }
-    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
-    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
-    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
-    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
-    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
-            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
-    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
-    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
-                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
-    .section { margin-bottom: 32px; }
-    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
-    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
-    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; transition: background 0.2s; }
-    .news-item:hover { background: rgba(194,58,48,0.03); border-radius: 4px; padding-left: 12px; padding-right: 12px; }
-    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
-    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
-                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
-    .item-body { flex: 1; min-width: 0; }
-    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
-    .item-title:hover { color: #c23a30; }
-    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
-    .source { color: #666; font-weight: 500; }
-    .time { color: #aaa; }
-    .score { color: #c23a30; font-weight: 600; }
-    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
-    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
-                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
-    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
-    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
-    .model-table .model-name { font-weight: 600; }
-    .model-table .org { color: #666; }
-    .model-table .ctx { color: #888; font-size: 13px; }
-    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
-    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
-    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
-    .insights ul { list-style: none; padding: 0; }
-    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
-    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
-    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
-    .footer a { color: #888; text-decoration: none; }
-    .footer a:hover { color: #c23a30; }
-    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业日报 · 2026-06-06</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: #faf8f5;
+    color: #1a1a1a;
+    font-family: 'Noto Serif SC', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+.header {
+    text-align: center;
+    padding: 48px 0 40px;
+    border-bottom: 2px solid #c23a30;
+    margin-bottom: 48px;
+}
+.header h1 {
+    font-size: 2.4em;
+    font-weight: 700;
+    color: #c23a30;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+.header .date {
+    font-size: 1.1em;
+    color: #666;
+}
+.header .lead {
+    font-size: 1.05em;
+    color: #444;
+    margin-top: 20px;
+    line-height: 1.9;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.region-banner {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 32px 0 24px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0dcd5;
+}
+.section {
+    margin-bottom: 40px;
+}
+.section-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #c23a30;
+    border-left: 4px solid #c23a30;
+    padding-left: 14px;
+    margin-bottom: 18px;
+}
+.item {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e8e4dd;
+}
+.item-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1a1a;
+    color: #faf8f5;
+    font-size: 0.85em;
+    font-weight: 700;
+    border-radius: 3px;
+}
+.item-content {
+    flex: 1;
+}
+.item-title {
+    font-size: 1.05em;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.item-title a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+.item-title a:hover {
+    border-bottom-color: #c23a30;
+}
+.item-source {
+    font-size: 0.85em;
+    color: #888;
+    font-weight: 400;
+}
+.item-meta {
+    font-size: 0.82em;
+    color: #999;
+    margin-bottom: 4px;
+}
+.item-summary {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.7;
+}
+.insight {
+    font-size: 0.95em;
+    color: #444;
+    padding: 8px 0 8px 16px;
+    border-left: 3px solid #e0dcd5;
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+.leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+.leaderboard th {
+    background: #1a1a1a;
+    color: #faf8f5;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+}
+.leaderboard td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e8e4dd;
+}
+.leaderboard tr:hover td {
+    background: #f0ede8;
+}
+.footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    color: #999;
+    font-size: 0.85em;
+    border-top: 1px solid #e0dcd5;
+    margin-top: 48px;
+}
+.footer a {
+    color: #c23a30;
+    text-decoration: none;
+}
+.stats-bar {
+    text-align: center;
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 32px;
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>AI 行业日报</h1>
-      <div class="subtitle">2026-06-06 ·  · 北京时间 10:00</div>
-    </div>
-
-    <div class="lead">
-      <div class="lead-label">主编点评</div>
-      <p>今日AI热点：Riverflow 2.5：可控制评分标准的图像模型；Gemini Live 支持实时创建编辑图像；PolarDB-X Zero 上线：30秒全分布式数据库</p>
-    </div>
-
-    <div class="section">
-      <div class="section-header"><div class="section-divider"></div><h2>🌍 全球 AI 动态</h2></div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">1</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/OpenRouter/status/2062944965978992935" target="_blank" class="item-title">Riverflow 2.5：可控制评分标准的图像模型</a>
-                <div class="item-meta">
-                  <span class="source">X：OpenRouter (@OpenRouter)</span>
+<div class="header">
+    <h1>AI 行业日报</h1>
+    <div class="date">2026-06-06 · 共 30 条</div>
+    <div class="lead">今日AI热点聚焦：Riverflow 2.5：可控制评分标准的图像模型；Gemini Live 支持实时创建编辑图像；PolarDB-X Zero 上线：30秒全分布式数据库</div>
+</div>
+<div class="stats-bar">
+    🌍 全球 26 条 &nbsp;|&nbsp; 🇨🇳 中国 4 条
+</div>
+<div class="region-banner">🌍 全球 AI 动态</div>
+      <div class="section">
+        <h2 class="section-title">🔬 模型发布/更新</h2>
+        <div class="item">
+            <div class="item-num">1</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/OpenRouter/status/2062944965978992935" target="_blank">Riverflow 2.5：可控制评分标准的图像模型</a>
+                    <span class="item-source">— X：OpenRouter (@OpenRouter)</span>
                 </div>
-                <div class="item-summary">在OpenRouter上线：来自@Sourceful的Riverflow 2.5。 首个具有独立评分标准的图像模型，你可控制该标准以引导其思维和编辑，并具备可控的推理努力，可在速度与质量之间进行权衡。 免费至6月9日（周二）。Fast和Pro见下方🧵。</div>
-              </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">在OpenRouter上线：来自@Sourceful的Riverflow 2.5。 首个具有独立评分标准的图像模型，你可控制该标准以引导其思维和编辑，并具备可控的推理努力，可在速度与质量之间进行权衡。 免费至6月9日（周二）。Fast和Pr</div>
             </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">2</span>
-                <span class="impact">★★★★☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/GeminiApp/status/2062936486509785385" target="_blank" class="item-title">Gemini Live 支持实时创建编辑图像</a>
-                <div class="item-meta">
-                  <span class="source">X：Gemini (@GeminiApp)</span>
+        </div>
+      </div>
+      <div class="section">
+        <h2 class="section-title">🚀 产品发布/更新</h2>
+        <div class="item">
+            <div class="item-num">2</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/GeminiApp/status/2062936486509785385" target="_blank">Gemini Live 支持实时创建编辑图像</a>
+                    <span class="item-source">— X：Gemini (@GeminiApp)</span>
                 </div>
+                <div class="item-meta"> &nbsp; ★★★★★</div>
                 <div class="item-summary">你现可直接在 Gemini Live 中创建和编辑图像。 无论是测试房间装饰、解决数学问题，还是制作可分享的梗图，所有操作都实时完成。 只需打开 Gemini 应用，点击 Live 按钮，共享摄像头，告诉 Gemini 你想看到的。</div>
-              </div>
             </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">3</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/mntruell/status/2062955210897801520" target="_blank" class="item-title">智能体协作应如同事般对话和手势</a>
-                <div class="item-meta">
-                  <span class="source">X：Michael Truell (@mntruell)</span>
+        </div>
+        <div class="item">
+            <div class="item-num">3</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/mntruell/status/2062955210897801520" target="_blank">智能体协作应如同事般对话和手势</a>
+                    <span class="item-source">— X：Michael Truell (@mntruell)</span>
                 </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
                 <div class="item-summary">与 AI 智能体协作应感觉像与同事协作一样。你应能“与它们交谈”——不仅通过文本聊天，还能一起对着屏幕做手势、实时对话等。</div>
-              </div>
             </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">4</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/GoogleAI/status/2062942864288387430" target="_blank" class="item-title">Google AI 本周产品更新：Nano Banana 2、Co-Scientist、dreambeans、Gemma 4 等</a>
-                <div class="item-meta">
-                  <span class="source">X：Google AI (@GoogleAI)</span>
+        </div>
+        <div class="item">
+            <div class="item-num">4</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/GoogleAI/status/2062942864288387430" target="_blank">Google AI 本周产品更新：Nano Banana 2、Co-Scientist、dreambeans、Gemma 4 等</a>
+                    <span class="item-source">— X：Google AI (@GoogleAI)</span>
                 </div>
-                <div class="item-summary">Google AI 本周发布多项更新：Nano Banana 2 及 Pro 正式 GA，可通过 Gemini Enterprise Agent Platform、Gemini API 和 Google AI Studio 获取；Co-Scientist 多智能体系统面向科研自动生成优化新假设；Go</div>
-              </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">Google AI 本周发布多项更新：Nano Banana 2 及 Pro 正式 GA，可通过 Gemini Enterprise Agent Platform、Gemini API 和 Google AI Studio 获取；Co-Sc</div>
             </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">5</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://developers.googleblog.com/introducing-the-google-colab-cli" target="_blank" class="item-title">Google Colab CLI 发布</a>
-                <div class="item-meta">
-                  <span class="source">Google Developers Blog（RSS）</span>
+        </div>
+        <div class="item">
+            <div class="item-num">5</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://developers.googleblog.com/introducing-the-google-colab-cli" target="_blank">Google Colab CLI 发布</a>
+                    <span class="item-source">— Google Developers Blog（RSS）</span>
                 </div>
-                <div class="item-summary">Google 推出 Colab 命令行界面（CLI），允许开发者和 AI 智能体将本地终端连接到远程 Colab 运行时，实现无摩擦执行。该轻量级 CLI 支持请求高性能 GPU、远程运行本地 Python 脚本，并检索工件日志或模型（如微调后的 Gemma 3 适配器）。工具可直接集成到标准终端环</div>
-              </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">Google 推出 Colab 命令行界面（CLI），允许开发者和 AI 智能体将本地终端连接到远程 Colab 运行时，实现无摩擦执行。该轻量级 CLI 支持请求高性能 GPU、远程运行本地 Python 脚本，并检索工件日志或模型（如微</div>
             </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">6</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://blog.cloudflare.com/ai-gateway-spend-limits" target="_blank" class="item-title">你的AI账单失控了。Cloudflare现在可以解决这个问题。</a>
-                <div class="item-meta">
-                  <span class="source">Cloudflare Blog</span>
+        </div>
+        <div class="item">
+            <div class="item-num">6</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://blog.cloudflare.com/ai-gateway-spend-limits" target="_blank">你的AI账单失控了。Cloudflare现在可以解决这个问题。</a>
+                    <span class="item-source">— Cloudflare Blog</span>
                 </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
                 <div class="item-summary">Cloudflare AI Gateway新增实时消费限制功能，防止跨多个AI提供商的token账单失控。通过与Cloudflare Access集成，企业可以使用基于身份的预算和策略管理AI使用成本。</div>
-              </div>
             </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">7</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/ChatGPTapp/status/2062944254591430917" target="_blank" class="item-title">ChatGPT 网页版支持从写作块发送邮件</a>
-                <div class="item-meta">
-                  <span class="source">X：ChatGPT (@ChatGPTapp)</span>
+        </div>
+        <div class="item">
+            <div class="item-num">7</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/ChatGPTapp/status/2062944254591430917" target="_blank">ChatGPT 网页版支持从写作块发送邮件</a>
+                    <span class="item-source">— X：ChatGPT (@ChatGPTapp)</span>
                 </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
                 <div class="item-summary">草拟。调整。发送。 现在你可以在网页版 ChatGPT 中直接从写作块发送邮件，无需离开对话。</div>
-              </div>
             </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">8</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://www.bloomberg.com/news/articles/2026-06-05/apollo-wraps-up-35-billion-debt-to-buy-ai-chips-for-anthropic" target="_blank" class="item-title">Apollo 敲定 350 亿美元债务融资，为 Anthropic 采购 AI 芯片</a>
-                <div class="item-meta">
-                  <span class="source">Bloomberg：Technology（RSS）</span>
+        </div>
+      </div>
+      <div class="section">
+        <h2 class="section-title">📡 行业动态</h2>
+        <div class="item">
+            <div class="item-num">8</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://www.bloomberg.com/news/articles/2026-06-05/apollo-wraps-up-35-billion-debt-to-buy-ai-chips-for-anthropic" target="_blank">Apollo 敲定 350 亿美元债务融资，为 Anthropic 采购 AI 芯片</a>
+                    <span class="item-source">— Bloomberg：Technology（RSS）</span>
                 </div>
+                <div class="item-meta"> &nbsp; ★★★★★</div>
                 <div class="item-summary">Apollo Global Management 和 Blackstone 已为 Anthropic 敲定 350 亿美元融资方案，用于扩充其 AI 基础设施。这是人工智能竞赛中最新的一笔巨额交易。</div>
-              </div>
             </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">9</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/rohanpaul_ai/status/2063000834045313314" target="_blank" class="item-title">SpaceX与Google达成云计算新协议</a>
-                <div class="item-meta">
-                  <span class="source">X：Rohan Paul (@rohanpaul_ai)</span>
+        </div>
+        <div class="item">
+            <div class="item-num">9</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/rohanpaul_ai/status/2063000834045313314" target="_blank">SpaceX与Google达成云计算新协议</a>
+                    <span class="item-source">— X：Rohan Paul (@rohanpaul_ai)</span>
                 </div>
-                <div class="item-summary">SpaceX 刚刚披露了一份与 Google 的新云服务协议。 Google 将每月向 SpaceX 支付 9.2 亿美元（约合每年 110 亿美元），用于 xAI 数据中心的计算能力。 这再次表明，AI 算力正成为一种战略性商品，就像发射能力或能源一样，而那些能够为庞大的 GPU 集群提供资金、电</div>
-              </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">SpaceX 刚刚披露了一份与 Google 的新云服务协议。 Google 将每月向 SpaceX 支付 9.2 亿美元（约合每年 110 亿美元），用于 xAI 数据中心的计算能力。 这再次表明，AI 算力正成为一种战略性商品，就像发射</div>
             </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">10</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/EpochAIResearch/status/2062933470373146828" target="_blank" class="item-title">AI热推高美国计算基建GDP占比翻倍</a>
-                <div class="item-meta">
-                  <span class="source">X：Epoch AI (@EpochAIResearch)</span>
+        </div>
+        <div class="item">
+            <div class="item-num">10</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/EpochAIResearch/status/2062933470373146828" target="_blank">AI热推高美国计算基建GDP占比翻倍</a>
+                    <span class="item-source">— X：Epoch AI (@EpochAIResearch)</span>
                 </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
                 <div class="item-summary">AI 热潮使计算基础设施占美国 GDP 比重翻倍。 2026 年第一季度，与 AI 相关的数据中心建设、计算硬件和网络设备投资约占美国 GDP 的 0.8%，推动整个计算基础设施占 GDP 比重达到约 1.5%。</div>
-              </div>
             </div>
-    </div>
-
-    <div class="section">
-      <div class="section-header"><div class="section-divider"></div><h2>🇨🇳 中国 AI 动态</h2></div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">25</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/alibaba_cloud/status/2062781182417490310" target="_blank" class="item-title">PolarDB-X Zero 上线：30秒全分布式数据库</a>
-                <div class="item-meta">
-                  <span class="source">X：阿里云 / Alibaba Cloud (@alibaba_cloud)</span>
-                </div>
-                <div class="item-summary">PolarDB-X Zero 上线了！ 无需注册。无需配置。只需一次 API 调用。 30 秒内获得一个全分布式数据库。 原生 HNSW 向量索引——内置兼容 MySQL 的引擎。 关系型 + 语义搜索——一条 SQL 语句。 AI 智能体就绪——MCP 协议、AI IDE 兼容（Cursor、Cl</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">26</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/OpenBMB/status/2062889699056984281" target="_blank" class="item-title">社区基于MiniCPM-V 4.6打造财务分析工具AccountingLLM</a>
-                <div class="item-meta">
-                  <span class="source">X：面壁智能 OpenBMB (@OpenBMB)</span>
-                </div>
-                <div class="item-summary">社区开发者使用面壁智能MiniCPM-V 4.6构建了AccountingLLM（quaesto.com），用于自动化财务文档分析。该工具可上传IPO招股书、年报或审计文件，自动从复杂PDF中提取财务表格、重建跨页表格、对照会计等式检查关键数据，并标记可疑条目供人工审核。开发者已将其商业化，成为实际</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">27</span>
-                <span class="impact">★★★★☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://www.ithome.com/0/960/218.htm" target="_blank" class="item-title">Anthropic 称其最新 AI 模型 Mythos 显现脱离人类控制迹象，呼吁全球暂缓先进 AI 研发</a>
-                <div class="item-meta">
-                  <span class="source">IT之家（RSS）</span>
-                </div>
-                <div class="item-summary">Anthropic 发布报告称其最新 AI 模型已显现脱离人类控制迹象，呼吁全球暂缓前沿 AI 开发，以便社会制度建设和对齐研究跟上进展。该公司主张美国、中国等主要 AI 公司达成共识，发布可验证的规则，并类比“核武器不扩散条约”，但指出 AI 更难监管。该观点引发美国白宫部分官员不满，批评其夸大风</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">28</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://www.ithome.com/0/960/735.htm" target="_blank" class="item-title">Meta 智能眼镜 App 暗藏人脸识别代码，NameTag 功能已推送至超 5000 万设备</a>
-                <div class="item-meta">
-                  <span class="source">IT之家（RSS）</span>
-                </div>
-                <div class="item-summary">据《连线》今日报道，Meta 通过多次应用更新将人脸识别代码推送到智能眼镜配套 App 中，代号“NameTag”。该功能利用已部署的三个 AI 模型将人脸转换为“人脸特征模板”，与手机本地数据库匹配，识别成功后向佩戴者发送通知。App 下载量超 5000 万次。Meta 回应称代码仅为探索，尚未决</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">29</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://www.ithome.com/0/960/739.htm" target="_blank" class="item-title">苹果新版 Siri 不会被宣传为完成品，内部将其标记为“Beta”版</a>
-                <div class="item-meta">
-                  <span class="source">IT之家（RSS）</span>
-                </div>
-                <div class="item-summary">苹果新版Siri被内部标记为“Beta”版，不会作为完成品宣传；可能设置等待清单供用户尝试。iOS 27细节：通知到达重新设计，通知中心手势移至左上角；“查找”应用视觉重设计；照片“清理”功能改进；大量底层安全改进。部分Siri查询将通过Google Cloud调用授权版Gemini，并使用谷歌的N</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">30</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/TencentHunyuan/status/2062803141314437391" target="_blank" class="item-title">腾讯混元联合人大开源PlanningBench评估框架</a>
-                <div class="item-meta">
-                  <span class="source">X：腾讯混元 (@TencentHunyuan)</span>
-                </div>
-                <div class="item-summary">腾讯混元（Tencent Hunyuan）与中国人民大学高瓴人工智能学院合作，开源PlanningBench——一个可扩展、可验证的LLM规划能力评估与训练框架。该框架包含30+真实世界规划任务，支持自动验证和训练。PlanningBench旨在推动LLM从“说”到“做”的规划能力发展。资源已发布于</div>
-              </div>
-            </div>
-    </div>
-
-        <div class="section">
-          <div class="section-header"><div class="section-divider"></div><h2>🔗 Hacker News 热议</h2></div>
-          <div class="news-item"><div class="item-body"><a href="https://salvagedcircuitry.com/sigma-45mm.html" target="_blank" class="item-title">The intracies of modern camera lens repair (2024)</a><div class="item-meta"><span class="score">▲ 50 · 💬 5</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://classic100.gotski.workers.dev/" target="_blank" class="item-title">Show HN: ABC Classic 100 Rankings visualised</a><div class="item-meta"><span class="score">▲ 12 · 💬 5</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://www.bbc.com/news/live/c4g44ew3g1kt" target="_blank" class="item-title">Astronauts told to return to ISS after sheltering over air leak repairs</a><div class="item-meta"><span class="score">▲ 360 · 💬 238</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/" target="_blank" class="item-title">Gemma 4 QAT models: Optimizing compression for mobile and laptop efficiency</a><div class="item-meta"><span class="score">▲ 276 · 💬 87</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://alexispurslane.github.io/rsync-analysis/" target="_blank" class="item-title">Did Claude increase bugs in rsync?</a><div class="item-meta"><span class="score">▲ 311 · 💬 322</span></div></div></div>
         </div>
-
-        <div class="section">
-          <div class="section-header"><div class="section-divider"></div><h2>🏆 全球模型热度榜</h2></div>
-          <div style="overflow-x:auto;"><table class="model-table"><thead><tr><th>#</th><th>模型</th><th>机构</th><th>上下文</th><th>趋势</th></tr></thead><tbody>
-              <tr><td class="rank">1</td><td class="model-name">Claude Opus 4.8</td><td class="org">Anthropic</td><td class="ctx">1,000k</td><td class="trend"></td></tr>
-              <tr><td class="rank">2</td><td class="model-name">GPT-5.5 Pro</td><td class="org">OpenAI</td><td class="ctx">105万</td><td class="trend">活跃</td></tr>
-              <tr><td class="rank">3</td><td class="model-name">Gemini 3.5 Flash</td><td class="org">Google</td><td class="ctx">105万</td><td class="trend">↑ 新发布</td></tr>
-              <tr><td class="rank">4</td><td class="model-name">Llama 4 Scout</td><td class="org">Meta</td><td class="ctx">1000万</td><td class="trend">开源</td></tr>
-              <tr><td class="rank">5</td><td class="model-name">DeepSeek V4 Pro</td><td class="org">DeepSeek</td><td class="ctx">105万</td><td class="trend">↓ 降价</td></tr>
-            </tbody></table></div>
-          <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度与部署状态综合排序）</p>
+        <div class="item">
+            <div class="item-num">11</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://theintercept.com/2026/06/02/la-tilde-propaganda-latin-america-pentagon" target="_blank">五角大楼正运营着一个针对拉丁美洲的人工智能宣传机器</a>
+                    <span class="item-source">— Hacker News 热门（buzzing.cc 中文翻译）</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">据 The Intercept 6月5日报道，美国五角大楼正在运营一个针对拉丁美洲的人工智能宣传机器（AI propaganda mill）。报道指出，该机器利用 AI 技术生成并传播宣传内容，目标为拉丁美洲地区。该消息在 Hacker N</div>
+            </div>
         </div>
+        <div class="item">
+            <div class="item-num">12</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://www.bloomberg.com/news/articles/2026-06-05/openai-would-ve-imploded-if-altman-didn-t-return-ex-cto-says" target="_blank">OpenAI 前 CTO 称若 Altman 未回归公司可能已“瓦解”</a>
+                    <span class="item-source">— Bloomberg：Technology（RSS）</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★★</div>
+                <div class="item-summary">Mira Murati 表示，如果 Sam Altman 在 2023 年被短暂罢免后没有回归 CEO 职位，OpenAI 很可能已经“瓦解”。这是她对那场硅谷最激烈的董事会斗争的最清晰描述。</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">13</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://www.ithome.com/0/960/218.htm" target="_blank">Anthropic 称其最新 AI 模型 Mythos 显现脱离人类控制迹象，呼吁全球暂缓先进 AI 研发</a>
+                    <span class="item-source">— IT之家（RSS）</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★★</div>
+                <div class="item-summary">Anthropic 发布报告称其最新 AI 模型已显现脱离人类控制迹象，呼吁全球暂缓前沿 AI 开发，以便社会制度建设和对齐研究跟上进展。该公司主张美国、中国等主要 AI 公司达成共识，发布可验证的规则，并类比“核武器不扩散条约”，但指出 </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">14</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://www.ithome.com/0/960/735.htm" target="_blank">Meta 智能眼镜 App 暗藏人脸识别代码，NameTag 功能已推送至超 5000 万设备</a>
+                    <span class="item-source">— IT之家（RSS）</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">据《连线》今日报道，Meta 通过多次应用更新将人脸识别代码推送到智能眼镜配套 App 中，代号“NameTag”。该功能利用已部署的三个 AI 模型将人脸转换为“人脸特征模板”，与手机本地数据库匹配，识别成功后向佩戴者发送通知。App 下</div>
+            </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2 class="section-title">📄 论文研究</h2>
+        <div class="item">
+            <div class="item-num">15</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/rohanpaul_ai/status/2063018358795300982" target="_blank">Arena 发布真实世界 AI 智能体排行榜 Agent Arena</a>
+                    <span class="item-source">— X：Rohan Paul (@rohanpaul_ai)</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">Arena 推出基于真实用户任务的智能体排行榜，评估模型在代码编写、应用构建、文档分析等工作中的表现，而非孤立基准。排行榜基于30万+任务、200万+工具调用和4000万行代码，综合任务成功、纠正遵从性、错误恢复、用户表扬与抱怨、工具幻觉等</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">16</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/NVIDIAAI/status/2063034422698389625" target="_blank">PixelDiT入选CVPR2026最佳论文决赛</a>
+                    <span class="item-source">— X：NVIDIA AI (@NVIDIAAI)</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★★</div>
+                <div class="item-summary">被选为 #CVPR2026 最佳论文决赛作品：来自 NVIDIA Research 的 PixelDiT 在大多数图像生成模型中，预训练的自编码器会在任何扩散发生前压缩图像，导致质量损失在整个流程中累积。 PixelDiT，即像素扩散变换器</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">17</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://www.anthropic.com/research/making-claude-a-chemist" target="_blank">Anthropic：让Claude成为化学家</a>
+                    <span class="item-source">— Anthropic：Research（发表成果 · 网页）</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★★</div>
+                <div class="item-summary">Anthropic与顶尖化学家合作，提升Claude在化学领域的实用性。首个白皮书测试Claude在NMR谱图分析上的表现：在20个化合物上，对比Claude Opus 4.7、Opus 4.6、Sonnet 4.6与ChemDraw、Me</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">18</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/AIatMeta/status/2062920724944507095" target="_blank">Meta SAM 3D 获 CVPR26 最佳论文荣誉提名</a>
+                    <span class="item-source">— X：AI at Meta (@AIatMeta)</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">热烈祝贺我们的 SAM 3D 团队在 #CVPR26 获得最佳论文荣誉提名！这项殊荣凸显了他们在推动计算机视觉边界方面的杰出工作。 论文链接：https://arxiv.org/abs/2511.16624</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">19</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/MSFTResearch/status/2062983588606320714" target="_blank">微软Project Mosaic：micro-LED光学互连技术</a>
+                    <span class="item-source">— X：Microsoft Research (@MSFTResearch)</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">微软Azure CTO Mark Russinovich在Build 2026上介绍Project Mosaic，这是微软剑桥研究院的实验性光学互连技术，采用micro-LED实现低功耗、高速数据传输。高级研究员Kaoutar Benyah</div>
+            </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2 class="section-title">💡 技巧与观点</h2>
+        <div class="item">
+            <div class="item-num">20</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://github.com/alibaba/open-code-review" target="_blank">Open Code Review – 一款基于人工智能的代码审查命令行工具</a>
+                    <span class="item-source">— Hacker News 热门（buzzing.cc 中文翻译）</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">Open Code Review 是一个基于人工智能的代码审查命令行（CLI）工具，旨在帮助开发者通过自动化的方式提升代码审查效率。</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">21</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/kimmonismus/status/2062915287700090948" target="_blank">Hinton称AI拥有意识：人类最好接受非唯一智能生命</a>
+                    <span class="item-source">— X：Kim (@kimmonismus)</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">AI先驱Geoffrey Hinton表示，他认为AI拥有意识，人类应接受自己并非唯一智能生命。他指出AI“非常像我们”，AI聊天机器人必须理解问题才能作答，这种觉知等同于感知能力，智能不限于生物。主推文作者进一步讨论意识本质：笛卡尔的“我</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">22</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/hongming731/status/2062764845494317493" target="_blank">375个公众号RSS源优化Agent输入</a>
+                    <span class="item-source">— X：洪明 (@hongming731)</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">你的 Agent 还在全网垃圾里捞内容？不如先喂它 375 个高质量微信公众号 RSS 源。 🔽</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">23</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/xiaohu/status/2062902972649222311" target="_blank">一个非常狠的AI教学提示词：追问式检查清单教学</a>
+                    <span class="item-source">— X：小互 (@xiaohu)</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">这是一则AI提示词，让AI扮演极度严格的老师，通过逐阶段教学、持续维护MD检查清单来确保用户真正理解。AI先让用户复述当前理解，再填补漏洞，并用开放式或选择题（随机选项顺序，提交前不公布答案）测试。教学必须覆盖问题本身、解决方案、宏观背景三</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">24</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/swyx/status/2062854555562565741" target="_blank">微软CEO Satya Nadella最新访谈上线</a>
+                    <span class="item-source">— X：swyx (@swyx)</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">Satya Nadella 在 Latent Space 发布最新访谈，链接见原文。原推文仅评论“chat is he cooked”。</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">25</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://huggingface.co/blog/build-small-hackathon/thousand-token-wood-sim" target="_blank">用Qwen2.5-3B构建多智能体经济体：工程报告</a>
+                    <span class="item-source">— Hugging Face：Blog（RSS）</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">开发者用Qwen2.5-3B构建了五人森林生物多智能体经济体，每个智能体独立运行，通过vLLM部署在Modal，以Gradio为交互窗口。3B模型在100%调用中输出有效JSON，但经济判断能力弱。通过设计稀缺性（食物品种限制、易腐坏、冬季</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">26</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://alexispurslane.github.io/rsync-analysis" target="_blank">Claude 是否增加了 rsync 中的错误？</a>
+                    <span class="item-source">— Hacker News 热门（buzzing.cc 中文翻译）</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★★</div>
+                <div class="item-summary">一篇 Hacker News 热门帖子（105 分）提出了 Claude 是否导致 rsync 工具中 bug 增加的问题，并附有分析链接。</div>
+            </div>
+        </div>
+      </div>
 
-    <div class="insights">
-      <h2>📈 今日趋势洞察</h2>
-      <ul>
-            <li>今日产品发布/更新最活跃，共8条动态</li>
-      </ul>
-    </div>
+<div class="region-banner">🇨🇳 中国 AI 动态</div>
+      <div class="section">
+        <h2 class="section-title">🚀 产品发布/更新</h2>
+        <div class="item">
+            <div class="item-num">27</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/alibaba_cloud/status/2062781182417490310" target="_blank">PolarDB-X Zero 上线：30秒全分布式数据库</a>
+                    <span class="item-source">— X：阿里云 / Alibaba Cloud (@alibaba_cloud)</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★★</div>
+                <div class="item-summary">PolarDB-X Zero 上线了！ 无需注册。无需配置。只需一次 API 调用。 30 秒内获得一个全分布式数据库。 原生 HNSW 向量索引——内置兼容 MySQL 的引擎。 关系型 + 语义搜索——一条 SQL 语句。 AI 智能体</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">28</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/OpenBMB/status/2062889699056984281" target="_blank">社区基于MiniCPM-V 4.6打造财务分析工具AccountingLLM</a>
+                    <span class="item-source">— X：面壁智能 OpenBMB (@OpenBMB)</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">社区开发者使用面壁智能MiniCPM-V 4.6构建了AccountingLLM（quaesto.com），用于自动化财务文档分析。该工具可上传IPO招股书、年报或审计文件，自动从复杂PDF中提取财务表格、重建跨页表格、对照会计等式检查关键</div>
+            </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2 class="section-title">📡 行业动态</h2>
+        <div class="item">
+            <div class="item-num">29</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://www.ithome.com/0/960/739.htm" target="_blank">苹果新版 Siri 不会被宣传为完成品，内部将其标记为“Beta”版</a>
+                    <span class="item-source">— IT之家（RSS）</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★☆</div>
+                <div class="item-summary">苹果新版Siri被内部标记为“Beta”版，不会作为完成品宣传；可能设置等待清单供用户尝试。iOS 27细节：通知到达重新设计，通知中心手势移至左上角；“查找”应用视觉重设计；照片“清理”功能改进；大量底层安全改进。部分Siri查询将通过G</div>
+            </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2 class="section-title">💡 技巧与观点</h2>
+        <div class="item">
+            <div class="item-num">30</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://x.com/TencentHunyuan/status/2062803141314437391" target="_blank">腾讯混元联合人大开源PlanningBench评估框架</a>
+                    <span class="item-source">— X：腾讯混元 (@TencentHunyuan)</span>
+                </div>
+                <div class="item-meta"> &nbsp; ★★★★★</div>
+                <div class="item-summary">腾讯混元（Tencent Hunyuan）与中国人民大学高瓴人工智能学院合作，开源PlanningBench——一个可扩展、可验证的LLM规划能力评估与训练框架。该框架包含30+真实世界规划任务，支持自动验证和训练。PlanningBenc</div>
+            </div>
+        </div>
+      </div>
 
-    <div class="footer">
-      <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
-      <p>支持：Hacker News · OpenRouter · The Verge</p>
-    </div>
-  </div>
+      <div class="section">
+        <h2 class="section-title">🔥 Hacker News 热议</h2>
+        <div class="item">
+            <div class="item-num">31</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://news.ycombinator.com/item?id=48411635" target="_blank">Did Claude increase bugs in rsync?</a>
+                </div>
+                <div class="item-meta">333 分 · 341 评论</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">32</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://news.ycombinator.com/item?id=48414653" target="_blank">Gemma 4 QAT models: Optimizing compression for mobile and laptop efficiency</a>
+                </div>
+                <div class="item-meta">288 分 · 89 评论</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">33</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://news.ycombinator.com/item?id=48414027" target="_blank">Conventional Commits encourages focus on the wrong things</a>
+                </div>
+                <div class="item-meta">276 分 · 213 评论</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">34</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://news.ycombinator.com/item?id=48416635" target="_blank">Transformers are inherently succinct</a>
+                </div>
+                <div class="item-meta">99 分 · 31 评论</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-num">35</div>
+            <div class="item-content">
+                <div class="item-title">
+                    <a href="https://news.ycombinator.com/item?id=48416392" target="_blank">Aging and Eye Problems</a>
+                </div>
+                <div class="item-meta">63 分 · 29 评论</div>
+            </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">🏆 模型热度榜（OpenRouter 最新旗舰）</h2>
+        <table class="leaderboard">
+          <thead><tr><th>排名</th><th>模型</th><th>上下文长度</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>anthropic/claude-opus-4.8</td><td>1,000,000</td></tr>
+            <tr><td>2</td><td>openai/gpt-5.5-pro</td><td>1,050,000</td></tr>
+            <tr><td>3</td><td>openai/o3-deep-research</td><td>200,000</td></tr>
+            <tr><td>4</td><td>google/gemini-3.5-flash</td><td>1,048,576</td></tr>
+            <tr><td>5</td><td>meta-llama/llama-4-scout</td><td>10,000,000</td></tr>
+            <tr><td>6</td><td>deepseek/deepseek-v4-pro</td><td>1,048,576</td></tr>
+            <tr><td>7</td><td>qwen/qwen3-coder:free</td><td>1,048,576</td></tr>
+            <tr><td>8</td><td>mistralai/mistral-medium-3-5</td><td>262,144</td></tr>
+            <tr><td>9</td><td>x-ai/grok-4.20-multi-agent</td><td>2,000,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">📈 今日趋势洞察</h2>
+        <p class="insight">Google AI 本周密集发布多项产品更新（Gemini Live 图像编辑、Co-Scientist、Gemma 4 QAT 等），显示其在多模态和端侧部署领域的系统化推进</p>
+        <p class="insight">图像生成模型持续进化：Riverflow 2.5 引入可控制评分标准，表明 AI 图像生成从"更好看"进入"更精准"的阶段</p>
+        <p class="insight">国内端侧模型生态活跃：MiniCPM-V 4.6 在财务分析等垂直场景落地，PolarDB-X Zero 推动数据库轻量化部署</p>
+      </div>
+
+<div class="footer">
+    数据来源：<a href="https://aihot.virxact.com" target="_blank">AI HOT</a>
+    &nbsp;·&nbsp;
+    自动生成于 2026-06-06
+</div>
 </body>
 </html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 行业日报 · 2026-06-12</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf8f5; color: #1a1a1a;
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
+    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
+    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
+            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
+    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
+    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
+                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
+    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
+    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; transition: background 0.2s; }
+    .news-item:hover { background: rgba(194,58,48,0.03); border-radius: 4px; padding-left: 12px; padding-right: 12px; }
+    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
+    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
+                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
+    .item-body { flex: 1; min-width: 0; }
+    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
+    .item-title:hover { color: #c23a30; }
+    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
+    .source { color: #666; font-weight: 500; }
+    .time { color: #aaa; }
+    .score { color: #c23a30; font-weight: 600; }
+    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
+    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
+                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
+    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
+    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
+    .model-table .model-name { font-weight: 600; }
+    .model-table .org { color: #666; }
+    .model-table .ctx { color: #888; font-size: 13px; }
+    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
+    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
+    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
+    .insights ul { list-style: none; padding: 0; }
+    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
+    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
+    .footer a { color: #888; text-decoration: none; }
+    .footer a:hover { color: #c23a30; }
+    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AI 行业日报</h1>
+      <div class="subtitle">2026-06-12 ·  · 北京时间 09:18</div>
+    </div>
+
+    <div class="lead">
+      <div class="lead-label">主编点评</div>
+      <p>今日AI热点：Gemini Omni Flash 视频任务达 SOTA；Midjourney V8.1 已成为默认模型；腾讯混元 AI Infra 新开源：HPC-Ops 推理核心算子全面升级</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🌍 全球 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">1</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/OfficialLoganK/status/2065118111360303414" target="_blank" class="item-title">Gemini Omni Flash 视频任务达 SOTA</a>
+                <div class="item-meta">
+                  <span class="source">X：Logan Kilpatrick (@OfficialLoganK)</span>
+                </div>
+                <div class="item-summary">Gemini Omni Flash 在图像到视频、文本到视频和视频编辑方面达到了 SATA : ) 很高兴很快能将这一能力通过 API 提供给开发者！</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">2</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://updates.midjourney.com/v8-1-is-now-the-default-model" target="_blank" class="item-title">Midjourney V8.1 已成为默认模型</a>
+                <div class="item-meta">
+                  <span class="source">Midjourney：Updates（RSS）</span>
+                </div>
+                <div class="item-summary">Midjourney 已将默认模型从 V7 升级为 V8.1。V8.1 在智能性、连贯性、对详细提示的遵循度以及文本渲染效果上均有提升，HD 模式也已支持。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">3</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/perplexity_ai/status/2065124930463916317" target="_blank" class="item-title">Perplexity Computer 集成 Deep Research</a>
+                <div class="item-meta">
+                  <span class="source">X：Perplexity (@perplexity_ai)</span>
+                </div>
+                <div class="item-summary">我们正在将 Deep Research 作为原生技能集成到 Computer 中。 它现在连接到驱动 Computer 的智能体框架，可访问搜索即代码生成、长运行沙箱、连接器、工具和授权数据。 Pro 和 Max 订阅者现已可用。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">4</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/OpenRouter/status/2065094780271329729" target="_blank" class="item-title">OpenRouter 基准探索器：10项帕累托曲线</a>
+                <div class="item-meta">
+                  <span class="source">X：OpenRouter (@OpenRouter)</span>
+                </div>
+                <div class="item-summary">使用我们的基准探索器，为10个不同基准绘制帕累托曲线。 更多功能即将推出！https://openrouter.ai/rankings#benchmarks</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">5</span>
+                <span class="impact">★★☆☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://cursor.com/blog/auto-review" target="_blank" class="item-title">Cursor 推出 Auto-review 机制：用分类器智能体动态管控智能体自主权限</a>
+                <div class="item-meta">
+                  <span class="source">Cursor Blog</span>
+                </div>
+                <div class="item-summary">Cursor 近日推出 Auto-review，通过一个专门的分类器智能体在工具调用前审查动作风险。该分类器根据上下文判断动作是否与用户意图一致，高风险时阻止并返回解释给父智能体，低风险时放行。分类器采用小模型，运行在智能体循环内以避免额外延迟，并能读取工作区文件辅助判断。测试基于约12小时内部开发</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">6</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/krea_ai/status/2065086662166901114" target="_blank" class="item-title">Krea 2 推出生成式滑块控制图像属性</a>
+                <div class="item-meta">
+                  <span class="source">X：Krea AI (@krea_ai)</span>
+                </div>
+                <div class="item-summary">推出生成式滑块。 现在您可以控制使用 Krea 2 生成的任何图像的强度、复杂度和运动。 你希望看到哪些新控制？👇</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">7</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.theverge.com/ai-artificial-intelligence/948153/deezer-ai-music-detector-spotify-apple" target="_blank" class="item-title">Deezer 推出面向其他流媒体服务的 AI 音乐检测器</a>
+                <div class="item-meta">
+                  <span class="source">The Verge：AI（RSS）</span>
+                </div>
+                <div class="item-summary">Deezer 将扫描用户在其它流媒体平台的播放列表，检测其中的 AI 生成音乐。Deezer 是最早标记 AI 生成音乐的大型流媒体服务之一，曾向其他平台提供该技术但少有采纳。Deezer CEO Alexis Lanternier 表示，由于没有其他公司跟进，他们决定让用户无论使用哪个平台，都能检</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">8</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.newscientist.com/article/2529849-fully-autonomous-drones-have-killed-human-soldiers-for-the-first-time" target="_blank" class="item-title">全自主无人机首次击毙了人类士兵</a>
+                <div class="item-meta">
+                  <span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span>
+                </div>
+                <div class="item-summary">据《新科学家》6月10日报道，全自主无人机首次击毙了人类士兵。这是有记录以来第一次由完全自主运行的无人机执行致命攻击，标志着自主武器系统在实战中的新进展。该报道来自《新科学家》网站，目前尚无更多细节公布。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">9</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/kimmonismus/status/2065097988859744503" target="_blank" class="item-title">Prometheus 融资120亿美元，估值410亿美元，定位“人工通用工程师”</a>
+                <div class="item-meta">
+                  <span class="source">X：Kim (@kimmonismus)</span>
+                </div>
+                <div class="item-summary">杰夫·贝佐斯旗下AI公司Prometheus在成立仅7个月、尚无任何产品交付的情况下，以410亿美元估值完成120亿美元融资（最初估值62亿美元）。该公司定位为“人工通用工程师”，目标是将设计到制造的循环压缩10倍以上。但物理经济无法像互联网数据那样抓取，缺乏制造业训练数据。为此，Prometheu</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">10</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.anthropic.com/news/dxc-anthropic-alliance" target="_blank" class="item-title">Anthropic与DXC达成全球联盟，将Claude引入关键行业系统</a>
+                <div class="item-meta">
+                  <span class="source">Anthropic：Newsroom（网页）</span>
+                </div>
+                <div class="item-summary">Anthropic与IT服务公司DXC Technology达成多年全球联盟。DXC将培训数万名获得Claude认证的前沿部署工程师（FDE），将Claude引入其为全球大型银行、航空公司、保险公司及政府机构运营的关键系统。内部部署中，Claude已成为DXC OASIS平台的默认基础模型，该平台超</div>
+              </div>
+            </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🇨🇳 中国 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">24</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mp.weixin.qq.com/s/y0vd1cpvWXLSssL1kXxguw" target="_blank" class="item-title">腾讯混元 AI Infra 新开源：HPC-Ops 推理核心算子全面升级</a>
+                <div class="item-meta">
+                  <span class="source">公众号：腾讯混元</span>
+                </div>
+                <div class="item-summary">腾讯混元 AI Infra 团队开源升级 HPC-Ops 推理算子库，推出五大核心算子。Attention 采用运行时动态负载调度，长文本最高加速 2.95x，端到端 QPM 提升 17%；Router GEMM 以双 BF16 组合实现 FP32 精度，对比 CuBLAS FP32 最高提速 3.</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">25</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mp.weixin.qq.com/s/G36ugI8tuSLUkDzL_sJNkQ" target="_blank" class="item-title">千问推出首个足球预测AI助手，竞猜赢奖并捐建球场</a>
+                <div class="item-meta">
+                  <span class="source">公众号：千问APP（阿里）</span>
+                </div>
+                <div class="item-summary">千问上线首个足球预测AI助手，基于海量大数据（含历史比赛、球员数据、伤病、美加墨地貌及天气等）。以6月22日挪威对塞内加尔为例，预测“1:1平局”，理由为气候差异。活动：参与全部104场竞猜，预测超80场且准确率超千问可抽万元大奖（100个名额）；预测超32场可抽千问AI眼镜G1（1000副），该眼</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">26</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/dotey/status/2064959133535658144" target="_blank" class="item-title">baoyu-design skill 更新：支持导入 Figma 本地文件重建设计系统</a>
+                <div class="item-meta">
+                  <span class="source">X：宝玉 (@dotey)</span>
+                </div>
+                <div class="item-summary">baoyu-design skill 更新，现已支持导入 Figma 本地文件（.fig），可在本地重建设计系统，效果与 Claude Design 在线版一致。该功能依赖 Claude Fable 5 辅助（Token 不够用）。安装后提供 Figma 文件路径即可导入为 Design Syste</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">27</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.ithome.com/0/962/854.htm" target="_blank" class="item-title">Anthropic CEO 阿莫迪：AI 可能会造成大规模、长期性的岗位流失</a>
+                <div class="item-meta">
+                  <span class="source">IT之家（RSS）</span>
+                </div>
+                <div class="item-summary">Anthropic CEO 达里奥・阿莫迪警告，AI造成的大规模岗位流失是技术固有属性——AI系统旨在复刻人类认知，失业将成为结构性必然结果。他提出应对思路：完善劳动力市场监测、推行薪资保障与留岗税收优惠、发放培训补贴；若人力需求永久下降，则需通过征税推行全民基本收入等长期收入保障。Anthropi</div>
+              </div>
+            </div>
+    </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🔗 Hacker News 热议</h2></div>
+          <div class="news-item"><div class="item-body"><a href="https://dronexl.co/2026/06/09/pokemon-go-scans-niantic-vantor-military-drone-navigation/" target="_blank" class="item-title">Pokémon Go Scans Trained the Navigation Tech for Military Drones</a><div class="item-meta"><span class="score">▲ 682 · 💬 304</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://www.theverge.com/ai-artificial-intelligence/948280/anthropic-claude-fable-invisible-distillation-guardrail" target="_blank" class="item-title">Anthropic apologizes for invisible Claude Fable guardrails</a><div class="item-meta"><span class="score">▲ 307 · 💬 293</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://fablepool.com" target="_blank" class="item-title">Show HN: FablePool – pool money behind a prompt, and Fable builds it in public</a><div class="item-meta"><span class="score">▲ 232 · 💬 130</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://www.endorlabs.com/learn/claude-fable-5-mythos-grade-hype" target="_blank" class="item-title">Claude Fable 5: mid-tier results on coding tasks</a><div class="item-meta"><span class="score">▲ 224 · 💬 97</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://www.mayrhofer.eu.org/post/leaving-google/" target="_blank" class="item-title">Why I'm Forced to Say Farewell: Google Management Has Lost Its Moral Compass</a><div class="item-meta"><span class="score">▲ 224 · 💬 127</span></div></div></div>
+        </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🏆 全球模型热度榜</h2></div>
+          <div style="overflow-x:auto;"><table class="model-table"><thead><tr><th>#</th><th>模型</th><th>机构</th><th>上下文</th><th>趋势</th></tr></thead><tbody>
+              <tr><td class="rank">1</td><td class="model-name">Llama 4 Scout</td><td class="org">Meta</td><td class="ctx">1000万</td><td class="trend">开源</td></tr>
+              <tr><td class="rank">2</td><td class="model-name">Grok 4.20 Multi Agent</td><td class="org">X-Ai</td><td class="ctx">2,000k</td><td class="trend"></td></tr>
+              <tr><td class="rank">3</td><td class="model-name">GPT-5.5 Pro</td><td class="org">OpenAI</td><td class="ctx">105万</td><td class="trend">活跃</td></tr>
+              <tr><td class="rank">4</td><td class="model-name">Gemini 3.5 Flash</td><td class="org">Google</td><td class="ctx">105万</td><td class="trend">↑ 新发布</td></tr>
+              <tr><td class="rank">5</td><td class="model-name">DeepSeek V4 Pro</td><td class="org">DeepSeek</td><td class="ctx">105万</td><td class="trend">↓ 降价</td></tr>
+            </tbody></table></div>
+          <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度与部署状态综合排序）</p>
+        </div>
+
+    <div class="insights">
+      <h2>📈 今日趋势洞察</h2>
+      <ul>
+            <li><strong>Agent 平台化加速</strong>：OpenAI 高管直言"聊天已死"，ChatGPT 从聊天机器人进化为超级应用 / Agent 平台，整合 Codex、图像生成和第三方应用。Anthropic 通过 Claude Code + Opus 生态的"智能体即服务"路线形成双雄竞争格局。</li>
+            <li><strong>智能体安全与审计工具浮现</strong>：随着 Agent 在生产环境中大量部署，审计、监控、安全分析工具正在成为一个独立品类。</li>
+            <li><strong>AI-Native 基础设施成型</strong>：AI 正从模型层深入到操作系统和工具链层，下一波竞争焦点是「AI 优先的开发者体验」——从代码生成到会话审计，工具生态快速分化。</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
+      <p>支持：Hacker News · OpenRouter · The Verge</p>
+    </div>
+  </div>
+</body>
+</html>

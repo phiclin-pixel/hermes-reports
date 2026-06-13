@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 行业日报 · 2026-06-13</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf8f5; color: #1a1a1a;
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
+    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
+    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
+            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
+    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
+    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
+                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
+    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
+    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; transition: background 0.2s; }
+    .news-item:hover { background: rgba(194,58,48,0.03); border-radius: 4px; padding-left: 12px; padding-right: 12px; }
+    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
+    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
+                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
+    .item-body { flex: 1; min-width: 0; }
+    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
+    .item-title:hover { color: #c23a30; }
+    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
+    .source { color: #666; font-weight: 500; }
+    .time { color: #aaa; }
+    .score { color: #c23a30; font-weight: 600; }
+    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
+    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
+                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
+    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
+    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
+    .model-table .model-name { font-weight: 600; }
+    .model-table .org { color: #666; }
+    .model-table .ctx { color: #888; font-size: 13px; }
+    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
+    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
+    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
+    .insights ul { list-style: none; padding: 0; }
+    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
+    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
+    .footer a { color: #888; text-decoration: none; }
+    .footer a:hover { color: #c23a30; }
+    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AI 行业日报</h1>
+      <div class="subtitle">2026-06-13 ·  · 北京时间 09:17</div>
+    </div>
+
+    <div class="lead">
+      <div class="lead-label">主编点评</div>
+      <p>今日AI热点：olmo-eval：面向模型开发循环的评估工作台；OpenAI Codex 推出速率重置攒存功能；MiniMax M3 开源权重模型发布，已上架 HuggingFace</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🌍 全球 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">1</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://huggingface.co/blog/allenai/olmo-eval" target="_blank" class="item-title">olmo-eval：面向模型开发循环的评估工作台</a>
+                <div class="item-meta">
+                  <span class="source">Hugging Face：Blog（RSS）</span>
+                </div>
+                <div class="item-summary">olmo-eval 是基于 OLMES 标准构建的评估工作台，专为 LLM 持续开发中的反复评测场景设计。相比 OLMES，它减少了新增评测的实现工作量，支持 agentic 和多轮评测作为一等用例，并允许根据基准需求选择轻量直接运行或容器化隔离运行。采用模块化架构，模型、工具、容器环境、辅助模型均</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">2</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/OpenAI/status/2065225362544726371" target="_blank" class="item-title">OpenAI Codex 推出速率重置攒存功能</a>
+                <div class="item-meta">
+                  <span class="source">X：OpenAI (@OpenAI)</span>
+                </div>
+                <div class="item-summary">我们听说您希望能在自己方便的时候使用 Codex 速率限制重置。 从今天起，我们开始推出将速率限制重置保留到以后使用的功能。 我们从 Go、Plus、Pro 和 Business 用户开始，每人提供一次免费重置：</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">3</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/OpenAIDevs/status/2065226355495895521" target="_blank" class="item-title">Codex 推出浏览器开发者模式</a>
+                <div class="item-meta">
+                  <span class="source">X：OpenAI Developers (@OpenAIDevs)</span>
+                </div>
+                <div class="item-summary">为 Chrome 和 Codex 内置浏览器引入开发者模式。 Codex 可以使用 Chrome DevTools 协议（CDP）来调试浏览器问题，通过分析 JavaScript 性能、检查控制台输出、网络流量和页面状态。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">4</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.175" target="_blank" class="item-title">Claude Code v2.1.175 发布：新增 enforceAvailableModels 管理设置</a>
+                <div class="item-meta">
+                  <span class="source">Claude Code：GitHub Releases（RSS）</span>
+                </div>
+                <div class="item-summary">Claude Code v2.1.175 新增 enforceAvailableModels 管理设置。启用该设置后，availableModels 允许列表也会约束 Default 模型——若 Default 模型解析到被禁用的模型，则自动回退至第一个允许的模型；用户或项目设置无法再扩大受管理的 </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">5</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.174" target="_blank" class="item-title">Claude Code v2.1.174 发布</a>
+                <div class="item-meta">
+                  <span class="source">Claude Code：GitHub Releases（RSS）</span>
+                </div>
+                <div class="item-summary">新增 `wheelScrollAccelerationEnabled` 设置，全屏禁用鼠标滚轮加速。修复 /model 选择器：Opus 在 Max/Team Premium/Enterprise 独立行，Sonnet 在 Pro/Team，Opus 在 API 按量付费账户；修复固定 Sonnet</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">6</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.176" target="_blank" class="item-title">Claude Code v2.1.176 发布</a>
+                <div class="item-meta">
+                  <span class="source">Claude Code：GitHub Releases（RSS）</span>
+                </div>
+                <div class="item-summary">Claude Code v2.1.176 更新：会话标题现按对话语言生成；新增 footerLinksRegexes 设置支持正则匹配页脚行链接徽章；优化 Bedrock 凭证缓存。修复多项问题：环境变量不可再绕过 availableModels 限制；/fast 切换至白名单外模型时拒绝；auto</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">7</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.anthropic.com/news/tcs-anthropic-partnership" target="_blank" class="item-title">TCS与Anthropic合作，将Claude引入受监管行业</a>
+                <div class="item-meta">
+                  <span class="source">Anthropic：Newsroom（网页）</span>
+                </div>
+                <div class="item-summary">Anthropic宣布与塔塔咨询服务（TCS）合作。TCS将向56个国家的5万名员工提供Claude，并为金融、医疗等受监管行业客户构建基于Claude的产品，同时加入Claude Partner Network。作为“客户零号”，TCS将在自身工程、财务、法律、营销和销售团队中率先使用Claude</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">8</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://research.google/blog/research-into-how-ai-can-help-users-understand-skin-conditions" target="_blank" class="item-title">Google Research研究：AI如何帮助用户理解皮肤问题</a>
+                <div class="item-meta">
+                  <span class="source">Google Research：Blog（网页）</span>
+                </div>
+                <div class="item-summary">Google Research 在《JAMA Dermatology》发表两项研究，探索 AI 帮助普通人理解自身皮肤问题。一项涉及 2345 名参与者的定量研究显示，AI 辅助显著提升了用户识别皮肤疾病名称的能力，并影响了其就医或自我护理的下一步决策。另一项混合方法研究对比了用户通过 AI 工具与</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">9</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/oran_ge/status/2065566882774868125" target="_blank" class="item-title">Oran Ge 开源《人味儿写作心法.skill》解决AI写作缺人味</a>
+                <div class="item-meta">
+                  <span class="source">X：Oran Ge (@oran_ge)</span>
+                </div>
+                <div class="item-summary">Oran Ge 让 Claude Fable 5 打磨文案三遍，发现改稿越来越讲究却缺“人味儿”。他与 AI 讨论后得出结论：人写的文字背后有“存在感”——作者在具体位置付出过具体代价，而 AI 无法复现。为此他制作了《人味儿写作心法.skill》，专用于自写文章或口述后让 AI 改稿的场景，旨在保</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">10</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/xiaohu/status/2065278092441268246" target="_blank" class="item-title">小互开源公众号自动排版技能组合</a>
+                <div class="item-meta">
+                  <span class="source">X：小互 (@xiaohu)</span>
+                </div>
+                <div class="item-summary">小互（@xiaohu）升级了公众号排版技能组合，实现一句话完成排版、封面生成并一键发送到公众号草稿箱。该工具已开源，提供20种主题颜色可选，可自动分析内容进行排版，支持非Markdown文件。用户只需在Claude Code、Codex或OpenClaw中提供文章链接或文档位置，即可获得可视化预览界</div>
+              </div>
+            </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🇨🇳 中国 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">16</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/MiniMax_AI/status/2065436935188058208" target="_blank" class="item-title">MiniMax M3 开源权重模型发布，已上架 HuggingFace</a>
+                <div class="item-meta">
+                  <span class="source">X：MiniMax (@MiniMax_AI)</span>
+                </div>
+                <div class="item-summary">MiniMax 发布开源权重模型 M3，约 428B 总参数、23B 激活参数，已上传 HuggingFace。该模型融合三种前沿能力：编码与智能体方面达 59.0% SWE-Bench Pro、66.0% Terminal Bench 2.1、34.8% SWE-fficiency、28.8% K</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">17</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/Kimi_Moonshot/status/2065377579130142937" target="_blank" class="item-title">Kimi 发布并开源最新代码模型 Kimi-K2.7-Code</a>
+                <div class="item-meta">
+                  <span class="source">X：Kimi.ai (@Kimi_Moonshot)</span>
+                </div>
+                <div class="item-summary">Kimi 发布并开源最新代码模型 Kimi-K2.7-Code。相比 K2.6，其在 Kimi Code Bench v2 上提升 +21.8%，Program Bench 提升 +11.0%，MLS Bench Lite 提升 +31.5%。推理效率改进，推理 token 使用量降低 30%，长时</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">18</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.ithome.com/0/963/302.htm" target="_blank" class="item-title">苹果 iOS 27 健康 App 大改：卡片布局、营养识别、围绝经期追踪</a>
+                <div class="item-meta">
+                  <span class="source">IT之家（RSS）</span>
+                </div>
+                <div class="item-summary">苹果在 iOS 27 中优化健康 App，将列表改为卡片布局并增加导航栏。新增视觉智能营养识别，用户通过相机 Siri 模式拍摄食物可获取加工程度、蛋白质、含糖量等信息及营养价值评级，不提供精确卡路里，需 iPhone 15 Pro 及以上。经期追踪扩展支持围绝经期，可分析长期周期异常模式并推送提醒</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">19</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.ithome.com/0/963/725.htm" target="_blank" class="item-title">字节豆包上线“任务模式”：支持定时执行与文件生成，“思考模式”升级为“专家模式”</a>
+                <div class="item-meta">
+                  <span class="source">IT之家（RSS）</span>
+                </div>
+                <div class="item-summary">6月12日，字节跳动旗下AI应用豆包大范围上线“任务模式”，支持定时执行、零代码网页生成、一键PPT生成、数据可视化分析等全链路Agent执行。原“思考模式”升级为“专家模式”，调用豆包大模型2.0 Pro版本，强化深度推理能力。App顶部模式切换改为“快速、专家、任务”。基础功能免费，高阶服务付费</div>
+              </div>
+            </div>
+    </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🔗 Hacker News 热议</h2></div>
+          <div class="news-item"><div class="item-body"><a href="https://correresmidestino.com/dont-you-just-upload-it-to-chatgpt/" target="_blank" class="item-title">"Don't You Just Upload It to ChatGPT?"</a><div class="item-meta"><span class="score">▲ 297 · 💬 260</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://ikyle.me/blog/2026/how-to-setup-a-local-coding-agent-on-macos" target="_blank" class="item-title">How to setup a local coding agent on macOS</a><div class="item-meta"><span class="score">▲ 247 · 💬 71</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://www.ft.com/content/7ffcace7-9dc0-4e7e-9912-895ac073f979" target="_blank" class="item-title">Palantir loses legal challenge against Swiss investigative magazine</a><div class="item-meta"><span class="score">▲ 183 · 💬 42</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://envs.net/~volpe/blog/posts/reduce-slop.html" target="_blank" class="item-title">Slightly reducing the sloppiness of AI generated front end</a><div class="item-meta"><span class="score">▲ 164 · 💬 110</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://grack.com/blog/2026/06/11/life-before-main/" target="_blank" class="item-title">There Is Life Before Main in Rust</a><div class="item-meta"><span class="score">▲ 69 · 💬 17</span></div></div></div>
+        </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🏆 全球模型热度榜</h2></div>
+          <div style="overflow-x:auto;"><table class="model-table"><thead><tr><th>#</th><th>模型</th><th>机构</th><th>上下文</th><th>趋势</th></tr></thead><tbody>
+              <tr><td class="rank">1</td><td class="model-name">Kimi K2.7 Code</td><td class="org">Moonshotai</td><td class="ctx">262k</td><td class="trend"></td></tr>
+              <tr><td class="rank">2</td><td class="model-name">Claude Fable Latest</td><td class="org">~Anthropic</td><td class="ctx">1,000k</td><td class="trend"></td></tr>
+              <tr><td class="rank">3</td><td class="model-name">Claude Fable 5</td><td class="org">Anthropic</td><td class="ctx">100万</td><td class="trend">↑ 新模型</td></tr>
+              <tr><td class="rank">4</td><td class="model-name">Nex N2 Pro:Free</td><td class="org">Nex-Agi</td><td class="ctx">262k</td><td class="trend"></td></tr>
+              <tr><td class="rank">5</td><td class="model-name">Nemotron 3.5 Content Safety:Free</td><td class="org">Nvidia</td><td class="ctx">128k</td><td class="trend"></td></tr>
+            </tbody></table></div>
+          <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度与部署状态综合排序）</p>
+        </div>
+
+    <div class="insights">
+      <h2>📈 今日趋势洞察</h2>
+      <ul>
+            <li><strong>Agent 平台化加速</strong>：OpenAI 高管直言"聊天已死"，ChatGPT 从聊天机器人进化为超级应用 / Agent 平台，整合 Codex、图像生成和第三方应用。Anthropic 通过 Claude Code + Opus 生态的"智能体即服务"路线形成双雄竞争格局。</li>
+            <li><strong>智能体安全与审计工具浮现</strong>：随着 Agent 在生产环境中大量部署，审计、监控、安全分析工具正在成为一个独立品类。</li>
+            <li><strong>AI-Native 基础设施成型</strong>：AI 正从模型层深入到操作系统和工具链层，下一波竞争焦点是「AI 优先的开发者体验」——从代码生成到会话审计，工具生态快速分化。</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
+      <p>支持：Hacker News · OpenRouter · The Verge</p>
+    </div>
+  </div>
+</body>
+</html>

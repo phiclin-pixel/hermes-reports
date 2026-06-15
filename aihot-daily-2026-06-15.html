@@ -1,197 +1,343 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI 行业日报 · 2026-06-15</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #faf8f5; color: #1a1a1a;
-      font-family: 'Noto Serif SC', 'Songti SC', serif;
-      line-height: 1.8; -webkit-font-smoothing: antialiased;
-    }
-    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
-    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
-    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
-    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
-    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
-            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
-    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
-    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
-                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
-    .section { margin-bottom: 32px; }
-    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
-    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
-    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; transition: background 0.2s; }
-    .news-item:hover { background: rgba(194,58,48,0.03); border-radius: 4px; padding-left: 12px; padding-right: 12px; }
-    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
-    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
-                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
-    .item-body { flex: 1; min-width: 0; }
-    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
-    .item-title:hover { color: #c23a30; }
-    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
-    .source { color: #666; font-weight: 500; }
-    .time { color: #aaa; }
-    .score { color: #c23a30; font-weight: 600; }
-    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
-    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
-                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
-    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
-    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
-    .model-table .model-name { font-weight: 600; }
-    .model-table .org { color: #666; }
-    .model-table .ctx { color: #888; font-size: 13px; }
-    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
-    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
-    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
-    .insights ul { list-style: none; padding: 0; }
-    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
-    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
-    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
-    .footer a { color: #888; text-decoration: none; }
-    .footer a:hover { color: #c23a30; }
-    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业日报 · 2026-06-15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  background: #faf8f5;
+  color: #1a1a1a;
+  line-height: 1.8;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+.header {
+  text-align: center;
+  padding: 40px 0 30px;
+  border-bottom: 2px solid #c23a30;
+  margin-bottom: 32px;
+}
+.header h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+.header .subtitle {
+  font-size: 14px;
+  color: #888;
+  margin-top: 4px;
+}
+.header .lead {
+  font-size: 15px;
+  color: #555;
+  margin-top: 16px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.9;
+}
+h2 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #c23a30;
+  margin: 32px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e8d5d3;
+}
+.news-item {
+  margin-bottom: 18px;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  border-left: 3px solid #c23a30;
+}
+.news-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+.news-title a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+.news-title a:hover {
+  color: #c23a30;
+  text-decoration: underline;
+}
+.news-meta {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 4px;
+}
+.news-summary {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.7;
+}
+.trend-insights {
+  background: linear-gradient(135deg, #fff8f6 0%, #faf8f5 100%);
+  border: 1px solid #e8d5d3;
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin: 36px 0;
+}
+.trend-insights h2 {
+  border-bottom: none;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+.trend-insights ul {
+  margin: 12px 0 0 20px;
+}
+.trend-insights li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.8;
+}
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #bbb;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+.tag {
+  display: inline-block;
+  background: #fef0ee;
+  color: #c23a30;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 6px;
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>AI 行业日报</h1>
-      <div class="subtitle">2026-06-15 ·  · 北京时间 09:27</div>
+
+<div class="header">
+  <h1>🌐 AI 行业日报</h1>
+  <div class="subtitle">2026 年 06 月 15 日 星期一 LUNAR=农历四月廿二 · 北京时间 10:00</div>
+  <div class="lead">今日 AI 热点：苹果 iOS 27 健康 App 大改：卡片布局、营养识别、围绝经期追踪、谷歌Android安全负责人因反对军事AI合作辞职、智谱 GLM-5.2 全量开放，支持 1M 上下文且下周开源</div>
+</div>
+
+<div class="section"><h2>🌍 全球 AI 动态（47 条）</h2></div>
+    <div class="section">
+      <h2>📊 行业动态</h2>
+      <div class="news-item">
+        <div class="news-title">1. <a href="https://www.ithome.com/0/963/302.htm" target="_blank">苹果 iOS 27 健康 App 大改：卡片布局、营养识别、围绝经期追踪</a></div>
+        <div class="news-meta">IT之家（RSS） · ★★★☆☆ · 06/12 10:06</div>
+        <div class="news-summary">苹果在 iOS 27 中优化健康 App，将列表改为卡片布局并增加导航栏。新增视觉智能营养识别，用户通过相机 Siri 模式拍摄食物可获取加工程度、蛋白质、含糖量等信息及营养价值评级，不提供精确卡路里，需 iPhone 15 Pro 及以上</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2. <a href="https://www.ithome.com/0/963/888.htm" target="_blank">谷歌Android安全负责人因反对军事AI合作辞职</a></div>
+        <div class="news-meta">IT之家（RSS） · ★★★☆☆ · 06/13 16:40</div>
+        <div class="news-summary">谷歌Android平台安全负责人René Mayrhofer辞职，他在5月18日内部告别信中指责公司"丧失道德指针"，批评谷歌悄悄放弃碳中和目标（因AI模型能耗），并与美国战争部签署允许AI用于"任何合法目的"的协议。今年4月下旬谷歌宣布向</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">3. <a href="https://www.ithome.com/0/963/834.htm" target="_blank">SemiAnalysis 洞察 Token 经济：200 美元 AI 订阅榨出 70 倍用量</a></div>
+        <div class="news-meta">IT之家（RSS） · ★★★☆☆ · 06/13 14:09</div>
+        <div class="news-summary">SemiAnalysis 购买了 Anthropic 和 OpenAI 的全部订阅方案，模拟高强度编码任务直至触及每周上限。月费 200 美元的 Claude Max 20x 方案，按 API 价格换算最高可消耗约值 8000 美元的 to</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">4. <a href="https://huggingface.co/inclusionAI/VISTA-4B" target="_blank">inclusionAI 发布 VISTA-4B GUI 定位视觉语言模型</a></div>
+        <div class="news-meta">蚂蚁 inclusionAI：HuggingFace 新模型 · ★★★★☆ · 06/12 16:59</div>
+        <div class="news-summary">VISTA-4B 是基于 Qwen3.5-4B 骨干的 GUI 定位模型，输入截图与自然语言指令，输出归一化 0-1000 坐标。训练采用视图一致 GRPO 和自验证交叉视图锚定。在 GUI 定位基准上，SSPro 得分 64.2（相比 G</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">5. <a href="https://x.com/OfficialLoganK/status/2065118111360303414" target="_blank">Gemini Omni Flash 视频任务达 SOTA</a></div>
+        <div class="news-meta">X：Logan Kilpatrick (@OfficialLoganK) · ★★★★★ · 06/12 01:05</div>
+        <div class="news-summary">Gemini Omni Flash 在图像到视频、文本到视频和视频编辑方面达到了 SATA ： ）
+
+很高兴很快能将这一能力通过 API 提供给开发者！</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">6. <a href="https://x.com/MiniMax_AI/status/2065436935188058208" target="_blank">MiniMax M3 开源权重模型发布，已上架 HuggingFace</a></div>
+        <div class="news-meta">X：MiniMax (@MiniMax_AI) · ★★★★☆ · 06/12 22:11</div>
+        <div class="news-summary">MiniMax 发布开源权重模型 M3，约 428B 总参数、23B 激活参数，已上传 HuggingFace。该模型融合三种前沿能力：编码与智能体方面达 59.0% SWE-Bench Pro、66.0% Terminal Bench 2</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">7. <a href="https://x.com/suno/status/2065862499765821916" target="_blank">Suno 音轨分离：从零生成更纯净</a></div>
+        <div class="news-meta">X：Suno (@suno) · ★★★☆☆ · 06/14 02:22</div>
+        <div class="news-summary">重大更新：Suno 的音轨分离刚刚大幅升级。🚀
+
+我们现在从零重新生成音轨，而非仅仅隔离频率。结果如何？纯净无伪影的音轨，可直接拖入你的 DAW。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">8. <a href="https://x.com/OpenRouter/status/2065856853989270011" target="_blank">Fusion API：半价达Fable级智能</a></div>
+        <div class="news-meta">X：OpenRouter (@OpenRouter) · ★★★☆☆ · 06/14 02:00</div>
+        <div class="news-summary">推出Fusion API，市场上最智能的复合模型。
+
+Fusion以一半的价格实现Fable级别的智能。
+
+工作原理如下👇</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">9. <a href="https://huggingface.co/blog/allenai/olmo-eval" target="_blank">olmo-eval：面向模型开发循环的评估工作台</a></div>
+        <div class="news-meta">Hugging Face：Blog（RSS） · ★★★☆☆ · 06/12 23:56</div>
+        <div class="news-summary">olmo-eval 是基于 OLMES 标准构建的评估工作台，专为 LLM 持续开发中的反复评测场景设计。相比 OLMES，它减少了新增评测的实现工作量，支持 agentic 和多轮评测作为一等用例，并允许根据基准需求选择轻量直接运行或容器</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">10. <a href="https://x.com/OpenAIDevs/status/2065226355495895521" target="_blank">Codex 推出浏览器开发者模式</a></div>
+        <div class="news-meta">X：OpenAI Developers (@OpenAIDevs) · ★★★★☆ · 06/12 08:15</div>
+        <div class="news-summary">为 Chrome 和 Codex 内置浏览器引入开发者模式。
+
+Codex 可以使用 Chrome DevTools 协议（CDP）来调试浏览器问题，通过分析 JavaScript 性能、检查控制台输出、网络流量和页面状态。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">11. <a href="https://x.com/OpenAI/status/2065225362544726371" target="_blank">OpenAI Codex 推出速率重置攒存功能</a></div>
+        <div class="news-meta">X：OpenAI (@OpenAI) · ★★★★★ · 06/12 08:11</div>
+        <div class="news-summary">我们听说您希望能在自己方便的时候使用 Codex 速率限制重置。
+从今天起，我们开始推出将速率限制重置保留到以后使用的功能。
+我们从 Go、Plus、Pro 和 Business 用户开始，每人提供一次免费重置：</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">12. <a href="https://openrouter.ai/blog/announcements/fusion-beats-frontier" target="_blank">OpenRouter融合预算模型面板超越GPT-5.5和Claude Opus 4.8</a></div>
+        <div class="news-meta">OpenRouter：Announcements（RSS） · ★★★★★ · 06/12 08:00</div>
+        <div class="news-summary">通过OpenRouter融合的一组预算模型，在100个复杂研究任务上得分超过GPT-5.5和Claude Opus 4.8。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">13. <a href="https://x.com/Replit/status/2065189762365813089" target="_blank">Replit 与 Databricks 集成升级，公开预览开放</a></div>
+        <div class="news-meta">X：Replit (@Replit) · ★★★★☆ · 06/12 05:49</div>
+        <div class="news-summary">Replit 与 @databricks 集成刚刚升级了。
+
+构建应用，让每个用户只看到他们应该看到的内容。你的 HR 分析师可以为 CEO 构建完整的组织视图，而无需访问底层数据。
+
+公开预览已开放注册！了解更多 →
+
+https：//r</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">14. <a href="https://x.com/Replit/status/2065146579326271883" target="_blank">Replit Agent 新增自定义指令与技能功能</a></div>
+        <div class="news-meta">X：Replit (@Replit) · ★★★☆☆ · 06/12 02:58</div>
+        <div class="news-summary">AI 智能体很强大，但它们不记得你的偏好。
+
+所以你总是重复指令--如何组织项目、你的品牌指南。
+
+现在你可以通过自定义指令和技能让 Replit Agent 学会你的惯例。
+
+它会在每个项目中自动将这些考虑进去。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">15. <a href="https://x.com/perplexity_ai/status/2065124930463916317" target="_blank">Perplexity Computer 集成 Deep Research</a></div>
+        <div class="news-meta">X：Perplexity (@perplexity_ai) · ★★★☆☆ · 06/12 01:32</div>
+        <div class="news-summary">我们正在将 Deep Research 作为原生技能集成到 Computer 中。
+
+它现在连接到驱动 Computer 的智能体框架，可访问搜索即代码生成、长运行沙箱、连接器、工具和授权数据。
+
+Pro 和 Max 订阅者现已可用。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">16. <a href="https://github.com/huggingface/open-r1" target="_blank">DeepSeek-R1 的开源实现</a></div>
+        <div class="news-meta">Hacker News 热门（buzzing.cc 中文翻译） · ★★★★★ · 06/12 01:07</div>
+        <div class="news-summary">DeepSeek-R1 的开源复现项目已在 GitHub 发布，在 Hacker News 上获得 101 个积分。该项目旨在以开源方式复现 DeepSeek-R1 模型。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">17. <a href="https://x.com/OpenRouter/status/2065094780271329729" target="_blank">OpenRouter 基准探索器：10项帕累托曲线</a></div>
+        <div class="news-meta">X：OpenRouter (@OpenRouter) · ★★★☆☆ · 06/11 23:32</div>
+        <div class="news-summary">使用我们的基准探索器，为10个不同基准绘制帕累托曲线。
+
+更多功能即将推出！https：//openrouter.ai/rankings#benchmarks</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">18. <a href="https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future" target="_blank">Anthropic 暂停新模型访问，印度辩论 AI 未来</a></div>
+        <div class="news-meta">TechCrunch：AI（RSS） · ★★★★★ · </div>
+        <div class="news-summary">Anthropic 暂停了新模型的访问权限，印度科技领袖围绕这一事件展开辩论，探讨其是否是对该国 AI 雄心的警示。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">19. <a href="https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-demand" target="_blank">Meta 开始撤销 20 亿美元收购 Manus 的交易</a></div>
+        <div class="news-meta">TechCrunch：AI（RSS） · ★★★★★ · </div>
+        <div class="news-summary">据 TechCrunch 报道，Meta 已开始撤销对 Manus 的 20 亿美元收购交易，此前北京要求该交易必须反转。目前收购解除程序已启动。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">20. <a href="https://openai.com/index/introducing-openai-partner-network" target="_blank">OpenAI 推出合作伙伴网络 OpenAI Partner Network</a></div>
+        <div class="news-meta">OpenAI：官网动态（RSS · 排除企业/客户案例） · ★★★★★ · 9小时前</div>
+        <div class="news-summary">OpenAI 宣布推出 OpenAI Partner Network，并投资 1.5 亿美元支持全球合作伙伴构建、销售和交付 AI 解决方案。该计划设立 Select、Advanced、Elite 三级合作伙伴层级，提供 Codex、网络安</div>
+      </div>
+    </div>
+    <div class="section">
+      <h2>💡 技巧与观点</h2>
+      <div class="news-item">
+        <div class="news-title">21. <a href="https://x.com/vista8/status/2066165703443726749" target="_blank">乔木小说创作 Skill 开源发布</a></div>
+        <div class="news-meta">X：Vista (@vista8) · ★★★★☆ · </div>
+        <div class="news-summary">开源乔木小说创作 Skill，用户只需说“我想写一个小说”或指定风格，AI 自动生成剧情梗概、人物设定、钩子、经典桥段、人物欲望、冲突升级和结尾。与 AI 讨论确认后，可生成完整、低 AI 味的小说。安装命令：npx skills add </div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">22. <a href="https://x.com/xiaohu/status/2065991805238497732" target="_blank">Anthropic 上市前夕</a></div>
+        <div class="news-meta">X：小互 (@xiaohu) · ★★★★★ · </div>
+        <div class="news-summary">Anthropic CEO Dario Amodei透露内部模型Mythos有上千漏洞，能黑银行、窃取国家机密；预言AI一到五年内砍掉一半入门级白领工作；称Claude已被美军用于对伊朗战争，涉及女校150人死亡拷问；解释离开OpenAI因</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">23. <a href="https://garymarcus.substack.com/p/what-washington-must-do" target="_blank">白宫AI监管决定被指偏袒OpenAI与亚马逊</a></div>
+        <div class="news-meta">Gary Marcus：The Road to AI We Can Trust（RSS） · ★★★★★ · </div>
+        <div class="news-summary">白宫周五做出的AI监管决定被指偏袒OpenAI、亚马逊等企业，同时对Anthropic施压不足24小时，缺乏透明度和事实依据。Gary Marcus、Dean W Ball及卡托研究所Kevin Frazier等专家指出，这种由少数人闭门快</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">24. <a href="https://x.com/satyanadella/status/2066182223213293753" target="_blank">Satya Nadella：没有生态的前沿不稳定</a></div>
+        <div class="news-meta">X：Satya Nadella (@satyanadella) · ★★★☆☆ · </div>
+        <div class="news-summary">微软CEO Satya Nadella认为，AI驱动的平台转变首次实现人与数字系统间的认知循环。企业需同时构建人力资本（知识、判断、关系）与token资本（自有的AI能力），且人力资本不会贬值，反而随token资本增长而增值。真正的机会在于</div>
+      </div>
     </div>
 
-    <div class="lead">
-      <div class="lead-label">主编点评</div>
-      <p>今日AI热点：Anthropic 暂停新模型访问，印度辩论 AI 未来；Meta 开始撤销 20 亿美元收购 Manus 的交易</p>
+
+<div class="section"><h2>🇨🇳 中国 AI 动态（3 条）</h2></div>
+    <div class="section">
+      <h2>📊 行业动态</h2>
+      <div class="news-item">
+        <div class="news-title">1. <a href="https://mp.weixin.qq.com/s/LDrbtLM0wiCTJorvd5GY9w" target="_blank">智谱 GLM-5.2 全量开放，支持 1M 上下文且下周开源</a></div>
+        <div class="news-meta">公众号：智谱（GLM） · ★★★★☆ · 06/13 14:19</div>
+        <div class="news-summary">GLM-5.2 是智谱迄今能力最强的开源模型，支持真正可用的 1M 上下文，在长程任务中继续保持领先，并被智谱称为最强的国产 Coding 模型。今晚 5：21 起面向 GLM Coding Plan 全量用户开放（覆盖 Lite、Pro、</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">2. <a href="https://x.com/Kimi_Moonshot/status/2065377579130142937" target="_blank">Kimi 发布并开源最新代码模型 Kimi-K2.7-Code</a></div>
+        <div class="news-meta">X：Kimi.ai (@Kimi_Moonshot) · ★★★★☆ · 06/12 18:16</div>
+        <div class="news-summary">Kimi 发布并开源最新代码模型 Kimi-K2.7-Code。相比 K2.6，其在 Kimi Code Bench v2 上提升 +21.8%，Program Bench 提升 +11.0%，MLS Bench Lite 提升 +31.5</div>
+      </div>
+      <div class="news-item">
+        <div class="news-title">3. <a href="https://www.ithome.com/0/963/725.htm" target="_blank">字节豆包上线"任务模式"：支持定时执行与文件生成，"思考模式"升级为"专家模式"</a></div>
+        <div class="news-meta">IT之家（RSS） · ★★★★☆ · 06/12 23:33</div>
+        <div class="news-summary">6月12日，字节跳动旗下AI应用豆包大范围上线"任务模式"，支持定时执行、零代码网页生成、一键PPT生成、数据可视化分析等全链路Agent执行。原"思考模式"升级为"专家模式"，调用豆包大模型2.0 Pro版本，强化深度推理能力。App顶部</div>
+      </div>
     </div>
+
 
     <div class="section">
-      <div class="section-header"><div class="section-divider"></div><h2>🌍 全球 AI 动态</h2></div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">1</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future" target="_blank" class="item-title">Anthropic 暂停新模型访问，印度辩论 AI 未来</a>
-                <div class="item-meta">
-                  <span class="source">TechCrunch：AI（RSS）</span>
-                </div>
-                <div class="item-summary">Anthropic 暂停了新模型的访问权限，印度科技领袖围绕这一事件展开辩论，探讨其是否是对该国 AI 雄心的警示。</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">2</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-demand" target="_blank" class="item-title">Meta 开始撤销 20 亿美元收购 Manus 的交易</a>
-                <div class="item-meta">
-                  <span class="source">TechCrunch：AI（RSS）</span>
-                </div>
-                <div class="item-summary">据 TechCrunch 报道，Meta 已开始撤销对 Manus 的 20 亿美元收购交易，此前北京要求该交易必须反转。目前收购解除程序已启动。</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">3</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/vista8/status/2066165703443726749" target="_blank" class="item-title">乔木小说创作 Skill 开源发布</a>
-                <div class="item-meta">
-                  <span class="source">X：Vista (@vista8)</span>
-                </div>
-                <div class="item-summary">开源乔木小说创作 Skill，用户只需说“我想写一个小说”或指定风格，AI 自动生成剧情梗概、人物设定、钩子、经典桥段、人物欲望、冲突升级和结尾。与 AI 讨论确认后，可生成完整、低 AI 味的小说。安装命令：npx skills add joeseesun/qiaomu-novel-generat</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">4</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/xiaohu/status/2065991805238497732" target="_blank" class="item-title">Anthropic 上市前夕</a>
-                <div class="item-meta">
-                  <span class="source">X：小互 (@xiaohu)</span>
-                </div>
-                <div class="item-summary">Anthropic CEO Dario Amodei透露内部模型Mythos有上千漏洞，能黑银行、窃取国家机密；预言AI一到五年内砍掉一半入门级白领工作；称Claude已被美军用于对伊朗战争，涉及女校150人死亡拷问；解释离开OpenAI因信任崩塌；回怼黄仁勋末日营销指控；给出文明崩溃概率10%-2</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">5</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://garymarcus.substack.com/p/what-washington-must-do" target="_blank" class="item-title">白宫AI监管决定被指偏袒OpenAI与亚马逊</a>
-                <div class="item-meta">
-                  <span class="source">Gary Marcus：The Road to AI We Can Trust（RSS）</span>
-                </div>
-                <div class="item-summary">白宫周五做出的AI监管决定被指偏袒OpenAI、亚马逊等企业，同时对Anthropic施压不足24小时，缺乏透明度和事实依据。Gary Marcus、Dean W Ball及卡托研究所Kevin Frazier等专家指出，这种由少数人闭门快速决策的做法带有腐败嫌疑，可能促使其他国家加速发展“主权AI</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">6</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/satyanadella/status/2066182223213293753" target="_blank" class="item-title">Satya Nadella：没有生态的前沿不稳定</a>
-                <div class="item-meta">
-                  <span class="source">X：Satya Nadella (@satyanadella)</span>
-                </div>
-                <div class="item-summary">微软CEO Satya Nadella认为，AI驱动的平台转变首次实现人与数字系统间的认知循环。企业需同时构建人力资本（知识、判断、关系）与token资本（自有的AI能力），且人力资本不会贬值，反而随token资本增长而增值。真正的机会在于建立人力资本与token资本复合增长的学习循环——企业应能替</div>
-              </div>
-            </div>
+      <h2>🔥 Hacker News 热议</h2>
+      <div class="news-item"><div class="news-title">1. <a href="https://gabrielweinberg.com/p/people-are-consuming-ai-like-they" target="_blank">Not everyone is using AI for everything</a></div><div class="news-meta">HN · 428 ↑</div></div>
+      <div class="news-item"><div class="news-title">2. <a href="https://news.ycombinator.com/item?id=48528029" target="_blank">I indexed 669 GB of my GoPro videos using my M1 Max computer and local ML models</a></div><div class="news-meta">HN · 289 ↑</div></div>
+      <div class="news-item"><div class="news-title">3. <a href="https://github.com/nex-agi/Nex-N2/issues/4" target="_blank">Rio de Janeiro's "homegrown" LLM appears to be a merge of an existing model</a></div><div class="news-meta">HN · 285 ↑</div></div>
+      <div class="news-item"><div class="news-title">4. <a href="https://www.theregister.com/ai-and-ml/2026/06/14/ai-is-code-and-cant-be-prompted-into-being-smarter/5254141" target="_blank">AI is code – and can't be prompted into being smarter</a></div><div class="news-meta">HN · 79 ↑</div></div>
+      <div class="news-item"><div class="news-title">5. <a href="https://psychedelics.co.uk/news/a-mushroom-genus-that-gets-people-high-but-not-the" target="_blank">The hallucinogenic mushroom that contains no known psychedelic</a></div><div class="news-meta">HN · 21 ↑</div></div>
     </div>
 
-    <div class="section">
-      <div class="section-header"><div class="section-divider"></div><h2>🇨🇳 中国 AI 动态</h2></div>
-    </div>
 
-        <div class="section">
-          <div class="section-header"><div class="section-divider"></div><h2>🔗 Hacker News 热议</h2></div>
-          <div class="news-item"><div class="item-body"><a href="https://gabrielweinberg.com/p/people-are-consuming-ai-like-they" target="_blank" class="item-title">Not everyone is using AI for everything</a><div class="item-meta"><span class="score">▲ 422 · 💬 454</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://news.ycombinator.com/item?id=48528029" target="_blank" class="item-title">I indexed 669 GB of my GoPro videos using my M1 Max computer and local ML models</a><div class="item-meta"><span class="score">▲ 278 · 💬 65</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://github.com/nex-agi/Nex-N2/issues/4" target="_blank" class="item-title">Rio de Janeiro's "homegrown" LLM appears to be a merge of an existing model</a><div class="item-meta"><span class="score">▲ 273 · 💬 147</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://www.verysane.ai/p/did-anthropic-ask-for-this" target="_blank" class="item-title">Did Anthropic ask for this?</a><div class="item-meta"><span class="score">▲ 151 · 💬 134</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://twitter.com/maattttbrown/status/2066215255987163246" target="_blank" class="item-title">Stanford grads walk out on Google CEO Sundar Pichai speech</a><div class="item-meta"><span class="score">▲ 100 · 💬 49</span></div></div></div>
-        </div>
+<div class="trend-insights">
+  <h2>📈 今日趋势洞察</h2>
+  <ul>
+  <li>OpenAI 生态持续扩张：推出合作伙伴网络（Partner Network），Codex 新增速率重置攒存和浏览器开发者模式，向开发者和企业双向渗透。</li>
+  <li>国产大模型密集迭代：智谱 GLM-5.2 全量开放 1M 上下文，Kimi-K2.7-Code 开源，字节豆包上线任务模式——上下文长度和实用化成为竞争焦点。</li>
+  <li>MiniMax M3 开源权重模型发布，中国基础模型正在从闭源走向开源社区参与。</li>
+  <li>模型路由层创新：OpenRouter 融合预算模型面板超越旗舰，Fusion API 半价达前沿水平——模型使用成本持续下探。</li>
+</ul>
+</div>
 
-        <div class="section">
-          <div class="section-header"><div class="section-divider"></div><h2>🏆 全球模型热度榜</h2></div>
-          <div style="overflow-x:auto;"><table class="model-table"><thead><tr><th>#</th><th>模型</th><th>机构</th><th>上下文</th><th>趋势</th></tr></thead><tbody>
-              <tr><td class="rank">1</td><td class="model-name">Fusion</td><td class="org">Openrouter</td><td class="ctx">128k</td><td class="trend"></td></tr>
-              <tr><td class="rank">2</td><td class="model-name">Kimi K2.7 Code</td><td class="org">Moonshotai</td><td class="ctx">262k</td><td class="trend"></td></tr>
-              <tr><td class="rank">3</td><td class="model-name">Claude Fable Latest</td><td class="org">~Anthropic</td><td class="ctx">1,000k</td><td class="trend"></td></tr>
-              <tr><td class="rank">4</td><td class="model-name">Claude Fable 5</td><td class="org">Anthropic</td><td class="ctx">100万</td><td class="trend">↑ 新模型</td></tr>
-              <tr><td class="rank">5</td><td class="model-name">Nex N2 Pro:Free</td><td class="org">Nex-Agi</td><td class="ctx">262k</td><td class="trend"></td></tr>
-            </tbody></table></div>
-          <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度与部署状态综合排序）</p>
-        </div>
+<div class="footer">
+  数据来源：AIHOT（aihot.virxact.com）+ Hacker News + OpenRouter<br>
+  报告由 Hermes Agent 自动生成 · 2026-06-15 北京时间 10:00
+</div>
 
-    <div class="insights">
-      <h2>📈 今日趋势洞察</h2>
-      <ul>
-            <li><strong>智能体安全与审计工具浮现</strong>：随着 Agent 在生产环境中大量部署，审计、监控、安全分析工具正在成为一个独立品类。</li>
-      </ul>
-    </div>
-
-    <div class="footer">
-      <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
-      <p>支持：Hacker News · OpenRouter · The Verge</p>
-    </div>
-  </div>
 </body>
 </html>

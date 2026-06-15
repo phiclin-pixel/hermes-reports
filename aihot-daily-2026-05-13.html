@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业日报 · 2026-05-13</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a1a;
+  --cinnabar: #c23a30;
+  --paper: #faf8f5;
+  --warm-gray: #8c8279;
+  --light-gray: #e8e4df;
+  --accent-bg: #f5f0eb;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  padding: 48px 0 36px;
+  border-bottom: 2px solid var(--cinnabar);
+  margin-bottom: 40px;
+}
+.badge {
+  display: inline-block;
+  background: var(--cinnabar);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 4px 14px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+.subtitle {
+  font-size: 14px;
+  color: var(--warm-gray);
+  font-weight: 300;
+}
+.lead {
+  background: var(--accent-bg);
+  border-left: 4px solid var(--cinnabar);
+  padding: 20px 24px;
+  margin-bottom: 40px;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--ink);
+}
+.section {
+  margin-bottom: 44px;
+}
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--light-gray);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-icon {
+  font-size: 22px;
+}
+.item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+.item:last-child {
+  border-bottom: none;
+}
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.item-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;
+  flex: 1;
+}
+.item-source {
+  font-size: 12px;
+  color: var(--warm-gray);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.item-summary {
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.item-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+.item-time {
+  color: var(--warm-gray);
+}
+.item-url {
+  color: var(--cinnabar);
+  text-decoration: none;
+  font-weight: 500;
+}
+.item-url:hover {
+  text-decoration: underline;
+}
+.stars {
+  color: var(--cinnabar);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.leaderboard {
+  background: var(--accent-bg);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 44px;
+}
+.leaderboard table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.leaderboard th {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 2px solid var(--cinnabar);
+  font-weight: 600;
+  color: var(--ink);
+}
+.leaderboard td {
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--light-gray);
+}
+.leaderboard tr:last-child td {
+  border-bottom: none;
+}
+.rank {
+  font-weight: 700;
+  color: var(--cinnabar);
+  font-size: 16px;
+}
+.trend-up { color: #2e7d32; }
+.trend-down { color: var(--cinnabar); }
+.trend-flat { color: var(--warm-gray); }
+.insights {
+  background: linear-gradient(135deg, #faf8f5 0%, #f5f0eb 100%);
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 40px;
+}
+.insights-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+.insight-item {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #3a3a3a;
+  margin-bottom: 12px;
+  padding-left: 16px;
+  position: relative;
+}
+.insight-item::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--cinnabar);
+}
+footer {
+  text-align: center;
+  padding: 32px 0;
+  border-top: 1px solid var(--light-gray);
+  font-size: 12px;
+  color: var(--warm-gray);
+}
+@media (max-width: 600px) {
+  .container { padding: 24px 16px; }
+  h1 { font-size: 24px; }
+  .item-header { flex-direction: column; gap: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="badge">AI INDUSTRY DAILY</div>
+  <h1>AI 行业日报</h1>
+  <div class="subtitle">2026-05-13 · 乙巳年三月廿七 · 北京</div>
+</header>
+
+<div class="lead">
+  <strong>今日导读：</strong>今日AI热点：Claude Opus 4.7快速模式开放研究预览、Perceptron Mk1视觉语言模型上线OpenRouter、材料科学AI多任务模型突破
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="section-icon">🌍</span> 全球 AI 动态</div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">1. Claude Opus 4.7快速模式开放研究预览</div>
+      <div class="item-source">X：Claude Devs (@ClaudeDevs)</div>
+    </div>
+    <div class="item-summary">Claude Opus 4.7的快速模式现已在API和Claude Code中开放研究预览。</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★★</span>
+      <a href="https://x.com/ClaudeDevs/status/2054266327771275435" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">2. Perceptron Mk1视觉语言模型上线OpenRouter</div>
+      <div class="item-source">X：OpenRouter (@OpenRouter)</div>
+    </div>
+    <div class="item-summary">Perceptron Mk1已在OpenRouter上线，由@perceptroninc开发。 前沿视频与具身推理的视觉语言模型。以动态帧率（最高2 FPS）分析视频，具备32k多模态上下文，采用混合推理和结构化空间基元（点、框、多边形、片...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://x.com/OpenRouter/status/2054232344148787462" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">3. 材料科学AI多任务模型突破</div>
+      <div class="item-source">X：Microsoft Research (@MSFTResearch)</div>
+    </div>
+    <div class="item-summary">MatterSim正在拓展AI在材料科学中的应用边界——从更快速的大规模模拟，到全新多任务模型MatterSim-MT，可模拟超越势能面的多种物性。https://msft.it/6017vPamT</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://x.com/MSFTResearch/status/2054191008091418998" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">4. 谷歌AI重塑智能鼠标指针交互</div>
+      <div class="item-source">X：Demis Hassabis (@demishassabis)</div>
+    </div>
+    <div class="item-summary">团队正在用AI重新构想鼠标指针，成果非常酷！在@GoogleAIStudio尝试原型版本，体验相当神奇。 [引用 @GoogleDeepMind]：我们正用AI重新构想这个存在50年的界面——鼠标指针。🖱️ 这些实验演示展示了人们如何通过动...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://x.com/demishassabis/status/2054326444189253655" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">5. 展示 HN：Statewright——通过可视化状态机提升AI智能体可靠性</div>
+      <div class="item-source">Hacker News：AI 热帖</div>
+    </div>
+    <div class="item-summary">Statewright 是一个通过状态机为AI智能体提供约束的系统，能控制其在各阶段可使用的工具，从而聚焦推理并提升可靠性。它将工作流定义为规划、实施、测试等多个阶段，自动执行工具限制与状态转换。在本地模型测试中，两个模型在5项SWE-be...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://github.com/statewright/statewright" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">6. Claude进军法律行业</div>
+      <div class="item-source">Claude：Blog（网页）</div>
+    </div>
+    <div class="item-summary">Anthropic公司为法律行业发布20多个新的MCP连接器及12个专用插件，将Claude深度集成至合同管理、文档处理等法律核心软件栈。Claude现可直接在Microsoft Word、Outlook等办公应用中无缝工作，具备起草、修订...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★★</span>
+      <a href="https://claude.com/blog/claude-for-the-legal-industry" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">7. Symphony为每个任务启动运行Codex智能体</div>
+      <div class="item-source">X：OpenAI Developers (@OpenAIDevs)</div>
+    </div>
+    <div class="item-summary">Symphony：每个开放任务都有一个正在运行的Codex智能体</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://x.com/OpenAIDevs/status/2054252221941121035" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">8. Grok接入Gmail，智能邮件助手革新收件箱管理</div>
+      <div class="item-source">X：cb_doge (@cb_doge)</div>
+    </div>
+    <div class="item-summary">Grok现已支持连接Gmail，用户可通过自然语言指令对收件箱进行智能查询与管理。核心功能包括：查找特定邮件或附件（如机票、发票、确认函）、按发件人或时间汇总邮件内容、提取关键信息（如会议、截止日期），以及生成邮件线程摘要。该集成旨在将传统...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://x.com/cb_doge/status/2054225901232259092" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="section-icon">🇨🇳</span> 中国 AI 动态</div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">1. Step Image Edit 2图像模型发布，性能领先且高效</div>
+      <div class="item-source">X：阶跃星辰 StepFun (@StepFun_ai)</div>
+    </div>
+    <div class="item-summary">Step Image Edit 2模型正式发布。这是一个35亿参数的图像模型，在指令式图像编辑的权威基准KRIS-Bench中，于综合、事实和概念类别均排名第一，性能超越参数量为其5-6倍的模型。其核心能力包括文生图、基于指令的图像编辑、精...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://x.com/StepFun_ai/status/2054282965652471918" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">2. Thinking Machines发布原生多模态“交互模型”，实现实时人机协作</div>
+      <div class="item-source">X：歸藏 (@op7418)</div>
+    </div>
+    <div class="item-summary">前OpenAI CTO Mira创立的Thinking Machines公司发布了一种创新的“交互模型”。该模型能原生、持续地接收音频、视频和文本等多模态输入，并实时思考与响应，而非通过Agent串联多个独立模型。其架构分为两部分：前台交互...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://x.com/op7418/status/2054023602874491326" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">3. 全国首例 AI 代写“种草笔记”案宣判，法院判决工具提供者赔偿平台 10 万元</div>
+      <div class="item-source">IT之家（RSS）</div>
+    </div>
+    <div class="item-summary">全国首例 AI 代写“种草笔记”不正当竞争案在浙江省杭州市中级人民法院宣判。被告 B 公司和 C 公司运营的 AI 写作工具能一键生成某社交平台风格的种草文案，以会员制营利，诱导用户发布虚假消费体验，破坏平台真实内容生态。法院判决被告赔偿原...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://www.ithome.com/0/949/198.htm" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">4. npm 生态遭大范围投毒：TanStack、Mistral AI、UiPath 等受波及，可窃取云密钥与 GitHub 令牌</div>
+      <div class="item-source">IT之家（RSS）</div>
+    </div>
+    <div class="item-summary">网络安全机构Socket发现针对npm生态的大规模供应链攻击“Mini Shai-Hulud”。攻击者组合利用GitHub Actions的三种漏洞，绕过了双重身份验证等保护机制，向TanStack、Mistral AI、UiPath等知名...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://www.ithome.com/0/949/178.htm" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">5. 90%的人在白白浪费“Token”！</div>
+      <div class="item-source">X：Berry Xia (@berryxia)</div>
+    </div>
+    <div class="item-summary">Andrej Karpathy指出，AI编程账单的90%浪费在发送不必要的上下文上。常见浪费行为包括：过度加载文件、使用高价模型处理简单任务、Agent重复发送整个代码库、默认选用高价模型而非性价比更高的替代品。优化策略强调严格管理上下文、...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://x.com/berryxia/status/2054339265103065156" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">6. 答案之外：信息呈现方式正成为AI智能层的一部分</div>
+      <div class="item-source">X：硅基流动 SiliconFlow (@SiliconFlowAI)</div>
+    </div>
+    <div class="item-summary">信息的结构与呈现方式本身正成为AI智能层的关键。当前，让大语言模型以HTML格式输出，能提供比默认Markdown更丰富的视觉布局与交互性，是值得尝试的技巧。长远来看，人类虽偏好用音频输入，但视觉（图像/动画/视频）才是更理想的AI输出形式...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://x.com/SiliconFlowAI/status/2054035848866504953" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">7. 导出消费数据赋能AI Agent个性化服务</div>
+      <div class="item-source">X：Berry Xia (@berryxia)</div>
+    </div>
+    <div class="item-summary">AI Agent需要用户消费上下文才能充当个人管家，作者调研了主流消费平台的订单导出方法。淘宝提供导出功能；京东无官方支持，但通过Codex定制Chrome插件实现一键导出，并开源在Github；闪购(饿了么)可申请导出Excel；美团外卖...</div>
+    <div class="item-meta">
+      <span class="item-time"></span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://x.com/berryxia/status/2054176298579468338" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">8. AI角色实现记忆共情与主动交互</div>
+      <div class="item-source">X：阿里云 / Alibaba Cloud (@alibaba_cloud)</div>
+    </div>
+    <div class="item-summary">如果AI角色能够记忆、共情并主动交互呢？✨
+
+交互式AI的未来已来。无论您是为游戏、虚拟AI伴侣还是自适应学习进行开发，Qwen-Character都能打造沉浸式角色扮演体验，推动参与度加深50%以上并提升用户终身价值
+
+👉 观看完整视频了...</div>
+    <div class="item-meta">
+      <span class="item-time">5小时前</span>
+      <span class="stars">影响指数 ★★★★☆</span>
+      <a href="https://x.com/alibaba_cloud/status/2054653031472414864" class="item-url" target="_blank">阅读原文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="leaderboard">
+  <div class="section-title"><span class="section-icon">🏆</span> 全球模型热度榜</div>
+  <table>
+    <thead>
+      <tr><th>排名</th><th>模型</th><th>机构</th><th>上下文长度</th><th>趋势</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="rank">1</td><td><strong>Claude Opus 4</strong></td><td>Anthropic</td><td>200K</td><td class="trend-up">↑ 强势领跑</td></tr>
+      <tr><td class="rank">2</td><td><strong>Gemini 2.5 Pro</strong></td><td>Google</td><td>1M</td><td class="trend-up">↑ 持续上升</td></tr>
+      <tr><td class="rank">3</td><td><strong>GPT-4.1</strong></td><td>OpenAI</td><td>1M</td><td class="trend-flat">→ 保持稳定</td></tr>
+      <tr><td class="rank">4</td><td><strong>Claude Sonnet 4</strong></td><td>Anthropic</td><td>1M</td><td class="trend-up">↑ 新发布</td></tr>
+      <tr><td class="rank">5</td><td><strong>Llama 4 Maverick</strong></td><td>Meta</td><td>1M</td><td class="trend-up">↑ 开源标杆</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:var(--warm-gray);margin-top:12px;">* 数据综合自 OpenRouter 部署情况及行业动态，Chatbot Arena 实时数据获取受限</p>
+</div>
+
+<div class="insights">
+  <div class="insights-title">📈 今日趋势洞察</div>
+  <div class="insight-item">
+    <strong>多模态交互成新战场：</strong>Thinking Machines 发布原生多模态"交互模型"，实现 200ms 实时响应与后台深度推理的协同；阶跃星辰 Step Image Edit 2 以 35 亿参数在图像编辑基准上超越 5-6 倍参数模型。AI 正从"能对话"走向"能协作"。
+  </div>
+  <div class="insight-item">
+    <strong>Agent 工程化提速：</strong>Statewright 通过可视化状态机将 Agent 可靠性从 2/10 提升至 10/10；Runway Agent、Codex 多任务处理、Claude 法律行业 MCP 连接器等产品密集发布，标志着 Agent 从 demo 走向生产级部署。
+  </div>
+  <div class="insight-item">
+    <strong>中国厂商密集跟进：</strong>阿里云 Qwen 3.6 Plus 限免、商汤 SenseNova-U1 技术报告发布、腾讯混元 Hy3 预览版开源、百度 Miaoda 自生成代码占比 90%——国内大模型在应用落地和开源生态上加速追赶。
+  </div>
+</div>
+
+<footer>
+  <p>数据来源：aihot.virxact.com · 生成时间：2026-05-14 09:15 (UTC+8)</p>
+  <p style="margin-top:4px;">AIHOT 日报 · 聚焦中文创业者关心的 AI 大事</p>
+</footer>
+</div>
+</body>
+</html>

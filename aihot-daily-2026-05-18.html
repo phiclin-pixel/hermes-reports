@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业日报 · 2026-05-18</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
+:root {
+  --ink: #1a1a1a;
+  --cinnabar: #c23a30;
+  --paper: #faf8f5;
+  --warm-gray: #8c8279;
+  --light-gray: #e8e4df;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Serif SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.8;
+  padding: 40px 20px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 48px;
+}
+header {
+  text-align: center;
+  border-bottom: 2px solid var(--cinnabar);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+header .subtitle {
+  font-size: 14px;
+  color: var(--warm-gray);
+}
+.lead {
+  background: linear-gradient(135deg, #fdf6f0 0%, #fff 100%);
+  border-left: 4px solid var(--cinnabar);
+  padding: 20px 24px;
+  margin-bottom: 32px;
+  border-radius: 0 8px 8px 0;
+}
+.lead h2 {
+  font-size: 18px;
+  color: var(--cinnabar);
+  margin-bottom: 8px;
+}
+.lead p {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+.section {
+  margin-bottom: 36px;
+}
+.section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--light-gray);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.item {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed var(--light-gray);
+}
+.item:last-child {
+  border-bottom: none;
+}
+.item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.item-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--cinnabar);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+}
+.item-section {
+  font-size: 12px;
+  color: var(--warm-gray);
+  background: var(--light-gray);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.item-score {
+  font-size: 13px;
+  color: var(--cinnabar);
+  margin-left: auto;
+}
+.item-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0 6px;
+}
+.item-title a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.item-title a:hover {
+  border-bottom-color: var(--cinnabar);
+  color: var(--cinnabar);
+}
+.item-source {
+  font-size: 13px;
+  color: var(--warm-gray);
+  font-weight: 400;
+}
+.item-summary {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+.item-meta {
+  font-size: 12px;
+  color: var(--warm-gray);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--light-gray);
+}
+th {
+  background: #f5f3f0;
+  font-weight: 600;
+  color: var(--warm-gray);
+  font-size: 13px;
+}
+tr:hover td {
+  background: #fdfcfa;
+}
+.trend {
+  background: #f8f6f3;
+  padding: 20px 24px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+.trend ul {
+  padding-left: 20px;
+}
+.trend li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--light-gray);
+  font-size: 12px;
+  color: var(--warm-gray);
+}
+@media (max-width: 600px) {
+  .container { padding: 24px; }
+  header h1 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>AI 行业日报</h1>
+<div class="subtitle">2026-05-18 · 农历四月3日 · 数据来自 aihot.virxact.com</div>
+</header>
+
+<div class="lead">
+<h2>主编点评</h2>
+<p>今日AI热点：Grok Imagine图像生成功能正式发布、手机端ChatGPT应用集成Codex构建功能、Zerostack——一款采用纯Rust语言编写、受Unix启发的编程代理、开源工具揭露AI API中转站安全风险与检测差异</p>
+</div>
+
+<div class="section">
+<h2>🌍 全球 AI 动态</h2>
+<div class="item">
+<div class="item-header"><span class="item-num">1</span><span class="item-section">产品发布/更新</span><span class="item-score">★★★★★</span></div>
+<div class="item-title"><a href="https://x.com/elonmusk/status/2055912040481599793" target="_blank">Grok Imagine图像生成功能正式发布</a> — <span class="item-source">X：Elon Musk (@elonmusk, xAI)</span></div>
+<div class="item-summary">Grok Imagine 现已正式发布 所有人都可使用 基于我们最新的文本到图像模型 能够生成逼真、高质量的图像 支持多种宽高比 现在可在 X 上使用</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">2</span><span class="item-section">产品发布/更新</span><span class="item-score">★★★★★</span></div>
+<div class="item-title"><a href="https://x.com/gdb/status/2055882172884763012" target="_blank">手机端ChatGPT应用集成Codex构建功能</a> — <span class="item-source">X：Greg Brockman (@gdb)</span></div>
+<div class="item-summary">你可以在手机端通过ChatGPT应用中的Codex直接构建项目</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">3</span><span class="item-section">产品发布/更新</span><span class="item-score">★★★☆☆</span></div>
+<div class="item-title"><a href="https://crates.io/crates/zerostack/1.0.0" target="_blank">Zerostack——一款采用纯Rust语言编写、受Unix启发的编程代理</a> — <span class="item-source">Hacker News 热门（buzzing.cc 中文翻译）</span></div>
+<div class="item-summary">Zerostack是一款采用纯Rust语言编写、受Unix哲学启发的编程代理工具，已正式发布1.0.0版本并在Rust包管理平台crates.io上提供。该发布在技术社区Hacker News上获得115点关注，反映出开发者对其的高度兴趣。Rust语言以内存安全和性能见称，Unix设计强调简洁与模块化，Zerostack结合两者优势，旨在提升编程效率，为代码辅助领域带来新选择。</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">4</span><span class="item-section">论文研究</span><span class="item-score">★★★★★</span></div>
+<div class="item-title"><a href="https://x.com/berryxia/status/2056043674446995887" target="_blank">Anthropic Claude 5天攻破Apple M5 macOS内核漏洞：5年数十亿防线，被AI一举击穿</a> — <span class="item-source">X：Berry Xia (@berryxia)</span></div>
+<div class="item-summary">Anthropic的Claude Mythos Preview在5天内，协助安全团队Calif成功构建并演示了首个公开的、针对Apple M5芯片macOS内核的内存破坏提权利用链。该攻击绕过了苹果耗时5年、投入数十亿美元打造的MIE硬件级内存完整性防护，从普通用户权限通过纯数据操作即可获得root权限。苹果已在后续更新中修复漏洞并致谢。此事件标志着AI驱动的安全研究能力已能极速突破顶尖硬件防护，显著改变了攻防的速度与平衡。</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">5</span><span class="item-section">论文研究</span><span class="item-score">★★★☆☆</span></div>
+<div class="item-title"><a href="https://x.com/rohanpaul_ai/status/2055919204591902771" target="_blank">研究揭示LLM智能体记忆重写机制损害可靠性</a> — <span class="item-source">X：Rohan Paul (@rohanpaul_ai)</span></div>
+<div class="item-summary">伊利诺伊大学与清华大学等机构的研究发现，LLM智能体虽能从经验中学习，但其通过LLM将原始经历压缩成书面教训的记忆重写机制会损害记忆可靠性。在网页购物、模拟世界及ARC风格谜题等任务测试中，反复重写记忆会导致错误分组、规则过度泛化或过拟合，使智能体遗忘细节或混淆任务类型。例如，GPT-4在无记忆时可100%解决小型ARC-AGI问题集，而建立记忆并流式更新后，性能降至约54%。研究主张智能体记忆系统应重视原始经历作为关键证据，而非自动将所有经验重写为摘要，保留原始证据并选择性摘要效果更佳。</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">6</span><span class="item-section">技巧与观点</span><span class="item-score">★★★☆☆</span></div>
+<div class="item-title"><a href="https://x.com/vista8/status/2056050473392902430" target="_blank">开源微信读书数据可视化工具yao-weread-skill发布</a> — <span class="item-source">X：Vista (@vista8)</span></div>
+<div class="item-summary">开发者姚老师开源了微信读书Skill——yao-weread-skill。该工具能将用户的微信读书数据生成本地可视化报告，核心功能包括分析近两年的阅读时长与节律、书架书籍构成、阅读分类与作者偏好，并对笔记和想法进行语义分析。报告最终通过词云、热力图、雷达图等26种图表形式呈现，所有代码已在GitHub公开。</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">7</span><span class="item-section">技巧与观点</span><span class="item-score">★★★★★</span></div>
+<div class="item-title"><a href="https://x.com/rohanpaul_ai/status/2055841486714147177" target="_blank">Anthropic CEO预言软件免费化与职业结构巨变</a> — <span class="item-source">X：Rohan Paul (@rohanpaul_ai)</span></div>
+<div class="item-summary">Anthropic CEO Dario Amodei在《华尔街日报》YouTube频道采访中表示，软件成本将急剧下降，可能基本免费，传统软件需百万用户分摊成本的前提将不再成立。同时，数十年来建立的许多工作和职业可能消失。Amodei认为社会能够应对并适应这种变化，但他警告人们目前完全未意识到即将到来的变革及其巨大规模。</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">8</span><span class="item-section">技巧与观点</span><span class="item-score">★★★☆☆</span></div>
+<div class="item-title"><a href="https://x.com/kimmonismus/status/2055952702908355012" target="_blank">微软AI CEO预测18个月内AI自动化所有白领工作</a> — <span class="item-source">X：Kim (@kimmonismus)</span></div>
+<div class="item-summary">微软AI CEO Mustafa Suleyman预测，AI将在18个月内实现人类水平的性能，自动化大多数专业任务，包括会计、法律、营销和项目管理。他在Fortune采访中指出，所有涉及“坐在电脑前”的白领工作都将被AI完全取代。Suleyman透露自己的使命是构建“超级智能”，并展望未来创建新AI模型将像制作播客或写博客一样便捷。</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">9</span><span class="item-section">技巧与观点</span><span class="item-score">★★★☆☆</span></div>
+<div class="item-title"><a href="https://x.com/op7418/status/2056021133477163298" target="_blank">让 Codex 自己做了一条视频介绍了一下这个视频生成方案</a> — <span class="item-source">X：歸藏 (@op7418)</span></div>
+<div class="item-summary">该方案整合了藏师傅的PPT Skill（视觉与动效）、HyperFrames（时间线与渲染）、Listenhub Skill（配音）以及即梦CLI（补充片段）。核心在于，用户可通过Codex直接基于文本提示生成带动效的解释视频，并能在聊天界面内预览，极大提升了制作效率，特别适合产品介绍等视频内容。</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">10</span><span class="item-section">技巧与观点</span><span class="item-score">★★★☆☆</span></div>
+<div class="item-title"><a href="https://x.com/AYi_AInotes/status/2055954675526934642" target="_blank">Garry Tan发布的GBrain直接捅破个人AI天花板</a> — <span class="item-source">X：阿易 AI Notes (@AYi_AInotes)</span></div>
+<div class="item-summary">Garry Tan开源的GBrain是一个知识系统，而非简单的RAG工具。它通过8层结构解决AI Agent的记忆缺陷：前4层升级基础检索，后4层实现终身记忆和自我进化，使如OpenClaw、Hermes等Agent能持续追踪用户的人际关系、决策轨迹和认知演化。该系统已在生产环境中处理大量数据，用户可通过安装链接或命令行快速集成，并以Markdown为最高优先级数据源，推动个人AI成为可能。</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">11</span><span class="item-section">技巧与观点</span><span class="item-score">★★★☆☆</span></div>
+<div class="item-title"><a href="https://x.com/berryxia/status/2055865005271314528" target="_blank">微信读书Skill安装与使用指南</a> — <span class="item-source">X：Berry Xia (@berryxia)</span></div>
+<div class="item-summary">❤️ [引用 @vista8]：微信读书Cli安装和配置教程。 1. 官方指令，复制发给Codex或Claude Code 下载 https://cdn.weread.qq.com/skills/weread-skills.zip 安装 skill 2. 或者用 X 上网友 @eviljer 做的优化版Skill npx skills add jerlinn/jerlin-weread 3. 如果需要API key，访问微信官方这个页面获取 https://weread.qq.com/r/weread-skills 4. 使用案例 直接跟AI说：“调用微信读书skill 查看被讨厌勇气的高亮划线”</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">12</span><span class="item-section">技巧与观点</span><span class="item-score">★★★☆☆</span></div>
+<div class="item-title"><a href="https://garymarcus.substack.com/p/the-illusion-of-generative-ai-the" target="_blank">生成式AI的幻觉、超大规模投入的狂热与世界模型及神经符号AI的路径</a> — <span class="item-source">Gary Marcus：The Road to AI We Can Trust（RSS）</span></div>
+<div class="item-summary">近期访谈指出，当前大语言模型存在“幻觉”问题，答案常不可靠。业界对“超大规模”的巨额投入可能陷入非理性狂热。作为替代路径，“世界模型”旨在让AI理解物理规律，“神经符号AI”则尝试结合深度学习与符号推理，以提升可靠性、可解释性与逻辑能力，为下一代AI奠定基础。</div>
+<div class="item-meta">1小时前</div>
+</div><div class="item">
+<div class="item-header"><span class="item-num">13</span><span class="item-section">技巧与观点</span><span class="item-score">★★★☆☆</span></div>
+<div class="item-title"><a href="https://x.com/vista8/status/2056170241147977741" target="_blank">Hermes 可配置的国内外 AI 模型及使用方法</a> — <span class="item-source">X：Vista (@vista8)</span></div>
+<div class="item-summary">Hermes 支持配置多种国内外主流 AI 模型，包括 OpenAI GPT-5.5、xAI Grok-4.3、谷歌 Gemini 系列、DeepSeek V4 系列、智谱 GLM-5 系列、Kimi K2.6 以及小米 Mimo V2.5-pro。用户需通过相应服务的订阅或 API 进行配置，完成后可使用 /model 指令指定模型及提供者来切换对话模型，例如输入&quot;/model gpt-5.5 --provider openai-codex&quot;即可切换至对应模型。该功能方便用户根据需求灵活调用不同模型的优势。</div>
+<div class="item-meta">35分钟前</div>
+</div>
+</div>
+
+<div class="section">
+<h2>🇨🇳 中国 AI 动态</h2>
+<div class="item">
+<div class="item-header"><span class="item-num">1</span><span class="item-section">技巧与观点</span><span class="item-score">★★★☆☆</span></div>
+<div class="item-title"><a href="https://x.com/berryxia/status/2056173473588994392" target="_blank">开源工具揭露AI API中转站安全风险与检测差异</a> — <span class="item-source">X：Berry Xia (@berryxia)</span></div>
+<div class="item-summary">针对AI API中转站可能存在的&quot;掺水&quot;、&quot;造假&quot;等安全风险，开源项目api-relay-audit通过双论文锚定路线，对AC-1工具调用改写、AC-2错误响应泄漏、上下文截断等常见攻击进行可验证的三态判定，并提供透明日志。对比hvoy.ai和cctest.ai等工具，其透明度和可审计性更为可靠。项目作者已将完整方法论、对比结果和功能速查表公开，并开源了该检测工具。</div>
+<div class="item-meta">22分钟前</div>
+</div>
+</div>
+
+<div class="section">
+<h2>🏆 全球模型热度榜（基于 OpenRouter 部署数据）</h2>
+<table>
+<thead><tr><th>排名</th><th>机构</th><th>模型</th><th>上下文长度</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Meta</td><td>llama-4-scout</td><td>10M</td></tr><tr><td>2</td><td>xAI</td><td>grok-4.20-multi-agent</td><td>2M</td></tr><tr><td>3</td><td>OpenAI</td><td>gpt-5.5-pro</td><td>1M</td></tr><tr><td>4</td><td>Google</td><td>gemini-3.1-flash-lite</td><td>1M</td></tr><tr><td>5</td><td>DeepSeek</td><td>deepseek-v4-pro</td><td>1M</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section">
+<h2>📈 今日趋势洞察</h2>
+<div class="trend">
+<ul><li><strong>产品发布密集：</strong>今日Grok Imagine图像生成功能正式、手机端ChatGPT应用集成Codex构等多项产品更新，显示AI应用层竞争加速。</li><li><strong>国内安全关注：</strong>开源工具揭露AI API中转站安全风险与检测差异... 反映国内开发者对AI基础设施安全的重视。</li></ul>
+</div>
+</div>
+
+<footer>
+<p>本报告由 Hermes Agent 自动生成 · 数据截止 2026-05-18</p>
+<p>完整数据及原文链接请见各条目</p>
+</footer>
+</div>
+</body>
+</html>

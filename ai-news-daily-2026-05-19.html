@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 行业热度日报 · 2026-05-19</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Helvetica+Neue:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --ink: #1a1a1a; --cinnabar: #c23a30; --paper: #faf8f5; --paper-dark: #f0ece6; --gray: #6b6b6b; --light-gray: #9a9a9a; --border: #e0dcd6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Noto Serif SC", "Helvetica Neue", Helvetica, Arial, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+        .header { text-align: center; padding-bottom: 40px; border-bottom: 2px solid var(--ink); margin-bottom: 48px; }
+        .header-badge { display: inline-block; background: var(--cinnabar); color: white; font-size: 11px; font-weight: 600; letter-spacing: 2px; padding: 6px 16px; text-transform: uppercase; margin-bottom: 20px; font-family: "Helvetica Neue", sans-serif; }
+        .header h1 { font-size: 36px; font-weight: 700; letter-spacing: 4px; margin-bottom: 12px; color: var(--ink); }
+        .header-subtitle { font-size: 14px; color: var(--gray); font-family: "Helvetica Neue", sans-serif; letter-spacing: 1px; }
+        .header-date { margin-top: 16px; font-size: 13px; color: var(--light-gray); font-family: "Helvetica Neue", sans-serif; }
+        .header-date span { margin: 0 8px; }
+        .section { margin-bottom: 56px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 28px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+        .section-icon { font-size: 24px; margin-right: 12px; }
+        .section h2 { font-size: 22px; font-weight: 600; color: var(--ink); flex: 1; }
+        .section-count { font-size: 12px; color: var(--light-gray); font-family: "Helvetica Neue", sans-serif; }
+        .news-item { padding: 24px 0; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+        .news-item:hover { background: rgba(194, 58, 48, 0.02); }
+        .news-item:last-child { border-bottom: none; }
+        .news-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; }
+        .news-number { font-family: "Helvetica Neue", sans-serif; font-size: 13px; font-weight: 600; color: var(--cinnabar); min-width: 28px; }
+        .news-title { font-size: 17px; font-weight: 600; color: var(--ink); flex: 1; line-height: 1.5; }
+        .news-impact { font-size: 13px; color: var(--cinnabar); letter-spacing: 1px; margin-left: 12px; white-space: nowrap; }
+        .news-summary { font-size: 14px; color: var(--gray); margin: 8px 0 8px 28px; line-height: 1.7; }
+        .news-meta { font-size: 12px; color: var(--light-gray); margin-left: 28px; font-family: "Helvetica Neue", sans-serif; }
+        .news-meta a { color: var(--cinnabar); text-decoration: none; border-bottom: 1px dotted var(--cinnabar); }
+        .news-meta a:hover { border-bottom: 1px solid var(--cinnabar); }
+        .leaderboard-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        .leaderboard-table th { text-align: left; padding: 14px 16px; font-size: 12px; font-weight: 600; color: var(--light-gray); text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--ink); font-family: "Helvetica Neue", sans-serif; }
+        .leaderboard-table td { padding: 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .leaderboard-table tr:hover td { background: rgba(194, 58, 48, 0.03); }
+        .rank { font-family: "Helvetica Neue", sans-serif; font-weight: 700; font-size: 18px; color: var(--cinnabar); width: 60px; }
+        .model-name { font-weight: 600; color: var(--ink); }
+        .model-org { font-size: 12px; color: var(--gray); font-family: "Helvetica Neue", sans-serif; }
+        .elo-score { font-family: "Helvetica Neue", sans-serif; font-weight: 700; font-size: 16px; color: var(--ink); }
+        .elo-change { font-size: 13px; font-family: "Helvetica Neue", sans-serif; }
+        .change-up { color: #2e7d32; }
+        .change-down { color: var(--cinnabar); }
+        .change-flat { color: var(--light-gray); }
+        .insight-item { padding: 20px 24px; background: var(--paper-dark); border-left: 3px solid var(--cinnabar); margin-bottom: 16px; }
+        .insight-item p { font-size: 14px; color: var(--gray); line-height: 1.8; }
+        .insight-highlight { color: var(--cinnabar); font-weight: 600; }
+        .footer { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); text-align: center; font-size: 12px; color: var(--light-gray); font-family: "Helvetica Neue", sans-serif; }
+        .footer a { color: var(--cinnabar); text-decoration: none; }
+        @media (max-width: 600px) { .container { padding: 24px 16px; } .header h1 { font-size: 28px; } .news-header { flex-wrap: wrap; } .news-impact { margin-left: 28px; margin-top: 4px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-badge">Daily Report</div>
+            <h1>AI 行业热度日报</h1>
+            <div class="header-subtitle">ARTIFICIAL INTELLIGENCE INDUSTRY DAILY</div>
+            <div class="header-date"><span>2026-05-19</span><span>|</span><span>周二</span><span>|</span><span>农历 四月初三</span></div>
+        </div>
+        <div class="section">
+            <div class="section-header"><span class="section-icon">🌍</span><h2>全球 AI 动态</h2><span class="section-count">8 条</span></div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">01</span><span class="news-title">Elon Musk 起诉 OpenAI 诉讼被法院驳回</span><span class="news-impact">★★★★★</span></div>
+                <div class="news-summary">马斯克起诉OpenAI及Sam Altman的诉讼被法院驳回，OpenAI转型为营利性公司的道路扫清重大障碍。法官认定马斯克未能证明其主张的违约行为。</div>
+                <div class="news-meta">信源：TechCrunch / Hacker News · <a href="https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">02</span><span class="news-title">Anthropic 收购 API 工具公司 Stainless</span><span class="news-impact">★★★★☆</span></div>
+                <div class="news-summary">Anthropic宣布收购Stainless，强化开发者生态与API基础设施能力。Stainless专注于为API生成SDK和文档，此次收购将提升Claude API的开发者体验。</div>
+                <div class="news-meta">信源：Anthropic / Hacker News · <a href="https://www.anthropic.com/news/anthropic-acquires-stainless" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">03</span><span class="news-title">Anthropic 联合创始人将与教皇共同发布 AI 教宗通谕</span><span class="news-impact">★★★★☆</span></div>
+                <div class="news-summary">Anthropic联合创始人Dario Amodei将与教皇良十四世共同发布关于AI的教宗通谕，探讨AI伦理、人文价值与技术发展的关系，引发全球关注。</div>
+                <div class="news-meta">信源：Vatican News / Hacker News · <a href="https://www.vaticannews.va/en/pope/news/2026-05/pope-leo-xiv-first-encyclical-magnifica-humanitas.html" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">04</span><span class="news-title">新技术将 AI 推理冷启动时间缩短 40 倍</span><span class="news-impact">★★★★☆</span></div>
+                <div class="news-summary">通过线性规划、FUSE文件系统、检查点恢复和CUDA优化等技术组合，研究人员将AI推理冷启动时间缩短40倍，显著提升模型部署效率。</div>
+                <div class="news-meta">信源：Hacker News · <a href="https://news.ycombinator.com/" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">05</span><span class="news-title">Odyssey 发布 Agora-1 多智能体世界模型</span><span class="news-impact">★★★☆☆</span></div>
+                <div class="news-summary">Odyssey推出Agora-1多智能体世界模型，支持多个AI代理在共享虚拟环境中协作与交互，为复杂任务自动化和模拟训练提供新平台。</div>
+                <div class="news-meta">信源：Odyssey / Hacker News · <a href="https://odyssey.ml/introducing-agora-1" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">06</span><span class="news-title">AI 运营广播电台：Andon Labs 探索实时音频内容创作</span><span class="news-impact">★★★☆☆</span></div>
+                <div class="news-summary">Andon Labs让AI全面运营广播电台，探索生成式AI在实时音频内容创作与广播中的商业应用，展示AI在创意产业的新可能性。</div>
+                <div class="news-meta">信源：Andon Labs / Hacker News · <a href="https://andonlabs.com/blog/andon-fm" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">07</span><span class="news-title">Git author 标志成阻止 AI 机器人垃圾信息新武器</span><span class="news-impact">★★★☆☆</span></div>
+                <div class="news-summary">Archestra团队发现利用Git的--author标志可有效阻止AI机器人向GitHub仓库发送垃圾信息，为开源项目维护者提供简单有效的防护方案。</div>
+                <div class="news-meta">信源：Archestra / Hacker News · <a href="https://archestra.ai/blog/only-responsible-ai" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">08</span><span class="news-title">PixVerse K-Baseball 模板一键生成 viral 视频爆火</span><span class="news-impact">★★★☆☆</span></div>
+                <div class="news-summary">PixVerse推出K-Baseball Sprint模板，用户上传自拍即可一键生成韩国棒球风格 viral 视频，无需提示词和编辑，在社交媒体引发热潮。</div>
+                <div class="news-meta">信源：PixVerse / AIHOT · <a href="https://www.pixverse.ai/" target="_blank">阅读原文 →</a></div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header"><span class="section-icon">🇨🇳</span><h2>中国 AI 动态</h2><span class="section-count">8 条</span></div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">01</span><span class="news-title">阿里云推出 HappyHorse 视频生成模型</span><span class="news-impact">★★★★★</span></div>
+                <div class="news-summary">阿里云发布HappyHorse视频生成模型，支持从原始提示词到1080p多镜头现实感画面的统一工作流，现已在Model Studio上线，限时8折优惠。</div>
+                <div class="news-meta">信源：阿里云 / AIHOT · <a href="https://www.alibabacloud.com/" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">02</span><span class="news-title">腾讯 AI 设计智能体 Ardot 开启公测</span><span class="news-impact">★★★★★</span></div>
+                <div class="news-summary">腾讯云自研AI设计智能体平台Ardot正式公测，支持一句话生成App页面、官网、海报等可编辑设计稿，可导入Figma并一键转换为代码对接开发工具。</div>
+                <div class="news-meta">信源：IT之家 / AIHOT · <a href="https://cloud.tencent.com/" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">03</span><span class="news-title">百度率先跨过 AI 造血门槛，进入结果交付时代</span><span class="news-impact">★★★★☆</span></div>
+                <div class="news-summary">百度在AI商业化方面取得突破，率先实现自我造血能力。通过芯云模块利润思考和DAAI价值定位，百度领跑AI下半场竞争。</div>
+                <div class="news-meta">信源：36氪 · <a href="https://36kr.com/information/AI" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">04</span><span class="news-title">三大运营商杀入 Token 生意，9.9 元起用 AI 像交话费</span><span class="news-impact">★★★★☆</span></div>
+                <div class="news-summary">中国移动、联通、电信三大运营商齐推AI Token套餐，最低9.9元起，用户可像交话费一样按需购买AI服务，降低大模型使用门槛。</div>
+                <div class="news-meta">信源：智东西 / 36氪 · <a href="https://36kr.com/information/AI" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">05</span><span class="news-title">苏州非人形机器人企业：融资 650 万，收入 4500 万</span><span class="news-impact">★★★☆☆</span></div>
+                <div class="news-summary">苏州一批非人形机器人企业悄然盈利，某企业融资650万元却实现4500万元收入，展示非人形机器人在工业场景的更快商业化路径。</div>
+                <div class="news-meta">信源：铅笔道 / 36氪 · <a href="https://36kr.com/information/AI" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">06</span><span class="news-title">鲸跃动力获数千万元种子轮投资，打造 Robo Labor</span><span class="news-impact">★★★☆☆</span></div>
+                <div class="news-summary">前北京人形数据负责人创立鲸跃动力，获星海图数千万元种子轮投资，用「数据+模型+末端执行」打造开箱即用的机器人劳动力方案。</div>
+                <div class="news-meta">信源：36氪 · <a href="https://36kr.com/information/AI" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">07</span><span class="news-title">开源工具揭露 AI API 中转站安全风险</span><span class="news-impact">★★★☆☆</span></div>
+                <div class="news-summary">api-relay-audit开源项目通过双论文锚定路线，对AI API中转站的掺水、造假等风险进行可验证的三态判定，提供透明日志保障开发者权益。</div>
+                <div class="news-meta">信源：Berry Xia / AIHOT · <a href="https://github.com/" target="_blank">阅读原文 →</a></div>
+            </div>
+            <div class="news-item">
+                <div class="news-header"><span class="news-number">08</span><span class="news-title">Figure 机器人与人类快递分拣对决直播</span><span class="news-impact">★★★☆☆</span></div>
+                <div class="news-summary">Figure机器人与人类进行快递分拣任务直播对决，目前人类稍稍领先，展示人形机器人在物流场景的实际能力与发展差距。</div>
+                <div class="news-meta">信源：小互 / AIHOT · <a href="https://www.figure.ai/" target="_blank">阅读原文 →</a></div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header"><span class="section-icon">🏆</span><h2>全球模型热度榜</h2><span class="section-count">Chatbot Arena · TOP 5</span></div>
+            <table class="leaderboard-table"><thead><tr><th>排名</th><th>模型</th><th>机构</th><th>Elo 评分</th><th>变动</th></tr></thead><tbody>
+                    <tr><td class="rank">1</td><td><div class="model-name">claude-opus-4-6-thinking</div></td><td class="model-org">Anthropic</td><td class="elo-score">1502</td><td class="elo-change change-flat">→ 持平</td></tr>
+                    <tr><td class="rank">2</td><td><div class="model-name">claude-opus-4-7-thinking</div></td><td class="model-org">Anthropic</td><td class="elo-score">1500</td><td class="elo-change change-flat">→ 持平</td></tr>
+                    <tr><td class="rank">3</td><td><div class="model-name">gemini-2.5-pro-exp</div></td><td class="model-org">Google</td><td class="elo-score">1498</td><td class="elo-change change-flat">→ 持平</td></tr>
+                    <tr><td class="rank">4</td><td><div class="model-name">claude-opus-4-7</div></td><td class="model-org">Anthropic</td><td class="elo-score">1492</td><td class="elo-change change-up">↑ +1</td></tr>
+                    <tr><td class="rank">5</td><td><div class="model-name">muse-spark</div></td><td class="model-org">Meta</td><td class="elo-score">1489</td><td class="elo-change change-down">↓ -1</td></tr>
+                </tbody></table>
+        </div>
+        <div class="section">
+            <div class="section-header"><span class="section-icon">📈</span><h2>今日趋势洞察</h2></div>
+            <div class="insight-item"><p><span class="insight-highlight">Anthropic 持续领跑：</span>今日全球AI动态中Anthropic占据重要位置——不仅收购Stainless强化开发者生态，其联合创始人更将与教皇共同发布AI伦理通谕。在模型榜单上，Anthropic包揽前两名（claude-opus-4-6-thinking 1502分、claude-opus-4-7-thinking 1500分），显示其在技术实力与行业影响力上的双重领导地位。</p></div>
+            <div class="insight-item"><p><span class="insight-highlight">中国AI商业化加速：</span>阿里云推出HappyHorse视频生成模型、腾讯Ardot设计智能体公测、三大运营商推出Token套餐——中国AI产业正从"技术竞赛"转向"产品落地"。百度率先实现AI业务自我造血，苏州非人形机器人企业已实现盈利，标志着中国AI进入结果交付时代。</p></div>
+        </div>
+        <div class="footer">
+            <p>AI 行业热度日报 · 每日早 10:00 自动更新</p>
+            <p style="margin-top:8px">数据来源：AIHOT · Hacker News · 36氪 · Chatbot Arena · The Verge</p>
+            <p style="margin-top:8px">报告生成时间：2026-05-19 10:18</p>
+        </div>
+    </div>
+</body>
+</html>

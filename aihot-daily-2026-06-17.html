@@ -1,382 +1,474 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI 行业日报 · 2026-06-17</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #faf8f5; color: #1a1a1a;
-      font-family: 'Noto Serif SC', 'Songti SC', serif;
-      line-height: 1.8; -webkit-font-smoothing: antialiased;
-    }
-    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
-    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
-    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
-    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
-    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
-            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
-    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
-    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
-                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
-    .section { margin-bottom: 32px; }
-    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
-    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
-    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; transition: background 0.2s; }
-    .news-item:hover { background: rgba(194,58,48,0.03); border-radius: 4px; padding-left: 12px; padding-right: 12px; }
-    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
-    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
-                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
-    .item-body { flex: 1; min-width: 0; }
-    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
-    .item-title:hover { color: #c23a30; }
-    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
-    .source { color: #666; font-weight: 500; }
-    .time { color: #aaa; }
-    .score { color: #c23a30; font-weight: 600; }
-    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
-    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
-                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
-    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
-    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
-    .model-table .model-name { font-weight: 600; }
-    .model-table .org { color: #666; }
-    .model-table .ctx { color: #888; font-size: 13px; }
-    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
-    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
-    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
-    .insights ul { list-style: none; padding: 0; }
-    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
-    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
-    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
-    .footer a { color: #888; text-decoration: none; }
-    .footer a:hover { color: #c23a30; }
-    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI HOT 行业日报 · 2026-06-17</title>
+<style>
+:root {
+  --ink: #1a1a1a;
+  --cinnabar: #c23a30;
+  --paper: #faf8f5;
+  --gray: #888;
+  --light-gray: #e8e4df;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.8;
+  padding: 0;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+header {
+  text-align: center;
+  padding-bottom: 32px;
+  border-bottom: 2px solid var(--cinnabar);
+  margin-bottom: 32px;
+}
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+header .subtitle {
+  font-size: 14px;
+  color: var(--gray);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+header .lead {
+  font-size: 16px;
+  color: var(--ink);
+  margin-top: 16px;
+  font-style: italic;
+  padding: 0 16px;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cinnabar);
+  margin: 32px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--light-gray);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.item {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+.item-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  flex: 1;
+  line-height: 1.5;
+}
+.item-meta {
+  font-size: 12px;
+  color: var(--gray);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin-top: 6px;
+}
+.item-summary {
+  font-size: 14px;
+  color: #444;
+  margin-top: 8px;
+  line-height: 1.7;
+}
+.item-url {
+  font-size: 12px;
+  color: var(--cinnabar);
+  margin-top: 6px;
+  word-break: break-all;
+}
+.item-url a {
+  color: var(--cinnabar);
+  text-decoration: none;
+}
+.impact {
+  color: #e6a23c;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.table-section {
+  margin-top: 32px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--light-gray);
+}
+th {
+  font-weight: 600;
+  color: var(--cinnabar);
+  background: #fff;
+}
+tr:hover { background: #f5f3f0; }
+.insight-box {
+  background: #fff;
+  border-left: 4px solid var(--cinnabar);
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+}
+.insight-box p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.insight-box p:last-child { margin-bottom: 0; }
+.footer {
+  text-align: center;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--light-gray);
+  font-size: 12px;
+  color: var(--gray);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+.hn-section {
+  margin-top: 32px;
+}
+.hn-item {
+  font-size: 14px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--light-gray);
+}
+.hn-item a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.hn-item a:hover { color: var(--cinnabar); }
+@media (max-width: 600px) {
+  .container { padding: 24px 16px; }
+  header h1 { font-size: 22px; }
+  .item-header { flex-direction: column; }
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>AI 行业日报</h1>
-      <div class="subtitle">2026-06-17 ·  · 北京时间 09:01</div>
-    </div>
-
-    <div class="lead">
-      <div class="lead-label">主编点评</div>
-      <p>今日AI热点：Cartesia 发布 Sonic 3.5 与 Ink 2 实时语音模型；Google Cloud 推出 OKF v0.1：供应商中立的 Markdown 规范，为 AI 智能体提供结构化上下文；Qwen-RobotManip：对齐解锁机器人操作基础模型的规模化能力</p>
-    </div>
-
-    <div class="section">
-      <div class="section-header"><div class="section-divider"></div><h2>🌍 全球 AI 动态</h2></div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">1</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/testingcatalog/status/2066773392527655252" target="_blank" class="item-title">Cartesia 发布 Sonic 3.5 与 Ink 2 实时语音模型</a>
-                <div class="item-meta">
-                  <span class="source">X：Testing Catalog (@testingcatalog)</span>
-                </div>
-                <div class="item-summary">Cartesia 推出 Sonic 3.5 和 Ink 2 两个模型，作为单一实时语音栈，分别负责文本转语音和语音转文本。Ink 2 在 Artificial Analysis 的流式语音转文字排行榜上排名第一。Sonic 3.5 在实时文本转语音中位列榜首，首音频延迟约 82ms。Cartesia</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">2</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://www.marktechpost.com/2026/06/16/google-cloud-introduces-open-knowledge-format-okf-a-vendor-neutral-markdown-spec-for-giving-ai-agents-curated-context" target="_blank" class="item-title">Google Cloud 推出 OKF v0.1：供应商中立的 Markdown 规范，为 AI 智能体提供结构化上下文</a>
-                <div class="item-meta">
-                  <span class="source">MarkTechPost（RSS）</span>
-                </div>
-                <div class="item-summary">Google Cloud 发布 Open Knowledge Format (OKF) v0.1，一种供应商中立的 Markdown 规范，为 AI 智能体提供结构化上下文知识。OKF 将知识表示为带 YAML 前置元数据的 markdown 文件目录，每个概念对应一个文件，通过 `type`、`t</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">3</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/satyanadella/status/2066911399494963335" target="_blank" class="item-title">Copilot Cowork 全球正式可用，支持多模型</a>
-                <div class="item-meta">
-                  <span class="source">X：Satya Nadella (@satyanadella)</span>
-                </div>
-                <div class="item-summary">Copilot Cowork 现已全球正式可用，并支持多模型！ 每个组织都可以让长期运行的智能体处理复杂的多步骤任务，基于你组织的独特知识和专有技术。 https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowo</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">4</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://openrouter.ai/blog/announcements/subagent-server-tool" target="_blank" class="item-title">Subagent：让模型把琐碎任务委托出去</a>
-                <div class="item-meta">
-                  <span class="source">OpenRouter：Announcements（RSS）</span>
-                </div>
-                <div class="item-summary">OpenRouter 推出 openrouter:subagent 服务器工具，允许前沿模型在生成过程中将独立的琐碎任务（如文档总结、结构化数据提取、文本重格式化）委托给更小、更便宜、更快的 worker 模型执行，从而节省前沿模型的 token 消耗。</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">5</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://updates.midjourney.com/draft-mode-for-v8-1-and-new-feature-previews" target="_blank" class="item-title">Midjourney V8.1 推出 Draft mode 草稿模式与新功能预览</a>
-                <div class="item-meta">
-                  <span class="source">Midjourney：Updates（RSS）</span>
-                </div>
-                <div class="item-summary">Midjourney V8.1 的 Draft mode 草稿模式每次生成24张低分辨率低质量图片。用户可对任意图片点击 "Vary"，将其渲染为全质量、全分辨率版本。草稿任务消耗的快速小时数减半。</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">6</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.ai/news/introducing-powerpoint-addin" target="_blank" class="item-title">Grok for PowerPoint 发布：在 Microsoft PowerPoint 内直接生成和编辑幻灯片</a>
-                <div class="item-meta">
-                  <span class="source">xAI：News（网页）</span>
-                </div>
-                <div class="item-summary">xAI 于 6 月 16 日发布 Grok for PowerPoint，作为免费 Microsoft 365 插件上线。用户无需离开应用即可利用 Grok 将大纲转为完整幻灯片，进行内容研究、撰写、排版，并支持添加单张幻灯片、调整样式主题、重构章节。插件还能调用 Grok 连接器，从邮件或 Sha</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">7</span>
-                <span class="impact">★★★★☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://the-decoder.com/doj-invokes-national-security-to-defend-xais-unpermitted-gas-turbines-in-naacp-lawsuit" target="_blank" class="item-title">美国司法部援引国家安全为xAI未经许可的燃气轮机辩护</a>
-                <div class="item-meta">
-                  <span class="source">The Decoder：AI News（RSS）</span>
-                </div>
-                <div class="item-summary">美国司法部在一份驳回诉讼的动议中称，xAI的聊天机器人Grok对军事行动至关重要，以此为其在密西西比州Southaven的Colossus 2设施运行未经许可的燃气轮机辩护。NAACP已提起诉讼，指控xAI的燃气轮机数量从4月的27台增至57台，导致氮氧化物排放飙升111%。国防部首席数字与人工智能</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">8</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://runtimewire.com/article/microsoft-github-aws-ai-capacity-crunch" target="_blank" class="item-title">微软旗下GitHub遭遇AI算力短缺，转而向AWS寻求支持</a>
-                <div class="item-meta">
-                  <span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span>
-                </div>
-                <div class="item-summary">微软旗下GitHub面临AI算力短缺，微软因此转向亚马逊AWS寻求计算资源支持。原文来自Hacker News热门讨论，标题为“Microsoft turns to AWS as GitHub faces AI capacity crunch”。</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">9</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://techcrunch.com/2026/06/15/the-us-governments-anthropic-models-ban-was-never-about-an-ai-jailbreak" target="_blank" class="item-title">Fable 遭美国政府封禁，TechCrunch 质疑真正原因并非模型越狱</a>
-                <div class="item-meta">
-                  <span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span>
-                </div>
-                <div class="item-summary">美国政府对 Anthropic 的模型 Fable 实施封禁，但 TechCrunch 发文质疑，实际原因可能并非此前认为的“模型越狱”问题。该文章在 Hacker News 引发讨论，获得 103 个点赞。</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">10</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo" target="_blank" class="item-title">SpaceX 以 600 亿美元股票收购 AI 编程公司 Cursor</a>
-                <div class="item-meta">
-                  <span class="source">TechCrunch：AI（RSS）</span>
-                </div>
-                <div class="item-summary">SpaceX 在历史性 IPO 数天后，同意以 600 亿美元股票收购 AI 编程初创公司 Cursor，旨在帮助其围绕 xAI 构建的 AI 部门追赶主要 AI 实验室。此前 Cursor 正接近完成一轮 20 亿美元融资，估值 500 亿美元，投资方包括 Andreessen Horowitz、</div>
-              </div>
-            </div>
-    </div>
-
-    <div class="section">
-      <div class="section-header"><div class="section-divider"></div><h2>🇨🇳 中国 AI 动态</h2></div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">19</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://qwen.ai/blog?id=qwen-robotmanip" target="_blank" class="item-title">Qwen-RobotManip：对齐解锁机器人操作基础模型的规模化能力</a>
-                <div class="item-meta">
-                  <span class="source">Qwen：Blog Retrieval（API）</span>
-                </div>
-                <div class="item-summary">Qwen-RobotManip 是通义千问基于 Qwen-VL 的视觉-语言-动作（VLA）基础模型，引入覆盖表示、运动和行为三维度的统一对齐框架。仅使用开源机器人数据集和人演示视频，构建约 38,100 小时预训练语料，涵盖 15 种机器人形态。在 LIBERO-Plus 达 91.4%，Robo</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">20</span>
-                <span class="impact">★★☆☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://qwen.ai/blog?id=qwen-robotworld" target="_blank" class="item-title">Qwen-RobotWorld：具身智能体的无界世界</a>
-                <div class="item-meta">
-                  <span class="source">Qwen：Blog Retrieval（API）</span>
-                </div>
-                <div class="item-summary">Qwen-RobotWorld以语言为统一动作接口，采用双流Multimodal Diffusion Transformer（MMDiT）架构，将Qwen2.5-VL作为动作编码器。在4个基准测试中取得顶尖成绩，统一20余种机器人形态，基于860万跨场景训练对和1300多项操作技能。语言接口标准化5</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">21</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://www.ithome.com/0/964/672.htm" target="_blank" class="item-title">成本砍半，字节跳动推出 Seedance 2.0 Mini 视频生成模型</a>
-                <div class="item-meta">
-                  <span class="source">IT之家（RSS）</span>
-                </div>
-                <div class="item-summary">字节跳动火山引擎旗下火山方舟体验中心于 6 月 15 日上线 Seedance 2.0 Mini 视频生成模型，计划近期开放 API。该模型比 Seedance 2.0 Fast 快 2 倍，输出质量相当。图生视频定价 0.023 元/千 tokens，视频生视频 0.014 元/千 tokens，</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">22</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://qwen.ai/blog?id=qwen-robotnav" target="_blank" class="item-title">Qwen-RobotNav：面向智能体导航系统的可扩展导航模型</a>
-                <div class="item-meta">
-                  <span class="source">Qwen：Blog Retrieval（API）</span>
-                </div>
-                <div class="item-summary">Qwen 发布 Qwen-RobotNav，基于 Qwen3-VL 在 15.6M 样本上训练，统一了视觉语言导航、目标导航、目标跟踪、自动驾驶和具身问答五个领域，无需修改架构即可在推理时切换任务模式和观察参数。模型在多项基准取得 SOTA：VLN-CE RxR 成功率 76.5%，HM3Dv2 目</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">23</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://www.ithome.com/0/964/675.htm" target="_blank" class="item-title">教育部“阳光志愿”信息服务系统全新升级上线：智能筛选志愿，数据权威可信</a>
-                <div class="item-meta">
-                  <span class="source">IT之家（RSS）</span>
-                </div>
-                <div class="item-summary">教育部“阳光志愿”信息服务系统今日全新升级上线，依托招生、学籍、就业等海量官方数据，免费为考生和家长提供志愿填报服务。系统支持31个省区市本专科普通批次志愿筛选，输入高考成绩、位次及个性化条件即可快速生成合理参考方案。AI助手“智慧小招”24小时在线解答政策规则。平台数据由高校直接报送、官方核验，真</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">24</span>
-                <span class="impact">★★★☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://www.ithome.com/0/964/691.htm" target="_blank" class="item-title">AI 版支付宝官宣开启邀测：右滑打开“阿宝”，官方放出 100 个邀请码</a>
-                <div class="item-meta">
-                  <span class="source">IT之家（RSS）</span>
-                </div>
-                <div class="item-summary">支付宝今日开启 AI 版邀测，用户可右滑进入新版界面，在对话框或语音中输入指令，由“阿宝”助手代办事项。以查询公积金为例，阿宝自动匹配对应小程序和服务入口，用户点击确认即可完成，将多步跳转折叠为一句指令。所有涉及资金变动和支付的环节均需用户本人确认。首批放出 100 个邀请码。</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">25</span>
-                <span class="impact">★★☆☆☆</span>
-              </div>
-              <div class="item-body">
-                <a href="https://mp.weixin.qq.com/s/N5ac768a8LkhEjOVpkR1dQ" target="_blank" class="item-title">小米 MiMo Claw 正式版发布：旗舰模型+金山办公，全新订阅服务上线</a>
-                <div class="item-meta">
-                  <span class="source">公众号：小米 MiMo</span>
-                </div>
-                <div class="item-summary">小米推出云端轻量化 Claw 类产品 MiMo Claw 正式版，搭载与 OpenClaw 框架深度适配的 MiMo-V2.5-Pro 旗舰模型。该模型原生兼容 MCP 工具调用协议，内置百万级超长上下文，支持单会话千次以上连续工具调用；依托 MTP 三层解码架构，在 OpenClaw 标准 Age</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">26</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://x.com/kimmonismus/status/2066946013026263110" target="_blank" class="item-title">微软考虑为 Copilot Cowork 集成 DeepSeek V4</a>
-                <div class="item-meta">
-                  <span class="source">X：Kim (@kimmonismus)</span>
-                </div>
-                <div class="item-summary">微软正考虑为 Copilot Cowork 提供微软托管的 DeepSeek V4 版本，作为更便宜的模型选项。Copilot Cowork 将放弃无限定价，转向按使用量计费，原因是成本过高（用户每周执行数百项任务导致费用激增）。若采用 DeepSeek，该模型将是可选的、经过微调与安全防护，并完全</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">27</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://the-decoder.com/deepseek-takes-outside-money-for-the-first-time-at-a-50-billion-valuation" target="_blank" class="item-title">DeepSeek 完成首轮外部融资，估值超 500 亿美元</a>
-                <div class="item-meta">
-                  <span class="source">The Decoder：AI News（RSS）</span>
-                </div>
-                <div class="item-summary">中国 AI 初创公司 DeepSeek 完成首轮外部融资，募资超 500 亿元人民币（约 74 亿美元），估值超 500 亿美元。投资结构特殊：多数投资者将资金投入 CEO 梁文锋管理的有限合伙企业，无投票权且锁定期五年；仅国资 AI 基金直接投资并保留投票权。创始人梁文锋个人投入约 200 亿元，</div>
-              </div>
-            </div>
-            <div class="news-item">
-              <div class="item-header">
-                <span class="item-index">28</span>
-                <span class="impact">★★★★★</span>
-              </div>
-              <div class="item-body">
-                <a href="https://mp.weixin.qq.com/s/iAgbUzPrsbpqvu4s2XiH0g" target="_blank" class="item-title">WorkBuddy日活飙升至行业第二的3-4倍，非技术用户涌入</a>
-                <div class="item-meta">
-                  <span class="source">公众号：数字生命卡兹克</span>
-                </div>
-                <div class="item-summary">从3月至今，WorkBuddy日活用户数已达行业第二名的3-4倍，用户不再限于开发者，大量HR、运营、行政等非技术岗位也在使用。其企业版和项目功能进一步扩展了Agent办公场景。同期，Trae Work、QoderWork、Kimi Work等产品纷纷改名或出新，争夺市场。腾讯云认为这可能是十年一遇</div>
-              </div>
-            </div>
-    </div>
-
-        <div class="section">
-          <div class="section-header"><div class="section-divider"></div><h2>🔗 Hacker News 热议</h2></div>
-          <div class="news-item"><div class="item-body"><a href="https://twitter.com/ID_AA_Carmack/status/2064095424420487226" target="_blank" class="item-title">I admire Fabrice Bellard. He is almost certainly a better overall programmer</a><div class="item-meta"><span class="score">▲ 854 · 💬 421</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://www.theregister.com/security/2026/06/15/feds-freaked-over-fable-5-after-simple-fix-this-code-prompt-not-jailbreak-says-researcher/5255827" target="_blank" class="item-title">Feds freaked over Fable 5 after 'fix this code', not jailbreak, say researchers</a><div class="item-meta"><span class="score">▲ 541 · 💬 318</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://arseniyshestakov.com/2026/06/16/apple-is-about-to-make-hide-my-email-useless/" target="_blank" class="item-title">Apple is about to make Hide My Email useless</a><div class="item-meta"><span class="score">▲ 375 · 💬 229</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://tim.blog/2026/06/12/has-ai-already-killed-nonfiction/" target="_blank" class="item-title">Has AI already killed self-help nonfiction books?</a><div class="item-meta"><span class="score">▲ 149 · 💬 150</span></div></div></div>
-          <div class="news-item"><div class="item-body"><a href="https://www.tno.nl/en/digital/artificial-intelligence/gpt-nl/" target="_blank" class="item-title">GPT‑NL: a sovereign language model for the Netherlands</a><div class="item-meta"><span class="score">▲ 127 · 💬 135</span></div></div></div>
-        </div>
-
-        <div class="section">
-          <div class="section-header"><div class="section-divider"></div><h2>🏆 全球模型热度榜</h2></div>
-          <div style="overflow-x:auto;"><table class="model-table"><thead><tr><th>#</th><th>模型</th><th>机构</th><th>上下文</th><th>趋势</th></tr></thead><tbody>
-              <tr><td class="rank">1</td><td class="model-name">Llama 4 Scout</td><td class="org">Meta</td><td class="ctx">10,000k</td><td class="trend">↑ 新</td></tr>
-              <tr><td class="rank">2</td><td class="model-name">Grok 4.20 Multi Agent</td><td class="org">xAI</td><td class="ctx">2,000k</td><td class="trend">↑ 新</td></tr>
-              <tr><td class="rank">3</td><td class="model-name">Gpt 5.5 Pro</td><td class="org">OpenAI</td><td class="ctx">1,050k</td><td class="trend"></td></tr>
-              <tr><td class="rank">4</td><td class="model-name">Qwen3 Coder</td><td class="org">Alibaba</td><td class="ctx">1,048k</td><td class="trend"></td></tr>
-              <tr><td class="rank">5</td><td class="model-name">Deepseek V4 Pro</td><td class="org">DeepSeek</td><td class="ctx">1,048k</td><td class="trend"></td></tr>
-              <tr><td class="rank">6</td><td class="model-name">Claude Fable 5</td><td class="org">Anthropic</td><td class="ctx">1,000k</td><td class="trend"></td></tr>
-            </tbody></table></div>
-          <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度排序，每个品牌取最新非预览版）</p>
-        </div>
-
-    <div class="insights">
-      <h2>📈 今日趋势洞察</h2>
-      <ul>
-            <li><strong>Agent 平台化加速</strong>：OpenAI 高管直言"聊天已死"，ChatGPT 从聊天机器人进化为超级应用 / Agent 平台，整合 Codex、图像生成和第三方应用。Anthropic 通过 Claude Code + Opus 生态的"智能体即服务"路线形成双雄竞争格局。</li>
-            <li><strong>智能体安全与审计工具浮现</strong>：随着 Agent 在生产环境中大量部署，审计、监控、安全分析工具正在成为一个独立品类。</li>
-            <li><strong>AI-Native 基础设施成型</strong>：AI 正从模型层深入到操作系统和工具链层，下一波竞争焦点是「AI 优先的开发者体验」——从代码生成到会话审计，工具生态快速分化。</li>
-      </ul>
-    </div>
-
-    <div class="footer">
-      <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
-      <p>支持：Hacker News · OpenRouter · The Verge</p>
-    </div>
-  </div>
+<div class="container">
+<header>
+  <h1>AI HOT 行业日报</h1>
+  <div class="subtitle">2026年06月17日  · 共 29 条精选动态</div>
+  <div class="lead">今日AI热点：Cartesia 发布 Sonic 3.5 与 Ink 2 实时语音模型、Qwen-RobotManip：对齐解锁机器人操作基础模型的规模化能力、Qwen-RobotWorld：具身智能体的无界世界</div>
+</header>
+<div class="section-title">🌍 全球 AI 动态</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">1. Cartesia 发布 Sonic 3.5 与 Ink 2 实时语音模型</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">X：Testing Catalog (@testingcatalog) </div>
+<div class="item-summary">Cartesia 推出 Sonic 3.5 和 Ink 2 两个模型，作为单一实时语音栈，分别负责文本转语音和语音转文本。Ink 2 在 Artificial Analysis 的流式语音转文字排行榜上排名第一。Sonic 3.5 在实时文本转语音中位列榜首，首音频延迟约 82ms。Cartesia 成为目前唯一同时拥有 #1 听与说模型的提供商。</div>
+<div class="item-url"><a href="https://x.com/testingcatalog/status/2066773392527655252" target="_blank">https://x.com/testingcatalog/status/2066773392527655252</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">2. Qwen-RobotManip：对齐解锁机器人操作基础模型的规模化能力</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">Qwen：Blog Retrieval（API） </div>
+<div class="item-summary">Qwen-RobotManip 是通义千问基于 Qwen-VL 的视觉-语言-动作（VLA）基础模型，引入覆盖表示、运动和行为三维度的统一对齐框架。仅使用开源机器人数据集和人演示视频，构建约 38,100 小时预训练语料，涵盖 15 种机器人形态。在 LIBERO-Plus 达 91.4%，RoboTwin-C2R Hard 达 69.4%，RoboCasa365 Composite-Unseen 达 14.9%，EBench 达 45.6%，RoboTwin-IF 达 72.0%，并在 RoboChallenge Table30 v1 generalist track 夺冠。模型采用 80 维状态-动作表示、人-机器人数据合成管道…</div>
+<div class="item-url"><a href="https://qwen.ai/blog?id=qwen-robotmanip" target="_blank">https://qwen.ai/blog?id=qwen-robotmanip</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">3. Qwen-RobotWorld：具身智能体的无界世界</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">Qwen：Blog Retrieval（API） </div>
+<div class="item-summary">Qwen-RobotWorld以语言为统一动作接口，采用双流Multimodal Diffusion Transformer（MMDiT）架构，将Qwen2.5-VL作为动作编码器。在4个基准测试中取得顶尖成绩，统一20余种机器人形态，基于860万跨场景训练对和1300多项操作技能。语言接口标准化500多种动作类别，支持操作、自动驾驶、室内导航的联合训练。还支持Scene2Robot人类到机器人转移及2–4路多视角几何一致视频生成。</div>
+<div class="item-url"><a href="https://qwen.ai/blog?id=qwen-robotworld" target="_blank">https://qwen.ai/blog?id=qwen-robotworld</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">4. Qwen-RobotNav：面向智能体导航系统的可扩展导航模型</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">Qwen：Blog Retrieval（API） </div>
+<div class="item-summary">Qwen 发布 Qwen-RobotNav，基于 Qwen3-VL 在 15.6M 样本上训练，统一了视觉语言导航、目标导航、目标跟踪、自动驾驶和具身问答五个领域，无需修改架构即可在推理时切换任务模式和观察参数。模型在多项基准取得 SOTA：VLN-CE RxR 成功率 76.5%，HM3Dv2 目标导航 75.6%（仅 RGB），EVT-Bench 跟踪率 90.0%，NAVSIM PDMS 91.4，以及三项 EQA 新标杆。模型暴露四个可调轴（视觉 token 预算、时间衰减、相机权重、帧采样模式）。作为智能体系统的一部分，上层规划器 Qwen3.7-Plus 在 EXPRESS-Bench 上提升 15.4%，导航步数减少 …</div>
+<div class="item-url"><a href="https://qwen.ai/blog?id=qwen-robotnav" target="_blank">https://qwen.ai/blog?id=qwen-robotnav</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">5. Google Cloud 推出 OKF v0.1：供应商中立的 Markdown 规范，为 AI 智能体提供结构化上下文</div>
+  <div class="impact">★★★★★</div>
+</div>
+<div class="item-meta">MarkTechPost（RSS） </div>
+<div class="item-summary">Google Cloud 发布 Open Knowledge Format (OKF) v0.1，一种供应商中立的 Markdown 规范，为 AI 智能体提供结构化上下文知识。OKF 将知识表示为带 YAML 前置元数据的 markdown 文件目录，每个概念对应一个文件，通过 `type`、`title`、`description` 等少量保留字段实现互操作。无需专有服务、SDK 或运行时，目录可托管在 GitHub、以 tarball 传输或挂载到任意文件系统。OKF 旨在解决组织内部知识碎片化问题——表结构、指标定义、runbook 等散落在不同 catalog 和 wiki 中，各厂商方案互不兼容。遵循最少意见原则，只强制…</div>
+<div class="item-url"><a href="https://www.marktechpost.com/2026/06/16/google-cloud-introduces-open-knowledge-format-okf-a-vendor-neutral-markdown-spec-for-giving-ai-agents-curated-context" target="_blank">https://www.marktechpost.com/2026/06/16/google-cloud-introduces-open-knowledge-format-okf-a-vendor-neutral-markdown-spec-for-giving-ai-agents-curated-context</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">6. Copilot Cowork 全球正式可用，支持多模型</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">X：Satya Nadella (@satyanadella) </div>
+<div class="item-summary">Copilot Cowork 现已全球正式可用，并支持多模型！ 每个组织都可以让长期运行的智能体处理复杂的多步骤任务，基于你组织的独特知识和专有技术。 https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/?v=15</div>
+<div class="item-url"><a href="https://x.com/satyanadella/status/2066911399494963335" target="_blank">https://x.com/satyanadella/status/2066911399494963335</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">7. Subagent：让模型把琐碎任务委托出去</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">OpenRouter：Announcements（RSS） </div>
+<div class="item-summary">OpenRouter 推出 openrouter:subagent 服务器工具，允许前沿模型在生成过程中将独立的琐碎任务（如文档总结、结构化数据提取、文本重格式化）委托给更小、更便宜、更快的 worker 模型执行，从而节省前沿模型的 token 消耗。</div>
+<div class="item-url"><a href="https://openrouter.ai/blog/announcements/subagent-server-tool" target="_blank">https://openrouter.ai/blog/announcements/subagent-server-tool</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">8. Midjourney V8.1 推出 Draft mode 草稿模式与新功能预览</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">Midjourney：Updates（RSS） </div>
+<div class="item-summary">Midjourney V8.1 的 Draft mode 草稿模式每次生成24张低分辨率低质量图片。用户可对任意图片点击 &quot;Vary&quot;，将其渲染为全质量、全分辨率版本。草稿任务消耗的快速小时数减半。</div>
+<div class="item-url"><a href="https://updates.midjourney.com/draft-mode-for-v8-1-and-new-feature-previews" target="_blank">https://updates.midjourney.com/draft-mode-for-v8-1-and-new-feature-previews</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">9. Grok for PowerPoint 发布：在 Microsoft PowerPoint 内直接生成和编辑幻灯片</div>
+  <div class="impact">★★★★★</div>
+</div>
+<div class="item-meta">xAI：News（网页） </div>
+<div class="item-summary">xAI 于 6 月 16 日发布 Grok for PowerPoint，作为免费 Microsoft 365 插件上线。用户无需离开应用即可利用 Grok 将大纲转为完整幻灯片，进行内容研究、撰写、排版，并支持添加单张幻灯片、调整样式主题、重构章节。插件还能调用 Grok 连接器，从邮件或 SharePoint 中获取信息。该插件同样适用于 Word 和 Excel。</div>
+<div class="item-url"><a href="https://x.ai/news/introducing-powerpoint-addin" target="_blank">https://x.ai/news/introducing-powerpoint-addin</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">10. 美国司法部援引国家安全为xAI未经许可的燃气轮机辩护</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">The Decoder：AI News（RSS） </div>
+<div class="item-summary">美国司法部在一份驳回诉讼的动议中称，xAI的聊天机器人Grok对军事行动至关重要，以此为其在密西西比州Southaven的Colossus 2设施运行未经许可的燃气轮机辩护。NAACP已提起诉讼，指控xAI的燃气轮机数量从4月的27台增至57台，导致氮氧化物排放飙升111%。国防部首席数字与人工智能官Cameron Stanley表示，Grok是支持机密和绝密网络军事任务的四款AI模型之一，包括近期针对伊朗的打击。</div>
+<div class="item-url"><a href="https://the-decoder.com/doj-invokes-national-security-to-defend-xais-unpermitted-gas-turbines-in-naacp-lawsuit" target="_blank">https://the-decoder.com/doj-invokes-national-security-to-defend-xais-unpermitted-gas-turbines-in-naacp-lawsuit</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">11. 微软旗下GitHub遭遇AI算力短缺，转而向AWS寻求支持</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">Hacker News 热门（buzzing.cc 中文翻译） </div>
+<div class="item-summary">微软旗下GitHub面临AI算力短缺，微软因此转向亚马逊AWS寻求计算资源支持。原文来自Hacker News热门讨论，标题为“Microsoft turns to AWS as GitHub faces AI capacity crunch”。</div>
+<div class="item-url"><a href="https://runtimewire.com/article/microsoft-github-aws-ai-capacity-crunch" target="_blank">https://runtimewire.com/article/microsoft-github-aws-ai-capacity-crunch</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">12. Fable 遭美国政府封禁，TechCrunch 质疑真正原因并非模型越狱</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">Hacker News 热门（buzzing.cc 中文翻译） </div>
+<div class="item-summary">美国政府对 Anthropic 的模型 Fable 实施封禁，但 TechCrunch 发文质疑，实际原因可能并非此前认为的“模型越狱”问题。该文章在 Hacker News 引发讨论，获得 103 个点赞。</div>
+<div class="item-url"><a href="https://techcrunch.com/2026/06/15/the-us-governments-anthropic-models-ban-was-never-about-an-ai-jailbreak" target="_blank">https://techcrunch.com/2026/06/15/the-us-governments-anthropic-models-ban-was-never-about-an-ai-jailbreak</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">13. SpaceX 以 600 亿美元股票收购 AI 编程公司 Cursor</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">TechCrunch：AI（RSS） </div>
+<div class="item-summary">SpaceX 在历史性 IPO 数天后，同意以 600 亿美元股票收购 AI 编程初创公司 Cursor，旨在帮助其围绕 xAI 构建的 AI 部门追赶主要 AI 实验室。此前 Cursor 正接近完成一轮 20 亿美元融资，估值 500 亿美元，投资方包括 Andreessen Horowitz、Thrive 和 Nvidia。SpaceX 在 IPO 期间向投资者表示，其 AI 产品可寻址市场达 26 万亿美元。交易预计于今年第三季度完成。</div>
+<div class="item-url"><a href="https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo" target="_blank">https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">14. Anthropic 5月企业AI订阅份额首超OpenAI，特朗普政府禁令反促采用量创新高</div>
+  <div class="impact">★★★★★</div>
+</div>
+<div class="item-meta">TechCrunch：AI（RSS） </div>
+<div class="item-summary">Anthropic 5月企业AI订阅市场份额达41%，首次超越OpenAI（39.5%）。公司刚完成650亿美元融资、估值9650亿美元，并因首次盈利季度秘密提交IPO。特朗普政府以出口管制为由要求Anthropic禁止非美国人访问最新模型Mythos 5及Fable 5，导致两款模型下架。Ramp首席经济学家指出，类似争议（如3月被国防部列为供应链风险）反而推动Anthropic企业采用量创纪录。Ramp数据显示，企业支出主要流向Claude Opus模型（最新为Opus 4.8）。</div>
+<div class="item-url"><a href="https://techcrunch.com/2026/06/16/anthropics-latest-feud-with-the-trump-admin-may-actually-help-it-sales-data-suggests" target="_blank">https://techcrunch.com/2026/06/16/anthropics-latest-feud-with-the-trump-admin-may-actually-help-it-sales-data-suggests</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">15. Anthropic：智能体编码中专业知识回报持续存在</div>
+  <div class="impact">★★★★★</div>
+</div>
+<div class="item-meta">Anthropic：Research（发表成果 · 网页） </div>
+<div class="item-summary">Anthropic 基于约40万次 Claude Code 交互会话（2025年10月至2026年4月）分析发现：人类主导规划决策（做什么），Claude 主导执行决策（怎么做）。领域专业知识越强，模型每次指令完成的工作量越多。各类职业完成任务的成功率与软件工程师平均相近；领域专家成功率更高，但与中级用户差距不大。七个月间调试会话占比下降近一半，使用转向端到端智能体任务（部署运行代码、分析数据、编写非代码文档），典型任务价值平均上升约25%。</div>
+<div class="item-url"><a href="https://www.anthropic.com/research/claude-code-expertise" target="_blank">https://www.anthropic.com/research/claude-code-expertise</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">16. OpenAI 发布 Deployment Simulation 方法：通过模拟部署预测模型发布前行为</div>
+  <div class="impact">★★★★★</div>
+</div>
+<div class="item-meta">OpenAI：官网动态（RSS · 排除企业/客户案例） </div>
+<div class="item-summary">OpenAI 近日发布 Deployment Simulation 方法，通过在隐私保护下重放历史对话、用新候选模型重新生成回复，模拟模型上线后的实际表现。在多个 GPT‑5‑series Thinking 部署中，该方法比传统评估更准确地估计了不良行为频率，发现新型对齐问题，并降低模型识别测试的风险。它还能扩展至涉及工具使用的智能体场景。传统评估存在覆盖不足、选择偏差和模型可识别测试等局限，而 Deployment Simulation 使用真实对话分布缓解了这些问题，但无法测量频率低于每 20 万条消息 1 次的行为。</div>
+<div class="item-url"><a href="https://openai.com/index/deployment-simulation" target="_blank">https://openai.com/index/deployment-simulation</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">17. 公开聊天数据能否预测真实世界AI失调？</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">OpenAI：Alignment 研究博客（RSS） </div>
+<div class="item-summary">OpenAI利用WildChat公开数据集（2023年4月至2024年5月收集的100万条对话）模拟模型部署，预测GPT-5.1、GPT-5.2、GPT-5.4在真实生产环境中的不良行为率。与私有生产数据对比发现，WildChat模拟的平均预测误差约3倍；但对技术性和智能体型失调的预测精度下降。研究验证了公开数据集作为外部审计工具的可行性。</div>
+<div class="item-url"><a href="https://alignment.openai.com/validating-public-evals" target="_blank">https://alignment.openai.com/validating-public-evals</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">18. Meta 解散工程部门引发热议</div>
+  <div class="impact">★★★★★</div>
+</div>
+<div class="item-meta">Hacker News 热门（buzzing.cc 中文翻译） </div>
+<div class="item-summary">6月16日，一篇标题为“Why is Meta destroying its engineering organization?”的博客文章出现在 Hacker News，获得110个点赞。文章指出 Meta 正在解散其工程组织，引发业界广泛讨论。具体原因和后续影响尚未明确。</div>
+<div class="item-url"><a href="https://newsletter.pragmaticengineer.com/p/why-is-meta-destroying-its-engineering" target="_blank">https://newsletter.pragmaticengineer.com/p/why-is-meta-destroying-its-engineering</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">19. 毕业生陷入AI检测荒诞循环：手写摘要被判99%AI率，AI写部分0%</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">公众号：数字生命卡兹克 </div>
+<div class="item-summary">当前毕业生面临论文AIGC率检测荒诞困境。学生手写摘要被判定99%AI率，纯AI写部分却为0%。学校要求AIGC率不超40%，学生用Claude反复修改并花上百元检测费（维普20元/篇，知网/万方2元/千字符），最终降至36.1%。答辩时老师要求改回学术表达，AI率回升至37.21%。同一论文在不同平台检测结果差异巨大（48%、44%、59%）。部分平台提供降重收费服务，少数学校已改用AI使用声明表替代一刀切检测。</div>
+<div class="item-url"><a href="https://mp.weixin.qq.com/s/DRzNIiojGLO-iqqPyJ7f8Q" target="_blank">https://mp.weixin.qq.com/s/DRzNIiojGLO-iqqPyJ7f8Q</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">20. WorkBuddy日活飙升至行业第二的3-4倍，非技术用户涌入</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">公众号：数字生命卡兹克 </div>
+<div class="item-summary">从3月至今，WorkBuddy日活用户数已达行业第二名的3-4倍，用户不再限于开发者，大量HR、运营、行政等非技术岗位也在使用。其企业版和项目功能进一步扩展了Agent办公场景。同期，Trae Work、QoderWork、Kimi Work等产品纷纷改名或出新，争夺市场。腾讯云认为这可能是十年一遇的机遇。</div>
+<div class="item-url"><a href="https://mp.weixin.qq.com/s/iAgbUzPrsbpqvu4s2XiH0g" target="_blank">https://mp.weixin.qq.com/s/iAgbUzPrsbpqvu4s2XiH0g</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">21. OpenAI 的领先优势正在快速缩小</div>
+  <div class="impact">★★★★★</div>
+</div>
+<div class="item-meta">Gary Marcus：The Road to AI We Can Trust（RSS） </div>
+<div class="item-summary">评论认为 OpenAI 正面临多重危机：缺乏护城河导致市场领先地位下滑；最大投资者微软持续疏远，近期甚至公开考虑将主要产品外包给中国；亏损速度远超预期，年亏损额以 8 倍增长。华盛顿方面可能打压 Anthropic，但也可能反而帮助其崛起，而 Elon Musk 成为另一个潜在的竞标者。</div>
+<div class="item-url"><a href="https://garymarcus.substack.com/p/openais-lead-is-dwindling-fast" target="_blank">https://garymarcus.substack.com/p/openais-lead-is-dwindling-fast</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">22. 前沿大模型后训练配方回顾：与 Finbarr Timbers 对谈</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">Nathan Lambert：Interconnects（RSS） </div>
+<div class="item-summary">Interconnects 播客邀请 Finbarr Timbers 回顾后训练配方的演变：从 InstructGPT 的 SFT→奖励模型→RL 三阶段，到 Llama 3 / Tülu 3 的 SFT→DPO→可验证奖励 RL，再至 DeepSeek R1 以大规模 RL 为核心。2026 年配方分化为多个领域专家模型再合并回统一模型。新出现模式为 Multi-teacher On-Policy Distillation（MOPD）：训练 N 个领域专家（经 SFT 和领域 RL），再通过在线采样、逐 token 最小化反向 KL 散度训练通用学生模型。MiMo Flash V2 率先引入，DeepSeek V4 与 Nemot…</div>
+<div class="item-url"><a href="https://www.interconnects.ai/p/frontier-post-training-recipe-review" target="_blank">https://www.interconnects.ai/p/frontier-post-training-recipe-review</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">23. 五角大楼将大部分日常AI工作流从Anthropic转移，目标9月前完全切断</div>
+  <div class="impact">★★★★★</div>
+</div>
+<div class="item-meta">X：阿易 AI Notes (@AYi_AInotes) </div>
+<div class="item-summary">五角大楼宣布已将超2/3日常AI工作流从Anthropic转移，目标9月前清零。起因是年初五角大楼要求Anthropic签署协议允许Claude用于大规模监控和全自动武器，CEO Dario Amodei以模型不可靠为由拒绝。五角大楼将其列为“供应链风险”，起诉未果。OpenAI调整立场获得订单。Polymarket预测6月底前和解概率仅9%。此事件凸显AI公司需在原则与政府合作间抉择。</div>
+<div class="item-url"><a href="https://x.com/AYi_AInotes/status/2066679835607412846" target="_blank">https://x.com/AYi_AInotes/status/2066679835607412846</a></div>
+</div>
+<div class="section-title">🇨🇳 中国 AI 动态</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">1. 成本砍半，字节跳动推出 Seedance 2.0 Mini 视频生成模型</div>
+  <div class="impact">★★★★★</div>
+</div>
+<div class="item-meta">IT之家（RSS） </div>
+<div class="item-summary">字节跳动火山引擎旗下火山方舟体验中心于 6 月 15 日上线 Seedance 2.0 Mini 视频生成模型，计划近期开放 API。该模型比 Seedance 2.0 Fast 快 2 倍，输出质量相当。图生视频定价 0.023 元/千 tokens，视频生视频 0.014 元/千 tokens，720P 规格下单秒生成成本约 0.5 元，较 Seedance 2.0 标准版降低约一半。模型面向电商内容生产、营销素材批量生成、UGC 创作及特效玩法等高频率、大规模视频生成场景。</div>
+<div class="item-url"><a href="https://www.ithome.com/0/964/672.htm" target="_blank">https://www.ithome.com/0/964/672.htm</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">2. 教育部“阳光志愿”信息服务系统全新升级上线：智能筛选志愿，数据权威可信</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">IT之家（RSS） </div>
+<div class="item-summary">教育部“阳光志愿”信息服务系统今日全新升级上线，依托招生、学籍、就业等海量官方数据，免费为考生和家长提供志愿填报服务。系统支持31个省区市本专科普通批次志愿筛选，输入高考成绩、位次及个性化条件即可快速生成合理参考方案。AI助手“智慧小招”24小时在线解答政策规则。平台数据由高校直接报送、官方核验，真实可靠。同时推出专业倾向测评和21项生涯测评工具，帮助学生认清特长、规划未来。</div>
+<div class="item-url"><a href="https://www.ithome.com/0/964/675.htm" target="_blank">https://www.ithome.com/0/964/675.htm</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">3. AI 版支付宝官宣开启邀测：右滑打开“阿宝”，官方放出 100 个邀请码</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">IT之家（RSS） </div>
+<div class="item-summary">支付宝今日开启 AI 版邀测，用户可右滑进入新版界面，在对话框或语音中输入指令，由“阿宝”助手代办事项。以查询公积金为例，阿宝自动匹配对应小程序和服务入口，用户点击确认即可完成，将多步跳转折叠为一句指令。所有涉及资金变动和支付的环节均需用户本人确认。首批放出 100 个邀请码。</div>
+<div class="item-url"><a href="https://www.ithome.com/0/964/691.htm" target="_blank">https://www.ithome.com/0/964/691.htm</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">4. 小米 MiMo Claw 正式版发布：旗舰模型+金山办公，全新订阅服务上线</div>
+  <div class="impact">★★★★☆</div>
+</div>
+<div class="item-meta">公众号：小米 MiMo </div>
+<div class="item-summary">小米推出云端轻量化 Claw 类产品 MiMo Claw 正式版，搭载与 OpenClaw 框架深度适配的 MiMo-V2.5-Pro 旗舰模型。该模型原生兼容 MCP 工具调用协议，内置百万级超长上下文，支持单会话千次以上连续工具调用；依托 MTP 三层解码架构，在 OpenClaw 标准 Agent 工作流中吞吐效率提升约 3 倍。ClawEval 测试中任务达标率（Pass³）达 63.8%，Token 消耗较同类产品降低 40%-60%。联动金山办公生态，提供 Word、Excel、PPT、PDF 等格式的 AI 生成、预览与在线编辑一站式服务。免费用户每日单次体验时长从1小时升级至4小时，面向高频用户推出 TokenPla…</div>
+<div class="item-url"><a href="https://mp.weixin.qq.com/s/N5ac768a8LkhEjOVpkR1dQ" target="_blank">https://mp.weixin.qq.com/s/N5ac768a8LkhEjOVpkR1dQ</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">5. 微软考虑为 Copilot Cowork 集成 DeepSeek V4</div>
+  <div class="impact">★★★★★</div>
+</div>
+<div class="item-meta">X：Kim (@kimmonismus) </div>
+<div class="item-summary">微软正考虑为 Copilot Cowork 提供微软托管的 DeepSeek V4 版本，作为更便宜的模型选项。Copilot Cowork 将放弃无限定价，转向按使用量计费，原因是成本过高（用户每周执行数百项任务导致费用激增）。若采用 DeepSeek，该模型将是可选的、经过微调与安全防护，并完全托管于 Azure。Axios 报道称微软已微调了一个可用模型，最终决定待定。</div>
+<div class="item-url"><a href="https://x.com/kimmonismus/status/2066946013026263110" target="_blank">https://x.com/kimmonismus/status/2066946013026263110</a></div>
+</div>
+<div class="item">
+<div class="item-header">
+  <div class="item-title">6. DeepSeek 完成首轮外部融资，估值超 500 亿美元</div>
+  <div class="impact">★★★★★</div>
+</div>
+<div class="item-meta">The Decoder：AI News（RSS） </div>
+<div class="item-summary">中国 AI 初创公司 DeepSeek 完成首轮外部融资，募资超 500 亿元人民币（约 74 亿美元），估值超 500 亿美元。投资结构特殊：多数投资者将资金投入 CEO 梁文锋管理的有限合伙企业，无投票权且锁定期五年；仅国资 AI 基金直接投资并保留投票权。创始人梁文锋个人投入约 200 亿元，腾讯和宁德时代为主要外部投资者。梁文锋表示优先基础 AI 研究与 AGI 开发，将继续开源。DeepSeek 去年初凭 V3、R1 模型获全球关注，今年 4 月发布运行于华为芯片的最大开源权重模型 V4，并将 V4 Pro 永久折扣 75%，输入价格约为 OpenAI GPT-5.5 的 1/11，输出价格约为 1/35。</div>
+<div class="item-url"><a href="https://the-decoder.com/deepseek-takes-outside-money-for-the-first-time-at-a-50-billion-valuation" target="_blank">https://the-decoder.com/deepseek-takes-outside-money-for-the-first-time-at-a-50-billion-valuation</a></div>
+</div>
+<div class="table-section">
+<div class="section-title">🏆 模型部署榜（基于 OpenRouter）</div>
+<table><thead><tr><th>排名</th><th>品牌</th><th>代表模型</th><th>上下文长度</th></tr></thead><tbody>
+<tr><td>1</td><td>Meta-Llama</td><td>meta-llama/llama-4-scout</td><td>10,000,000</td></tr>
+<tr><td>2</td><td>Openai</td><td>openai/gpt-5.5-pro</td><td>1,050,000</td></tr>
+<tr><td>3</td><td>Google</td><td>google/gemini-3.5-flash</td><td>1,048,576</td></tr>
+<tr><td>4</td><td>Deepseek</td><td>deepseek/deepseek-v4-pro</td><td>1,048,576</td></tr>
+<tr><td>5</td><td>Qwen</td><td>qwen/qwen3-coder:free</td><td>1,048,576</td></tr>
+<tr><td>6</td><td>Anthropic</td><td>anthropic/claude-fable-5</td><td>1,000,000</td></tr>
+</tbody></table>
+</div>
+<div class="hn-section">
+<div class="section-title">🔥 Hacker News 热议</div>
+<div class="hn-item"><a href="https://mll.sh/humiliating-iis-servers-for-fun-and-jail-time/" target="_blank">Humiliating IIS servers for fun and jail time</a> (125 pts)</div>
+<div class="hn-item"><a href="https://writings.stephenwolfram.com/2026/06/launching-version-15-of-wolfram-language-mathematica-built-in-useful-ai-lots-of-new-core-functionality/" target="_blank">Wolfram Language and Mathematica Version 15, AI Assistant, Symbolic Music, More</a> (104 pts)</div>
+<div class="hn-item"><a href="https://www.tno.nl/en/digital/artificial-intelligence/gpt-nl/" target="_blank">GPT‑NL: a sovereign language model for the Netherlands</a> (150 pts)</div>
+<div class="hn-item"><a href="https://tim.blog/2026/06/12/has-ai-already-killed-nonfiction/" target="_blank">Has AI already killed self-help nonfiction books?</a> (185 pts)</div>
+<div class="hn-item"><a href="https://www.dexerto.com/gaming/stop-killing-games-fails-to-secure-eu-law-despite-1-3m-signatures-3376431/" target="_blank">Stop Killing Games fails to secure EU law despite 1.3M signatures</a> (40 pts)</div>
+</div>
+<div class="section-title">📈 今日趋势洞察</div>
+<div class="insight-box">
+<p>• 今日AI动态聚焦「产品发布/更新」领域，共8条相关资讯，显示该方向仍是行业关注重心。</p>
+<p>• 今日国际AI动态占主导，OpenAI、Anthropic等头部公司持续发布新品，全球竞争格局加速演变。</p>
+<p>• 头部厂商字节、Google、Anthropic同日发声，大模型与应用层竞争进入白热化阶段。</p>
+</div>
+<div class="footer">
+<p>数据来自 aihot.virxact.com · 北京时间 2026年06月17日 生成</p>
+<p>AI HOT 行业日报 · 每日 11:20 自动更新</p>
+</div>
+</div>
 </body>
 </html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 行业日报 · 2026-06-18</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf8f5; color: #1a1a1a;
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
+    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
+    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
+            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
+    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
+    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
+                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
+    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
+    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; transition: background 0.2s; }
+    .news-item:hover { background: rgba(194,58,48,0.03); border-radius: 4px; padding-left: 12px; padding-right: 12px; }
+    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
+    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
+                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
+    .item-body { flex: 1; min-width: 0; }
+    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
+    .item-title:hover { color: #c23a30; }
+    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
+    .source { color: #666; font-weight: 500; }
+    .time { color: #aaa; }
+    .score { color: #c23a30; font-weight: 600; }
+    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
+    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
+                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
+    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
+    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
+    .model-table .model-name { font-weight: 600; }
+    .model-table .org { color: #666; }
+    .model-table .ctx { color: #888; font-size: 13px; }
+    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
+    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
+    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
+    .insights ul { list-style: none; padding: 0; }
+    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
+    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
+    .footer a { color: #888; text-decoration: none; }
+    .footer a:hover { color: #c23a30; }
+    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AI 行业日报</h1>
+      <div class="subtitle">2026-06-18 ·  · 北京时间 09:01</div>
+    </div>
+
+    <div class="lead">
+      <div class="lead-label">主编点评</div>
+      <p>今日AI热点：MolmoMotion：语言引导的3D运动预测模型；Grok 4.3 在 Amazon Bedrock 正式可用；Wolfram 语言和 Mathematica 15 版发布：内置 AI 助手、符号音乐等新功能</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🌍 全球 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">1</span>
+                <span class="impact">★★☆☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://huggingface.co/blog/allenai/molmomotion" target="_blank" class="item-title">MolmoMotion：语言引导的3D运动预测模型</a>
+                <div class="item-meta">
+                  <span class="source">Hugging Face：Blog（RSS）</span>
+                </div>
+                <div class="item-summary">MolmoMotion基于Molmo 2骨干网络，输入视频帧、物体上的3D点标记及文字动作指令（如“移动并旋转桌上放水果的木碗”），预测未来数秒内这些点的3D轨迹。提供两个变体：自回归的MolmoMotion-AR逐步预测坐标，流匹配的MolmoMotion-FM通过连续空间变换处理多可能性运动。同</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">2</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.ai/news/grok-amazon-bedrock" target="_blank" class="item-title">Grok 4.3 在 Amazon Bedrock 正式可用</a>
+                <div class="item-meta">
+                  <span class="source">xAI：News（网页）</span>
+                </div>
+                <div class="item-summary">6 月 17 日，xAI 宣布 Grok 4.3 在 Amazon Bedrock 上全面可用。该模型在前沿模型中达成最低幻觉率，支持 100 万 token 上下文窗口，并提供可配置推理努力（none/low/medium/high）。在 Artificial Analysis Omniscien</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">3</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.marktechpost.com/2026/06/17/vercel-releases-eve" target="_blank" class="item-title">Vercel 发布开源 AI 智能体框架 Eve：每个智能体就是一个文件目录</a>
+                <div class="item-meta">
+                  <span class="source">MarkTechPost（RSS）</span>
+                </div>
+                <div class="item-summary">Vercel 发布开源 AI 智能体框架 Eve（npm 包，Apache-2.0 许可）。Eve 采用文件系统优先设计：每个智能体对应一个磁盘目录，目录结构直接映射模型、指令、工具、技能、连接、子智能体等能力，无需额外注册代码。内置六大生产级能力：持久执行（每步检查点，崩溃后可恢复）、沙箱计算、人</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">4</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/Yuchenj_UW/status/2067273020352380950" target="_blank" class="item-title">Omnigent开源：AI智能体团队元框架</a>
+                <div class="item-meta">
+                  <span class="source">X：Yuchen Jin (@Yuchenj_UW)</span>
+                </div>
+                <div class="item-summary">编程的未来不是单一智能体，而是一个完整的AI团队。 Omnigent让你在一个实时会话中运行一个智能体团队：Claude Code、Codex、Cursor、Pi，以及你自己的智能体。 它是一个面向AI智能体的元框架，基于我们内部的Databricks开发工具构建，现已开源给所有人。 由传奇人物@m</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">5</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://techcrunch.com/2026/06/17/google-bets-on-gemini-to-reinvent-the-smart-home-speaker" target="_blank" class="item-title">Google发布99美元Gemini智能音箱</a>
+                <div class="item-meta">
+                  <span class="source">TechCrunch：AI（RSS）</span>
+                </div>
+                <div class="item-summary">Google推出首款专为Gemini打造的智能音箱Google Home Speaker，售价99.99美元。支持自然语言请求和多步指令，可在说话中途纠正，并具备连续对话功能。内置10种新声音。高级AI功能需订阅Google Home Premium（月费10美元或年费100美元），包括Gemini</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">6</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://claude.com/blog/claude-design-stays-on-brand-for-daily-work" target="_blank" class="item-title">Claude Design 更新：跨项目保持品牌一致，与Claude Code协同</a>
+                <div class="item-meta">
+                  <span class="source">Claude：Blog（网页）</span>
+                </div>
+                <div class="item-summary">6月17日，Claude Design 更新，支持跨项目使用统一设计系统，并与Claude Code同步工作流。用户可直接拖拽、对齐和缩放画布元素，编辑器稳定性大幅提升。设计系统可从GitHub、设计文件或原始上传导入，团队管理员可锁定标准系统防止篡改。新增桌面端侧边栏入口及独立网页端claude.</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">7</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/Replit/status/2067328501003497684" target="_blank" class="item-title">Claude Design与Replit联动，设计变应用</a>
+                <div class="item-meta">
+                  <span class="source">X：Replit (@Replit)</span>
+                </div>
+                <div class="item-summary">在Claude中设计。在Replit中构建。 你现在可以将Claude Design中的设计发送到Replit，将其变成一个可工作的应用。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">8</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://huggingface.co/blog/amazon/strands-lerobot-hub-to-hardware" target="_blank" class="item-title">Strands Robots SDK：用单一智能体打通 Hugging Face Hub 到物理机器人</a>
+                <div class="item-meta">
+                  <span class="source">Hugging Face：Blog（RSS）</span>
+                </div>
+                <div class="item-summary">AWS（Apache 2.0）开源的 Strands Robots SDK 将 LeRobot 栈封装为 AgentTools，构建统一智能体。默认用 MuJoCo 模拟（无需硬件），mode="real" 切换至真实机器人。可记录演示数据为 LeRobotDataset 并推送 Hugging F</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">9</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/kimmonismus/status/2067310431669223425" target="_blank" class="item-title">Anthropic与DeepMind CEO呼吁G7组建AI联盟排除中国</a>
+                <div class="item-meta">
+                  <span class="source">X：Kim (@kimmonismus)</span>
+                </div>
+                <div class="item-summary">Dario Amodei（Anthropic）与Demis Hassabis（Google DeepMind）在G7闭门会议上呼吁组建美国主导的联盟，为人工智能制定全球规则和标准。Amodei指出，该联盟应以前沿模型和硬件（包括芯片及其他关键组件）的访问权限为手段，将中国排除在外。这一主张被评论为高</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">10</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year" target="_blank" class="item-title">泄露文件显示OpenAI年营收130亿但亏损远超收入</a>
+                <div class="item-meta">
+                  <span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span>
+                </div>
+                <div class="item-summary">OpenAI 2025年营收130.7亿美元（2024年37亿），但研发成本达191.8亿（含向微软支付105.9亿），收入成本（推理计算）75亿，销售营销成本57.3亿，运营亏损209.2亿。2025年净亏损约390亿，扣除约300亿一次性会计费用后约80亿。2025年3月获1220亿融资（估值8</div>
+              </div>
+            </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🇨🇳 中国 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">25</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://writings.stephenwolfram.com/2026/06/launching-version-15-of-wolfram-language-mathematica-built-in-useful-ai-lots-of-new-core-functionality" target="_blank" class="item-title">Wolfram 语言和 Mathematica 15 版发布：内置 AI 助手、符号音乐等新功能</a>
+                <div class="item-meta">
+                  <span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span>
+                </div>
+                <div class="item-summary">在 Mathematica 诞生近 38 年后，Wolfram 语言与 Mathematica 发布 Version 15。每个笔记本内置 AI 助手，支持从 AI 环境中直接调用 Wolfram 技术。新增符号音乐系统、大规模时间序列与事件序列处理、分类数据计算、模型拟合超函数 ModelFit。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">26</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.ithome.com/0/965/652.htm" target="_blank" class="item-title">阿里云发布HappyOyster 1.0：一句话生成可实时交互的数字世界</a>
+                <div class="item-meta">
+                  <span class="source">IT之家（RSS）</span>
+                </div>
+                <div class="item-summary">6月17日，阿里云发布开放式世界模型HappyOyster 1.0（快乐生蚝）。该产品基于原生多模态架构，支持多模态输入与音视频联合生成，可在生成过程中持续接收用户指令并实时响应画面。它深度学习物理世界状态转移规律，保持人物和环境长程一致性。官网开放“实时导演”与“世界探索”两种玩法：前者可随时叫停</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">27</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.ithome.com/0/965/248.htm" target="_blank" class="item-title">中国加紧筹建世界人工智能合作组织</a>
+                <div class="item-meta">
+                  <span class="source">IT之家（RSS）</span>
+                </div>
+                <div class="item-summary">中国正加紧筹建世界人工智能合作组织，欢迎各方加入。2025年7月26日，中国政府倡议成立该组织，作为践行多边主义、推动共商共建共享全球治理的举措，旨在弥合数字和智能鸿沟、促进人工智能向善普惠发展。初步考虑总部设在上海。同日，2025世界人工智能大会发表《人工智能全球治理行动计划》，呼吁各方遵循向善为</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">28</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/AYi_AInotes/status/2067327021005656135" target="_blank" class="item-title">Matt Pocock 开源 skills v1：将技能描述 Token 成本降低 63%</a>
+                <div class="item-meta">
+                  <span class="source">X：阿易 AI Notes (@AYi_AInotes)</span>
+                </div>
+                <div class="item-summary">Matt Pocock（Total TypeScript 作者）开源了 skills v1，将技能描述的 Token 成本降低 63%。该工具包将技能分为模型可调用和用户可调用，新增 /codebase-design、/domain-modeling、/grilling 三项技能；重写 /writi</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">29</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/dotey/status/2067039941960327204" target="_blank" class="item-title">baoyu-design 本地动画视频导出功能更新</a>
+                <div class="item-meta">
+                  <span class="source">X：宝玉 (@dotey)</span>
+                </div>
+                <div class="item-summary">baoyu-design（本地运行 Claude Design 的 Skill）新增动画视频导出功能。其声明式动画引擎基于 f(t) 设计：任意时间点 t 可绝对确定画面状态。导出采用无头 Chromium 逐帧截图 + ffmpeg 编码，每帧等待两帧 requestAnimationFrame </div>
+              </div>
+            </div>
+    </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🔗 Hacker News 热议</h2></div>
+          <div class="news-item"><div class="item-body"><a href="https://charitydotwtf.substack.com/p/ai-demands-more-engineering-discipline" target="_blank" class="item-title">AI demands more engineering discipline. Not less</a><div class="item-meta"><span class="score">▲ 339 · 💬 162</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://www.reuters.com/world/china/us-holds-off-blacklisting-chinas-deepseek-more-than-100-firms-deemed-security-2026-06-17/" target="_blank" class="item-title">US holds off blacklisting DeepSeek, more than 100 firms deemed security risks</a><div class="item-meta"><span class="score">▲ 336 · 💬 359</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/" target="_blank" class="item-title">Leaked financial docs show OpenAI is losing billions of dollars a year</a><div class="item-meta"><span class="score">▲ 261 · 💬 175</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://claude.com/blog/the-founders-playbook" target="_blank" class="item-title">The founder's playbook: Building an AI-native startup</a><div class="item-meta"><span class="score">▲ 211 · 💬 152</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://openrouter.ai/blog/insights/royale-last-agent-standing/" target="_blank" class="item-title">A robot is sprinting towards you. Do you want it running on Claude or Grok?</a><div class="item-meta"><span class="score">▲ 162 · 💬 133</span></div></div></div>
+        </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🏆 全球模型热度榜</h2></div>
+          <div style="overflow-x:auto;"><table class="model-table"><thead><tr><th>#</th><th>模型</th><th>机构</th><th>上下文</th><th>趋势</th></tr></thead><tbody>
+              <tr><td class="rank">1</td><td class="model-name">Llama 4 Scout</td><td class="org">Meta</td><td class="ctx">10,000k</td><td class="trend">↑ 新</td></tr>
+              <tr><td class="rank">2</td><td class="model-name">Grok 4.20 Multi Agent</td><td class="org">xAI</td><td class="ctx">2,000k</td><td class="trend">↑ 新</td></tr>
+              <tr><td class="rank">3</td><td class="model-name">Gpt 5.5 Pro</td><td class="org">OpenAI</td><td class="ctx">1,050k</td><td class="trend"></td></tr>
+              <tr><td class="rank">4</td><td class="model-name">Qwen3 Coder</td><td class="org">Alibaba</td><td class="ctx">1,048k</td><td class="trend"></td></tr>
+              <tr><td class="rank">5</td><td class="model-name">Deepseek V4 Pro</td><td class="org">DeepSeek</td><td class="ctx">1,048k</td><td class="trend"></td></tr>
+              <tr><td class="rank">6</td><td class="model-name">Claude Fable 5</td><td class="org">Anthropic</td><td class="ctx">1,000k</td><td class="trend"></td></tr>
+            </tbody></table></div>
+          <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度排序，每个品牌取最新非预览版）</p>
+        </div>
+
+    <div class="insights">
+      <h2>📈 今日趋势洞察</h2>
+      <ul>
+            <li><strong>Agent 平台化加速</strong>：OpenAI 高管直言"聊天已死"，ChatGPT 从聊天机器人进化为超级应用 / Agent 平台，整合 Codex、图像生成和第三方应用。Anthropic 通过 Claude Code + Opus 生态的"智能体即服务"路线形成双雄竞争格局。</li>
+            <li><strong>智能体安全与审计工具浮现</strong>：随着 Agent 在生产环境中大量部署，审计、监控、安全分析工具正在成为一个独立品类。</li>
+            <li><strong>AI-Native 基础设施成型</strong>：AI 正从模型层深入到操作系统和工具链层，下一波竞争焦点是「AI 优先的开发者体验」——从代码生成到会话审计，工具生态快速分化。</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
+      <p>支持：Hacker News · OpenRouter · The Verge</p>
+    </div>
+  </div>
+</body>
+</html>

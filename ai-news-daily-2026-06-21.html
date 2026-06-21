@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 行业日报 · 2026-06-21</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif; background: #faf8f5; color: #1a1a1a; line-height: 1.8; }
+.container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+.header { text-align: center; padding: 32px 0; border-bottom: 2px solid #c23a30; margin-bottom: 32px; }
+.header h1 { font-size: 28px; font-weight: 700; color: #1a1a1a; letter-spacing: 2px; }
+.header .subtitle { font-size: 14px; color: #666; margin-top: 8px; }
+.header .date { font-size: 13px; color: #999; margin-top: 4px; }
+.lead { background: #fff; border-left: 4px solid #c23a30; padding: 16px 20px; margin-bottom: 28px; font-size: 15px; color: #444; }
+.section { margin-bottom: 32px; }
+.section-title { font-size: 18px; font-weight: 700; color: #c23a30; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #e8e4df; display: flex; align-items: center; gap: 8px; }
+.item { background: #fff; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.item-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+.item-title { font-size: 15px; font-weight: 600; color: #1a1a1a; line-height: 1.6; flex: 1; }
+.item-source { font-size: 12px; color: #888; white-space: nowrap; }
+.item-summary { font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 8px; }
+.item-url { font-size: 12px; color: #c23a30; text-decoration: none; }
+.item-url:hover { text-decoration: underline; }
+.stars { color: #c23a30; font-size: 13px; letter-spacing: 2px; }
+.table-section { margin-bottom: 32px; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+th { background: #f5f2ee; color: #1a1a1a; font-weight: 600; font-size: 13px; padding: 12px 16px; text-align: left; }
+td { padding: 12px 16px; font-size: 13px; border-bottom: 1px solid #f0ece6; }
+tr:last-child td { border-bottom: none; }
+.insight { background: #fff; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.insight-title { font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+.insight-text { font-size: 13px; color: #555; line-height: 1.7; }
+.footer { text-align: center; padding: 24px 0; font-size: 12px; color: #999; border-top: 1px solid #e8e4df; margin-top: 32px; }
+@media (max-width: 600px) { .container { padding: 20px 16px; } .item-header { flex-direction: column; } }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>AI 行业日报</h1>
+<div class="subtitle">2026年06月21日 </div>
+<div class="date">北京时间 10:05 生成 · 数据来自 AIHOT & Hacker News</div>
+</div>
+
+<div class="lead">
+<strong>主编点评：</strong>今日AI热点：开源教程《Deep Agents 实战》发布、Inference cost at scale with napkin math、GPT-5.5 hallucinates 3x more than MIT-licensed GLM-5.2
+</div>
+<div class="section">
+<div class="section-title">🌍 全球 AI 动态</div>
+<div class="item">
+<div class="item-header">
+<div class="item-title">1. 开源教程《Deep Agents 实战》发布</div>
+<div class="item-source">X：邵猛 (@shao__meng)</div>
+</div>
+<div class="item-summary">LangChain 官方认证大使 @zhanghaili0610 推出开源教程《Deep Agents 实战》，基于 LangChain / LangGraph 生态，讲解如何用 Deep Agents Harness 框架构建真实 Agent 应用。核心是“三层架构”：Runtime（LangGraph）、Framework（LangChain）、Harness（Deep Agents）。技术内核为上下文工程，通过虚拟文件系统实现按需读取、中间结果落盘、大文件局部读取。教程共 8 章 + 2 准备篇，覆盖虚拟文件系统（六大工具）、任务规划、子 Agent 委派（异步并行）及 Skills 复用（可在 Claude Code、Cur…</div>
+<div class="stars">★★★★☆</div>
+<a class="item-url" href="https://x.com/shao__meng/status/2068306942184034471" target="_blank">https://x.com/shao__meng/status/2068306942184034471...</a>
+</div>
+<div class="item">
+<div class="item-header">
+<div class="item-title">2. Inference cost at scale with napkin math</div>
+<div class="item-source">Hacker News</div>
+</div>
+<div class="item-summary">HN 热度: 59 points</div>
+<div class="stars">★★★☆☆</div>
+<a class="item-url" href="https://injuly.in/blog/napkin-inference-cost/index.html" target="_blank">https://injuly.in/blog/napkin-inference-cost/index.html...</a>
+</div>
+<div class="item">
+<div class="item-header">
+<div class="item-title">3. GPT-5.5 hallucinates 3x more than MIT-licensed GLM-5.2</div>
+<div class="item-source">Hacker News</div>
+</div>
+<div class="item-summary">HN 热度: 498 points</div>
+<div class="stars">★★★★★</div>
+<a class="item-url" href="https://arrowtsx.dev/bigger-models/" target="_blank">https://arrowtsx.dev/bigger-models/...</a>
+</div>
+<div class="item">
+<div class="item-header">
+<div class="item-title">4. Systemd 261 released with systemd-sysinstall, IMDSD, and storagectl</div>
+<div class="item-source">Hacker News</div>
+</div>
+<div class="item-summary">HN 热度: 33 points</div>
+<div class="stars">★★★☆☆</div>
+<a class="item-url" href="https://www.phoronix.com/news/systemd-261" target="_blank">https://www.phoronix.com/news/systemd-261...</a>
+</div>
+</div>
+<div class="section">
+<div class="section-title">🇨🇳 中国 AI 动态</div>
+<div class="item">
+<div class="item-header">
+<div class="item-title">1. 微软双向转售GPT与DeepSeek成全球最大AI中间商</div>
+<div class="item-source">X：阿易 AI Notes (@AYi_AInotes)</div>
+</div>
+<div class="item-summary">彭博社报道，微软已成为全球最大AI模型中转站，既将ChatGPT卖给中国企业，也反向将DeepSeek模型卖给西方客户。报道称微软正在测试DeepSeek-R1和DeepSeek-V4，计划向西方客户提供这些中国模型。这一模式构建起跨中美AI模型的双向贸易网络。</div>
+<div class="stars">★★★★★</div>
+<a class="item-url" href="https://x.com/AYi_AInotes/status/2068218661710512231" target="_blank">https://x.com/AYi_AInotes/status/2068218661710512231...</a>
+</div>
+</div>
+<div class="table-section">
+<div class="section-title">🏆 全球模型热度榜</div>
+<table><tr><th>排名</th><th>模型</th><th>品牌</th><th>上下文长度</th></tr>
+<tr><td>1</td><td>Anthropic: Claude Fable 5</td><td>Claude</td><td>1,000,000</td></tr>
+<tr><td>2</td><td>OpenAI: GPT-5.5 Pro</td><td>Gpt</td><td>1,050,000</td></tr>
+<tr><td>3</td><td>OpenAI: o3 Deep Research</td><td>O</td><td>200,000</td></tr>
+<tr><td>4</td><td>Google: Gemini 3.5 Flash</td><td>Gemini</td><td>1,048,576</td></tr>
+<tr><td>5</td><td>Meta: Llama 4 Scout</td><td>Llama</td><td>10,000,000</td></tr>
+<tr><td>6</td><td>DeepSeek: DeepSeek V4 Pro</td><td>Deepseek</td><td>1,048,576</td></tr>
+</table></div>
+<div class="section">
+<div class="section-title">📈 今日趋势洞察</div>
+<div class="insight">
+<div class="insight-title">微软成为AI中间商巨头</div>
+<div class="insight-text">微软双向转售GPT与DeepSeek，成为连接全球AI模型与企业的最大中间商，这一模式可能重塑AI分发格局。</div>
+</div>
+<div class="insight">
+<div class="insight-title">AI Agent 生态持续升温</div>
+<div class="insight-text">从开源教程《Deep Agents 实战》到企业级部署，AI Agent 正从概念验证走向实用化，开发者工具链日趋成熟。</div>
+</div>
+<div class="insight">
+<div class="insight-title">推理成本优化成关注焦点</div>
+<div class="insight-text">HN 热议"大规模推理成本"话题，随着模型规模膨胀，推理效率与成本控制将成为企业级部署的关键考量。</div>
+</div>
+</div>
+<div class="footer">
+<p>AI 行业日报 · 自动生成 · 每日更新</p>
+<p style="margin-top:4px;font-size:11px;color:#bbb;">数据来源: aihot.virxact.com | Hacker News | OpenRouter</p>
+</div>
+</div>
+</body>
+</html>

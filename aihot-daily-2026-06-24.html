@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 行业日报 · 2026-06-24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf8f5; color: #1a1a1a;
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
+    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
+    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
+            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
+    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
+    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
+                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
+    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
+    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; transition: background 0.2s; }
+    .news-item:hover { background: rgba(194,58,48,0.03); border-radius: 4px; padding-left: 12px; padding-right: 12px; }
+    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
+    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
+                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
+    .item-body { flex: 1; min-width: 0; }
+    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
+    .item-title:hover { color: #c23a30; }
+    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
+    .source { color: #666; font-weight: 500; }
+    .time { color: #aaa; }
+    .score { color: #c23a30; font-weight: 600; }
+    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
+    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
+                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
+    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
+    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
+    .model-table .model-name { font-weight: 600; }
+    .model-table .org { color: #666; }
+    .model-table .ctx { color: #888; font-size: 13px; }
+    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
+    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
+    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
+    .insights ul { list-style: none; padding: 0; }
+    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
+    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
+    .footer a { color: #888; text-decoration: none; }
+    .footer a:hover { color: #c23a30; }
+    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AI 行业日报</h1>
+      <div class="subtitle">2026-06-24 ·  · 北京时间 09:03</div>
+    </div>
+
+    <div class="lead">
+      <div class="lead-label">主编点评</div>
+      <p>今日AI热点：FastWan-QAD：单卡5090上1.8秒生成5秒视频；Krea 2 技术报告正式发布；京东全栈开源JoyAI-VL-Interaction，从“一问一答”走向“边看边说”</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🌍 全球 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">1</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/haoailab/status/2069493820732170695" target="_blank" class="item-title">FastWan-QAD：单卡5090上1.8秒生成5秒视频</a>
+                <div class="item-meta">
+                  <span class="source">X：Sky Computing Lab (@haoailab)</span>
+                </div>
+                <div class="item-summary">Sky Computing Lab 发布 FastWan-QAD 视频生成模型系列，基于 FastVideo 的量化感知蒸馏（QAD）方案训练。在单张 NVIDIA GeForce RTX 5090 上，端到端生成一段 5 秒 480P 视频仅需 1.8 秒。模型、代码及博客已开源。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">2</span>
+                <span class="impact">★★☆☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/krea_ai/status/2069473417804591191" target="_blank" class="item-title">Krea 2 技术报告正式发布</a>
+                <div class="item-meta">
+                  <span class="source">X：Krea AI (@krea_ai)</span>
+                </div>
+                <div class="item-summary">我们的技术报告已发布。 深入解析创建 Krea 2 所用的数据、架构及训练技巧。 https://www.krea.ai/blog/krea-2-technical-report</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">3</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mistral.ai/news/ocr-4" target="_blank" class="item-title">Mistral OCR 4</a>
+                <div class="item-meta">
+                  <span class="source">Mistral AI：News（网页）</span>
+                </div>
+                <div class="item-summary">Mistral AI 发布 OCR 4，新增边界框、块分类（标题、表格、方程式、签名等）及逐页逐词置信度分数。支持 170 种语言、10 个语系，可单容器全自托管部署。在 OlmOCRBench 上得分 85.20，独立标注者偏好率平均 72%。定价每 1000 页 $4，Batch API 享 5</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">4</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://huggingface.co/blog/ibm-research/cuga-apps" target="_blank" class="item-title">IBM 开源 CUGA：轻量级智能体框架，提供二十余个单文件示例应用</a>
+                <div class="item-meta">
+                  <span class="source">Hugging Face：Blog（RSS）</span>
+                </div>
+                <div class="item-summary">IBM 开源了 CUGA（Configurable Generalist Agent），一个处理规划、执行循环、工具调用和状态管理的轻量级智能体框架。开发者只需提供工具列表和提示词即可构建 CugaAgent。内置计划-执行-反思循环，在 AppWorld（2025年7月–2026年2月）和 Web</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">5</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://github.com/baidu/Unlimited-OCR" target="_blank" class="item-title">无限制OCR：单次长时域解析</a>
+                <div class="item-meta">
+                  <span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span>
+                </div>
+                <div class="item-summary">Unlimited OCR 是一个托管在 GitHub 的项目，实现单次长时域解析（One-Shot Long-Horizon Parsing），旨在一次性处理长时间跨度的 OCR 任务。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">6</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.anthropic.com/news/introducing-claude-tag" target="_blank" class="item-title">Anthropic 推出 Claude Tag：在 Slack 中通过 @Claude 协作</a>
+                <div class="item-meta">
+                  <span class="source">Anthropic：Newsroom（网页）</span>
+                </div>
+                <div class="item-summary">Anthropic 推出 Claude Tag，一种在 Slack 频道中通过 @Claude 委托任务的新协作方式。Claude 可记住频道上下文，支持多用户交互，经授权后可自动学习其他频道和数据源。开启“环境”行为后，能主动更新未解决的线程或任务。支持异步工作，可自主推进项目数小时或数天。即日起</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">7</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.187" target="_blank" class="item-title">Claude Code v2.1.187 发布</a>
+                <div class="item-meta">
+                  <span class="source">Claude Code：GitHub Releases（RSS）</span>
+                </div>
+                <div class="item-summary">Claude Code v2.1.187 新增 `sandbox.credentials` 设置，可阻止沙箱化命令读取凭证和秘密环境变量；模型选择器及相关参数现已支持组织配置的模型限制，选中受限模型时显示“受组织设置限制”提示。全屏模式下选择菜单支持鼠标点击。修复多项问题：`--resume` 在 </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">8</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments" target="_blank" class="item-title">Oracle因AI应用裁员21000人，债务驱动云基础设施投资</a>
+                <div class="item-meta">
+                  <span class="source">Ars Technica：AI（RSS）</span>
+                </div>
+                <div class="item-summary">Oracle在截至5月31日的财年裁员21000人，员工总数降至141,000人，降幅12.9%。公司称AI技术的采用导致劳动力缩减，同时重组成本达18亿美元，同比增长481%。Oracle计划2026年通过债务和股权筹集450至500亿美元，扩建Oracle Cloud Infrastructur</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">9</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.artificialintelligence-news.com/news/five-eyes-warning-ai-cyber-threats" target="_blank" class="item-title">五眼联盟警告：AI网络威胁数月内将影响普通用户</a>
+                <div class="item-meta">
+                  <span class="source">Artificial Intelligence News（RSS）</span>
+                </div>
+                <div class="item-summary">2026年6月22日，五眼联盟（美、英、加、澳、新）网络安全部门联合警告，即将到来的AI模型（如OpenAI的GPT-5.5-Cyber、Anthropic的Mythos）将降低编写复杂攻击代码的门槛。自动化智能体可全天候扫描互联网漏洞，大幅缩短安全窗口期。AI驱动的超个性化钓鱼诈骗已在亚太蔓延，印</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">10</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://github.blog/news-insights/policy-news-and-insights/github-joins-coalition-advocating-for-fixes-to-california-ai-transparency-act-to-protect-open-source" target="_blank" class="item-title">GitHub联合开源联盟呼吁修改加州AI透明度法案以保护开源</a>
+                <div class="item-meta">
+                  <span class="source">GitHub Blog</span>
+                </div>
+                <div class="item-summary">GitHub 联合 Black Forest Labs、Hugging Face 与 Mozilla Corporation 组成开源联盟，呼吁对加州 AI 透明度法案（SB 942，拟由 SB 1000 修正）进行针对性修改。当前草案要求开发者在下游用户未履行义务时撤销开源许可证，这与开源许可证永</div>
+              </div>
+            </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🇨🇳 中国 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">22</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mp.weixin.qq.com/s/IY6XGp4k6VgD9ZPH6YprCA" target="_blank" class="item-title">京东全栈开源JoyAI-VL-Interaction，从“一问一答”走向“边看边说”</a>
+                <div class="item-meta">
+                  <span class="source">公众号：京东JoyAI</span>
+                </div>
+                <div class="item-summary">京东近日开源全球首个全栈交互模型JoyAI-VL-Interaction，获vLLM-Omni原生支持。该模型能持续观察视频流、主动判断关键事件并实时响应，支持将复杂任务委托后台Agent处理。在58个真人盲评中，对比豆包视频通话助手胜率77.6%，对比Gemini视频通话助手胜率87.9%，监控预</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">23</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.ithome.com/0/967/636.htm" target="_blank" class="item-title">网易有道发布 Confucius4-TTS：14 语种跨语种无口音语音克隆开源模型</a>
+                <div class="item-meta">
+                  <span class="source">IT之家（RSS）</span>
+                </div>
+                <div class="item-summary">网易有道推出“子曰 4.0”TTS 引擎 Confucius4-TTS，声称是业内首个支持 14 种语言跨语种无口音、且无需参考文本即可完成语音克隆的开源模型。用户仅需 3 秒音频即可实现零样本音色克隆，克隆音色与原声相似度超 85%，任务准确度达 97%。模型支持中文、英语等 14 种语言，首创音</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">24</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mp.weixin.qq.com/s/iL0uyUjOMUEfudeuDP6wQQ" target="_blank" class="item-title">豆包音频生成模型1.0发布，重新定义AI音频创作</a>
+                <div class="item-meta">
+                  <span class="source">公众号：火山引擎</span>
+                </div>
+                <div class="item-summary">火山引擎正式发布豆包音频生成模型1.0（Doubao-Seed-Audio 1.0），支持文本与音频参考生成，端到端输出目标音频。单条Prompt可编排多角色对白、情绪语气、背景音乐及环境氛围，长时生成中保持多角色音色一致性，无需后期多轨混音。模型支持0样本多模态输入，无需额外训练即可生成；实现音色</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">25</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://seed.bytedance.com/zh/blog/seed2-1-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83-%E6%B7%B1%E5%85%A5-ai-%E7%94%9F%E4%BA%A7%E5%8A%9B" target="_blank" class="item-title">Seed2.1 正式发布，深入 AI 生产力</a>
+                <div class="item-meta">
+                  <span class="source">字节 Seed：Research Feed（网页内嵌数据）</span>
+                </div>
+                <div class="item-summary">字节Seed发布Seed2.1系列，面向真实生产力场景的智能体，强化通用Agent能力、代码工程交付与多模态理解。Seed2.1 Pro在GDPval基准获最高分，Agents' Last Exam位列参评模型第一梯队；MobileWorld手机GUI任务最高分，CreativeWork多环境任务表</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">26</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mp.weixin.qq.com/s/oGHVP4MgGS1rbmT8s8St8Q" target="_blank" class="item-title">国内首个高考志愿AI测评出炉，千问多项表现超过资深咨询师</a>
+                <div class="item-meta">
+                  <span class="source">公众号：千问APP（阿里）</span>
+                </div>
+                <div class="item-summary">友松实验室发布国内首个高考志愿AI能力测评报告，测试千问高考志愿填报Agent四大模块。与53位平均从业4.6年的人类咨询师对照，千问表现更稳定精确：44道事实题全对；模拟10个志愿中6个可录取；100场匿名对比中专家58次倾向千问回答。使用千问辅助后，人类咨询师正确率提升，耗时减少约27%。该Ag</div>
+              </div>
+            </div>
+    </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🔗 Hacker News 热议</h2></div>
+          <div class="news-item"><div class="item-body"><a href="https://apnews.com/article/germany-trains-halted-communications-radio-problem-deutsche-bahn-e8fd970b2d889f3ae7ce03322d5c726b" target="_blank" class="item-title">Trains halted across Germany because of communication system problem</a><div class="item-meta"><span class="score">▲ 139</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://milek7.pl/mailverifyspam/" target="_blank" class="item-title">Don't verify email addresses by sending spam to them</a><div class="item-meta"><span class="score">▲ 135</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://nega.tv/posts/low-tech-ai-of-elden-ring.html" target="_blank" class="item-title">The Low-Tech AI of Elden Ring</a><div class="item-meta"><span class="score">▲ 101</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://github.com/y-times-y/y" target="_blank" class="item-title">Show HN: Y – A malleable coding-agent desktop app built with Electron</a><div class="item-meta"><span class="score">▲ 5</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://joshmoody.org/blog/selfish-ai/" target="_blank" class="item-title">How to Passive-Aggressively Shame People Who Use LLMs Selfishly</a><div class="item-meta"><span class="score">▲ 3</span></div></div></div>
+        </div>
+
+
+    <div class="insights">
+      <h2>📈 今日趋势洞察</h2>
+      <ul>
+            <li><strong>Agent 平台化加速</strong>：OpenAI 高管直言"聊天已死"，ChatGPT 从聊天机器人进化为超级应用 / Agent 平台，整合 Codex、图像生成和第三方应用。Anthropic 通过 Claude Code + Opus 生态的"智能体即服务"路线形成双雄竞争格局。</li>
+            <li><strong>智能体安全与审计工具浮现</strong>：随着 Agent 在生产环境中大量部署，审计、监控、安全分析工具正在成为一个独立品类。</li>
+            <li><strong>AI-Native 基础设施成型</strong>：AI 正从模型层深入到操作系统和工具链层，下一波竞争焦点是「AI 优先的开发者体验」——从代码生成到会话审计，工具生态快速分化。</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
+      <p>支持：Hacker News · OpenRouter · The Verge</p>
+    </div>
+  </div>
+</body>
+</html>

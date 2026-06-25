@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 行业日报 · 2026-06-25</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf8f5; color: #1a1a1a;
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
+    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
+    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
+            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
+    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
+    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
+                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
+    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
+    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; transition: background 0.2s; }
+    .news-item:hover { background: rgba(194,58,48,0.03); border-radius: 4px; padding-left: 12px; padding-right: 12px; }
+    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
+    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
+                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
+    .item-body { flex: 1; min-width: 0; }
+    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
+    .item-title:hover { color: #c23a30; }
+    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
+    .source { color: #666; font-weight: 500; }
+    .time { color: #aaa; }
+    .score { color: #c23a30; font-weight: 600; }
+    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
+    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
+                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
+    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
+    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
+    .model-table .model-name { font-weight: 600; }
+    .model-table .org { color: #666; }
+    .model-table .ctx { color: #888; font-size: 13px; }
+    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
+    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
+    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
+    .insights ul { list-style: none; padding: 0; }
+    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
+    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
+    .footer a { color: #888; text-decoration: none; }
+    .footer a:hover { color: #c23a30; }
+    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AI 行业日报</h1>
+      <div class="subtitle">2026-06-25 ·  · 北京时间 10:05</div>
+    </div>
+
+    <div class="lead">
+      <div class="lead-label">主编点评</div>
+      <p>今日AI热点：Gemini 3.5 Flash 中的计算机使用；GPT-5.5 Instant 新版本，对话更有趣；Qwen-AgentWorld 开源：让 Agent 学会“先预测，再行动”</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🌍 全球 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">1</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash" target="_blank" class="item-title">Gemini 3.5 Flash 中的计算机使用</a>
+                <div class="item-meta">
+                  <span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span>
+                </div>
+                <div class="item-summary">Google 将计算机使用（Computer use）作为内置工具集成至 Gemini 3.5 Flash，使开发者能构建跨浏览器、移动端和桌面环境的智能体。此前该功能仅作为独立模型在 Gemini 2.5 中提供，现已原生整合至主 Flash 模型。开发者可通过 Gemini API 及 Gemi</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">2</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/OpenAI/status/2069843083701915755" target="_blank" class="item-title">GPT-5.5 Instant 新版本，对话更有趣</a>
+                <div class="item-meta">
+                  <span class="source">X：OpenAI (@OpenAI)</span>
+                </div>
+                <div class="item-summary">我们为你带来了新版 GPT-5.5 Instant，它现在聊起天来有趣多了。 我们最常用的模型现在能更好地理解问题背后的意图，并相应地调整回应。 它也能更可靠地处理复杂约束，让购物和本地推荐更加实用和连贯。 今天向付费用户推送，明天向免费用户推送。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">3</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://the-decoder.com/figma-bets-on-human-judgment-at-config-2026-while-the-ai-powering-its-canvas-belongs-to-someone-else" target="_blank" class="item-title">Figma在Config 2026押注人类判断，画布AI能力却来自第三方</a>
+                <div class="item-meta">
+                  <span class="source">The Decoder：AI News（RSS）</span>
+                </div>
+                <div class="item-summary">Figma在Config 2026将设计画布扩展至代码、动画、3D深度和着色器效果，并集成去年收购的Weave工作流系统。新功能包括Code Layers（代码与设计并存）、Motion动画、深度层、Shader及Generative Plugins。协作方面，团队可搜索复用AI提示词、保存工作流为</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">4</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mp.weixin.qq.com/s/83mrPAPgQRKhxLkoSvRgBQ" target="_blank" class="item-title">火山引擎推出Agent Ready基础设施，AgentKit与ArkClaw企业版升级</a>
+                <div class="item-meta">
+                  <span class="source">公众号：火山引擎</span>
+                </div>
+                <div class="item-summary">火山引擎在FORCE大会推出面向企业智能应用的Agent Ready基础设施，构建AI云与Agent三层架构。AgentKit升级提供Identity、Runtime、Sandbox、Evaluation等模块，实现Agent可靠、可控、可衡量。Identity已接入数千家身份体系，Runtime支</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">5</span>
+                <span class="impact">★★☆☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://cursor.com/blog/notion" target="_blank" class="item-title">Notion 使用 Cursor SDK 嵌入编码智能体</a>
+                <div class="item-meta">
+                  <span class="source">Cursor Blog</span>
+                </div>
+                <div class="item-summary">Notion 通过 Cursor SDK 在数周内将编码智能体嵌入产品。用户可在文档中@Cursor、在讨论串中提及或向数据库指派任务，Cursor 即可端到端完成规划、构建、测试、验证并自动创建 PR。集成基于一套 Provider 无关的智能体框架，Notion 的讨论串对应一个 Cursor </div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">6</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/perplexity_ai/status/2069866668671766804" target="_blank" class="item-title">Perplexity推出Computer for Counsel</a>
+                <div class="item-meta">
+                  <span class="source">X：Perplexity (@perplexity_ai)</span>
+                </div>
+                <div class="item-summary">推出 Computer for Counsel。 Computer 现在连接了律师日常使用的研究数据库、文档工具和案件管理系统。可从中提取可引用来源：@midpageAI、@LegalZoom、@Docusign、@netdocuments 等。 所有 Pro 和 Max 订阅用户均可使用。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">7</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mistral.ai/news/more-control-over-connectors" target="_blank" class="item-title">Mistral AI 为 Connectors 推出多项安全与可控新能力</a>
+                <div class="item-meta">
+                  <span class="source">Mistral AI：News（网页）</span>
+                </div>
+                <div class="item-summary">2026年6月24日，Mistral AI 发布 Connectors 多项新能力：Enriched admin controls（GA）支持按工作空间设置连接器访问权限并单独开关工具；API keys with connector scopes（GA）防止自动化 AI 工作负载中身份冒充；Mult</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">8</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://huggingface.co/blog/ffasr-leaderboard" target="_blank" class="item-title">FFASR 排行榜发布：真实远场条件下 ASR 评测</a>
+                <div class="item-meta">
+                  <span class="source">Hugging Face：Blog（RSS）</span>
+                </div>
+                <div class="item-summary">Treble Technologies 与 Hugging Face 联合推出 FFASR（Far-Field ASR）排行榜，这是首个开源社区驱动的真实远场声学条件 ASR 评测基准。传统近场评测无法反映混响、背景噪声和麦克风距离带来的性能下降。FFASR 使用混合波模拟引擎生成声学数据，涵盖 1</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">9</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip" target="_blank" class="item-title">OpenAI 与 Broadcom 发布面向 LLM 推理的定制芯片 Jalapeño</a>
+                <div class="item-meta">
+                  <span class="source">OpenAI：官网动态（RSS · 排除企业/客户案例）</span>
+                </div>
+                <div class="item-summary">OpenAI 与 Broadcom 联合推出 Jalapeño，一款专为大语言模型（LLM）推理优化的定制 AI 芯片，旨在提升 AI 系统的性能、效率与规模。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">10</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.nytimes.com/2026/06/23/us/politics/nsa-lost-access-anthropic-tool.html" target="_blank" class="item-title">在与Anthropic的纠纷中，NSA失去了对Mythos的访问权限</a>
+                <div class="item-meta">
+                  <span class="source">Hacker News 热门（buzzing.cc 中文翻译）</span>
+                </div>
+                <div class="item-summary">美国国家安全局（NSA）因与人工智能公司Anthropic的纠纷，失去了对Mythos系统的访问权限。</div>
+              </div>
+            </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🇨🇳 中国 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">15</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mp.weixin.qq.com/s/NV9WGpGsfFz35jww5agM9g" target="_blank" class="item-title">Qwen-AgentWorld 开源：让 Agent 学会“先预测，再行动”</a>
+                <div class="item-meta">
+                  <span class="source">公众号：通义实验室（千问）</span>
+                </div>
+                <div class="item-summary">通义千问推出首个原生语言世界模型 Qwen-AgentWorld，覆盖 MCP、Search、Terminal、SWE、Web、OS、Android 七大领域。模型基于超 1000 万条真实交互轨迹，经 CPT→SFT→RL 三阶段训练，在 AgentWorldBench 上超越 GPT-5.4（5</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">16</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mp.weixin.qq.com/s/Sb-NMXTrWFQES1EDO_Gr2g" target="_blank" class="item-title">今天，豆包正式推出专业版</a>
+                <div class="item-meta">
+                  <span class="source">公众号：豆包（字节）</span>
+                </div>
+                <div class="item-summary">豆包专业版基于豆包2.1系列大模型上线，面向复杂办公与生产力场景。办公任务模式接入可执行Agent任务的豆包2.1模型，支持操作本地电脑、浏览器、调用Skills技能、定时任务，内置Office办公套件，并可生成带后端数据库的在线应用。免费用户可体验豆包2.1 Turbo版办公任务模式，专业版接入豆</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">17</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://www.marktechpost.com/2026/06/24/dflash-speculative-decoding-drafts-whole-token-blocks-in-parallel-for-up-to-15x-higher-throughput-on-nvidia-blackwell" target="_blank" class="item-title">DFlash：块扩散草稿模型实现最高15倍吞吐量提升</a>
+                <div class="item-meta">
+                  <span class="source">MarkTechPost（RSS）</span>
+                </div>
+                <div class="item-summary">DFlash 由 UC San Diego 团队提出，是一种用于投机解码的轻量块扩散草稿模型。它一次前向推理生成整块 token，再由目标模型并行验证，保证输出无损。相比 EAGLE-3，DFlash 实现最高 2.5 倍加速，在 Qwen3-8B 等多种模型上平均无损加速超过 6 倍（MATH-5</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">18</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://research.google/blog/thinking-to-recall-how-reasoning-unlocks-parametric-knowledge-in-llms" target="_blank" class="item-title">思考即回忆：推理如何解锁LLM中的参数化知识</a>
+                <div class="item-meta">
+                  <span class="source">Google Research：Blog（网页）</span>
+                </div>
+                <div class="item-summary">Google Research研究发现，推理（chain-of-thought）能帮助大语言模型（LLM）回忆简单事实，即使这些事实无需复杂推导。在Gemini-2.5 Flash和Pro以及Qwen3-32B上，启用推理后模型能够回答原本无法直接回答的简单问题，pass@k显示正确事实存在于输出分</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">19</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://mp.weixin.qq.com/s/mdmaAyUIvxE8WT_GEbF2wQ" target="_blank" class="item-title">字节跳动技术副总裁洪定坤：AI Coding 的实践与探索</a>
+                <div class="item-meta">
+                  <span class="source">公众号：火山引擎</span>
+                </div>
+                <div class="item-summary">在火山引擎Force大会，字节跳动技术副总裁洪定坤分享AI Coding实践。过去一年，字节AI代码贡献率增长6倍，tokens消耗增长5倍，但过度关注单一指标可能失真——TRAE团队代码超90%由AI生成，人均需求吞吐率仅提升60%。900次实验显示，主流Coding模型组合代码正确率超80%，但</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">20</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://openrouter.ai/blog/insights/when-zero-means-zero" target="_blank" class="item-title">OpenRouter 零数据留存（ZDR）实践：97 款新模型，流量占比近半</a>
+                <div class="item-meta">
+                  <span class="source">OpenRouter：Announcements（RSS）</span>
+                </div>
+                <div class="item-summary">OpenRouter 的零数据留存（ZDR）保证用户提示词和模型响应不被存储，元数据一般安全。自 1 月以来新增 97 款支持 ZDR 的模型，月度 token 量增长 4.3 倍，约占全部路由流量一半。ZDR 在三个层面执行：账户级（整个供应商开启）、护栏级（按 API Key 或组织成员限定）、</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">21</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/OpenBMB/status/2069676334381728106" target="_blank" class="item-title">MiniCPM-V 4.6 在 Apple Core AI 上高速运行</a>
+                <div class="item-meta">
+                  <span class="source">X：面壁智能 OpenBMB (@OpenBMB)</span>
+                </div>
+                <div class="item-summary">🥳感谢分享，@MLBoy_DaisukeMajima 🚀 MiniCPM-V 4.6 在设备上以这样的速度运行，实在令人印象深刻——尤其是在 Apple Core AI 上以不到 2B 参数跑出。 干得漂亮，推动高效多模态 AI 向前发展。🫡</div>
+              </div>
+            </div>
+    </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🔗 Hacker News 热议</h2></div>
+          <div class="news-item"><div class="item-body"><a href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/" target="_blank" class="item-title">OpenAI unveils its first custom chip, built by Broadcom</a><div class="item-meta"><span class="score">▲ 536</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://rubyllm.com/" target="_blank" class="item-title">RubyLLM: A Ruby framework for all major AI providers</a><div class="item-meta"><span class="score">▲ 347</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://www.krea.ai/blog/krea-2-technical-report" target="_blank" class="item-title">Krea 2: SOTA open-weights 12B image model</a><div class="item-meta"><span class="score">▲ 340</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://www.greptile.com/blog/prs-on-openclaw" target="_blank" class="item-title">PR spam today looks like email spam in the early 2000s</a><div class="item-meta"><span class="score">▲ 181</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/" target="_blank" class="item-title">Computer use in Gemini 3.5 Flash</a><div class="item-meta"><span class="score">▲ 174</span></div></div></div>
+        </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🏆 全球模型热度榜</h2></div>
+          <div style="overflow-x:auto;"><table class="model-table"><thead><tr><th>#</th><th>模型</th><th>机构</th><th>上下文</th><th>趋势</th></tr></thead><tbody>
+              <tr><td class="rank">1</td><td class="model-name">Llama 4 Scout</td><td class="org">Meta</td><td class="ctx">10,000k</td><td class="trend">↑ 新</td></tr>
+              <tr><td class="rank">2</td><td class="model-name">Grok 4.20 Multi Agent</td><td class="org">xAI</td><td class="ctx">2,000k</td><td class="trend">↑ 新</td></tr>
+              <tr><td class="rank">3</td><td class="model-name">Gpt 5.5 Pro</td><td class="org">OpenAI</td><td class="ctx">1,050k</td><td class="trend"></td></tr>
+              <tr><td class="rank">4</td><td class="model-name">Qwen3 Coder</td><td class="org">Alibaba</td><td class="ctx">1,048k</td><td class="trend"></td></tr>
+              <tr><td class="rank">5</td><td class="model-name">Deepseek V4 Pro</td><td class="org">DeepSeek</td><td class="ctx">1,048k</td><td class="trend"></td></tr>
+              <tr><td class="rank">6</td><td class="model-name">Claude Fable 5</td><td class="org">Anthropic</td><td class="ctx">1,000k</td><td class="trend"></td></tr>
+            </tbody></table></div>
+          <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度排序，每个品牌取最新非预览版）</p>
+        </div>
+
+    <div class="insights">
+      <h2>📈 今日趋势洞察</h2>
+      <ul>
+            <li><strong>Agent 平台化加速</strong>：OpenAI 高管直言"聊天已死"，ChatGPT 从聊天机器人进化为超级应用 / Agent 平台，整合 Codex、图像生成和第三方应用。Anthropic 通过 Claude Code + Opus 生态的"智能体即服务"路线形成双雄竞争格局。</li>
+            <li><strong>智能体安全与审计工具浮现</strong>：随着 Agent 在生产环境中大量部署，审计、监控、安全分析工具正在成为一个独立品类。</li>
+            <li><strong>AI-Native 基础设施成型</strong>：AI 正从模型层深入到操作系统和工具链层，下一波竞争焦点是「AI 优先的开发者体验」——从代码生成到会话审计，工具生态快速分化。</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
+      <p>支持：Hacker News · OpenRouter · The Verge</p>
+    </div>
+  </div>
+</body>
+</html>

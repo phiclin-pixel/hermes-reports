@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 行业日报 · 2026-06-26</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #faf8f5; color: #1a1a1a;
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .header { text-align: center; padding: 40px 0 32px; border-bottom: 2px solid #c23a30; margin-bottom: 40px; }
+    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .header .subtitle { font-size: 15px; color: #666; letter-spacing: 0.04em; }
+    .lead { background: linear-gradient(135deg,#fef8f6 0%,#fdf4f2 100%); border-left: 4px solid #c23a30;
+            padding: 20px 24px; margin-bottom: 36px; border-radius: 4px; }
+    .lead p { font-size: 16px; color: #333; line-height: 1.9; }
+    .lead .lead-label { font-size: 12px; color: #c23a30; text-transform: uppercase;
+                        letter-spacing: 0.12em; margin-bottom: 6px; font-weight: 600; }
+    .section { margin-bottom: 32px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-divider { width: 4px; height: 22px; background: #c23a30; border-radius: 2px; }
+    .section-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.04em; }
+    .news-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #e8e4df; transition: background 0.2s; }
+    .news-item:hover { background: rgba(194,58,48,0.03); border-radius: 4px; padding-left: 12px; padding-right: 12px; }
+    .item-header { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 40px; }
+    .item-index { font-size: 12px; color: #999; font-weight: 600; background: #f0ede8;
+                  width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .impact { font-size: 11px; color: #c23a30; letter-spacing: 0.5px; }
+    .item-body { flex: 1; min-width: 0; }
+    .item-title { font-size: 16px; font-weight: 600; color: #1a1a1a; text-decoration: none; display: block; line-height: 1.6; }
+    .item-title:hover { color: #c23a30; }
+    .item-meta { display: flex; gap: 12px; margin-top: 4px; font-size: 13px; color: #888; }
+    .source { color: #666; font-weight: 500; }
+    .time { color: #aaa; }
+    .score { color: #c23a30; font-weight: 600; }
+    .item-summary { font-size: 14px; color: #555; margin-top: 6px; line-height: 1.7; }
+    .model-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .model-table th { text-align: left; font-size: 12px; color: #999; text-transform: uppercase;
+                      letter-spacing: 0.08em; padding: 10px 12px; border-bottom: 2px solid #c23a30; font-weight: 600; }
+    .model-table td { padding: 12px 12px; font-size: 15px; border-bottom: 1px solid #e8e4df; }
+    .model-table .rank { font-weight: 700; color: #c23a30; width: 40px; }
+    .model-table .model-name { font-weight: 600; }
+    .model-table .org { color: #666; }
+    .model-table .ctx { color: #888; font-size: 13px; }
+    .model-table .trend { color: #c23a30; font-size: 13px; font-weight: 500; }
+    .insights { background: #faf8f5; border: 1px solid #e8e4df; border-radius: 8px; padding: 24px; margin-top: 36px; }
+    .insights h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
+    .insights ul { list-style: none; padding: 0; }
+    .insights li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 15px; color: #444; line-height: 1.8; }
+    .insights li::before { content: "\25B8"; position: absolute; left: 0; color: #c23a30; font-weight: 700; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e4df; text-align: center; font-size: 13px; color: #aaa; }
+    .footer a { color: #888; text-decoration: none; }
+    .footer a:hover { color: #c23a30; }
+    @media (max-width: 600px) { .container { padding: 24px 16px 48px; } .header h1 { font-size: 22px; } .item-title { font-size: 15px; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AI 行业日报</h1>
+      <div class="subtitle">2026-06-26 ·  · 北京时间 09:07</div>
+    </div>
+
+    <div class="lead">
+      <div class="lead-label">主编点评</div>
+      <p>今日AI热点：OpenRouter MCP 服务器发布；Midjourney 预览 V8.2 并加速草稿模式；Ornith-1.0 开源模型家族发布，专注 Agentic Coding 全参数规模</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🌍 全球 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">1</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://openrouter.ai/blog/announcements/openrouter-mcp-server" target="_blank" class="item-title">OpenRouter MCP 服务器发布</a>
+                <div class="item-meta">
+                  <span class="source">OpenRouter：Announcements（RSS）</span>
+                </div>
+                <div class="item-summary">OpenRouter 推出 MCP 服务器，为编程智能体提供实时模型数据、基准排名、定价和文档查询。开发者通过一键安装（支持 Claude Code、Codex CLI、Cursor 等客户端），即可在编辑器内完成模型筛选、价格对比和测试推理，无需切换标签页。服务器整合 Artificial Ana</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">2</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/midjourney/status/2070223272072065228" target="_blank" class="item-title">Midjourney 预览 V8.2 并加速草稿模式</a>
+                <div class="item-meta">
+                  <span class="source">X：Midjourney (@midjourney)</span>
+                </div>
+                <div class="item-summary">Midjourney 带来两项更新。一是加入 `--preview` 参数可提前体验 V8.2 的美学与个性化效果；二是此前在 V8.1 推出的大批量草稿模式（生成 24 张低分辨率图，价格仅为标准 4 张的一半，点击 "Vary" 可升级为全分辨率）现在支持搭配 `--sref random` 使</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">3</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/OpenAIDevs/status/2070254532911882707" target="_blank" class="item-title">Codex 在 ChatGPT 移动 App 正式可用</a>
+                <div class="item-meta">
+                  <span class="source">X：OpenAI Developers (@OpenAIDevs)</span>
+                </div>
+                <div class="item-summary">OpenAI 宣布 Codex 在 ChatGPT 移动应用中正式开放（GA），并新增一对一设备配对实现更安全的手机与电脑连接。移动端新增通知、目标、侧边聊天、文件预览及内联审阅评论功能。此前预览版已明确，用户可通过 ChatGPT 移动 App 启动新工作、审查输出、引导执行和批准下一步，而 Co</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">4</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://runwayml.com/news/introducing-agent-2" target="_blank" class="item-title">Runway发布Agent 2.0</a>
+                <div class="item-meta">
+                  <span class="source">Runway：News（网页）</span>
+                </div>
+                <div class="item-summary">Runway发布Agent 2.0，帮助营销人员创建、测试和优化广告、视频及营销活动。品牌营销人员可在对话中开发活动概念、生成变体并自动本地化；绩效营销人员可上传创意并导入Meta、YouTube、TikTok或Google广告数据，由Agent分析后生成下一轮待测广告。社交媒体营销人员可一次性生成</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">5</span>
+                <span class="impact">★★☆☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://updates.midjourney.com/random-styles-in-draft-mode" target="_blank" class="item-title">Midjourney V8.1 草稿模式新增随机风格功能</a>
+                <div class="item-meta">
+                  <span class="source">Midjourney：Updates（RSS）</span>
+                </div>
+                <div class="item-summary">Midjourney V8.1 的草稿模式（draft mode）添加了随机风格功能。用户在提示词中加入 `--sref random` 即可一键生成 24 张不同风格的图片。开启草稿模式可通过点击提示栏的 ⚡ 图标或添加 `--draft` 参数。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">6</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.193" target="_blank" class="item-title">Claude Code v2.1.193 发布</a>
+                <div class="item-meta">
+                  <span class="source">Claude Code：GitHub Releases（RSS）</span>
+                </div>
+                <div class="item-summary">Claude Code v2.1.193 新增 `autoMode.classifyAllShell` 设置，将全部 Bash/PowerShell 命令经自动模式分类器处理。自动模式拒绝原因现加入转录、拒绝提示及 `/permissions` 页面。新增 `claude_code.assistan</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">7</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://blog.google/products-and-platforms/products/search/google-finance-updates-june-2026" target="_blank" class="item-title">Google Finance 全新 Android 应用与投资组合功能上线</a>
+                <div class="item-meta">
+                  <span class="source">Google Blog：AI（RSS）</span>
+                </div>
+                <div class="item-summary">本周，Google Finance 推出正式版 Android 应用，同步上线全球投资组合跟踪功能。用户可通过截图、CSV/PDF 上传或文字描述创建组合，并利用 AI 研究工具提问资产配置、固定收益影响等问题。新增市场情报简报功能：用户设定任务（如每日盘前简报），后台自动生成并推送至 Google</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">8</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.ai/news/grok-interactive-brokers" target="_blank" class="item-title">盈透证券（Interactive Brokers）与 Grok 集成：组合分析、情景建模与实时交易指令生成</a>
+                <div class="item-meta">
+                  <span class="source">xAI：News（网页）</span>
+                </div>
+                <div class="item-summary">盈透证券（Interactive Brokers）近日与 Grok 集成，用户可在几分钟内免费关联现有账户，无需注册新账户。通过自然语言与 Grok 对话，可完成组合收益分析（如股息与利息预测）、行业/地区/经济事件的风险敞口情景建模、市场趋势研究，并直接生成对冲订单等实时交易指令，实现从数据洞察到</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">9</span>
+                <span class="impact">★★★★★</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/rohanpaul_ai/status/2070252433109049466" target="_blank" class="item-title">美国政府要求OpenAI暂缓GPT-5.6广泛发布</a>
+                <div class="item-meta">
+                  <span class="source">X：Rohan Paul (@rohanpaul_ai)</span>
+                </div>
+                <div class="item-summary">The Information 报道，美国政府因安全顾虑要求 OpenAI 暂缓 GPT-5.6 的广泛发布，改为推出受控预览版。OpenAI 计划先向小部分合作伙伴提供早期访问，并由政府逐客户审批准入。这一非常规做法主要担忧模型在自动化高技能网络工作上的能力：既能帮防御者更快发现漏洞，也可能被攻击</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">10</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://the-decoder.com/meta-employees-warn-ai-moderation-rollout-is-too-fast" target="_blank" class="item-title">Meta员工警告AI内容审核部署过快</a>
+                <div class="item-meta">
+                  <span class="source">The Decoder：AI News（RSS）</span>
+                </div>
+                <div class="item-summary">Meta在2025年已用大语言模型替换约一半人工审核请求，计划年底前将部分内容类型的AI审核比例提升至90%以上，每年节省数十亿美元。Meta否认成本动机，称自3月测试显示其模型错误率比人类低13%，且多捕捉10%违规。但员工指出模型仍会移除或限流无害内容，缺乏足够监督，快速部署已导致外包裁员。此外</div>
+              </div>
+            </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><div class="section-divider"></div><h2>🇨🇳 中国 AI 动态</h2></div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">24</span>
+                <span class="impact">★★★☆☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://x.com/berryxia/status/2070167806700908957" target="_blank" class="item-title">Ornith-1.0 开源模型家族发布，专注 Agentic Coding 全参数规模</a>
+                <div class="item-meta">
+                  <span class="source">X：Berry Xia (@berryxia)</span>
+                </div>
+                <div class="item-summary">Ornith-1.0 开源模型家族发布，专注智能体编程（Agentic Coding），覆盖 9B Dense、31B Dense、35B MoE 及 397B MoE 全参数规模。在 Agent Coding 基准上达开源顶尖：SWE-Bench Verified 82.4、SWE-Bench P</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <div class="item-header">
+                <span class="item-index">25</span>
+                <span class="impact">★★★★☆</span>
+              </div>
+              <div class="item-body">
+                <a href="https://the-decoder.com/most-major-ai-chatbots-still-lean-left-on-political-questions-even-anti-woke-models-are-no-exception" target="_blank" class="item-title">多数主流AI聊天机器人政治立场偏左，“反觉醒”模型也不例外</a>
+                <div class="item-meta">
+                  <span class="source">The Decoder：AI News（RSS）</span>
+                </div>
+                <div class="item-summary">华盛顿邮报调查显示，多数主流AI聊天机器人在政治问题上明显偏左。OpenAI GPT-5.5在80%回答中仅呈现左派论据；DeepSeek V4 Pro为70%；Anthropic Claude Opus 4.8有43%纯左、57%给出双方观点。xAI的Grok 4.3左倾回答仍多于右倾。右翼平台G</div>
+              </div>
+            </div>
+    </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🔗 Hacker News 热议</h2></div>
+          <div class="news-item"><div class="item-body"><a href="https://github.com/inkeep/open-knowledge" target="_blank" class="item-title">Show HN: OpenKnowledge – open source AI-first alternative to Obsidian/Notion</a><div class="item-meta"><span class="score">▲ 195</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://www.reuters.com/world/asia-pacific/apple-raises-prices-macbooks-ipads-memory-costs-skyrocket-2026-06-25/" target="_blank" class="item-title">Apple raises prices of MacBooks, iPads</a><div class="item-meta"><span class="score">▲ 621</span></div></div></div>
+          <div class="news-item"><div class="item-body"><a href="https://idlemachines.co.uk/essays/pytorch-training-loop" target="_blank" class="item-title">The annotated PyTorch training loop</a><div class="item-meta"><span class="score">▲ 59</span></div></div></div>
+        </div>
+
+        <div class="section">
+          <div class="section-header"><div class="section-divider"></div><h2>🏆 全球模型热度榜</h2></div>
+          <div style="overflow-x:auto;"><table class="model-table"><thead><tr><th>#</th><th>模型</th><th>机构</th><th>上下文</th><th>趋势</th></tr></thead><tbody>
+              <tr><td class="rank">1</td><td class="model-name">Llama 4 Scout</td><td class="org">Meta</td><td class="ctx">10,000k</td><td class="trend">↑ 新</td></tr>
+              <tr><td class="rank">2</td><td class="model-name">Grok 4.20 Multi Agent</td><td class="org">xAI</td><td class="ctx">2,000k</td><td class="trend">↑ 新</td></tr>
+              <tr><td class="rank">3</td><td class="model-name">Gpt 5.5 Pro</td><td class="org">OpenAI</td><td class="ctx">1,050k</td><td class="trend"></td></tr>
+              <tr><td class="rank">4</td><td class="model-name">Qwen3 Coder</td><td class="org">Alibaba</td><td class="ctx">1,048k</td><td class="trend"></td></tr>
+              <tr><td class="rank">5</td><td class="model-name">Deepseek V4 Pro</td><td class="org">DeepSeek</td><td class="ctx">1,048k</td><td class="trend"></td></tr>
+              <tr><td class="rank">6</td><td class="model-name">Claude Fable 5</td><td class="org">Anthropic</td><td class="ctx">1,000k</td><td class="trend"></td></tr>
+            </tbody></table></div>
+          <p style="font-size:12px;color:#aaa;margin-top:8px;">数据来源：OpenRouter API（按上下文长度排序，每个品牌取最新非预览版）</p>
+        </div>
+
+    <div class="insights">
+      <h2>📈 今日趋势洞察</h2>
+      <ul>
+            <li><strong>Agent 平台化加速</strong>：OpenAI 高管直言"聊天已死"，ChatGPT 从聊天机器人进化为超级应用 / Agent 平台，整合 Codex、图像生成和第三方应用。Anthropic 通过 Claude Code + Opus 生态的"智能体即服务"路线形成双雄竞争格局。</li>
+            <li><strong>智能体安全与审计工具浮现</strong>：随着 Agent 在生产环境中大量部署，审计、监控、安全分析工具正在成为一个独立品类。</li>
+            <li><strong>AI-Native 基础设施成型</strong>：AI 正从模型层深入到操作系统和工具链层，下一波竞争焦点是「AI 优先的开发者体验」——从代码生成到会话审计，工具生态快速分化。</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>AI 行业日报由 <a href="https://aihot.virxact.com" target="_blank">AI HOT</a> 提供数据支持</p>
+      <p>支持：Hacker News · OpenRouter · The Verge</p>
+    </div>
+  </div>
+</body>
+</html>

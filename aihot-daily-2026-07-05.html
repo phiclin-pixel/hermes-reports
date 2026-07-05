@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HOT 行业日报 · 2026-07-05</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Helvetica+Neue:wght@300;400;500;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #faf8f5;
+            color: #1a1a1a;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            border-bottom: 2px solid #c23a30;
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        .header .date {
+            font-size: 1.1em;
+            color: #666;
+            font-weight: 300;
+        }
+        .section {
+            margin-bottom: 50px;
+        }
+        .section-title {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #c23a30;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .news-item {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .news-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .news-title {
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .news-summary {
+            color: #555;
+            font-size: 0.98em;
+            margin-bottom: 15px;
+        }
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88em;
+            color: #888;
+        }
+        .news-source {
+            background: #f5f5f5;
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+        .rating {
+            color: #c23a30;
+            letter-spacing: 2px;
+        }
+        .models-table {
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .models-table th {
+            background: #c23a30;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .models-table td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .models-table tr:last-child td {
+            border-bottom: none;
+        }
+        .model-name {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .model-brand {
+            color: #c23a30;
+            font-size: 0.9em;
+        }
+        .insights {
+            background: linear-gradient(135deg, #fef5f4 0%, #fff5f0 100%);
+            border-radius: 8px;
+            padding: 30px;
+            border-left: 4px solid #c23a30;
+        }
+        .insight-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .insight-item:last-child {
+            margin-bottom: 0;
+        }
+        .insight-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #c23a30;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #999;
+            font-size: 0.9em;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 60px;
+        }
+        .data-note {
+            background: #fff9e6;
+            border-left: 4px solid #f5a623;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: #666;
+            border-radius: 0 4px 4px 0;
+        }
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.8em; }
+            .container { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📰 AI HOT 行业日报</h1>
+            <div class="date">2026-07-05</div>
+        </div>
+
+        <div class="data-note">
+            ⚠️ AIHOT API 暂不可用，本日数据来源：36氪 AI 频道 + OpenRouter 模型榜单
+        </div>
+
+        <div class="section">
+            <div class="section-title">🌍 全球 AI 动态</div>
+
+            <div class="news-item">
+                <div class="news-title">1. Anthropic拟全面封禁地下通道</div>
+                <div class="news-summary">外媒爆料：Anthropic正在准备全面封禁地下通道访问。这是史上最严的一次清洗，几乎所有的后门都被强制关闭。</div>
+                <div class="news-meta">
+                    <span class="news-source">新智元</span>
+                    <span class="rating">★★★☆☆</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">2. GPT-5.6三大模型全曝，定档7月7日？</div>
+                <div class="news-summary">突发偷跑！GPT-5.6三大神秘模型底层代码曝光，下周二重磅降临。这一波，OpenAI是卡点截杀Claude，用超高额度「趁火打劫」。</div>
+                <div class="news-meta">
+                    <span class="news-source">新智元</span>
+                    <span class="rating">★★★★☆</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">3. Hinton盛赞，Gemini核心贡献者演讲：未来会有数十亿超人级AI爱因斯坦</div>
+                <div class="news-summary">「我们的文明已经学会了如何将沙子转化为硅芯片，将硅芯片转化为神经网络，再将神经网络转化为人工智能。」</div>
+                <div class="news-meta">
+                    <span class="news-source">机器之心</span>
+                    <span class="rating">★★★☆☆</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <div class="section-title">🇨🇳 中国 AI 动态</div>
+
+            <div class="news-item">
+                <div class="news-title">4. 语音输入戒指OASIS走红，Vibe Coding带火了一波AI硬件</div>
+                <div class="news-summary">「听话」的语音硬件起风了。AI 语音输入设备成为新的创业热点，OASIS 戒指等产品获得广泛关注。</div>
+                <div class="news-meta">
+                    <span class="news-source">雷科技</span>
+                    <span class="rating">★★★★☆</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">5. 宇树的1/2，机器人"祖师爷"彻底卖身</div>
+                <div class="news-summary">波士顿动力被彻底出售，估值仅为宇树的一半。人形机器人市场格局正在发生重大变化，商业化道路依然艰难。</div>
+                <div class="news-meta">
+                    <span class="news-source">36氪的朋友们</span>
+                    <span class="rating">★★★☆☆</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">6. "不可能三角"下的AI眼镜芯片还要迈过几道坎</div>
+                <div class="news-summary">AI眼镜出货量爆发背后，芯片成为产业核心瓶颈。功耗、性能、成本的平衡是关键挑战。</div>
+                <div class="news-meta">
+                    <span class="news-source">半导体产业纵横</span>
+                    <span class="rating">★★★☆☆</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">7. 程一笑要带可灵AI打"对赌局"</div>
+                <div class="news-summary">快手也养不起可灵AI了。程一笑带领可灵AI独立融资，对赌压力下的商业化之路。</div>
+                <div class="news-meta">
+                    <span class="news-source">唐辰同学</span>
+                    <span class="rating">★★★☆☆</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <div class="section-title">🏆 模型热度榜（基于 OpenRouter 部署数据）</div>
+            <table class="models-table">
+                <thead>
+                    <tr>
+                        <th>排名</th>
+                        <th>模型</th>
+                        <th>品牌</th>
+                        <th>上下文长度</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td class="model-name">claude-sonnet-5</td>
+                        <td class="model-brand">Claude</td>
+                        <td>1,000,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td class="model-name">gemini-3.1-flash-lite-image</td>
+                        <td class="model-brand">Gemini</td>
+                        <td>65,536</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td class="model-name">qwen3.7-plus</td>
+                        <td class="model-brand">Qwen</td>
+                        <td>1,000,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td class="model-name">gpt-chat-latest</td>
+                        <td class="model-brand">GPT</td>
+                        <td>400,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td class="model-name">deepseek-v4-pro</td>
+                        <td class="model-brand">DeepSeek</td>
+                        <td>1,048,576</td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td class="model-name">llama-guard-4-12b</td>
+                        <td class="model-brand">Llama</td>
+                        <td>163,840</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">📈 今日趋势洞察</div>
+            <div class="insights">
+                <div class="insight-item">
+                    <strong>AI 硬件爆发：</strong>语音输入戒指 OASIS 走红标志着 AI 硬件进入消费级爆发期，Vibe Coding 等新交互范式推动语音设备创新热潮。
+                </div>
+                <div class="insight-item">
+                    <strong>模型军备竞赛加剧：</strong>GPT-5.6 定档 7 月 7 日与 Anthropic 安全升级同期，显示大模型厂商在性能与安全维度的双线竞争进入白热化。
+                </div>
+                <div class="insight-item">
+                    <strong>国产 AI 商业化加速：</strong>可灵 AI 独立融资、AI 眼镜芯片瓶颈凸显，国内 AI 产业在资本推动下加速从技术向产品转化。
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>数据来源：36氪 AI 频道、OpenRouter API</p>
+            <p>AI HOT 日报 · 每日更新</p>
+        </div>
+    </div>
+</body>
+</html>

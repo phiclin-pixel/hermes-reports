@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 行业日报 · 2026年07月09日</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Helvetica+Neue:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #faf8f5;
+            color: #1a1a1a;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #c23a30;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .header .date {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #c23a30;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .news-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .news-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c23a30;
+            min-width: 40px;
+            opacity: 0.6;
+        }
+        
+        .news-content {
+            flex: 1;
+        }
+        
+        .news-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .news-summary {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .news-meta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        
+        .news-source {
+            background: #f0f0f0;
+            padding: 3px 10px;
+            border-radius: 12px;
+        }
+        
+        .news-rating {
+            color: #c23a30;
+            letter-spacing: 2px;
+        }
+        
+        .news-points {
+            color: #e67e22;
+        }
+        
+        .news-link {
+            font-size: 0.85rem;
+            color: #c23a30;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        
+        .news-link:hover {
+            opacity: 0.7;
+        }
+        
+        .model-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .model-table th {
+            background: #1a1a1a;
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .model-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .model-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .rank {
+            font-weight: 700;
+            color: #c23a30;
+            font-size: 1.1rem;
+        }
+        
+        .brand {
+            font-weight: 600;
+        }
+        
+        .model-name {
+            font-family: 'Helvetica Neue', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .context {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .trends-list {
+            list-style: none;
+        }
+        
+        .trend-item {
+            padding: 15px 0;
+            padding-left: 25px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .trend-item::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: #c23a30;
+            font-size: 0.8rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+            border-top: 1px solid #e0e0e0;
+            color: #999;
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .news-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .model-table {
+                font-size: 0.8rem;
+            }
+            
+            .model-table th, .model-table td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌐 AI 行业日报</h1>
+            <div class="date">2026年07月09日 · 农历五月廿六</div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">🌍 全球 AI 动态</div>
+
+        <div class="news-item">
+            <div class="news-number">1</div>
+            <div class="news-content">
+                <div class="news-title">John Deere owners will get the right to repair equipment under FTC settlement</div>
+                <div class="news-meta">
+                    <span class="news-source">Hacker News</span>
+                    <span class="news-points">🔥 300 points</span>
+                    <span class="news-rating">★★★☆☆</span>
+                </div>
+                <a href="https://apnews.com/article/john-deere-right-to-repair-agriculture-equipment-cb7514ffedb95c130a976af661f2bc02" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        <div class="news-item">
+            <div class="news-number">2</div>
+            <div class="news-content">
+                <div class="news-title">I Think I Have LLM Burnout</div>
+                <div class="news-meta">
+                    <span class="news-source">Hacker News</span>
+                    <span class="news-points">🔥 5 points</span>
+                    <span class="news-rating">★★★☆☆</span>
+                </div>
+                <a href="https://www.alecscollon.com/blog/llm-burnout/" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        <div class="news-item">
+            <div class="news-number">3</div>
+            <div class="news-content">
+                <div class="news-title">Mistral's Robostral Navigate: a state of the art robotics navigation model</div>
+                <div class="news-meta">
+                    <span class="news-source">Hacker News</span>
+                    <span class="news-points">🔥 416 points</span>
+                    <span class="news-rating">★★★☆☆</span>
+                </div>
+                <a href="https://mistral.ai/news/robostral-navigate/" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        <div class="news-item">
+            <div class="news-number">4</div>
+            <div class="news-content">
+                <div class="news-title">Show HN: Microsoft releases Flint, a visualization language for AI agents</div>
+                <div class="news-meta">
+                    <span class="news-source">Hacker News</span>
+                    <span class="news-points">🔥 205 points</span>
+                    <span class="news-rating">★★★★☆</span>
+                </div>
+                <a href="https://microsoft.github.io/flint-chart/#/" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        <div class="news-item">
+            <div class="news-number">5</div>
+            <div class="news-content">
+                <div class="news-title">MIRA: Multiplayer Interactive World Models Trained on Rocket League</div>
+                <div class="news-meta">
+                    <span class="news-source">Hacker News</span>
+                    <span class="news-points">🔥 18 points</span>
+                    <span class="news-rating">★★★☆☆</span>
+                </div>
+                <a href="https://mira-wm.com/" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        <div class="news-item">
+            <div class="news-number">6</div>
+            <div class="news-content">
+                <div class="news-title">GPT‑Live</div>
+                <div class="news-meta">
+                    <span class="news-source">Hacker News</span>
+                    <span class="news-points">🔥 604 points</span>
+                    <span class="news-rating">★★★★★</span>
+                </div>
+                <a href="https://openai.com/index/introducing-gpt-live/" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        </div>
+        
+        <div class="section">
+            <div class="section-title">🇨🇳 中国 AI 动态</div>
+
+        <div class="news-item">
+            <div class="news-number">1</div>
+            <div class="news-content">
+                <div class="news-title">把</div>
+                <div class="news-summary">Fable 5 装进 MacBook，还要多久 端侧 AI 不是一个「会不会来」的问题</div>
+                <div class="news-meta">
+                    <span class="news-source">爱范儿</span>
+                    <span class="news-rating">★★★★☆</span>
+                </div>
+                <a href="https://36kr.com/information/AI" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        <div class="news-item">
+            <div class="news-number">2</div>
+            <div class="news-content">
+                <div class="news-title">Meta“投降”？一场被严重误读的算力恐慌</div>
+                <div class="news-summary">一场被误读的产业成人礼</div>
+                <div class="news-meta">
+                    <span class="news-source">脑极体</span>
+                    <span class="news-rating">★★★☆☆</span>
+                </div>
+                <a href="https://36kr.com/information/AI" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        <div class="news-item">
+            <div class="news-number">3</div>
+            <div class="news-content">
+                <div class="news-title">AI商业化，还是大厂的一本糊涂账</div>
+                <div class="news-summary">AI的糊涂账</div>
+                <div class="news-meta">
+                    <span class="news-source">光子星球</span>
+                    <span class="news-rating">★★★★☆</span>
+                </div>
+                <a href="https://36kr.com/information/AI" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        <div class="news-item">
+            <div class="news-number">4</div>
+            <div class="news-content">
+                <div class="news-title">36氪首发</div>
+                <div class="news-summary">| 物理AI公司获晶科能源、国投创新等数亿融资，要做全球能源基础设施“大脑” 物理AI重塑全球能源基础设施</div>
+                <div class="news-meta">
+                    <span class="news-source">欧雪</span>
+                    <span class="news-rating">★★★★★</span>
+                </div>
+                <a href="https://36kr.com/information/AI" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        <div class="news-item">
+            <div class="news-number">5</div>
+            <div class="news-content">
+                <div class="news-title">可灵单飞：一份推到桌子中间的赌注</div>
+                <div class="news-summary">中国AI视频模型可灵获融资独立，场景盈利胜出</div>
+                <div class="news-meta">
+                    <span class="news-source">胡说成理</span>
+                    <span class="news-rating">★★★★★</span>
+                </div>
+                <a href="https://36kr.com/information/AI" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        <div class="news-item">
+            <div class="news-number">6</div>
+            <div class="news-content">
+                <div class="news-title">OpenAI的新语音模型，先把用户烦到了</div>
+                <div class="news-summary">AI语音助手不只是要会说话，也要学会闭嘴。</div>
+                <div class="news-meta">
+                    <span class="news-source">字母AI</span>
+                    <span class="news-rating">★★★★★</span>
+                </div>
+                <a href="https://36kr.com/information/AI" class="news-link" target="_blank">阅读全文 →</a>
+            </div>
+        </div>
+    
+        </div>
+        
+        <div class="section">
+            <div class="section-title">🏆 全球模型热度榜</div>
+
+    <table class="model-table">
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>品牌</th>
+                <th>模型</th>
+                <th>上下文窗口</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td class="rank">1</td>
+            <td class="brand">Meta</td>
+            <td class="model-name">Meta: Llama 4 Scout</td>
+            <td class="context">10.0M</td>
+        </tr>
+    
+        <tr>
+            <td class="rank">2</td>
+            <td class="brand">xAI</td>
+            <td class="model-name">xAI: Grok 4.20 Multi-Agent</td>
+            <td class="context">2.0M</td>
+        </tr>
+    
+        <tr>
+            <td class="rank">3</td>
+            <td class="brand">OpenAI</td>
+            <td class="model-name">OpenAI: GPT-5.5 Pro</td>
+            <td class="context">1.1M</td>
+        </tr>
+    
+        <tr>
+            <td class="rank">4</td>
+            <td class="brand">Qwen (通义千问)</td>
+            <td class="model-name">Qwen: Qwen3 Coder 480B A35B (free)</td>
+            <td class="context">1.0M</td>
+        </tr>
+    
+        <tr>
+            <td class="rank">5</td>
+            <td class="brand">DeepSeek</td>
+            <td class="model-name">DeepSeek: DeepSeek V4 Pro</td>
+            <td class="context">1.0M</td>
+        </tr>
+    
+        <tr>
+            <td class="rank">6</td>
+            <td class="brand">Anthropic</td>
+            <td class="model-name">Anthropic: Claude Sonnet 5</td>
+            <td class="context">1.0M</td>
+        </tr>
+    
+        </tbody>
+    </table>
+
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📈 今日趋势洞察</div>
+            <ul class="trends-list">
+<li class="trend-item">端侧 AI 加速渗透：Fable 5 等模型正在推进端侧部署，个人设备 AI 能力持续增强</li><li class="trend-item">AI Agent 成主战场：Claude、Cursor、OpenClaw 等在移动端爆发，Agent 正在接管更多工作场景</li><li class="trend-item">国产大模型发力造芯：DeepSeek、智谱被曝自研芯片，试图绕开英伟达供应链限制</li><li class="trend-item">OpenAI 语音交互升级：ChatGPT 语音大升级，AI 语音正从"听和说"向操作系统级体验演进</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>数据来源：Hacker News · 36氪 · OpenRouter API</p>
+            <p>AI 行业日报由 AI 自动生成</p>
+        </div>
+    </div>
+</body>
+</html>

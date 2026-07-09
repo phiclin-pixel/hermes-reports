@@ -4,336 +4,257 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI HOT 行业日报 · 2026-07-09</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Helvetica+Neue:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Helvetica+Neue:wght@400;500;700&display=swap');
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
             font-family: 'Helvetica Neue', 'Noto Serif SC', serif;
-            background: #faf8f5;
+            background-color: #faf8f5;
             color: #1a1a1a;
-            line-height: 1.7;
-        }
-        
-        .container {
+            line-height: 1.8;
             max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
         }
-        
         .header {
             text-align: center;
-            padding: 30px 0;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
             border-bottom: 2px solid #c23a30;
-            margin-bottom: 40px;
         }
-        
         .header h1 {
-            font-size: 2.2em;
+            font-size: 2.5rem;
             font-weight: 700;
             color: #c23a30;
             margin-bottom: 10px;
         }
-        
         .header .date {
-            font-size: 1.1em;
+            font-size: 1.1rem;
             color: #666;
         }
-        
         .section {
             margin-bottom: 50px;
         }
-        
         .section h2 {
-            font-size: 1.5em;
+            font-size: 1.8rem;
+            font-weight: 600;
             color: #c23a30;
             margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e0e0e0;
+            padding-left: 15px;
+            border-left: 4px solid #c23a30;
         }
-        
         .news-item {
+            margin-bottom: 30px;
+            padding: 20px;
             background: white;
             border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            transition: transform 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        
-        .news-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
         .news-item h3 {
-            font-size: 1.2em;
+            font-size: 1.3rem;
+            font-weight: 600;
             margin-bottom: 10px;
             color: #1a1a1a;
         }
-        
         .news-item .source {
-            display: inline-block;
-            background: #f0f0f0;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.85em;
+            font-size: 0.9rem;
             color: #666;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
-        
         .news-item .summary {
-            color: #444;
-            margin-bottom: 12px;
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 10px;
         }
-        
-        .news-item a {
+        .news-item .impact {
+            font-size: 0.9rem;
             color: #c23a30;
-            text-decoration: none;
-            font-size: 0.9em;
+            font-weight: 600;
         }
-        
-        .news-item a:hover {
-            text-decoration: underline;
-        }
-        
-        .rating {
-            color: #c23a30;
-            letter-spacing: 2px;
-        }
-        
         .model-table {
             width: 100%;
+            border-collapse: collapse;
             background: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        
         .model-table th, .model-table td {
             padding: 15px 20px;
             text-align: left;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #eee;
         }
-        
         .model-table th {
             background: #c23a30;
             color: white;
             font-weight: 600;
         }
-        
         .model-table tr:last-child td {
             border-bottom: none;
         }
-        
-        .insights {
-            background: linear-gradient(135deg, #fff5f3 0%, #fff9f8 100%);
-            border-radius: 8px;
+        .trends {
             padding: 25px;
-            border-left: 4px solid #c23a30;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        
-        .insights ul {
-            margin-left: 20px;
+        .trends h3 {
+            color: #c23a30;
+            margin-bottom: 15px;
         }
-        
-        .insights li {
+        .trends ul {
+            padding-left: 20px;
+        }
+        .trends li {
             margin-bottom: 10px;
-            color: #444;
         }
-        
         .footer {
             text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid #e0e0e0;
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 50px;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
         }
-        
-        .data-source {
+        .note {
             background: #fff3cd;
-            border-radius: 6px;
             padding: 15px;
+            border-radius: 8px;
             margin-bottom: 30px;
             border-left: 4px solid #ffc107;
-            color: #856404;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>📰 AI HOT 行业日报</h1>
-            <div class="date">2026-07-09</div>
+    <div class="header">
+        <h1>📰 AI HOT 行业日报</h1>
+        <div class="date">2026-07-09 · 北京时间</div>
+    </div>
+
+    <div class="note">
+        <strong>说明：</strong>今日 AIHOT API 暂时不可用，数据来源为 36氪 AI 频道 + OpenRouter 模型榜单。
+    </div>
+
+    <div class="section">
+        <h2>🌍 全球 AI 动态</h2>
+
+        <div class="news-item">
+            <h3>xAI发布Grok 4.5旗舰模型，性能接近Claude Opus 4.8</h3>
+            <div class="source">来源：xAI / 新智元</div>
+            <div class="summary">马斯克深夜发布最强旗舰Grok 4.5，使用数万块GB300训练，性能紧贴Opus 4.8，价格大幅降低，直接对标GPT-5.5</div>
+            <div class="impact">影响指数：★★★★★</div>
         </div>
-        
-        <div class="data-source">
-            <strong>⚠️ 数据说明：</strong>AIHOT API 暂时不可用（DNS 解析失败），今日新闻来自 Hacker News AI 热门话题 + OpenRouter 模型数据。
+
+    </div>
+
+    <div class="section">
+        <h2>🇨🇳 中国 AI 动态</h2>
+
+        <div class="news-item">
+            <h3>乱用AI，打工人被坑惨了</h3>
+            <div class="source">来源：定焦One</div>
+            <div class="summary">提效还是背锅？AI工具在工作场景的滥用正在导致更多职场纠纷</div>
+            <div class="impact">影响指数：★★★☆☆</div>
         </div>
-        
-        <div class="section">
-            <h2>🌍 全球 AI 动态</h2>
 
-            <div class="news-item">
-                <h3>1. John Deere owners will get the right to repair equipment under FTC settlement</h3>
-                <span class="source">Hacker News</span>
-                <div class="summary">HN 热度：177 分</div>
-                <div class="rating">★★★☆☆</div>
-                <a href="https://apnews.com/article/john-deere-right-to-repair-agriculture-equipment-cb7514ffedb95c130a976af661f2bc02" target="_blank">🔗 查看原文</a>
-            </div>
-
-            <div class="news-item">
-                <h3>2. Separating signal from noise in coding evaluations</h3>
-                <span class="source">Hacker News</span>
-                <div class="summary">HN 热度：141 分</div>
-                <div class="rating">★★★☆☆</div>
-                <a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/" target="_blank">🔗 查看原文</a>
-            </div>
-
-            <div class="news-item">
-                <h3>3. Mistral's Robostral Navigate: a state of the art robotics navigation model</h3>
-                <span class="source">Hacker News</span>
-                <div class="summary">HN 热度：406 分</div>
-                <div class="rating">★★★☆☆</div>
-                <a href="https://mistral.ai/news/robostral-navigate/" target="_blank">🔗 查看原文</a>
-            </div>
-
-            <div class="news-item">
-                <h3>4. Show HN: Microsoft releases Flint, a visualization language for AI agents</h3>
-                <span class="source">Hacker News</span>
-                <div class="summary">HN 热度：189 分</div>
-                <div class="rating">★★★☆☆</div>
-                <a href="https://microsoft.github.io/flint-chart/#/" target="_blank">🔗 查看原文</a>
-            </div>
-
-            <div class="news-item">
-                <h3>5. We made Grok 4.5, GPT-5.5, and Claude build the same apps</h3>
-                <span class="source">Hacker News</span>
-                <div class="summary">HN 热度：22 分</div>
-                <div class="rating">★★★☆☆</div>
-                <a href="https://www.tryai.dev/blog/grok-4.5-vs-gpt-5.5-vs-claude-build-off" target="_blank">🔗 查看原文</a>
-            </div>
-
-            <div class="news-item">
-                <h3>6. Grok 4.5</h3>
-                <span class="source">Hacker News</span>
-                <div class="summary">HN 热度：452 分</div>
-                <div class="rating">★★★☆☆</div>
-                <a href="https://x.ai/news/grok-4-5" target="_blank">🔗 查看原文</a>
-            </div>
-
-            <div class="news-item">
-                <h3>7. GPT‑Live</h3>
-                <span class="source">Hacker News</span>
-                <div class="summary">HN 热度：584 分</div>
-                <div class="rating">★★★☆☆</div>
-                <a href="https://openai.com/index/introducing-gpt-live/" target="_blank">🔗 查看原文</a>
-            </div>
-
-            <div class="news-item">
-                <h3>8. MIRA: Multiplayer Interactive World Models Trained on Rocket League</h3>
-                <span class="source">Hacker News</span>
-                <div class="summary">HN 热度：3 分</div>
-                <div class="rating">★★★☆☆</div>
-                <a href="https://mira-wm.com/" target="_blank">🔗 查看原文</a>
-            </div>
-
-            <div class="news-item">
-                <h3>9. Decoding the obfuscated bash script on a Uniqlo t-shirt</h3>
-                <span class="source">Hacker News</span>
-                <div class="summary">HN 热度：1290 分</div>
-                <div class="rating">★★★☆☆</div>
-                <a href="https://tris.sherliker.net/blog/obfuscated-self-evaluating-bash-script-by-cdn-akamai-being-supplied-to-consumers-via-retail-stores/" target="_blank">🔗 查看原文</a>
-            </div>
-
-            <div class="news-item">
-                <h3>10. Show HN: Frugon – Find which LLM calls a cheaper model could handle (local, MIT)</h3>
-                <span class="source">Hacker News</span>
-                <div class="summary">HN 热度：5 分</div>
-                <div class="rating">★★★☆☆</div>
-                <a href="https://github.com/Rodiun/frugon" target="_blank">🔗 查看原文</a>
-            </div>
-
+        <div class="news-item">
+            <h3>普渡机器人，不想当"老登"</h3>
+            <div class="source">来源：光子星球</div>
+            <div class="summary">服务机器人赛道竞争加剧，普渡机器人面临转型考验</div>
+            <div class="impact">影响指数：★★★☆☆</div>
         </div>
-        
-        <div class="section">
-            <h2>🏆 模型热度榜（基于 OpenRouter 部署数据）</h2>
-            <div class="model-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>排名</th>
-                            <th>品牌</th>
-                            <th>模型</th>
-                            <th>上下文长度</th>
-                        </tr>
-                    </thead>
-                    <tbody>
 
-                        <tr>
-                            <td>1</td>
-                            <td><strong>Anthropic Claude</strong></td>
-                            <td>claude-sonnet-5</td>
-                            <td>1000K</td>
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td><strong>OpenAI GPT</strong></td>
-                            <td>gpt-5.5-pro</td>
-                            <td>1050K</td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td><strong>OpenAI o</strong></td>
-                            <td>o3-deep-research</td>
-                            <td>200K</td>
-                        </tr>
-
-                        <tr>
-                            <td>4</td>
-                            <td><strong>Google Gemini</strong></td>
-                            <td>gemini-3.5-flash</td>
-                            <td>1048K</td>
-                        </tr>
-
-                        <tr>
-                            <td>5</td>
-                            <td><strong>Meta Llama</strong></td>
-                            <td>llama-4-scout</td>
-                            <td>10000K</td>
-                        </tr>
-
-                        <tr>
-                            <td>6</td>
-                            <td><strong>DeepSeek</strong></td>
-                            <td>deepseek-v4-pro</td>
-                            <td>1048K</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
+        <div class="news-item">
+            <h3>杀不死比赛的Liblib们，为什么还在被资本追捧</h3>
+            <div class="source">来源：窄播</div>
+            <div class="summary">AI生成内容平台持续获得资本青睐，市场押注的是能在模型、用户和产品形态不断变化中持续选对航线的团队</div>
+            <div class="impact">影响指数：★★★★☆</div>
         </div>
-        
-        <div class="section">
-            <h2>📈 今日趋势洞察</h2>
-            <div class="insights">
-                <ul>
-                    <li><strong>机器人模型爆发：</strong>Mistral 发布 Robostral Navigate 机器人导航模型，SOTA 级别性能，标志着 AI 从语言模型向具身智能加速演进</li>
-                    <li><strong>代码评估新标准：</strong>OpenAI 发布编码评估新方法，探讨如何区分信号与噪声，提升 LLM 代码能力评估的准确性</li>
-                    <li><strong>Agent 可视化工具：</strong>Microsoft 开源 Flint，专门用于 AI Agent 的可视化语言，帮助调试和理解 Agent 行为</li>
-                </ul>
-            </div>
+
+        <div class="news-item">
+            <h3>AI 圈的新生意：不是卖课，是立门派</h3>
+            <div class="source">来源：韦书_wiwi</div>
+            <div class="summary">AI行业新商业模式兴起：不再是卖课制造焦虑，而是建立技术流派和标准，接管'谁真的会AI'的解释权</div>
+            <div class="impact">影响指数：★★★★☆</div>
         </div>
-        
-        <div class="footer">
-            <p>AI HOT 行业日报 · 数据来源：Hacker News + OpenRouter</p>
-            <p>自动生成于 2026-07-09 09:03:06 CST</p>
+
+        <div class="news-item">
+            <h3>Momenta的物理AI溢价，是不是太贵了？</h3>
+            <div class="source">来源：智械岛</div>
+            <div class="summary">自动驾驶公司Momenta重新定位为物理AI企业，估值逻辑发生变化</div>
+            <div class="impact">影响指数：★★★☆☆</div>
         </div>
+
+    </div>
+
+    <div class="section">
+        <h2>🏆 模型热度榜（基于 OpenRouter 部署数据）</h2>
+        <table class="model-table">
+            <thead>
+                <tr>
+                    <th>排名</th>
+                    <th>模型</th>
+                    <th>机构</th>
+                    <th>上下文长度</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td>O3 Deep Research</td>
+                    <td>OpenAI</td>
+                    <td>200,000</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Claude Sonnet 5</td>
+                    <td>Anthropic</td>
+                    <td>1,000,000</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Llama 4 Scout</td>
+                    <td>Meta</td>
+                    <td>10,000,000</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Deepseek V4 Pro</td>
+                    <td>DeepSeek</td>
+                    <td>1,048,576</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>Qwen3 Coder:Free</td>
+                    <td>Qwen</td>
+                    <td>1,048,576</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>📈 今日趋势洞察</h2>
+        <div class="trends">
+            <ul>
+                <li><strong>模型性价比战升级：</strong>xAI 发布 Grok 4.5 标志着大模型竞赛进入"性能追赶+价格下探"的新阶段，顶级智能的获取成本持续降低</li>
+                <li><strong>AI 商业模式创新：</strong>国内 AI 圈正在从单纯的知识付费卖课，转向建立技术流派和标准的新商业模式，行业话语权的争夺加剧</li>
+                <li><strong>AI 职场风险显现：</strong>AI 工具的普及正在带来新的职场问题，滥用 AI 导致的责任归属和背锅风险成为新的行业关注点</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>AI HOT 每日 AI 行业日报 · 数据聚合自公开渠道</p>
+        <p>生成时间：2026-07-09 11:24:13 CST</p>
     </div>
 </body>
 </html>
